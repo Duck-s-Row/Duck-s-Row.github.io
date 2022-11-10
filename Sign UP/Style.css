@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Bebas+Neue&display=swap');
+
+/* 
+Font family: -
+font-family: 'ABeeZee', sans-serif;
+font-family: 'Bebas Neue', cursive;
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.top {
+    width: 100%;
+    height: 250px;
+    background-color: #FEE715;
+    display: grid;
+    grid-template-columns: 500px 550px 500px;
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.top h1{
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 500;
+    font-size: 96px;
+    letter-spacing: 0.1em;
+    grid-column: 2;
+    grid-row: 1;
+    margin-top: 50px;
+}
+
+.top p {
+    font-family: 'ABeeZee', sans-serif;
+    grid-column: 2;
+    grid-row: 2;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 40px;
+}
+
+.top p a {
+    text-decoration: none;
+    color: black;
+}
+
+.top p a:hover {
+    color: blueviolet;
+}
+
+.forms {
+    background-color: black;
+    width: 100%;
+    min-height: 67vh;
+}
+
+#face-btn {
+    font-family: 'ABeeZee', sans-serif;
+    color: white;
+    background-color: #3B5998;
+    border-radius: 30px;
+    position: absolute;
+    width: 400px;
+    height: 80px;
+    left: 570px;
+    top: 341px;
+
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    transition: 1s ease;
+}
+
+#face-btn:hover {
+    transform: scale(1.1);
+}
+
+#face-btn i {
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+#google-btn {
+    font-family: 'ABeeZee', sans-serif;
+    position: absolute;
+    width: 400px;
+    height: 80px;
+    left: 570px;
+    top: 472px;
+
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    transition: 1s ease;
+}
+
+#google-btn i {
+    margin-left: 50px;
+    font-size: 30px;
+}
+
+#google-btn:hover {
+    transform: scale(1.1);
+}
+
+#new-acc {
+    font-family: 'Bebas Neue', cursive;
+    position: absolute;
+    width: 350px;
+    height: 80px;
+    left: 600px;
+    top: 603px;
+
+    background: #FEE715;
+    border-radius: 30px;
+    transition: 1s ease;
+
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: 0.1em;
+}
+
+#new-acc:hover {
+    transform: scale(1.1);
+}
