@@ -130,3 +130,8 @@ font-family: 'Bebas Neue', cursive;
 #new-acc:hover {
     transform: scale(1.1);
 }
+
+.forms img {
+    margin-top: 420px;
+    margin-left: 25px;
+}
