@@ -7,7 +7,7 @@ nav {
     background-color: rgba(16, 24, 32, 1);
     color: white;
     display: grid;
-    grid-template-columns: 120px 300px 885px 100px 100px 100px 100px;
+    grid-template-columns: 120px 300px 715px 100px 100px 100px 100px;
     grid-template-rows: 120px;
     justify-content: center;
     text-align: center;
