@@ -7,16 +7,16 @@ nav {
     background-color: rgba(16, 24, 32, 1);
     color: white;
     display: grid;
-    grid-template-columns: 120px 300px 715px 100px 100px 100px 100px;
-    grid-template-rows: 120px;
+    grid-template-columns: 120px 150px 815px 100px 100px 100px 100px;
+    grid-template-rows: 70px;
     justify-content: center;
     text-align: center;
     align-items: center;
 }
 
 nav .duck_icon img {
-    width: 100px;
-    height: 60px;
+    width: 60px;
+    height: 40px;
 }
 
 nav .go {
@@ -24,36 +24,30 @@ nav .go {
     text-align: center;
 }
 
-
-nav .go a:hover {
-    color: white;
-}
-
 nav .go a {
     color: white;
     text-decoration: none;
+}
+
+nav .go a:hover {
+    color: yellow;
 }
 
 nav .go .F_s {
     font-family: 'Bebas Neue', cursive;
     font-style: normal;
     font-weight: 400;
-    font-size: 60.1701px;
-    line-height: 72px;
+    font-size: 30px;
     letter-spacing: 0.1em;
-
-
 }
 
 nav .go .S_s {
     font-family: 'ABeeZee', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 14.4131px;
-    line-height: 17px;
+    font-size: 10px;
     text-align: center;
     letter-spacing: 0.1em;
-
 }
 
 nav .search_icon {
@@ -64,7 +58,7 @@ nav .home {
     font-family: 'ABeeZee';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 24px;
 }
 
@@ -153,7 +147,7 @@ nav .about {
     font-family: 'ABeeZee';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 24px;
 }
 
@@ -161,6 +155,10 @@ nav .hang {
     font-family: 'ABeeZee';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 24px;
+}
+
+nav .profile {
+
 }
