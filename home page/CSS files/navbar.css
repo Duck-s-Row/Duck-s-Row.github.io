@@ -30,7 +30,7 @@ nav .go a {
 }
 
 nav .go a:hover {
-    color: yellow;
+    color: rgba(254, 231, 21, 1);
 }
 
 nav .go .F_s {
@@ -76,13 +76,13 @@ nav .home a::before {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(254, 231, 21, 1);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
 
 nav .home a:hover {
-    color: white;
+    color: rgba(254, 231, 21, 1);
 }
 
 nav .home a:hover::before {
@@ -103,13 +103,13 @@ nav .about a::before {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(254, 231, 21, 1);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
 
 nav .about a:hover {
-    color: white;
+    color: rgba(254, 231, 21, 1);
 }
 
 nav .about a:hover::before {
@@ -130,13 +130,13 @@ nav .hang a::before {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(254, 231, 21, 1);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
 
 nav .hang a:hover {
-    color: white;
+    color: rgba(254, 231, 21, 1);
 }
 
 nav .hang a:hover::before {
