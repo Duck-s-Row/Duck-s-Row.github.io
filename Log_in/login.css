@@ -35,6 +35,7 @@ section {
 }
 .login {
 	text-align:center;
+	min-height: 73.2vh;
 }
 input[type="email"] {
 	width: 400px;

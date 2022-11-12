@@ -9,53 +9,45 @@ font-family: 'Bebas Neue', cursive;
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.top {
-    width: 100%;
-    height: 250px;
-    background-color: #FEE715;
-    display: grid;
-    grid-template-columns: 500px 550px 500px;
-    grid-template-rows: repeat(2, 1fr);
-    justify-items: center;
-    align-items: center;
+header {
+	background-color: #FEE715;
+	width: 100%;
+	z-index: 999;
+	height: 200px;
 }
-
-.top h1{
-    font-family: 'Bebas Neue', cursive;
-    font-weight: 500;
-    font-size: 96px;
-    letter-spacing: 0.1em;
-    grid-column: 2;
-    grid-row: 1;
-    margin-top: 50px;
+.head {
+	text-align: center;
 }
-
-.top p {
-    font-family: 'ABeeZee', sans-serif;
-    grid-column: 2;
-    grid-row: 2;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 38px;
-    margin-bottom: 40px;
+.head h1 {
+	font-family: 'Bebas Neue', cursive;
+	font-weight: 500;
+	font-size: 90px;
+	letter-spacing: 0.1em;
+	padding-top: 15px;
 }
-
-.top p a {
+.head span {
+	font-size: 32px;
+	font-weight: 400;
+	font-family: 'ABeeZee', sans-serif;
+	line-height: 38px;
+	margin-bottom: 40px;
+}
+.head span a {
     text-decoration: none;
     color: black;
 }
 
-.top p a:hover {
+.head span a:hover {
     color: blueviolet;
 }
 
 .forms {
-    background-color: black;
+    background-color: #1E1E1E;
     width: 100%;
-    min-height: 67vh;
+    min-height: 73.2vh;
 }
 
 #face-btn {
@@ -67,7 +59,7 @@ font-family: 'Bebas Neue', cursive;
     width: 400px;
     height: 80px;
     left: 570px;
-    top: 341px;
+    top: 280px;
 
     font-weight: 400;
     font-size: 20px;
@@ -90,7 +82,7 @@ font-family: 'Bebas Neue', cursive;
     width: 400px;
     height: 80px;
     left: 570px;
-    top: 472px;
+    top: 380px;
 
     background: #FFFFFF;
     border-radius: 30px;
@@ -115,7 +107,7 @@ font-family: 'Bebas Neue', cursive;
     width: 350px;
     height: 80px;
     left: 600px;
-    top: 603px;
+    top: 480px;
 
     background: #FEE715;
     border-radius: 30px;
@@ -132,6 +124,6 @@ font-family: 'Bebas Neue', cursive;
 }
 
 .forms img {
-    margin-top: 420px;
+    margin-top: 470px;
     margin-left: 25px;
 }
