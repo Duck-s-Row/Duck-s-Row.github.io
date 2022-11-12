@@ -5,15 +5,18 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
 header {
 	background-color: #FEE715;
 	width: 100%;
 	z-index: 999;
 	height: 200px;
 }
+
 .head {
 	text-align: center;
 }
+
 .head h1 {
 	font-family: 'Bebas Neue', cursive;
 	font-weight: 500;
@@ -21,6 +24,7 @@ header {
 	letter-spacing: 0.1em;
 	padding-top: 15px;
 }
+
 .head span {
 	font-size: 32px;
 	font-weight: 400;
@@ -28,15 +32,18 @@ header {
 	line-height: 38px;
 	margin-bottom: 40px;
 }
+
 section {
 	width: 100%;
 	min-height: 100vh;
 	background: rgba(16, 24, 32, 1);
 }
+
 .login {
 	text-align:center;
 	min-height: 73.2vh;
 }
+
 input[type="email"] {
 	width: 400px;
 	height: 50px;
@@ -47,6 +54,7 @@ input[type="email"] {
 	font-size: 20px;
 	padding-left:15px;
 }
+
 input[type="password"] {
 	width: 400px;
 	height: 50px;
@@ -57,6 +65,7 @@ input[type="password"] {
 	font-size: 20px;
 	padding-left: 15px;
 }
+
 button {
 	width: 200px;
 	height: 50px;
@@ -67,6 +76,7 @@ button {
 	font-size: 30px;
 	transition:all 0.5;
 }
+
 button:hover {
 	width: 200px;
 	height: 50px;
@@ -77,24 +87,28 @@ button:hover {
 	font-size: 30px;
 	transition: all 0.5;
 }
+
 .forget {
 	text-decoration: none;
 	font-family: 'ABeeZee', sans-serif;
 	color: white;
 	margin-top:100px;
 }
+
 .forget:hover{
 	text-decoration: none;
 	font-family: 'ABeeZee', sans-serif;
 	color: red;
 	margin-top: 100px;
 }
+
 .icons a {
 	color: white;
 	font-size: 30px;
 	padding: 20px;
 	background: url(icons8-google-500.png);
 }
+
 .logo{
 	margin-right:90%;
 }
