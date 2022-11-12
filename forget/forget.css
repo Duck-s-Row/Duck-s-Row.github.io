@@ -33,7 +33,7 @@ header {
 section {
     width: 100%;
     min-height: 73.2vh;
-    background: #1E1E1E;
+    background: rgba(16, 24, 32, 1);
 }
 .forget-password {
     text-align: center;
@@ -77,5 +77,5 @@ button:hover {
 }
 .logo {
     margin-right: 90%;
-    margin-top:160px;
+    margin-top: 187px;
 }

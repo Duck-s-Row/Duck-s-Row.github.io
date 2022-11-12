@@ -4,24 +4,27 @@
 }
 
 nav {
+    width: 100%;
     background-color: rgba(16, 24, 32, 1);
     color: white;
-    display: grid;
-    grid-template-columns: 120px 150px 815px 100px 100px 100px 100px;
-    grid-template-rows: 70px;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+    position: absolute;
+    min-height: 10vh;
 }
 
 nav .duck_icon img {
     width: 60px;
     height: 40px;
+    position: absolute;
+    left: 70px;
+    top: 20px;
 }
 
 nav .go {
     justify-self: center;
     text-align: center;
+    position: absolute;
+    left: 150px;
+    top: 5px;
 }
 
 nav .go a {
@@ -53,109 +56,111 @@ nav .go .S_s {
 
 nav .search_icon {
     margin-left: 95%;
+    position: absolute;
+    right: 400px;
+    top: 25px;
 }
 
 nav .home {
-    font-family: 'ABeeZee';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 24px;
-}
-
-nav .home a {
-    position: relative;
-    color: white;
-    text-decoration: none;
-}
-
-nav .home a::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(254, 231, 21, 1);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-nav .home a:hover {
-    color: rgba(254, 231, 21, 1);
-}
-
-nav .home a:hover::before {
-    transform: scaleX(1);
-}
-
-nav .about a {
-    position: relative;
-    color: white;
-    text-decoration: none;
-}
-
-nav .about a::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(254, 231, 21, 1);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-nav .about a:hover {
-    color: rgba(254, 231, 21, 1);
-}
-
-nav .about a:hover::before {
-    transform: scaleX(1);
-}
-
-nav .hang a {
-    position: relative;
-    color: white;
-    text-decoration: none;
-}
-
-nav .hang a::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(254, 231, 21, 1);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-nav .hang a:hover {
-    color: rgba(254, 231, 21, 1);
-}
-
-nav .hang a:hover::before {
-    transform: scaleX(1);
+    right: 320px;
+    top: 25px;
 }
 
 nav .about {
-    font-family: 'ABeeZee';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 24px;
+    right: 220px;
+    top: 25px;
 }
 
 nav .hang {
+    right: 120px;
+    top: 25px;
+}
+
+nav .hover_u{
     font-family: 'ABeeZee';
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
     line-height: 24px;
+    position: absolute;
+}
+
+nav .hover_u a:hover {
+    color: rgba(254, 231, 21, 1);
+}
+
+nav .hover_u a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(254, 231, 21, 1);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+nav .hover_u a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+}
+
+nav .hover_u a:hover::before {
+    transform: scaleX(1);
+}
+
+nav .profile {
+    position: absolute;
+    right: 50px;
+    top: 15px;
+}
+
+@media (max-width: 60vh) {
+    nav {
+        min-height: 7vh;
+        width: 100%;
+    }
+    
+    .home {
+        display: none;
+    }
+    
+    .about {
+        display: none;
+    }
+
+    .hang {
+        display: none;
+    }
+
+    .profile{
+        display: none;
+    }
+
+    .search_icon{
+        display: none;
+    }
+
+    nav .go{
+        top: 20px;
+        left: 400px;
+    }
+
+    nav .go .F_s{
+        font-size: 50px;
+    }
+
+    nav .go .S_s {
+        font-size: 20px;
+    }
+
+    nav .duck_icon img {
+        top: 35px;
+        left: 300px;
+        width: 100px;
+        height: 80px;
+    }
 }

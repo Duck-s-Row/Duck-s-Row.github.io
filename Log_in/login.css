@@ -31,7 +31,7 @@ header {
 section {
 	width: 100%;
 	min-height: 100vh;
-	background: #1E1E1E;
+	background: rgba(16, 24, 32, 1);
 }
 .login {
 	text-align:center;
