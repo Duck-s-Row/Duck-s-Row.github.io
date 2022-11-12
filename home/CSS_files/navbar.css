@@ -118,7 +118,7 @@ nav .profile {
     top: 15px;
 }
 
-@media (max-width: 60vh) {
+@media (max-width: 70vh) {
     nav {
         min-height: 7vh;
         width: 100%;
