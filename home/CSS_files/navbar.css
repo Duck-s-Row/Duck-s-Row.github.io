@@ -13,7 +13,7 @@ body {
 
 nav {
     width: 90%;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0,0.616);
     color: white;
     position: relative;
     min-height: 10vh;
@@ -187,7 +187,7 @@ main .button {
     font-size: 54.4px;
     line-height: 65px;
     letter-spacing: 0.1em;
-    background: #fee7159d;
+    background: rgba(254, 231, 21, 0.616);
     border: none;
     position: relative;
     top: 450px;
