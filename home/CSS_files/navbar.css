@@ -134,7 +134,7 @@ nav .profile {
 @media (max-width: 70vh) {
     nav {
         min-height: 7vh;
-        width: 100%;
+        width: 90%;
     }
 
     .home {
@@ -193,4 +193,9 @@ main .button {
     top: 450px;
     left: 618px;
     border-radius: 100px;
+    transition: 1s ease;
+}
+
+main .button:hover {
+    transform: scale(1.1);
 }
