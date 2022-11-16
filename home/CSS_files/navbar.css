@@ -3,12 +3,12 @@
     padding: 0px;
 }
 
-main {
-    height: 753px;
-    width: 1536px;
+body {
+    height: auto;
+    width: 100%;
     background: url(../imgs/home_page_fullscreen.jpg);
     background-size: cover;
-    background-position: absolute;
+    background-repeat: no-repeat;
 }
 
 nav {
@@ -21,11 +21,7 @@ nav {
     gap: 487;
     align-content: center;
     left: 77px;
-    top: 2%;
-    /* align-items: center; */
-    /* justify-self: center; */
-    /* align-self: center; */
-    
+    top: 10px;
 }
 
 nav .duck_icon img {
