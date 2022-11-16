@@ -3,6 +3,14 @@
     padding: 0px;
 }
 
+main {
+    height: 753px;
+    width: 1536px;
+    background: url(../imgs/home_page_fullscreen.jpg);
+    background-size: cover;
+    background-position: absolute;
+}
+
 nav {
     width: 90%;
     background-color: rgb(0, 0, 0);
@@ -10,10 +18,10 @@ nav {
     position: relative;
     min-height: 10vh;
     border-radius: 100px;
-    left: 80px;
     gap: 487;
     align-content: center;
-    top: 1%;
+    left: 77px;
+    top: 2%;
     /* align-items: center; */
     /* justify-self: center; */
     /* align-self: center; */
@@ -174,17 +182,7 @@ nav .profile {
     }
 }
 
-main {
-    width: 1536px;
-    height: 721.60px;
-    background: url(../imgs/Welcome\ Photo.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-}
-
-main button {
+main .button {
     width: 300px;
     height: 100px;
     font-family: 'Bebas Neue';
@@ -192,11 +190,11 @@ main button {
     font-weight: 400;
     font-size: 54.4px;
     line-height: 65px;
-    text-align: center;
     letter-spacing: 0.1em;
-    background: #FEE715;
+    background: #fee7159d;
     border: none;
     position: relative;
-    top: 400px;
-    left: 686px;
+    top: 450px;
+    left: 618px;
+    border-radius: 100px;
 }
