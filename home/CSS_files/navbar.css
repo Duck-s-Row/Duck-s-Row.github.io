@@ -6,7 +6,7 @@
 body {
     height: auto;
     width: 100%;
-    background: url(../imgs/home_page_fullscreen.jpg);
+    /* background: url(../imgs/home_page_fullscreen.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -179,19 +179,19 @@ nav .profile {
 }
 
 main .button {
-    width: 300px;
-    height: 100px;
+    width: 250px;
+    height: 70px;
     font-family: 'Bebas Neue';
     font-style: normal;
     font-weight: 400;
-    font-size: 54.4px;
+    font-size: 40px;
     line-height: 65px;
     letter-spacing: 0.1em;
     background: rgb(254, 231, 21);
     border: none;
     position: relative;
-    top: 450px;
-    left: 618px;
+    top: 550px;
+    left: 718px;
     border-radius: 100px;
     transition: 1s ease;
 } 
@@ -199,3 +199,11 @@ main .button {
 main .button:hover {
     transform: scale(1.1);
 }
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 100%;
+  }
