@@ -191,8 +191,8 @@ main .button {
     background: rgb(254, 231, 21);
     border: none;
     position: relative;
-    top: 550px;
-    left: 718px;
+    top: 450px;
+    left: 618px;
     border-radius: 100px;
     transition: 1s ease;
 } 
