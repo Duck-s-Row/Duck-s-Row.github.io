@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Bebas+Neue&display=swap');
+
 * {
     margin: 0px;
     padding: 0px;
@@ -7,17 +9,78 @@ body {
     width: 100%;
 }
 
+main{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
 nav {
-    width: 90%;
-    background-color: rgb(0, 0, 0, 0.9);
-    position: fixed;
-    min-height: 10vh;
-    border-radius: 100px;
-    align-content: center;
-    left: 5%;
-    right: 5%;
     top: 10px;
+    width: 90%;
+    background-color: rgb(0, 0, 0, 0.7);
+    min-height: 10vh;
+    position: absolute;
+    border-radius: 100px;
+    display: flex;
     z-index: 999;
+}
+
+main h1 {
+    color: rgba(254, 231, 21, 1);
+    margin-top: 15%;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+	font-size: 90px;
+}
+main h2 {
+    font-family: 'ABeeZee', sans-serif;
+    color: rgba(254, 231, 21, 1);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+}
+
+main .button {
+    width: 250px;
+    height: 70px;
+    margin-top: 10%;
+
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 65px;
+    letter-spacing: 0.1em;
+
+    background: rgb(254, 231, 21);
+    border-radius: 100px;
+    border: none;
+
+    position: relative;
+    transition: 1s ease;
+} 
+
+main .button:hover {
+    transform: scale(1.1);
+}
+
+#myVideo {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+#logo {
+    width: 80px;
 }
 
 .container-fluid .navbar-toggler-icon {
@@ -60,41 +123,10 @@ nav {
     box-shadow: none;
 }
 
-main .button {
-    width: 250px;
-    height: 70px;
-    font-family: 'Bebas Neue';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 65px;
-    letter-spacing: 0.1em;
-    background: rgb(254, 231, 21);
-    border: none;
-    position: relative;
-    top: 550px;
-    left: 718px;
-    border-radius: 100px;
-    transition: 1s ease;
-} 
-
-main .button:hover {
-    transform: scale(1.1);
-}
-
-#myVideo {
-    position: relative;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    min-height: 100%;
-}
-
-@media (max-width: 70vh) {
+@media (max-width: 90vh) {
     nav {
         min-height: 5vh;
-
+        top: 20px;
     }
 
     .navbar .navbar-toggler {
@@ -117,4 +149,25 @@ main .button:hover {
         font-size: 30px;
     }
 
+    main h1 {
+        margin-top: 40%;
+        font-size: 130px;
+    }
+
+    main h2 {
+        font-family: 'ABeeZee', sans-serif;
+        color: rgba(254, 231, 21, 1);
+        font-weight: 400;
+        font-size: 50px;
+        line-height: 38px;
+    }
+
+    main .button {
+        width: 450px;
+        height: 100px;
+        margin-top: 20%;
+
+        font-weight: 400;
+        font-size: 60px;
+    }
 }
