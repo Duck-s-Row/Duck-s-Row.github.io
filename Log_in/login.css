@@ -74,18 +74,12 @@ button {
 	margin: 50px 545px 0px 545px;
 	font-family: 'Bebas Neue', cursive;
 	font-size: 30px;
-	transition:all 0.5;
+	transition: 1s ease;
 }
 
 button:hover {
-	width: 200px;
-	height: 50px;
 	background: white;
-	border-radius: 30px;
-	margin: 50px 545px 0px 545px;
-	font-family: 'Bebas Neue', cursive;
-	font-size: 30px;
-	transition: all 0.5;
+	transform: scale(1.1);
 }
 
 .forget {
