@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <meta name="description" content="GO Fun, GO & run">
         <link rel="stylesheet" href="home/CSS_files/navbar.css">
+        <link rel="stylesheet" href="/css/all.min.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css.map">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -12,19 +15,50 @@
     </head>
     <body>
         <main>
-            <nav id="nav">
-                <div class="duck_icon"><a href="#"><img src="home/imgs/ducks.png" alt="logo"></a></div>
-                <div class="go"><a href="#"><span class="F_s">DUCK'S ROW</span><br><span class="S_s">Go fun, Go & run</span></a></div>
-                <div class="search_icon"><img src="home/imgs/search_icon.png" alt="search_icon" width="25"></div>
-                <div class="home hover_u"><a href="#home">Home</a></div>
-                <div class="about hover_u" ><a href="#aboutUs">About Us</a></div>
-                <div class="hang hover_u"><a href="#hangout">Hangout</a></div>
-                <div class="profile"><a href="Sign_UP/first page/Sign_up.html"><img src="home/imgs/profile.png" alt="avatar" width="40"></a></div>
-            </nav>
-            <video autoplay muted loop id="myVideo">
+            <nav class="navbar navbar-expand-lg p-3 sticky-lg-bottom">
+                <div class="container">
+                  <a class="navbar-brand" href="#">
+                    <img src="/home/imgs/ducks.png" alt="logo" width="60px" id="logo">
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars"></i>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li>
+                            <div class="search mt-2 p-2 d-none d-lg-block">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                        </li>
+                      <li class="nav-item">
+                        <a class="nav-link p-lg-3 active" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link p-lg-3" aria-current="page" href="#">Hangout</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link p-lg-3" aria-current="page" href="#">About Us</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link p-lg-3" aria-current="page" href="#">Contact Us</a>
+                      </li>
+                    </ul>
+                    <div class="user" id="user">
+                        <a href="/Log_in/login.html">
+                            <i id="user" class="fa-regular fa-user"></i>
+                        </a>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+              <h1>Duck's Row</h1>
+              <h2>Go Fun, Go & Run</h2>
+            <input type="button" value="Hangout" class="button">
+            <video autoplay muted loop id="myVideo" poster="">
                 <source src="/home/imgs/production.mp4" type="video/mp4">
             </video>
-            <input type="button" value="Hangout" class="button">
         </main>
+        <script src="/js/all.min.js"></script>
+        <script src="/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
