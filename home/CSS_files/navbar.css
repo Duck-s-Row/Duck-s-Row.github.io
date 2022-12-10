@@ -21,7 +21,7 @@ main{
 nav {
     top: 10px;
     width: 90%;
-    background-color: rgb(0, 0, 0, 0.7);
+    background-color: black;
     min-height: 10vh;
     position: absolute;
     border-radius: 100px;
@@ -48,7 +48,7 @@ main h2 {
 main .button {
     width: 250px;
     height: 70px;
-    margin-top: 10%;
+    margin: 8%;
 
     font-family: 'Bebas Neue';
     font-style: normal;
@@ -160,6 +160,7 @@ main .button:hover {
         font-weight: 400;
         font-size: 50px;
         line-height: 38px;
+        min-height: 10vh;
     }
 
     main .button {
@@ -171,7 +172,6 @@ main .button:hover {
         font-size: 60px;
     }
 }
-
 
 .about_us {
     display: flex;
