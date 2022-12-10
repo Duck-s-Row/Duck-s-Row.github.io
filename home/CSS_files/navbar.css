@@ -171,3 +171,42 @@ main .button:hover {
         font-size: 60px;
     }
 }
+
+
+.about_us {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    padding-left: 200px;
+}
+
+.about_us h3{
+    text-transform: capitalize;
+    color: white;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 77px;
+}
+.about_us h3 span {
+    color: yellow;
+}
+
+.about_us p{
+    padding: 0%;
+    color: white;
+    margin-right: 300px;
+}
+
+.about_us img{
+    width: 500px;
+    height: 500px;
+    border-radius: 30%;
+    margin-left: 100px;
+}
