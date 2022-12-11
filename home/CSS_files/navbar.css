@@ -198,6 +198,7 @@ main .button:hover {
 }
 
 .about_us p{
+    text-align: justify;
     padding: 0%;
     color: white;
     margin-right: 30%;
