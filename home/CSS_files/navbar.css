@@ -187,7 +187,7 @@ main .button:hover {
 }
 
 .about_us h3{
-    text-transform: capitalize;
+    text-transform: uppercase;
     color: white;
     font-weight: 400;
     font-size: 64px;
@@ -209,4 +209,37 @@ main .button:hover {
     height: 500px;
     border-radius: 30%;
     margin-left: 100px;
+}
+
+.contact_us{
+    width: 100%;
+    min-height: 90vh;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contact_us .left {
+    margin: 100px;
+}
+
+.contact_us .left h3{
+    display: inline;
+    text-transform: uppercase;
+    color: yellow;
+}
+
+.contact_us .info h3{
+    text-transform: uppercase;
+    color: yellow;
+}
+
+.contact_us .info p {
+    color: white;
+}
+
+.contact_us img {
+    width: 66px;
+    height: 40px;
 }
