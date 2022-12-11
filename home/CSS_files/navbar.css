@@ -29,6 +29,16 @@ nav {
     z-index: 999;
 }
 
+.favorite a{
+    text-decoration: none;
+    color: white;
+    font-size: 19px;
+}
+
+.favorite a:hover {
+    color: rgba(254, 231, 21, 1); 
+}
+
 main h1 {
     color: rgba(254, 231, 21, 1);
     margin-top: 15%;
@@ -187,6 +197,7 @@ main .button:hover {
 }
 
 .about_us h3{
+    font-family: 'Bebas Neue', cursive;
     text-transform: uppercase;
     color: white;
     font-weight: 400;
@@ -194,10 +205,11 @@ main .button:hover {
     line-height: 77px;
 }
 .about_us h3 span {
-    color: yellow;
+    color: rgba(254, 231, 21, 1);
 }
 
 .about_us p{
+    font-family: 'ABeeZee', sans-serif;
     text-align: justify;
     padding: 0%;
     color: white;
@@ -213,33 +225,55 @@ main .button:hover {
 
 .contact_us{
     width: 100%;
-    min-height: 90vh;
+    min-height: 30vh;
     background-color: black;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    grid-template-rows: repeat(2, 50%);
+    font-family: 'ABeeZee', sans-serif;
 }
 
 .contact_us .left {
-    margin: 100px;
+    grid-row: 2;
+    margin-left: 30px;
 }
 
 .contact_us .left h3{
     display: inline;
     text-transform: uppercase;
-    color: yellow;
+    color: rgba(254, 231, 21, 1);
+    font-family: 'Bebas Neue', cursive;
+}
+
+.contact_us .info {
+    grid-column: 3;
+    grid-row: 1;
 }
 
 .contact_us .info h3{
     text-transform: uppercase;
-    color: yellow;
+    color: rgba(254, 231, 21, 1);
+    font-family: 'Bebas Neue', cursive;
 }
 
 .contact_us .info p {
     color: white;
 }
 
+.contact_us .info a {
+    text-decoration: none;
+    color: rgba(254, 231, 21, 1);
+}
+
+.contact_us .info a:hover {
+    color: white;
+}
+
 .contact_us img {
     width: 66px;
     height: 40px;
+}
+
+.privacy {
+    grid-column: 3;
 }

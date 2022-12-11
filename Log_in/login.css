@@ -26,11 +26,20 @@ header {
 }
 
 .head span {
+	font-family: 'ABeeZee', sans-serif;
 	font-size: 32px;
 	font-weight: 400;
-	font-family: 'ABeeZee', sans-serif;
 	line-height: 38px;
 	margin-bottom: 40px;
+}
+
+.head span a {
+	text-decoration: none;
+    color: black;
+}
+
+.head span a:hover {
+    color: blueviolet;
 }
 
 section {
@@ -78,7 +87,6 @@ button {
 }
 
 button:hover {
-	background: white;
 	transform: scale(1.1);
 }
 

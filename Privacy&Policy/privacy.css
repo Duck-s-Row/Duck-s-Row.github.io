@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Bebas+Neue&display=swap');
+
+body{
+    font-family: 'ABeeZee', sans-serif;
+    background-color: black;
+    color: white;
+    margin: 100px;
+}
+
+h1, h2, h3{
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 300;
+    color: rgba(254, 231, 21, 1);
+}
+
+a {
+    text-decoration: none;
+    color: rgba(254, 231, 21, 1);
+}
