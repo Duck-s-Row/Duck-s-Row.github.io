@@ -179,7 +179,6 @@ main .button:hover {
     min-height: 100vh;
     background-color: black;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
 }
 
