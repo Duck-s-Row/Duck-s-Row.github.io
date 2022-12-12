@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css.map">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="website icon" type="png" href="../home/imgs/Logo.png">
+    <title>Profile</title>
+</head>
+<body>
+    <section class="main">
+        <div class="user_choices">
+            <div class="user">
+                <i class="fa-solid fa-user-vneck"></i>
+                <h2>Kareem Abdallah</h2>
+                <h3>ducksrow100@gmail.com</h3>
+            </div>
+            <button class="chooice1 active"><a href="#"><i class="fa-sharp fa-solid fa-user"></i>&nbsp;Profile</a></button>
+            <button class="chooice2"><a href="#"><i class="fa-solid fa-location-check"></i>&nbsp; Recent activity</a></button>
+            <button class="chooice3"><a href="#"><i class="fa-solid fa-pen-line"></i>&nbsp;Edit profile</a></button>
+            <button class="chooice4"><a href="#"><i class="fa-regular fa-heart"></i>&nbsp;Favorites</a></button>
+        </div>
+        <div class="user_info">
+            <div class="details"><h2><strong>details</strong></h2></div>
+            <form action="" method="post">
+                <label>First Name : </label>
+                <input class="firstName" type="text" value="Kareem" disabled="disabled" name="firstName">
+        
+                <label class="llastName">Last Name : </label>
+                <input class="lastName" type="text" value="Abdallah" disabled="disabled" name="lastName"><br>
+                
+                <label class="lnational">Nationality : </label>
+                <input class="nationality" type="text" value="Egyptian" disabled="disabled" name="nationality"><br>
+                
+                <label class="lphone">Mobile Phone :</label>
+                <input class="phone" type="tel" value="01556892517" disabled="disabled" name="phone"><br>
+                
+                <div class="gender">
+                    <label>Gender : </label>
+                    <label class="gmale">Male</label>
+                    <input class="male" type="radio" checked="checked" disabled="disabled" name="gender">
+            
+                    <label class="gfemale">Female</label>
+                    <input class="female" type="radio" disabled="disabled" name="gender"><br>
+                </div>
+                <label class="ldate">Date of birth : </label>
+                <input class="date" type="date" id="myDate" disabled="disabled"><br>
+
+                <label class="lemail">Your Email : </label>
+                <input class="email" type="email" value="ducksrow100@gmail.com" disabled="disabled"><br>
+            </form>
+        </div>
+    </section>
+    <script>
+        document.getElementById("myDate").defaultValue = "2014-02-09";
+    </script>
+    <script src="/js/all.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js.map"></script>
+</body>
+</html>

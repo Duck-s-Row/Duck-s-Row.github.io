@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+}
+
+.user_choices{
+    height: 90vh;
+    width: 40%;
+    margin: 2%;
+}
+
+.user {
+    display: flex;
+    height: 300px;
+    background-color: rgba(254, 231, 21, 1);
+    border-radius: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user h2, .user h3 {
+    font-family: 'ABeeZee', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+}
+
+.chooice1, .chooice2, .chooice3, .chooice4 {
+    background-color: white;
+    width: 100%;
+    height: 80px;
+    margin: 1% 0%;
+    border-radius: 20px;
+}
+
+button a{
+    font-family: 'ABeeZee', sans-serif;
+    text-decoration: none;
+    color: black;
+    
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+}
+
+.active{
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.user_info {
+    width: 60%;
+    height: 90vh;
+    border-radius: 20px;
+    background-color: white;
+    margin: 2%;
+}
+
+.details {
+    height: 15%;
+    border-radius: 20px;
+    background-color: rgba(254, 231, 21, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-family: 'ABeeZee', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+}
+
+form{
+    margin: 5%;
+    /* background-color: rgba(0, 0, 0, 0.258); */
+    display: grid;
+    grid-template-columns: 23% 20% 15% 22% 20% ;
+    grid-template-rows: repeat(4, 100px);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+}
+
+input {
+    height: 30px;
+    background-color: white;
+    border: 0px solid white;
+}
+
+label {
+    font-weight: 700;
+}
+
+.llastName{
+    grid-row: 1;
+    grid-column: 4;
+}
+.lastName{
+    grid-row: 1;
+    grid-column: 5;
+}
+.lnational{
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.nationality {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.lphone {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.phone{
+    grid-row: 3;
+    grid-column: 2;
+}
+.gender{
+    grid-column: 4 / 6;
+    grid-row: 2;
+}
+
+.ldate{
+    grid-column: 4;
+    grid-row: 3;
+}
+
+.date{
+    grid-column: 5;
+    grid-row: 3;
+}
+
+.lemail{
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.email {
+    grid-column: 2 / 4;
+    grid-row: 4;
+}
