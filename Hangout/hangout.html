@@ -15,20 +15,20 @@
     <title>Hangout</title>
 </head>
 <body>
-    <!-- The Start of Hangout SEction -->
+    <!-- The Start of Hangout Section -->
     <section class="hang" id="hangout">
     <div class="left">
         <div class="filters">
         <form>
             <label for="sort">Sort by</label>
             <select id="sort" name="sort">
-            <option value="top-rating">Top rating</option>
-            <option value="low-rating">Low rating</option>
+                <option value="top-rating">Top rating</option>
+                <option value="low-rating">Low rating</option>
             </select>
-            <label for="sort">Filters</label>
+            <label for="date">At any day?</label>
             <input type="date" name="date" id="date">
             <label for="number"><i class="fa-solid fa-user-group"></i></label>
-            <input type="number" name="number" id="number" min="1">
+            <input type="number" name="number" id="number" min="1" max="10" value="1">
         </form>
         </div>
         <div class="choices">
@@ -107,39 +107,41 @@
         </div>
     </div>
     <div class="right">
-        <div class="budget">
-        <form>
-            <h1>Your budget</h1>
-            <div class="range">
-            <div class="range-slider">
-                <span class="range-selected"></span>
+        <div class="budget">        
+        <h1>Your budget</h1>
+        <div class="wrapper">
+            <div class="range_container">
+                <div class="sliders_control">
+                    <input id="fromSlider" type="range" value="200" min="100" max="1000" step="50"/>
+                    <input id="toSlider" type="range" value="600" min="100" max="1000" step="50"    />
+                </div>
+                <div class="form_control">
+                    <div class="form_control_container">
+                        <div class="form_control_container__time">Min</div>
+                        <input class="form_control_container__time__input" type="number" id="fromInput" value="200" min="100" max="1000" step="50"/>
+                    </div>
+                    <div class="form_control_container">
+                        <div class="form_control_container__time">Max</div>
+                        <input class="form_control_container__time__input" type="number" id="toInput" value="600" min="100" max="1000" step="50"/>
+                    </div>
+                </div>
             </div>
-            <div class="range-input">
-                <input type="range" class="min" min="0" max="1000" value="300" step="20">
-                <input type="range" class="max" min="0" max="1000" value="700" step="20">
-            </div>
-            <div class="range-price">      
-                <label for="min">Min</label>
-                <input type="number" name="min" value="300">      
-                <label for="max">Max</label>
-                <input type="number" name="max" value="700">      
-            </div>
-            </div>
-        </form>
+        </div>
         </div>
         <hr>
         <div class="food-services">
         <form>
-            <label for="food">Food & Services</label><br>
-            <input type="radio" name="food" id="cafe" value="cafe"> <label for="cafe">Cafe</label><br>
-            <input type="radio" name="food" id="restaurant" value="restaurant"><label for="restaurant">Restaurants</label><br>
-            <input type="radio" name="food" id="park" value="park"><label for="park">Park</label><br>
-            <input type="radio" name="food" id="museum" value="museum"><label for="museum">Museums</label><br>
+            <label for="food" class="food">Food & Services</label><br>
+            <input type="checkbox" name="food" id="cafe" value="cafe"> <label for="cafe">Cafe</label><br>
+            <input type="checkbox" name="food" id="restaurant" value="restaurant"><label for="restaurant">Restaurants</label><br>
+            <input type="checkbox" name="food" id="park" value="park"><label for="park">Park</label><br>
+            <input type="checkbox" name="food" id="museum" value="museum"><label for="museum">Museums</label><br>
         </form>
         </div>
     </div>
     </section>
     <!-- The End of Hangout Section -->
     <script src="../js/all.min.js"></script> <!-- font awesome -->
+    <script src="hangout.js"></script> <!-- font awesome -->
 </body>
 </html>

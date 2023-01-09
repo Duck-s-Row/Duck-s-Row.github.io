@@ -15,6 +15,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 
 .hang .left {
@@ -28,13 +29,16 @@ body {
 }
 
 .hang .left .filters {
-    width: 750px;
+    width: 650px;
     padding: 10px 0px;
     background-color: #EDEDED;
 
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+
+.hang .left .filters input[type="number"] {
+    width: 50px;
 }
 
 .hang .left .choices {
@@ -152,10 +156,10 @@ body {
 
 .hang .right {
     width: 350px;
-    max-height: 70vh;
+    height: 85vh;
 
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
 }
@@ -164,82 +168,104 @@ body {
     width: 100%;
     height: 200px;
     background-color: #EDEDED;
+    
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
+
+    text-align: left;
 }
 
-.range{
+.wrapper {
     width: 100%;
-    height: 100%;
-}
-.range-slider {
-    height: 5px;
-    position: relative;
-    background-color: #FEE715;
-    border-radius: 2px;
-}
-.range-selected {
-    height: 100%;
-    left: 30%;
-    right: 30%;
-    position: absolute;
-    border-radius: 5px;
-    background-color: #8F0000;
-}
-.range-input {
-    position: relative;
-}
-.range-input input {
-    position: absolute;
-    width: 100%;
-    height: 5px;
-    top: -7px;
-    background: none;
-    pointer-events: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-.range-input input::-webkit-slider-thumb {
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    border: 3px solid #8F0000;
-    background-color: #fff;
-    pointer-events: auto;
-    -webkit-appearance: none;
-}
-.range-input input::-moz-range-thumb {
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    border: 3px solid #1b53c0;
-    background-color: #fff;
-    pointer-events: auto;
-    -moz-appearance: none;
+    height: 20%;
+    background-color: transparent;
 }
 
-.range-price {
-    margin: 30px 0;
-    width: 100%;
+  .range_container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    margin: 30px auto;
 }
-.range-price label {
-    margin-right: 5px;
+  
+.sliders_control {
+    position: relative;
+    min-height: 50px;
 }
-.range-price input {
+  
+.form_control {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #635a5a;
+}
+  
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    pointer-events: all;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #8F0000;
+    cursor: pointer;
+}
+  
+input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    pointer-events: all;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #C6C6C6;
+    cursor: pointer;  
+}
+  
+input[type=range]::-webkit-slider-thumb:hover {
+    background: #f7f7f7;
+}
+  
+input[type=range]::-webkit-slider-thumb:active {
+    box-shadow: inset 0 0 3px #8F0000, 0 0 9px #8F0000;
+    -webkit-box-shadow: inset 0 0 3px #8F0000, 0 0 9px #8F0000;
+}
+  
+input[type="number"] {
+    color: #000;
     width: 80px;
-    padding: 5px;
+    height: 30px;
+    font-size: 20px;
+    border: none;
 }
-.range-price input:first-of-type {
-    margin-right: 15px;
+  
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+     opacity: 1;
+}
+  
+input[type="range"] {
+    -webkit-appearance: none; 
+    appearance: none;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    background-color: #C6C6C6;
+    pointer-events: none;
+}
+  
+#fromSlider {
+    height: 0;
+    z-index: 1;
 }
 
-.hang .right h1 {
-    font-size: 25px;
-    margin: 50px 0px;
+.hang .right h1{
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 16px;
 }
 
 .hang .right hr {
@@ -252,11 +278,21 @@ body {
     width: 100%;
     height: auto;
     background-color: #EDEDED;
+
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
+
+    padding: 20px 20px;
 }
+
+.hang .right .food-services .food{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 16px;
+    margin: 0px 0px 20px 0px;
+}
+
 .hang .right .food-services input{
     display: inline-block;
     padding: 100px;
