@@ -14,7 +14,8 @@
         <title>Duck's Row</title>
     </head>
     <body>
-        <main>
+          <!-- The Start of Navbar section -->
+          <header>
             <nav class="navbar navbar-expand-lg p-3 sticky-lg-bottom">
                 <div class="container">
                   <a class="navbar-brand" href="#">
@@ -27,14 +28,15 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li>
                             <div class="search mt-2 p-2 d-none d-lg-block favorite">
-                              <a href="#"><i class="fa-regular fa-heart"></i></a>
+                              <a href="#" id="heart"><i class="fa-regular fa-heart"></i></a>
+                              <a href="#" id="f-heart">Favorite</a>
                             </div>
                         </li>
                       <li class="nav-item">
-                        <a class="nav-link p-lg-3 active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link p-lg-3 active" aria-current="page" href="#home">Home</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link p-lg-3" aria-current="page" href="#">Hangout</a>
+                        <a class="nav-link p-lg-3" aria-current="page" href="#hangout">Hangout</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link p-lg-3" aria-current="page" href="#about_us">About Us</a>
@@ -51,36 +53,179 @@
                   </div>
                 </div>
               </nav>
+          </header>
+          <!-- The End of Navbar section -->
+
+          <!-- The Start of Home Section -->
+          <section class="home" id="home">
               <h1>Duck's Row</h1>
               <h2>Go Fun, Go & Run</h2>
             <input type="button" value="Hangout" class="button">
             <video autoplay muted loop id="myVideo" poster="">
                 <source src="/home/imgs/production.mp4" type="video/mp4">
             </video>
-            <section class="about_us" id="about_us">
-              <img src="/home/imgs/about_us.jpg" alt="about-us-Photo">
-              <div class="content">
-                  <h3>About <span>Duck’s Row</span></h3>
-                  <p>
-                    Duck's Row is trying to organize your time so you can have fun in various locations while staying inside the limits of your preferred spending limit. <br>We need you to enjoy yourself and go to your favourite destinations.
-                  </p>
+          </section>
+          <!-- The End of Home Section -->
+
+          <!-- The Start of Hangout SEction -->
+          <section class="hang" id="hangout">
+            <div class="left">
+              <div class="filters">
+                <form>
+                  <label for="sort">Sort by</label>
+                  <select id="sort" name="sort">
+                    <option value="top-rating">Top rating</option>
+                    <option value="low-rating">Low rating</option>
+                  </select>
+                  <label for="sort">Filters</label>
+                  <input type="date" name="date" id="date">
+                  <label for="number"><i class="fa-solid fa-user-group"></i></label>
+                  <input type="number" name="number" id="number" min="1">
+                </form>
               </div>
-            </section>
-            <section class="contact_us" id="contact_us">
-              <div class="left">
-                <img src="/home/imgs/gold-ducks.png" alt="logo">
-                <h3>Duck’s ROW</h3>
+              <div class="choices">
+                <div class="card">
+                  <img src="home/imgs/Rectangle 38.png" alt="">
+                  <div class="text1">
+                    <h1>Dunkin donate</h1>
+                    <h2>no of Viewers</h2>
+                    <ul>
+                      <li><i class="fa fa-check"></i> Have a good offers</li>
+                      <li><i class="fa fa-check"></i> Make Coffe & Donuts</li>
+                      <li><i class="fa fa-check"></i> Have a good service</li>
+                    </ul>
+                  </div>
+                  <hr>
+                  <div class="location-text">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>New Cairo Galleria Mall, South Teseen St, Near AUC</p>
+                  </div>
+                  <button class="location">See the Location</button>
+                </div>
+                <div class="card">
+                  <img src="home/imgs/pyramid2.png" alt="">
+                  <div class="text1">
+                    <h1>The three pyramids</h1>
+                    <h2>no of Viewers</h2>
+                    <ul>
+                      <li><i class="fa fa-check"></i> Have a nice Time with family and friends</li>
+                      <li><i class="fa fa-check"></i> Riding Horses and camels</li>
+                      <li><i class="fa fa-check"></i> Buy some souvenirs to your family and friends</li>
+                    </ul>
+                  </div>
+                  <hr>
+                  <div class="location-text">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>New Cairo Galleria Mall, South Teseen St, Near AUC</p>
+                  </div>
+                  <button class="location">See the Location</button>
+                </div>
+                <div class="card">
+                  <img src="home/imgs/Rectangle 38.png" alt="">
+                  <div class="text1">
+                    <h1>Dunkin donate</h1>
+                    <h2>no of Viewers</h2>
+                    <ul>
+                      <li><i class="fa fa-check"></i> Have a good offers</li>
+                      <li><i class="fa fa-check"></i> Make Coffee & Donuts</li>
+                      <li><i class="fa fa-check"></i> Have a good service</li>
+                    </ul>
+                  </div>
+                  <hr>
+                  <div class="location-text">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>New Cairo Galleria Mall, South Teseen St, Near AUC</p>
+                  </div>
+                  <button class="location">See the Location</button>
+                </div>
+                <div class="card">
+                  <img src="home/imgs/Rectangle 38 (1).png" alt="">
+                  <div class="text1">
+                    <h1>Dunkin donate</h1>
+                    <h2>no of Viewers</h2>
+                    <ul>
+                      <li><i class="fa fa-check"></i> Have a good offers</li>
+                      <li><i class="fa fa-check"></i> Make Coffee & Donuts</li>
+                      <li><i class="fa fa-check"></i> Have a good service</li>
+                    </ul>
+                  </div>
+                  <hr>
+                  <div class="location-text">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>New Cairo Galleria Mall, South Teseen St, Near AUC</p>
+                  </div>
+                  <button class="location">See the Location</button>
+                </div>
               </div>
-              <div class="info">
-                <h3>contact us</h3>
-                <p>Telephone: <a href="tel:+201556892517">01556892517</a><br>
-                  Email: <a href="mailto:ducksrow100@gmail.com">ducksrow100@gmail.com</a><br><br>
-                  <a href="/Privacy&Policy/Privacy&Policy.html" class="privacy">Go to Privacy & Policy</a>
+            </div>
+            <div class="right">
+              <div class="budget">
+                <form>
+                  <h1>Your budget</h1>
+                  <div class="range">
+                    <div class="range-slider">
+                      <span class="range-selected"></span>
+                    </div>
+                    <div class="range-input">
+                      <input type="range" class="min" min="0" max="1000" value="300" step="20">
+                      <input type="range" class="max" min="0" max="1000" value="700" step="20">
+                    </div>
+                    <div class="range-price">      
+                      <label for="min">Min</label>
+                      <input type="number" name="min" value="300">      
+                      <label for="max">Max</label>
+                      <input type="number" name="max" value="700">      
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <hr>
+              <div class="food-services">
+                <form>
+                  <label for="food">Food & Services</label><br>
+                  <input type="radio" name="food" id="cafe" value="cafe"> <label for="cafe">Cafe</label><br>
+                  <input type="radio" name="food" id="restaurant" value="restaurant"><label for="restaurant">Restaurants</label><br>
+                  <input type="radio" name="food" id="park" value="park"><label for="park">Park</label><br>
+                  <input type="radio" name="food" id="museum" value="museum"><label for="museum">Museums</label><br>
+                </form>
+              </div>
+            </div>
+          </section>
+          <!-- The End of Hangout SEction -->
+
+          <!-- The Start of About Us section -->
+          <section class="about_us" id="about_us">
+            <img src="/home/imgs/about_us.jpg" alt="about-us-Photo">
+            <div class="content">
+                <h3>About <span>Duck’s Row</span></h3>
+                <p>
+                  Duck's Row is trying to organize your time so you can have fun in various locations while staying inside the limits of your preferred spending limit. <br>We need you to enjoy yourself and go to your favourite destinations.
                 </p>
-              </div>
-            </section>
-        </main>
-        <script src="/js/all.min.js"></script>
-        <script src="/js/bootstrap.bundle.min.js"></script>
+            </div>
+          </section>
+          <!-- The End of About Us section -->
+
+          <!-- The Start of Contact Us section -->
+          <section class="contact_us" id="contact_us">
+            <div class="left">
+              <img src="/home/imgs/gold-ducks.png" alt="logo">
+              <h3>Duck’s ROW</h3>
+            </div>
+            <div class="info">
+              <h3>contact us</h3>
+              <p>Telephone: <a href="tel:+201556892517">01556892517</a><br>
+                Email: <a href="mailto:ducksrow100@gmail.com">ducksrow100@gmail.com</a><br><br>
+                <a href="/Privacy&Policy/Privacy&Policy.html" class="privacy">Go to Privacy & Policy</a>
+              </p>
+            </div>
+          </section>
+          <!-- The End of Contact Us section -->
+
+          <!-- The End of the page -->
+
+          <!-- JS Configuration -->
+        <script src="/js/all.min.js"></script> <!-- font awesome -->
+        <script src="/js/bootstrap.bundle.min.js"></script> <!-- bootstrap -->
+        <script src="home/home.js"></script>
     </body>
 </html>
