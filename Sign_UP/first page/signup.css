@@ -45,7 +45,7 @@ header {
 }
 
 .forms {
-    background-color: black;
+    background-color: #101820;
     width: 100%;
     min-height: 74vh;
     text-align: center;
@@ -81,9 +81,6 @@ header {
 #google-btn {
     font-family: 'ABeeZee', sans-serif;
     margin: 30px;
-    /* position: absolute;
-    left: 570px;
-    top: 380px; */
     width: 400px;
     height: 80px;
 
@@ -91,7 +88,6 @@ header {
     border-radius: 30px;
     font-weight: 400;
     font-size: 20px;
-    /* text-align: center; */
     transition: 1s ease;
 }
 
@@ -111,9 +107,6 @@ header {
 
 #new-acc {
     font-family: 'Bebas Neue', cursive;
-    /* position: absolute;
-    left: 600px;
-    top: 480px; */
 
     width: 350px;
     height: 80px;

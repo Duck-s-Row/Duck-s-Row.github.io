@@ -22,7 +22,7 @@ header{
 nav {
     top: 10px;
     width: 90%;
-    background-color: black;
+    background-color: #101820;
     min-height: 10vh;
     border-radius: 100px;
 }
@@ -203,7 +203,7 @@ nav {
     display: flex;
     width: 100%;
     min-height: 100vh;
-    background-color: black;
+    background-color: #101820;
     flex-direction: row;
     align-items: center;
 }
@@ -242,7 +242,7 @@ nav {
 .contact_us{
     width: 100%;
     min-height: fit-content;
-    background-color: black;
+    background-color: #101820;
     display: grid;
     grid-template-columns: repeat(3, 33.33%);
     grid-template-rows: repeat(2, 50%);

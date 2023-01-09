@@ -3,12 +3,13 @@
 * {
     margin: 0px;
     padding: 0px;
+    font-family: 'ABeeZee', sans-serif;
 }
 
 .main {
     width: 100%;
     min-height: 100vh;
-    background-color: black;
+    background-color: #101820;
     display: flex;
     flex-direction: row;
 }
@@ -17,6 +18,11 @@
     height: 90vh;
     width: 40%;
     margin: 2%;
+}
+
+#circle-user{
+    width: 150px;
+    height: 150px;
 }
 
 .user {

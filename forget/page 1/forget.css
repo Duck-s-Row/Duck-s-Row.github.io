@@ -33,7 +33,7 @@ header {
 section {
     width: 100%;
     min-height: 73.2vh;
-    background: black;
+    background: #101820;
 }
 .forget-password {
     text-align: center;
