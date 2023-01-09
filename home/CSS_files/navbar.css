@@ -493,12 +493,13 @@ nav {
 
 .contact_us{
     width: 100%;
-    min-height: 30vh;
+    min-height: fit-content;
     background-color: black;
     display: grid;
     grid-template-columns: repeat(3, 33.33%);
     grid-template-rows: repeat(2, 50%);
     font-family: 'ABeeZee', sans-serif;
+    padding: 20px;
 }
 
 .contact_us .left {
