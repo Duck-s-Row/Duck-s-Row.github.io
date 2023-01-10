@@ -307,3 +307,127 @@ nav {
 .privacy {
     grid-column: 3;
 }
+/* 
+
+.suggest {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #FEE715;
+    text-align: center;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.suggest .cards {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    background-color: #101820;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+}
+
+.suggest .cards .card {
+    width: 25%;
+    height: 100%;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+} */
+
+.suggest {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #FEE715;
+    text-align: center;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.suggest h1 {
+    font-family: 'Bebas Neue', cursive;
+    text-transform: uppercase;
+    color: #101820;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 77px;
+    padding-bottom: 100px;
+}
+
+.row {
+    width: 90%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.campus-col {
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.campus-col img {
+    width: 100%;
+    display: block;
+}
+
+.layer {
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+
+.layer:hover {
+    background: #fee71598;
+}
+
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: #101820;
+    font-size: 26px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.layer p{ 
+    width: 100%;
+    font-weight: 400;
+    color: #101820;
+    font-size: 16px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.layer:hover h3{
+    bottom: 69%;
+    opacity: 1;
+}
+
+.layer:hover p{
+    bottom: 20%;
+    opacity: 1;
+}
