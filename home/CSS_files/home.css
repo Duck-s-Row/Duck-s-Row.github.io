@@ -44,7 +44,7 @@ nav {
 .home {
     width: 100%;
     height: 100vh;
-    background: url(/home/imgs/home_page\ croped.jpg) no-repeat;
+    background: url(/home/imgs/welcome.jpg) no-repeat;
     background-position: center;
     background-size: cover;
     display: flex;
