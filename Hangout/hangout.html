@@ -15,6 +15,45 @@
     <title>Hangout</title>
 </head>
 <body>
+    <!-- The Start of Navbar section -->
+    <header>
+    <nav class="navbar navbar-expand-lg p-3 sticky-lg-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+            <img src="../home/imgs/ducks.png" alt="logo" width="60px" id="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li>
+                    <div class="search mt-2 p-2 d-none d-lg-block favorite">
+                        <a href="#" id="heart"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" id="f-heart">Favorite</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link p-lg-3" aria-current="page" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link p-lg-3" aria-current="page" href="Hangout/hangout.html">Hangout</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link p-lg-3" aria-current="page" href="#contact_us">Contact Us</a>
+                </li>
+            </ul>
+            <div class="user" id="user">
+                <a href="Log_in/login.html">
+                    <i id="user" class="fa-regular fa-user"></i>
+                </a>
+            </div>
+            </div>
+        </div>
+        </nav>
+    </header>
+    <!-- The End of Navbar section -->
+
     <!-- The Start of Hangout Section -->
     <section class="hang" id="hangout">
     <div class="left">
@@ -141,6 +180,22 @@
     </div>
     </section>
     <!-- The End of Hangout Section -->
+
+    <!-- The Start of Contact Us section -->
+    <section class="contact_us" id="contact_us">
+    <div class="left">
+        <img src="../home/imgs/gold-ducks.png" alt="logo">
+        <h3>Duck’s ROW</h3>
+    </div>
+    <div class="info">
+        <h3>contact us</h3>
+        <p>Telephone: <a href="tel:+201556892517">01556892517</a><br>
+        Email: <a href="mailto:ducksrow100@gmail.com">ducksrow100@gmail.com</a><br><br>
+        <a href="Privacy&Policy/Privacy&Policy.html" class="privacy">Go to Privacy & Policy</a>
+        </p>
+    </div>
+    </section>
+    <!-- The End of Contact Us section -->
     <script src="../js/all.min.js"></script> <!-- font awesome -->
     <script src="hangout.js"></script> <!-- font awesome -->
 </body>
