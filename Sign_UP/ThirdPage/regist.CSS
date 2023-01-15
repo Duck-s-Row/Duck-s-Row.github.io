@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Bebas+Neue&display=swap');
+
+/* 
+Font family: -
+font-family: 'ABeeZee', sans-serif;
+font-family: 'Bebas Neue', cursive;
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.top {
+    width: 100%;
+    min-height: 30vh;
+    background-color: #FEE715;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top h1 {
+	font-family: 'Bebas Neue', cursive;
+	font-weight: 500;
+	font-size: 100px;
+	letter-spacing: 0.1em;
+}
+
+.regist_part {
+    font-family: 'ABeeZee', sans-serif;
+    width: 100%;
+    height: 60vh;
+    background-color: #101820;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.regist_part .container {
+    width: 60%;
+    height: 90%;
+    /* background-color: #FEE715; */
+}
+
+form {
+    width: 100%;
+}
+
+.row {
+    width: 100%;
+    height: 100px;
+    font-family: 'ABeeZee', sans-serif;
+    background-color: #101820;
+    color: #FEE715;
+    font-size: 22px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.row input {
+    font-size: 20px;
+    background: #D9D9D9;
+}
+
+.row input[type=text], .row input[type=date], .gender {
+    width: 400px;
+    height: 50px;
+    border-radius: 30px;
+    padding: 0 20px;
+    margin: 0 20px;
+}
+
+.row input::placeholder {
+    font-family: 'ABeeZee', sans-serif;
+    font-size: 18px;
+    color: #101820;
+}
+
+.gender {
+    font-family: 'ABeeZee', sans-serif;
+    width: 400px;
+    border: solid 1px #fff;
+    border-radius: 30px;
+    /* margin-left: 100px; */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    accent-color: #FEE715;
+}
+
+.gender:hover {
+    border: solid 1px #000;
+    background-color: #FEE715;
+    color: #101820;
+    accent-color: #101820;
+}
+
+button {
+    width: 200px;
+    height: 60px;
+    border-radius: 40px;
+    background-color: #FEE715;
+    cursor: pointer;
+
+    font-family: 'ABeeZee', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.5s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    width: 100%;
+    height: 10vh;
+    background-color: #101820;
+}
+
+footer img {
+    width: 100px;
+    margin-left: 20px;
+}
+
+@media (max-width: 750px) {
+    .top{
+        min-height: 20vh;
+    }
+    .top h1{
+        font-size: 60px;
+    }
+    .regist_part{
+        height: 70vh;
+    }
+    .row {
+        height: 120px;
+        flex-direction: column;
+    }
+    .row input[type=text], .row input[type=date]{
+        width: 250px;
+        margin-top: 10px;
+    }
+    .gender{
+        width: 250px;
+        height: 60px;
+        margin-top: 10px;
+    }
+    footer img {
+        width: 70px;
+        margin-left: 20px;
+    }
+}
