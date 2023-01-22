@@ -21,9 +21,17 @@
         <form>
             <button id="face-btn">Sign up with Facebook <i class="fab fa-facebook"></i></button><br>
             <button id="google-btn">Sign up with Google<i class="fab fa-google"></i></button><br>
-            <button id="new-acc"><a href="../secondPage/email.html">Create New Account</a></button><br>
         </form>
+        <button onclick="pageRedirect()" id="new-acc">Create New Account</button>
         <img src="images/pngfind.com-duckling-png-5872453(Y).png" width="90" height="55"/>
     </section>
+
+    <script>
+        let new_acc = document.getElementById("new-acc");
+        // document.getElementById("new-acc").addEventListener("click", );
+        function pageRedirect() {
+            window.location.href = "../ThirdPage/regist.html";
+        }
+    </script>
 </body>
 </html>

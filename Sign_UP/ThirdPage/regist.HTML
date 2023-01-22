@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css.map">
+    <link rel="stylesheet" href="../../css/all.min.css">
     <link rel="stylesheet" href="regist.CSS">
-    <title>Document</title>
+    <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
+    <title>Registration</title>
 </head>
 <body>
     <div class="top">
@@ -19,14 +21,19 @@
             <div class="row">
                 <input type="text" placeholder="First Name" required>
                 <input type="text" placeholder="Last Name" required>
+                <input type="text" placeholder="Nationality" required>
             </div>
 
             <div class="row">
-                <input type="text" placeholder="Nationality" required>
                 <input type="text" placeholder="mobile phone" required>
+                <input type="date" name="date" id="date" required>
+                <input type="email" required placeholder="example@gmail.com">
+            </div>
+            <div class="row">
+                <input type="password" required placeholder="Password">
+                <input type="password" required placeholder="R-Password">
             </div>
             <div class="row">                
-                <input type="date" name="date" id="date" required>
                 <div class="gender">
                     <label>Gender </label>
                     <div>
@@ -38,9 +45,7 @@
                         <label for="female">Female</label>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <button onclick="pageRedirect()">Submit</button>
+                <button onclick="pageRedirect()">Submit <i class="fa fa-arrow-right"></i></button>
             </div>
         </form>
     </div>
@@ -50,6 +55,7 @@
     </footer>
 
     <script src="js/bootstrap.bundle.min.js"></script> <!-- bootstrap -->
+    <script src="../../js/all.min.js"></script>
     <script>
         function pageRedirect() {
             window.location.href = "../../Log_in/login.html";

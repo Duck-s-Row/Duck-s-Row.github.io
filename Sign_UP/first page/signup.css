@@ -118,7 +118,7 @@ header {
     font-size: 32px;
     line-height: 38px;
     letter-spacing: 0.1em;
-    
+    cursor: pointer;
 }
 
 #new-acc:hover {
