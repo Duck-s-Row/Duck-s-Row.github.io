@@ -213,75 +213,84 @@ nav {
         font-size: 60px;
     }
 }
-
 .services {
-    width: 100%;
-    min-height: 100vh;
-    background-color: #FEE715;
+    height: 100vh;
+    background: linear-gradient(120deg, #FEE715,#9d8e04);
     text-align: center;
-    
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
-
-.services h1 {
-    font-family: 'Bebas Neue', cursive;
-    text-transform: uppercase;
-    color: #101820;
-    font-weight: 400;
-    font-size: 64px;
-    line-height: 77px;
+.card{
+    min-height: 350px;
+    width: 250px;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 10px 50px 55px -50px black;
+    position: relative;
+    overflow: hidden;
+    transform: scale(1.3);
+    margin: 80px;
 }
-
-.services .row {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+.card::before{
+    content: '';
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    background-image: url("/home/imgs/welcome.jpg");
+    background-position: center;
+    background-size: cover;
+    right: 0;
+    border-radius: 0 0 0 158px;
+    box-shadow: 0 5px 3px #000;
+    transition: 0.5s;
 }
-
-.services .row .campus-col {
-    width: 25%;
-    height: 600px;
-
-    background-color: #101820;
-    color: #FEE715;
-    margin: 10px;
-    padding: 10px;
-    text-align: left;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    flex-direction: column;
-}
-
-.services .row .campus-col img {
-    width: 100%;
+.card.card:hover::before{
     height: 100%;
-    transition: 0.5s linear;
+    width: 100%;
 }
-
-.services .row .campus-col img:hover{
-    transform: scale(0.96);
+.card h1{
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 65px;
+    color: white;
+    font-family: sans-serif;
 }
-
-.services .row .campus-col .layer{
-    margin: 15px;
+.pra{
+    top: 130px;
+    position: absolute;
+    padding: 20px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    transition: 0.5s;
 }
-
-.services .row .campus-col .layer h3 {
-    font-family: 'Bebas Neue', cursive;
+.pra:hover,.card:hover{
+    color: white;
 }
-
-.services .row .campus-col .layer p {
-    text-align: justify;
-    font-family: 'ABeeZee', sans-serif;
+.services a{
+    position: absolute;
+    text-decoration: none;
+    bottom: 40px;
+    right: 60px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    padding: 7px 15px ;
+    background: linear-gradient(120deg, #FEE715,#9d8e04);
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 2px;
+    box-shadow: -2px 20px 30px -10px black;
+    opacity: 0.8;
 }
-
-
+.services a:hover{
+    color: #101820;
+    background: white;
+}
 .about_us {
     width: 100%;
     min-height: 70vh;
