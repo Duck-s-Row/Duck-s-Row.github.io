@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hangout2.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css.map">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="website icon" type="png" href="../home/imgs/Logo.png">
+    <title>Hangout</title>
+</head>
+<body>
+    <!-- The Start of Navbar section -->
+    <header>
+        <nav class="navbar navbar-expand-lg p-3 lg-bottom">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                <img src="../home/imgs/ducks.png" alt="logo" width="60px" id="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                        <a class="nav-link p-lg-3" aria-current="page" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link p-lg-3" aria-current="page" href="../Profile/profile.html">My Plans</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link p-lg-3" aria-current="page" href="#contact_us">Contact Us</a>
+                        </li>
+                    </ul>
+                    <div class="user" id="user">
+                        <a href="Log_in/login.html">
+                            <i id="user" class="fa-regular fa-user"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- The End of Navbar section -->
+    <section class="hangout">
+        <div class="left">
+            <div class="filters">
+            <form>
+                <label for="sort">Sort by</label>
+                <select id="sort" name="sort">
+                    <option value="top-rating">Top rating</option>
+                    <option value="low-rating">Low rating</option>
+                </select>
+                <label for="date">At any day?</label>
+                <input type="date" name="date" id="date">
+                <label for="number"><i class="fa-solid fa-user-group"></i></label>
+                <input type="number" name="number" id="number" min="1" max="10" value="1">
+            </form>
+            </div>
+        </div>
+        <div class="right">
+            <div class="budget">        
+                <h1>Your Max budget</h1>
+                <input type="range" name="budget" class="budget-range" id="budget-range" min="100" max="1000" step="50">
+                <!-- <button onclick="myfun()">Try it</button> -->
+                <p id="demo">fd</p>
+            </div>
+            <hr>
+            <div class="food-services">
+                <form>
+                    <label for="food" class="food">Food & Services</label><br>
+                    <input type="checkbox" name="food" id="cafe" value="cafe"> <label for="cafe">Cafe</label><br>
+                    <input type="checkbox" name="food" id="restaurant" value="restaurant"><label for="restaurant">Restaurants</label><br>
+                    <input type="checkbox" name="food" id="park" value="park"><label for="park">Park</label><br>
+                    <input type="checkbox" name="food" id="museum" value="museum"><label for="museum">Museums</label><br>
+                </form>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="card1">
+                
+            </div>
+        </div>
+    </section>

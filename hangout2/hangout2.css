@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    width: 100%;
+    background-color: #101820;
+    min-height: 10vh;
+}
+
+.favorite a{
+    text-decoration: none;
+    color: white;
+    font-size: 19px;
+}
+
+#f-heart{
+    display: none;
+}
+
+#heart:hover + #f-heart, #f-heart:hover{
+    display: inline;
+}
+
+.favorite a:hover {
+    color: #FEE715; 
+}
+
+#logo {
+    width: 80px;
+}
+
+.container-fluid .navbar-toggler-icon {
+    color: white;
+}
+
+.navbar .navbar-nav .nav-link,
+.navbar .navbar-brand {
+    color: white;
+}
+
+.navbar .navbar-brand:hover {
+    color: #FEE715;
+}
+
+#user {
+    margin-left: 10px;
+    font-size: 25px;
+    color: white;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+#user:hover {
+    color: #FEE715;
+}
+
+.navbar .navbar-nav .nav-link::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #FEE715;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.navbar .navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar .search{
+    color: #FEE715;
+    border-right: 1px solid white;
+}
+
+.navbar .navbar-toggler {
+    color: white;
+    border: none;
+    font-size: 25px;
+}
+
+.navbar .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+@media (max-width: 90vh) {
+    nav {
+        min-height: 5vh;
+        top: 20px;
+    }
+
+    .navbar .navbar-toggler {
+        color: white;
+        border: none;
+        font-size: 40px;
+    }
+
+    #user {
+        margin-left: 10px;
+        font-size: 40px;
+        color: white;
+    }
+
+    #logo {
+        width: 90px;
+    }
+
+    .navbar .navbar-nav .nav-link,.navbar .navbar-brand {
+        font-size: 30px;
+    }
+
+}
+.hangout{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #FEE715;
+    background-image: url("rubber-duck.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.left {
+    width: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left .filters {
+    width: 460px;
+    padding: 10px 5px;
+    background-color: #EDEDED;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+.left .filters input[type="number"] {
+    width: 40px;
+}
+.right {
+    width: 350px;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 25%;
+    margin-top: 5%;
+}
+.right .budget{
+    width: 100%;
+    height: 200px;
+    background-color: #EDEDED;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+}
+.right h1{
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 16px;
+}
+.right hr {
+    width: 90%;
+    height: 3px;
+    background-color: #000;
+}
+.right .food-services {
+    width: 100%;
+    height: auto;
+    background-color: #EDEDED;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px 20px;
+}
+.right .food-services .food{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 16px;
+    margin: 0px 0px 20px 0px;
+}
+.right .food-services input{
+    display: inline-block;
+    padding: 100px;
+}
