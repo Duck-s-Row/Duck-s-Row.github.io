@@ -45,3 +45,26 @@ gender varchar(7),
 email varchar (255),
 u_password varchar(255)
 );
+
+ALTER TABLE `ducks_row`.`places` 
+ADD INDEX `rating_ID_idx` (`rating_ID` ASC) VISIBLE,
+ADD INDEX `details_ID_idx` (`details_ID` ASC) VISIBLE,
+ADD INDEX `budget_ID_idx` (`budget_ID` ASC) VISIBLE,
+ADD INDEX `bransh_ID_idx` (`bransh_ID` ASC) VISIBLE,
+DROP INDEX `bransh_ID_idx` ,
+DROP INDEX `rating_ID_idx` ,
+DROP INDEX `budget_ID_idx` ,
+DROP INDEX `details_ID_idx` ;
+;
+
+ALTER TABLE `ducks_row`.`planes` 
+ADD INDEX `user_ID_idx` (`user_ID` ASC) VISIBLE,
+ADD INDEX `place_ID_idx` (`place_ID` ASC) VISIBLE,
+DROP INDEX `place_ID_idx` ,
+DROP INDEX `user_ID_idx` ;
+;
+
+ALTER TABLE `ducks_row`.`rating` 
+ADD INDEX `users_ID_idx` (`user_ID` ASC) VISIBLE,
+DROP INDEX `users_ID_idx` ;
+;
