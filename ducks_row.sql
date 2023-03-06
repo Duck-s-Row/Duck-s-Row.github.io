@@ -47,24 +47,57 @@ u_password varchar(255)
 );
 
 ALTER TABLE `ducks_row`.`places` 
-ADD INDEX `rating_ID_idx` (`rating_ID` ASC) VISIBLE,
 ADD INDEX `details_ID_idx` (`details_ID` ASC) VISIBLE,
 ADD INDEX `budget_ID_idx` (`budget_ID` ASC) VISIBLE,
-ADD INDEX `bransh_ID_idx` (`bransh_ID` ASC) VISIBLE,
-DROP INDEX `bransh_ID_idx` ,
-DROP INDEX `rating_ID_idx` ,
-DROP INDEX `budget_ID_idx` ,
-DROP INDEX `details_ID_idx` ;
+ADD INDEX `rating_ID_idx` (`rating_ID` ASC) VISIBLE,
+ADD INDEX `bransh_ID_idx` (`bransh_ID` ASC) VISIBLE;
 ;
-
-ALTER TABLE `ducks_row`.`planes` 
-ADD INDEX `user_ID_idx` (`user_ID` ASC) VISIBLE,
-ADD INDEX `place_ID_idx` (`place_ID` ASC) VISIBLE,
-DROP INDEX `place_ID_idx` ,
-DROP INDEX `user_ID_idx` ;
+ALTER TABLE `ducks_row`.`places` 
+ADD CONSTRAINT `details_ID`
+  FOREIGN KEY (`details_ID`)
+  REFERENCES `ducks_row`.`details` (`ID`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `budget_ID`
+  FOREIGN KEY (`budget_ID`)
+  REFERENCES `ducks_row`.`budget` (`ID`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `rating_ID`
+  FOREIGN KEY (`rating_ID`)
+  REFERENCES `ducks_row`.`rating` (`ID`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `bransh_ID`
+  FOREIGN KEY (`bransh_ID`)
+  REFERENCES `ducks_row`.`branshes` (`ID`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+  
+  ALTER TABLE `ducks_row`.`rating` 
+ADD INDEX `users_ID_idx` (`user_ID` ASC) VISIBLE;
 ;
-
 ALTER TABLE `ducks_row`.`rating` 
-ADD INDEX `users_ID_idx` (`user_ID` ASC) VISIBLE,
-DROP INDEX `users_ID_idx` ;
+ADD CONSTRAINT `users_ID`
+  FOREIGN KEY (`user_ID`)
+  REFERENCES `ducks_row`.`users` (`ID`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+  
+  ALTER TABLE `ducks_row2`.`planes` 
+ADD INDEX `user_ID_idx` (`user_ID` ASC) VISIBLE,
+ADD INDEX `place_ID_idx` (`place_ID` ASC) VISIBLE;
 ;
+ALTER TABLE `ducks_row`.`planes` 
+ADD CONSTRAINT `user_ID`
+  FOREIGN KEY (`user_ID`)
+  REFERENCES `ducks_row`.`users` (`ID`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `place_ID`
+  FOREIGN KEY (`place_ID`)
+  REFERENCES `ducks_row`.`places` (`ID`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+  
+  
