@@ -93,7 +93,7 @@ ADD CONSTRAINT `users_ID`
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
   
-  ALTER TABLE `ducks_row2`.`planes` 
+  ALTER TABLE `ducks_row`.`planes` 
 ADD INDEX `user_ID_idx` (`user_ID` ASC) VISIBLE,
 ADD INDEX `place_ID_idx` (`place_ID` ASC) VISIBLE;
 ;
