@@ -14,17 +14,17 @@ font-family: 'Bebas Neue', cursive;
 body {
     width: 100%;
     height: 100vh;
-    background-color: #FEE715;
+    background-color: #101820;
     
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .content {
     width: 70%;
     height: 700px;
-    background-color: rgba(0, 0, 0, 0.2);
 
     display: flex;
     flex-direction: column;
@@ -32,19 +32,20 @@ body {
 
 .head {
     width: 100%;
-    height: 100px;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
     
     font-family: 'Bebas Neue', cursive;
     font-size: 30px;
+    background-color: #FEE715;
     color: #101820;
 }
 
 .reg {
     width: 100%;
-    height: 500px;
+    height: 100%;
     
     display: flex;
 }
@@ -66,6 +67,8 @@ label {
     font-weight: 500;
 
     display: block;
+    color: #FEE715;
+    padding: 10px;
 }
 
 input[type="text"],input[type="password"],input[type="date"],input[type="phone"],input[type="email"] {
@@ -98,8 +101,17 @@ input::placeholder {
     color: #FEE715;
 }
 
+label[for="gender"] {
+    display: inline;
+    margin-right: 20px;
+    padding: 0;
+}
+
 .gender:hover {
     background-color: #FEE715;
+}
+
+.gender:hover label[for="gender"]{
     color: #101820;
 }
 
@@ -107,20 +119,15 @@ input::placeholder {
     accent-color: #101820;
 }
 
-label[for="gender"] {
-    display: inline;
-    margin-right: 20px;
-}
-
-.footer {
+.submit {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.footer input{
+.submit input{
     width: 150px;
-    height: 60px;
+    height: 50px;
 
     font-size: 26px;
     border-radius: 20px;
@@ -128,11 +135,22 @@ label[for="gender"] {
     cursor: pointer;
 
     font-family: 'Bebas Neue', cursive;
-    background-color: #101820;
-    color: #FEE715;
+    background-color: #FEE715;
+    color: #101820;
     transition: 0.5s ease-out;
 }
 
-.footer input:hover {
+.submit input:hover {
     transform: scale(1.1);
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+}
+
+footer img {
+    width: 80px;
+    height: 55px;
+    padding: 0 20px;
 }
