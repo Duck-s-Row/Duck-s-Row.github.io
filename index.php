@@ -37,7 +37,7 @@
                       <a class="nav-link p-lg-3" aria-current="page" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link p-lg-3" aria-current="page" href="Hangout/hangout.html">Hangout</a>
+                      <a class="nav-link p-lg-3" aria-current="page" href="Hangout/hangout.php">Hangout</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link p-lg-3" aria-current="page" href="#services">Services</a>
@@ -50,7 +50,7 @@
                     </li>
                   </ul>
                   <div class="user" id="user">
-                      <a href="Log_in/login.html">
+                      <a href="Log_in/login.php">
                           <i id="user" class="fa-regular fa-user"></i>
                       </a>
                   </div>
@@ -60,6 +60,10 @@
         </header>
         <!-- The End of Navbar section -->
 
+        <!-- logout button/link -->
+        <!-- <a href="Log_out">logout</a> -->
+        
+        
         <!-- The Start of Home Section -->
         <section class="home" id="home">
             <h1>Duck's Row</h1>

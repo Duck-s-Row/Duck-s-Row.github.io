@@ -1,3 +1,11 @@
+<?php
+session_start();
+include("../connection/connection.php");
+include("../Functions/Functions.php");
+  $_SESSION;
+  $user_data = check_login($con);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,17 +36,17 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                        <a class="nav-link p-lg-3" aria-current="page" href="../index.html">Home</a>
+                        <a class="nav-link p-lg-3" aria-current="page" href="../index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link p-lg-3" aria-current="page" href="../Profile/profile.html">My Plans</a>
+                        <a class="nav-link p-lg-3" aria-current="page" href="../Profile/profile.php">My Plans</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link p-lg-3" aria-current="page" href="#contact_us">Contact Us</a>
                         </li>
                     </ul>
                     <div class="user" id="user">
-                        <a href="Log_in/login.html">
+                        <a href="../Log_in/login.php">
                             <i id="user" class="fa-regular fa-user"></i>
                         </a>
                     </div>
@@ -237,7 +245,7 @@
     <!-- The Start of Contact Us section -->
     <section class="contact_us" id="contact_us">
     <div class="left">
-        <a href="../index.html">
+        <a href="../index.php">
             <img src="../home/imgs/gold-ducks.png" alt="logo">
             <h3>Duck’s ROW</h3>
         </a>

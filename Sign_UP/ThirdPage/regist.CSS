@@ -11,146 +11,151 @@ font-family: 'Bebas Neue', cursive;
     padding: 0;
 }
 
-body {
+.top {
     width: 100%;
-    height: 100vh;
+    min-height: 30vh;
+    background-color: #FEE715;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top h1 {
+	font-family: 'Bebas Neue', cursive;
+	font-weight: 500;
+	font-size: 100px;
+	letter-spacing: 0.1em;
+}
+
+.regist_part {
+    font-family: 'ABeeZee', sans-serif;
+    width: 100%;
+    height: 60vh;
     background-color: #101820;
     
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
-.content {
-    width: 70%;
-    height: 700px;
-
-    display: flex;
-    flex-direction: column;
+.regist_part .container {
+    width: 60%;
+    height: 90%;
+    /* background-color: #FEE715; */
 }
 
-.head {
+form {
     width: 100%;
-    height: 300px;
+}
+
+.row {
+    width: 100%;
+    height: 100px;
+    font-family: 'ABeeZee', sans-serif;
+    background-color: #101820;
+    color: #FEE715;
+    font-size: 22px;
+
+
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    font-family: 'Bebas Neue', cursive;
-    font-size: 30px;
-    background-color: #FEE715;
-    color: #101820;
+    flex-direction: row;
 }
 
-.reg {
-    width: 100%;
-    height: 100%;
-    
-    display: flex;
-}
-
-.left, .right {
-    width: 50%;
-    /* background-color: red; */
-
-    display: flex;
-    justify-content: center;
-    padding-left: 100px;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-label {
-    font-family: 'ABeeZee', sans-serif;
+.row input {
     font-size: 20px;
-    font-weight: 500;
-
-    display: block;
-    color: #FEE715;
-    padding: 10px;
+    background: #D9D9D9;
 }
 
-input[type="text"],input[type="password"],input[type="date"],input[type="phone"],input[type="email"] {
-    height: 35px;
-    width: 70%;
-    padding: 5px;
-    padding-left: 20px;
+.row input[type=text], .row input[type=date], .row input[type=email], .row input[type=password], .gender {
+    width: 400px;
+    height: 50px;
     border-radius: 30px;
-
-    border: none;
-    font-size: 20px;
+    padding: 0 20px;
+    margin: 0 20px;
 }
 
-input[type="radio"]{
-    margin-right: 10px;
-    accent-color: #FEE715;
-}
-
-input::placeholder {
-    font-size: 16px;
+.row input::placeholder {
+    font-family: 'ABeeZee', sans-serif;
+    font-size: 18px;
+    color: #101820;
 }
 
 .gender {
-    width: fit-content;
-    padding: 10px;
-    border: 3px solid black;
-    border-radius: 20px;
+    font-family: 'ABeeZee', sans-serif;
+    width: 400px;
+    border: solid 1px #fff;
+    border-radius: 30px;
+    /* margin-left: 100px; */
 
-    background-color: #101820;
-    color: #FEE715;
-}
-
-label[for="gender"] {
-    display: inline;
-    margin-right: 20px;
-    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    accent-color: #FEE715;
 }
 
 .gender:hover {
+    border: solid 1px #000;
     background-color: #FEE715;
-}
-
-.gender:hover label[for="gender"]{
     color: #101820;
-}
-
-.gender:hover input[type="radio"] {
     accent-color: #101820;
 }
 
-.submit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.submit input{
-    width: 150px;
-    height: 50px;
-
-    font-size: 26px;
-    border-radius: 20px;
-    border: none;
+.button {
+    width: 200px;
+    height: 60px;
+    border-radius: 40px;
+    background-color: #FEE715;
     cursor: pointer;
 
-    font-family: 'Bebas Neue', cursive;
-    background-color: #FEE715;
-    color: #101820;
-    transition: 0.5s ease-out;
+    font-family: 'ABeeZee', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.5s ease-in-out;
 }
 
-.submit input:hover {
+.button:hover {
     transform: scale(1.1);
 }
 
 footer {
     width: 100%;
-    height: 100px;
+    height: 10vh;
+    background-color: #101820;
 }
 
 footer img {
-    width: 80px;
-    height: 55px;
-    padding: 0 20px;
+    width: 100px;
+    margin-left: 20px;
+}
+
+@media (max-width: 750px) {
+    .top{
+        min-height: 20vh;
+    }
+    .top h1{
+        font-size: 60px;
+    }
+    .regist_part{
+        height: 70vh;
+        padding: 10px 0px 50px 0;
+    }
+    .row {
+        height: 120px;
+        flex-direction: column;
+    }
+    .row input[type=text], .row input[type=date], .row input[type=password], .row input[type=email]{
+        width: 250px;
+        margin-top: 10px;
+    }
+    .gender{
+        width: 250px;
+        height: 60px;
+        margin: 10px 0px;
+    }
+    footer img {
+        width: 60px;
+    }
 }

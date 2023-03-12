@@ -21,7 +21,7 @@
         <input type="password" required placeholder=""><br>
         <label>R-Password</label>
         <input type="password" required placeholder="">
-        <a href="../ThirdPage/regist.HTML">Continue</a>
+        <a href="../ThirdPage/regist.php">Continue</a>
     </form>
     <footer>
         <img src="../first page/images/pngfind.com-duckling-png-5872453(Y).png" width="90" height="55"/>
