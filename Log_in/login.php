@@ -8,13 +8,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     // something was posted
    $username    = $_POST['username'];
    $password = $_POST['password'];
-//    $Fname       = $_POST['Fname'];
-//    $Lname       = $_POST['Lname'];
-//    $Nationality = $_POST['Nationality'];
-//    $phone       = $_POST['phone'];
-//    $date        = $_POST['date'];
-//    $email       = $_POST['email'];
-//    $gender      = $_POST['gender'];
    
    if(!empty($username)&&!empty($password)&& !is_numeric($username)&&!is_numeric($password))
    {
