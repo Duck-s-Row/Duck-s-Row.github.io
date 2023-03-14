@@ -11,151 +11,259 @@ font-family: 'Bebas Neue', cursive;
     padding: 0;
 }
 
-.top {
+body {
     width: 100%;
-    min-height: 30vh;
+    height: 100vh;
+    background-color: #101820;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content {
+    width: 70%;
+    height: 700px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.head {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
     background-color: #FEE715;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.top h1 {
-	font-family: 'Bebas Neue', cursive;
-	font-weight: 500;
-	font-size: 100px;
-	letter-spacing: 0.1em;
-}
-
-.regist_part {
-    font-family: 'ABeeZee', sans-serif;
-    width: 100%;
-    height: 60vh;
-    background-color: #101820;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.regist_part .container {
-    width: 60%;
-    height: 90%;
-    /* background-color: #FEE715; */
-}
-
-form {
-    width: 100%;
-}
-
-.row {
-    width: 100%;
-    height: 100px;
-    font-family: 'ABeeZee', sans-serif;
-    background-color: #101820;
-    color: #FEE715;
-    font-size: 22px;
-
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}
-
-.row input {
-    font-size: 20px;
-    background: #D9D9D9;
-}
-
-.row input[type=text], .row input[type=date], .row input[type=email], .row input[type=password], .gender {
-    width: 400px;
-    height: 50px;
-    border-radius: 30px;
-    padding: 0 20px;
-    margin: 0 20px;
-}
-
-.row input::placeholder {
-    font-family: 'ABeeZee', sans-serif;
-    font-size: 18px;
     color: #101820;
 }
 
-.gender {
-    font-family: 'ABeeZee', sans-serif;
-    width: 400px;
-    border: solid 1px #fff;
-    border-radius: 30px;
-    /* margin-left: 100px; */
+.reg {
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+}
+
+.left, .right {
+    width: 50%;
 
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    padding-left: 100px;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.right {
+    gap: 2.9rem;
+}
+
+label {
+    font-family: 'ABeeZee', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+
+    display: block;
+    color: #FEE715;
+    padding: 10px;
+}
+
+input[type="text"],input[type="password"],input[type="date"],input[type="phone"],input[type="email"] {
+    height: 35px;
+    width: 70%;
+    padding: 5px;
+    padding-left: 20px;
+    border-radius: 30px;
+
+    border: none;
+    font-size: 20px;
+}
+
+input[type="radio"]{
+    margin-right: 10px;
     accent-color: #FEE715;
 }
 
+input::placeholder {
+    font-size: 16px;
+}
+
+.gender {
+    width: fit-content;
+    padding: 10px;
+    border: 1px solid #FEE715;
+    border-radius: 20px;
+
+    background-color: #101820;
+    color: #FEE715;
+}
+
+label[for="gender"] {
+    display: inline;
+    margin-right: 20px;
+    padding: 0;
+}
+
 .gender:hover {
-    border: solid 1px #000;
     background-color: #FEE715;
+}
+
+.gender:hover label[for="gender"]{
     color: #101820;
+}
+
+.gender:hover input[type="radio"] {
     accent-color: #101820;
 }
 
-.button {
-    width: 200px;
-    height: 60px;
-    border-radius: 40px;
-    background-color: #FEE715;
-    cursor: pointer;
-
-    font-family: 'ABeeZee', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    transition: 0.5s ease-in-out;
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.button:hover {
+.submit input{
+    width: 150px;
+    height: 50px;
+
+    font-size: 26px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+
+    font-family: 'Bebas Neue', cursive;
+    background-color: #FEE715;
+    color: #101820;
+    transition: 0.5s ease-out;
+}
+
+.submit input:hover {
     transform: scale(1.1);
 }
 
 footer {
     width: 100%;
-    height: 10vh;
-    background-color: #101820;
+    height: 100px;
 }
 
 footer img {
-    width: 100px;
-    margin-left: 20px;
+    width: 80px;
+    height: 55px;
+    padding: 0 20px;
 }
 
-@media (max-width: 750px) {
-    .top{
-        min-height: 20vh;
+@media (max-width: 725px) {
+
+    body{
+        height: min-content;
     }
-    .top h1{
-        font-size: 60px;
+
+    .head {
+        height: 150px;
+        font-size: 30px;
     }
-    .regist_part{
-        height: 70vh;
-        padding: 10px 0px 50px 0;
+
+    .content{
+        width: 100%;
+        height: 850px;
     }
-    .row {
-        height: 120px;
+
+    .reg {
+        height: 100%;
         flex-direction: column;
     }
-    .row input[type=text], .row input[type=date], .row input[type=password], .row input[type=email]{
-        width: 250px;
-        margin-top: 10px;
+
+    .left, .right {
+        padding-left: 0;
+        width: 100%;
+        gap: 0rem;
     }
-    .gender{
-        width: 250px;
-        height: 60px;
-        margin: 10px 0px;
+    
+    .right {
+        gap: 0;
     }
+    
+    label {
+        margin-left: 30px;
+    }
+    
+    input[type="text"],input[type="password"],input[type="date"],input[type="phone"],input[type="email"] {
+        height: 25px;
+        width: 80%;
+        padding-left: 15px;
+        margin-bottom: 20px;
+        margin-left: 30px;
+    }
+
+    .gender {
+        margin-left: 30px;
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+    }
+    
     footer img {
-        width: 60px;
+        width: 80px;
+        height: 55px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 325px) {
+
+    body{
+        height: min-content;
+    }
+
+    .head {
+        height: 150px;
+        font-size: 30px;
+    }
+
+    .content{
+        width: 100%;
+        height: 850px;
+    }
+
+    .reg {
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .left, .right {
+        width: 100%;
+        gap: 0rem;
+        margin-left: 0px;
+        padding-left: 0;
+    }
+    
+    .right {
+        gap: 0;
+    }
+    
+    label {
+        margin-left: 17px;
+    }
+    
+    input[type="text"],input[type="password"],input[type="date"],input[type="phone"],input[type="email"] {
+        height: 25px;
+        width: 80%;
+        padding-left: 15px;
+        margin-bottom: 20px;
+        margin-left: 17px;
+    }
+
+    .gender {
+        width: 80%;
+        padding: 5px;
+        margin-left: 17px;
     }
 }
