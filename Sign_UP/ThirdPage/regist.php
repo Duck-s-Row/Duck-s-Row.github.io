@@ -63,12 +63,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
                 <div>
                     <label for="Password">Password</label>
-                    <input type="password" placeholder="password" required name="password">
+                    <input type="password" placeholder="password" required name="password" id="password">
+                    <i class="fa fa-eye" id="show-Password"></i>                    
                 </div>
 
                 <div>
                     <label for="Password">Re-Password</label>
-                    <input type="Password" placeholder="Re-Password" required name="re-password">
+                    <input type="Password" placeholder="Re-Password" required name="re-password" id="re-password">
+                    <i class="fa fa-eye" id="show-re-password"></i>
                 </div>
             </div>
 
@@ -108,5 +110,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     <footer>
         <img src="../../home/imgs/gold-ducks.png" alt="Logo">
     </footer>
+
+    <script>
+        // Change the Password into text
+        const showPassword = document.querySelector("#show-Password");
+        const password = document.querySelector("#password");
+
+        showPassword.addEventListener("click", function () {
+
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+
+            this.classList.toggle("bi-eye");
+        });
+
+        const ShowRePassword = document.querySelector("#show-re-password");
+        const rePassword = document.querySelector("#re-password");
+
+        ShowRePassword.addEventListener("click", function () {
+
+            const type = rePassword.getAttribute("type") === "password" ? "text" : "password";
+            rePassword.setAttribute("type", type);
+
+            this.classList.toggle("bi-eye");
+        });
+    </script>
 </body>
 </html>
