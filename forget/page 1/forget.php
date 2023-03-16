@@ -17,7 +17,7 @@
         <div class="content">
             <p>E-mail</p>
             <div class="email">
-                <input type="email" placeholder="E-mail or Mobile Phone Number" />
+                <input type="email" placeholder="E-mail" />
             </div>
             <button onclick="pageRedirect()">Send</button>
         </div>
