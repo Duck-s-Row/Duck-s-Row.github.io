@@ -92,13 +92,6 @@ input[type="text"],input[type="password"],input[type="date"],input[type="phone"]
     margin-left: -40px;
 }
 
-.fa-eye-slash{
-    display: none;
-    color: #101820;
-    cursor: pointer;
-    margin-left: -40px;
-}
-
 input[type="radio"]{
     margin-right: 10px;
     accent-color: #FEE715;
