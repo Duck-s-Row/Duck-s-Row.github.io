@@ -92,11 +92,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 <div class="gender">
                     <label for="gender">Gender</label>
 
-                    <label for="gender">Male</label>
-                    <input type="radio" required name="gender" value="male">
+                    <label for="Male">Male</label>
+                    <input type="radio" required name="gender" value="male" id="Male">
 
-                    <label for="gender">Female</label>
-                    <input type="radio" required name="gender" value="female">
+                    <label for="Female">Female</label>
+                    <input type="radio" required name="gender" value="female" id="Female">
                 </div>
             </div>
         </div>
