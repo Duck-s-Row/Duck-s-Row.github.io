@@ -18,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
    {
         //save to database
         $user_id = random_num(20);
-        $query = "insert into users(user_id,username,password,phone,email,gender,nationality,Bdate,Fname,Lname) values('$user_id','$username','$password','$phone','$email','$gender','$Nationality','$date','$Fname','$Lname')";
+        $query = "insert into users(user_id,username,password,phone,email,gender,Fname,Lname) values('$user_id','$username','$password','$phone','$email','$gender','$Fname','$Lname')";
         mysqli_query($con,$query);
        header('Location:../../Log_in/login.php');
        die();
@@ -94,10 +94,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                     <label for="gender">Gender</label>
 
                     <label for="Male">Male</label>
-                    <input type="radio" required name="gender" value="male" id="Male">
+                    <input type="radio" required name="gender" value="M" id="Male">
 
                     <label for="Female">Female</label>
-                    <input type="radio" required name="gender" value="female" id="Female">
+                    <input type="radio" required name="gender" value="F" id="Female">
                 </div>
             </div>
         </div>
