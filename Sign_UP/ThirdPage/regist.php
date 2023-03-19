@@ -43,70 +43,70 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     <title>Registration</title>
 </head>
 <body>
-<div class="head">
+    <div class="head">
         <h1>SIGN UP</h1>
     </div>
-    <form  method="post">
     <div class="content">
-        <div class="reg">
-            <div class="left">
-                <div>
-                    <label for="Username">username</label>
-                    <input type="text" placeholder="username" required name="username">
+        <form  method="post">
+            <div class="reg">
+                <div class="left">
+                    <div>
+                        <label for="Username">username</label>
+                        <input type="text" placeholder="username" required name="username">
+                    </div>
+
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" placeholder="email@test.com" required name="email">
+                    </div>
+
+                    <div>
+                        <label for="Password">Password</label>
+                        <input type="password" placeholder="password" required name="password" id="password">
+                        <i class="fa fa-eye" id="show-Password"></i>                    
+                    </div>
+
+                    <div>
+                        <label for="Password">Re-Password</label>
+                        <input type="Password" placeholder="Re-Password" required name="re-password" id="re-password">
+                        <i class="fa fa-eye" id="show-re-password"></i>
+                    </div>
                 </div>
 
-                <div>
-                    <label for="email">Email</label>
-                    <input type="email" placeholder="email@test.com" required name="email">
-                </div>
 
-                <div>
-                    <label for="Password">Password</label>
-                    <input type="password" placeholder="password" required name="password" id="password">
-                    <i class="fa fa-eye" id="show-Password"></i>                    
-                </div>
+                <div class="right">
+                    <div>
+                        <label for="Fname">First Name</label>
+                        <input type="text" placeholder="First Name" required name="Fname">
+                    </div>
 
-                <div>
-                    <label for="Password">Re-Password</label>
-                    <input type="Password" placeholder="Re-Password" required name="re-password" id="re-password">
-                    <i class="fa fa-eye" id="show-re-password"></i>
+                    <div>
+                        <label for="lastname">Last Name</label>
+                        <input type="text" placeholder="Last name" required name="Lname">
+                    </div>
+
+                    <div>
+                        <label for="phone">Phone</label>
+                        <input type="phone" placeholder="phone number" required name="phone">
+                    </div>
+
+                    <div class="gender">
+                        <label for="gender">Gender</label>
+
+                        <label for="Male">Male</label>
+                        <input type="radio" required name="gender" value="M" id="Male">
+
+                        <label for="Female">Female</label>
+                        <input type="radio" required name="gender" value="F" id="Female">
+                    </div>
                 </div>
             </div>
 
-
-            <div class="right">
-                <div>
-                    <label for="Fname">First Name</label>
-                    <input type="text" placeholder="First Name" required name="Fname">
-                </div>
-
-                <div>
-                    <label for="lastname">Last Name</label>
-                    <input type="text" placeholder="Last name" required name="Lname">
-                </div>
-
-                <div>
-                    <label for="phone">Phone</label>
-                    <input type="phone" placeholder="phone number" required name="phone">
-                </div>
-
-                <div class="gender">
-                    <label for="gender">Gender</label>
-
-                    <label for="Male">Male</label>
-                    <input type="radio" required name="gender" value="M" id="Male">
-
-                    <label for="Female">Female</label>
-                    <input type="radio" required name="gender" value="F" id="Female">
-                </div>
+            <div class="submit">
+                <input type="submit" value="submit">
             </div>
-        </div>
-
-        <div class="submit">
-            <input type="submit" value="submit">
-        </div>
+        </form>
     </div>
-    </form>
     <footer>
         <img src="../../home/imgs/gold-ducks.png" alt="Logo">
     </footer>
