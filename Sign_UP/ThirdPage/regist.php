@@ -46,6 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 <div class="head">
         <h1>SIGN UP</h1>
     </div>
+    <form  method="post">
     <div class="content">
         <div class="reg">
             <div class="left">
@@ -102,9 +103,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         </div>
 
         <div class="submit">
-            <input type="submit">
+            <input type="submit" value="submit">
         </div>
     </div>
+    </form>
     <footer>
         <img src="../../home/imgs/gold-ducks.png" alt="Logo">
     </footer>
