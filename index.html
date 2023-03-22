@@ -17,47 +17,25 @@
     <body>
         <!-- The Start of Navbar section -->
         <header>
-          <nav class="navbar navbar-expand-lg p-3 sticky-lg-bottom">
-              <div class="container">
-                <a class="navbar-brand" href="#">
-                  <img src="home/imgs/ducks.png" alt="logo" width="60px" id="logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <i class="fa-solid fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                      <li>
-                          <div class="search mt-2 p-2 d-none d-lg-block favorite">
-                            <a href="#" id="heart"><i class="fa-regular fa-heart"></i></a>
-                            <a href="#" id="f-heart">Favorite</a>
-                          </div>
-                      </li>
-                    <li class="nav-item">
-                      <a class="nav-link p-lg-3" aria-current="page" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link p-lg-3" aria-current="page" href="Hangout/hangout.php">Hangout</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link p-lg-3" aria-current="page" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link p-lg-3" aria-current="page" href="#services">My planes</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link p-lg-3" aria-current="page" href="#about_us">About Us</a>
-                    </li>
-                  </ul>
-                  <div class="user" id="user">
-                      <a href="Log_in/login.php">
-                          <i id="user" class="fa-regular fa-user"></i>
-                      </a>
-                  </div>
-                </div>
-              </div>
-            </nav>
-        </header>
+          <div class="logo"><img src="home/imgs/ducks.png" alt=""></div>
+          <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <nav class="nav-bar">
+            <ul>
+              <!-- <li><i class="fa-regular fa-heart"></i></li> -->
+              <li><a href="#home">Home</a></li>
+              <li><a href="Hangout/hangout.php">Hangout</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li>
+              <li><a href="#about_us">About</a></li>
+              <li><a href="Profile/profile.php" class="profile">Profile</a></li>
+              <li><i class="fa-regular fa-user" onclick="pageRedirect()"></i></li>
+            </ul>
+          </nav>
+         </header>
         <!-- The End of Navbar section -->
 
         <!-- logout button/link -->
@@ -131,8 +109,18 @@
 
         <!-- The End of the page -->
 
-        <!-- JS Configuration -->
-        <script src="home/home.js"></script> <!-- Page JS -->
+        <!-- JS -->
+        <script>
+          
+          hamburger = document.querySelector(".hamburger");
+          function pageRedirect() {
+            window.location.href = "Profile/profile.php";
+          }
+          hamburger.onclick = function() {
+            navBar = document.querySelector(".nav-bar");
+            navBar.classList.toggle("active");
+          }
+       </script>
         <script src="js/all.min.js"></script> <!-- font awesome -->
         <script src="js/bootstrap.bundle.min.js"></script> <!-- bootstrap -->
     </body>
