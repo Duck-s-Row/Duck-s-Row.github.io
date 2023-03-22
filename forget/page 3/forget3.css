@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Bebas+Neue&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+header {
+	background-color: #FEE715;
+	width: 100%;
+	z-index: 999;
+	height: 30vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.head {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.head h1 {
+	font-family: 'Bebas Neue', cursive;
+	font-weight: 500;
+	font-size: 90px;
+	letter-spacing: 0.1em;
+}
+.head span {
+	font-size: 32px;
+	font-weight: 400;
+	font-family: 'ABeeZee', sans-serif;
+	line-height: 38px;
+	color: rgb(0, 0, 0);
+}
+
+section {
+	background-color: #101820;
+    width: 100%;
+    min-height: 60vh;
+    text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+    /* padding-top: 100px; */
+}
+.phone{
+	font-size: 22px;
+	font-family: 'ABeeZee', sans-serif;
+    color:  rgb(182, 182, 182);
+	background-color: #161111c3;
+	width: 500px;
+    height: 80px;
+	font-weight: 400;
+	text-align: left;
+}
+.mail{
+	font-size: 22px;
+	font-family: 'ABeeZee', sans-serif;
+    color:  rgb(182, 182, 182);
+	background-color: #161111c3;
+	width: 500px;
+    height: 80px;
+	font-weight: 400;
+	text-align: left;
+}
+/* .logo{
+	margin-right:90%;
+	margin-top: 2%;
+} */
+hr{
+	width: 400px;
+	text-align: center;
+	margin-left: 37%;
+	margin-right: 37%;
+}
+input[type="radio"]{
+	margin-left: 80px;
+	height: 22px;
+	width: 22px;
+	background-color: #d5d5d5;
+	cursor: pointer;
+	margin-left: 80px;
+	border-radius: 30px;
+}
+label{
+	cursor: pointer;
+	padding-left: 80px;
+}
+.cont{
+	margin-top: 90px;
+	color: black;
+	background-color: #FEE715;
+	width: 200px;
+    height: 60px;
+	border-radius: 30px;
+	font-size: 25px;
+	font-family: 'ABeeZee', sans-serif;
+	transition: 0.7s ease;
+}
+.cont:hover{
+	margin-top: 90px;
+	color: rgb(0, 0, 0);
+	background-color: #ffffff;
+	transform: scale(1.1);
+}
+.font{
+	font-size: 15px;
+	text-align: center;
+	align-items: center;
+	padding-right: 48px;
+	color: #fee715;
+}
+.fontt{
+	font-size: 15px;
+	text-align: center;
+	align-items: center;
+	padding-left: 8px;
+	color: #fee715;
+}
+
+footer {
+    width: 100%;
+    height: 10vh;
+    background-color: #101820;
+}
+
+footer img {
+    width: 100px;
+    margin-left: 20px;
+}
+
+
+
+@media (max-width: 70vh) {
+	header .head h1 {
+		font-family: 'Bebas Neue', cursive;
+		font-weight: 500;
+		font-size: 120px;
+		letter-spacing: 0.1em;
+	}
+	.head span {
+		font-size: 40px;
+	}
+
+	.phone, .mail {
+		font-size: 34px;
+		width: 850px;
+		height: 130px;
+	}
+
+	input[type="radio"]{
+		width: 40px;
+		height: 40px;
+	}
+
+	.font{
+		font-size: 30px;
+	}
+
+	.cont {
+		font-size: 50px;
+		width: 500px;
+		height: 120px;
+	}
+
+	footer img {
+		width: 140px;
+		height: 80px;
+	}
+}
