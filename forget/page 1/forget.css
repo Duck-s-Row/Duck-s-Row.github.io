@@ -69,11 +69,13 @@ button {
     font-size: 30px;
     align-self: center;
     justify-self: center;
-    transition: all 0.5;
+    transition: 0.5s ease;
 }
 button:hover {
-    background: white;
-    transform: scale(1.1);
+    margin-top: 30px;
+	color: rgb(0, 0, 0);
+	background-color: #ffffff;
+	transform: scale(1.1);
 }
 
 .content {
