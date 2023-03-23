@@ -5,22 +5,27 @@ include("../Functions/Functions.php");
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    // something was posted
+    // getting posted from user
    $username    = $_POST['username'];
    $password = $_POST['password'];
-   
+
+
    if(!empty($username)&&!empty($password)&& !is_numeric($username)&&!is_numeric($password))
    {
         //read from database
         $user_id = random_num(20);
-        $query = "select * from users where username = '$username' and password = '$password' limit 1";
-        $result =mysqli_query($con,$query);
-        if($result)
+        $query = "select username,password from users where username = ? limit 1";
+        $stmt = mysqli_prepare($con,$query);
+        mysqli_stmt_bind_param($stmt,"s",$username);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_store_result($stmt);
+        if($stmt)
         {
-            if($result && mysqli_num_rows($result)>0)
+            if($stmt && mysqli_stmt_num_rows($stmt)>0)
             {
-                $user_data = mysqli_fetch_assoc($result);
-                if($user_data['password']=== $password)
+                mysqli_stmt_bind_result($stmt,$rowusername,$rowpassword);
+                $user_data = mysqli_stmt_fetch($stmt);
+                if(password_verify($password,$rowpassword))
                 {
                     $_SESSION['user_id'] = $user_data['user_id'];
                     header('Location:../index.php');

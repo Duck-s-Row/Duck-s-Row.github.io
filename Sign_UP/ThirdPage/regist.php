@@ -8,6 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     // something was posted
    $username    = $_POST['username'];
    $password    = $_POST['password'];
+   $hasedpassword = password_hash($password,PASSWORD_DEFAULT);
    $Fname       = $_POST['Fname'];
    $Lname       = $_POST['Lname'];
    $phone       = $_POST['phone'];
@@ -18,8 +19,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
    {
         //save to database
         $user_id = random_num(20);
-        $query = "insert into users(user_id,username,password,phone,email,gender,Fname,Lname) values('$user_id','$username','$password','$phone','$email','$gender','$Fname','$Lname')";
-        mysqli_query($con,$query);
+        $query = "insert into users(user_id,username,password,phone,email,gender,Fname,Lname) values(?,?,?,?,?,?,?,?)";
+        $stmt = mysqli_prepare($con,$query);
+        mysqli_stmt_bind_param($stmt,"isssssss",$user_id,$username,$hasedpassword,$phone,$email,$gender,$Fname,$Lname);
+        mysqli_stmt_execute($stmt);
+        
        header('Location:../../Log_in/login.php');
        die();
     }
