@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Bebas+Neue&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+header {
+	background-color: #FEE715;
+	width: 100%;
+	z-index: 999;
+	height: 30vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.head {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.head h1 {
+	font-family: 'Bebas Neue', cursive;
+	font-weight: 500;
+	font-size: 90px;
+	letter-spacing: 0.1em;
+}
+.head span {
+	font-size: 32px;
+	font-weight: 400;
+	font-family: 'ABeeZee', sans-serif;
+	line-height: 38px;
+	color: rgb(0, 0, 0);
+}
+section {
+	background-color: #101820;
+    width: 100%;
+    min-height: 60vh;
+    text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.enter{
+	color: #FEE715;
+	font-size: 60px;
+	font-family: 'Bebas Neue', cursive;
+	letter-spacing: 10px;
+	margin-bottom: 20px;
+}
+.code{
+	display: flex;
+}
+.code input{
+	width: 50px;
+	font-size: 32px;
+	padding: 10px;
+	text-align: center;
+	border-radius: 5px;
+	margin: 2px;
+	border: 2px solid black;
+	background-color: #16232e;
+	font-weight: bold;
+	color: #FEE715;
+	outline: none;
+	transition: all 0.1s;
+	margin-top: 80px;
+}
+.code input:focus{
+	border: 2px solid #FEE715;
+	box-shadow: 0 0 2px 2px black;
+}
+.again{
+	color: #FEE715;
+	text-decoration: none;
+	margin-top: 50px;
+	font-size: 17px;
+}
+.again:hover{
+	color: white;
+}
+.space{
+	margin-right: 10px !important;
+}
+.disabled{
+	opacity: 0.5;
+}
+.cont{
+	margin-top: 20px;
+	color: black;
+	background-color: #FEE715;
+	width: 200px;
+    height: 60px;
+	border-radius: 30px;
+	font-size: 25px;
+	font-family: 'ABeeZee', sans-serif;
+	transition: 0.7s ease;
+}
+.cont:hover{
+	margin-top: 30px;
+	color: rgb(0, 0, 0);
+	background-color: #ffffff;
+	transform: scale(1.1);
+}
+footer {
+    width: 100%;
+    height: 10vh;
+    background-color: #101820;
+}
+footer img {
+    width: 100px;
+    margin-left: 20px;
+}
+@media (max-width: 70vh) {
+	header .head h1 {
+		font-family: 'Bebas Neue', cursive;
+		font-weight: 500;
+		font-size: 120px;
+		letter-spacing: 0.1em;
+	}
+	.head span {
+		font-size: 40px;
+	}
+	.cont {
+		font-size: 50px;
+		width: 500px;
+		height: 120px;
+	}
+
+	footer img {
+		width: 140px;
+		height: 80px;
+	}
+}

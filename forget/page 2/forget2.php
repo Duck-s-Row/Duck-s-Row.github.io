@@ -20,11 +20,16 @@
             <button class="mail"><input type="radio" name="kind"><label>Confrim via E-mail<div class="font"><font >*******@gmail.com</font></div></label></button>
         </div>
         <div>
-            <button class="cont">continue</button>
+            <button class="cont" onclick="pageRedirect()">continue</button>
         </div>
     </section>
     <footer class="logo">
         <img src="../images/pngfind.com-duckling-png-5872453(Y).png" width="90" height="55"/>
     </footer>
+    <script>
+        function pageRedirect() {
+            window.location.href = "../page 3/forget3.html";
+        }  
+    </script>
 </body>
 </html>
