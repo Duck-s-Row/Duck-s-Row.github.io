@@ -26,7 +26,7 @@
         </div>
         <a href="#" class="again">send code again?</a>
         <div>
-            <button class="cont">continue</button>
+            <button class="cont" onclick="pageRedirect()">continue</button>
         </div>
     </section>
     <footer class="logo">
@@ -72,6 +72,9 @@
                 input.classList.add("disabled");
             });
             console.log(otp);
+        }
+        function pageRedirect() {
+            window.location.href = "../page 5/forget5.html";
         }
     </script>
 </body>
