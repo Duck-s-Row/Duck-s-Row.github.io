@@ -41,7 +41,6 @@
         <!-- logout button/link -->
         <!-- <a href="Log_out">logout</a> -->
         
-        
         <!-- The Start of Home Section -->
         <section class="home" id="home">
             <h1>Duck's Row</h1>
