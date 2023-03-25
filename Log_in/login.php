@@ -57,7 +57,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         
         <div class="head">
             <h1>LOGIN</h1>
-            <span>You don't have an account? <a href="../Sign_UP/first page/Sign_UP.php">Signup</a></span>
+            <span>You don't have an account? <a href="../Sign_UP/ThirdPage/regist.php">Signup</a></span>
         </div>
     </header>
     <form method="POST" class="login">

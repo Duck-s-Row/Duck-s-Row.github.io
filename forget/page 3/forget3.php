@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8" />
     <title>Duck's Row</title>
-    <link rel="stylesheet" href="forget4.css">
+    <link rel="stylesheet" href="forget3.css">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <div class="head">
             <h1>Forget Password</h1>
-            <span>A code has been sent to your E-mail. Enter that code here</span>
+            <span>A code has been sent to your phone. Enter that code here</span>
         </div>
     </header>
     <section class="forget-password-ways">
@@ -74,7 +74,7 @@
             console.log(otp);
         }
         function pageRedirect() {
-            window.location.href = "../page 5/forget5.html";
+            window.location.href = "../page 5/forget5.php";
         }
     </script>
 </body>
