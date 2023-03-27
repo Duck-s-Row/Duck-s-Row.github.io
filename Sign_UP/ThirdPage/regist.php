@@ -91,7 +91,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
                     <div>
                         <label for="phone">Phone</label>
-                        <input type="phone" placeholder="phone number" required name="phone">
+                        <input type="phone" placeholder="phone number" required name="phone" maxlength="13">
                     </div>
 
                     <div class="gender">
