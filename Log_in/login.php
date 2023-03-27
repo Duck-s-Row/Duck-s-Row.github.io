@@ -27,6 +27,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 $user_data = mysqli_stmt_fetch($stmt);
                 if(password_verify($password,$rowpassword))
                 {
+                    //getting user_id from database in a quick way till I get the right one
+                    $query2="select * from users where username = '$username' limit 1";
+                    $result= mysqli_query($con,$query2);
+                    $user_data= mysqli_fetch_assoc($result);
                     $_SESSION['user_id'] = $user_data['user_id'];
                     header('Location:../index.php');
                     die;

@@ -45,7 +45,7 @@
         <section class="home" id="home">
             <h1>Duck's Row</h1>
             <h2>Go Fun, Go & Run</h2>
-          <input type="button" value="Hangout" class="button">
+            <button onclick="window.location.href = 'Hangout/hangout.php';" class="button">Hangout</button>
         </section>
         <!-- The End of Home Section -->
 
