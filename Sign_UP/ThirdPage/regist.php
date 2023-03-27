@@ -15,7 +15,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
    $email       = $_POST['email'];
    $gender      = $_POST['gender'];
    
-   if(!empty($username)&&!empty($password)&&!empty($phone)&&!empty($email)&&!empty($gender) && !is_numeric($username)&&!is_numeric($password)&&!is_numeric($email)&&!is_numeric($gender))
+   if(!is_numeric($username)&&!is_numeric($password)&&!is_numeric($email)&&!is_numeric($gender))
    {
         //save to database
         $user_id = random_num(20);
