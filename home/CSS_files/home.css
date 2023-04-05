@@ -7,6 +7,7 @@
     text-decoration: none;
     font-family: 'ABeeZee', sans-serif;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -48,7 +49,7 @@ header {
     align-items: center;
 }
 
-.nav-bar ul li a, .fa-user {
+.nav-bar ul li a, .fa-user, #logout  {
     /* display: block; */
     color: #fefefe;
     font-size: 20px;
@@ -59,11 +60,7 @@ header {
 
 }
 
-.profile {
-    display: none;
-}
-
-.fa-user:hover {
+.fa-user:hover, #logout:hover  {
     cursor: pointer;
     color: #FEE715;
 }
@@ -86,6 +83,98 @@ header {
     color: #FEE715;
 }
 
+#logout {
+    display: none;
+}
+
+#logout:hover::after {
+    width: 0%;
+}
+
+.sub-menu-wrap {
+    position: absolute;
+    top: 80%;
+    right: 5%;
+    width: 350px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.sub-menu-wrap.open-menu {
+    max-height: 400px;
+}
+
+.sub-menu {
+    background: #101820;
+    padding: 20px;
+    margin: 10px;
+    color: #fefefe;
+}
+
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info img {
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.sub-menu hr {
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #9d8e04;
+    margin: 15px 0 10px;
+}
+
+#drop-icon {
+    padding: 0;
+    margin: 0;
+    color: #fefefe;
+}
+
+.sub-menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #101820;
+    margin: 12px 0;
+}
+
+.sub-menu-link p {
+    width: 100%;
+    color: #fefefe;
+}
+
+#drop-icon {
+    font-size: 25px;
+    padding: 8px;
+    margin-right: 15px;
+}
+
+.sub-menu-link span {
+    font-size: 22px;
+    color: #fefefe;
+    transition: transform 0.5s;
+}
+
+.sub-menu-link:hover span{
+    transform: translateX(5px);
+}
+
+.sub-menu-link:hover p {
+    font-weight: 600;
+}
+
+.profile{
+    display: none;
+}
+
 @media only screen and (max-width: 1320px) {
     header {
         padding: 0 50px;
@@ -93,6 +182,9 @@ header {
 }
 
 @media only screen and (max-width: 1100px) {
+    .sub-menu-wrap{
+        display: none;
+    }
     .hamburger{
         display: block;
         cursor: pointer;
@@ -119,7 +211,7 @@ header {
     }
 
     .nav-bar.active{
-        height: 500px;
+        height: 430px;
     }
 
     .nav-bar ul {
@@ -132,12 +224,12 @@ header {
         opacity: 0;
     }
 
-    .profile {
-        display: block;
+    #user-icon {
+        display: none;
     }
 
-    .fa-user {
-        display: none;
+    #logout{
+        display: inline-block;
     }
 
     .nav-bar.active ul {
@@ -146,6 +238,15 @@ header {
 
     .nav-bar ul li a {
         margin-bottom: 12px;
+    }
+    .profile{
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 720px){
+    .logo img {
+        width: 60px;
     }
 }
 .home {
@@ -333,6 +434,7 @@ header {
     line-height: 77px;
 }
 .about_us h3 span {
+    font-family: 'Bebas Neue', cursive;
     color: #FEE715;
 }
 
@@ -388,6 +490,10 @@ header {
     text-transform: uppercase;
 }
 
+.contact_us h3 {
+    font-weight: 400;
+}
+
 .contact_us .info p {
     color: white;
 }
@@ -423,23 +529,6 @@ header {
 }
 
 @media (max-width: 768px) {
-    .navbar .navbar-toggler {
-        font-size: 30px;
-    }
-
-    #user {
-        margin-left: 10px;
-        font-size: 30px;
-    }
-
-    #logo {
-        width: 60px;
-    }
-
-    .navbar .navbar-nav .nav-link,.navbar .navbar-brand {
-        font-size: 20px;
-    }
-
     .home h1 {
         margin-top: 25%;
         font-size: 90px;
@@ -451,14 +540,14 @@ header {
     }
 
     .services {
-        height: fit-content;
+        height: 1800px;
         flex-direction: column;
     }
 
     .cards {
-        min-height: 250px;
-        width: 70%;
-        margin: 50px 10px 50px 10px;
+        min-height: 380px;
+        width: 50%;
+        margin: 90px 10px 50px 10px;
     }
 
     .pra{
@@ -476,13 +565,14 @@ header {
         text-align: center;
     }
     
-    .about_us h3{
-        font-size: 54px;
+    .about_us h3, .about_us h3 span{
+        width: 100%;
+        font-size: 44px;
         line-height: 77px;
     }
 
     .about_us p{
-        width: 70%;
+        width: 100%;
         margin: auto;
         font-size: 16px;
     }
@@ -519,24 +609,6 @@ header {
 }
 
 @media (max-width: 420px) {
-    .navbar .navbar-toggler {
-        font-size: 20px;
-        margin-right: 15px;
-    }
-
-    #user {
-        font-size: 20px;
-    }
-
-    #logo {
-        width: 45px;
-    }
-
-    .navbar .navbar-nav .nav-link,.navbar .navbar-brand {
-        margin-left: 25px;
-        font-size: 15px;
-    }
-
     .home h1 {
         margin-top: 50%;
         font-size: 50px;
@@ -553,8 +625,8 @@ header {
         font-size: 30px;
     }
 
-    .about_us h3{
-        font-size: 34px;
+    .about_us h3, .about_us h3 span {
+        font-size: 40px;
         line-height: 77px;
     }
     
@@ -600,9 +672,12 @@ header {
 }
 
 @media (max-width: 350px) {
+    .services {
+        height: 1500px;
+    }
     .cards {
         min-height: 300px;
-        width: 70%;
+        width: 60%;
         margin: 70px 10px 70px 10px;
     }
     .pra{
@@ -611,6 +686,10 @@ header {
 
     .content{
         width: 100%;
+    }
+
+    .contact_us h3 {
+        font-weight: 400;
     }
 
     .contact_us .info {
@@ -628,7 +707,7 @@ header {
         text-align: center;
     }
     
-    .about_us h3{
+    .about_us h3, .about_us h3 span{
         font-size: 25px;
     }
 
