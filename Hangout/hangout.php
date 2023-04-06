@@ -147,8 +147,6 @@ include("../Functions/Functions.php");
     <div class="right">
         <div class="budget">        
             <h1>Your Max budget</h1>
-            <!-- <input type="number" name="budget" class="budget-range" id="budget-range" min="100" max="1000" value="500" step="100">
-            -->
             <div class="number-input">
                 <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
                 <input type="number" class="quantity" name="quantity" min="100" max="1000" value="500" step="100">
@@ -250,6 +248,9 @@ include("../Functions/Functions.php");
     </div>
     </section>
     <!-- The End of Contact Us section -->
+    <footer>
+        <a href="#"><i class="fa fa-arrow-up"></i></a>
+    </footer>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js.map"></script>
     <script src="hangout.js"></script>
