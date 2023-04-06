@@ -590,6 +590,6 @@ footer i {
     color: #FEE715;
 }
 
-footer:hover{
+footer:hover i{
     transform: scale(1.2);
 }

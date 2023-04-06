@@ -43,6 +43,12 @@
                   <p>Profile page</p>
                   <span>></span>
                 </a>
+                
+                <a href="Profile/profile.php" class="sub-menu-link">
+                  <i class="fa-regular fa-user" id="drop-icon"></i>
+                  <p>Profile page</p>
+                  <span>></span>
+                </a>
 
                 <a href="Log_out/logout.php" class="sub-menu-link">
                   <i class="fa fa-right-from-bracket" id="drop-icon"></i>
