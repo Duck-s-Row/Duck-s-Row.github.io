@@ -39,6 +39,7 @@ $_SESSION;
 
             <div class="sub-menu-wrap" id="subMenu">
               <div class="sub-menu">
+              <?php if(isset($_SESSION['user_id'])): ?>
                 <div class="user-info">
                   <img src="/Profile/kareem.jpg" alt="profile-image">
                   <h2>Kareem abdallah</h2>
@@ -62,7 +63,7 @@ $_SESSION;
                   <p>Logout</p>
                   <span>></span>
                 </a>
-
+                <?php else: ?>
                 <a href="Sign_UP/ThirdPage/regist.php" class="sub-menu-link">
                   <i class="fa fa-registered" id="drop-icon"></i>
                   <p>Sign Up</p>
@@ -74,7 +75,7 @@ $_SESSION;
                   <p>Login</p>
                   <span>></span>
                 </a>
-
+                <?php endif; ?>
               </div>
             </div>
           </nav>
