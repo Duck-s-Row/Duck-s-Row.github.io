@@ -108,7 +108,8 @@ header {
 /* Hang section */
 .hang {
     width: 100%;
-    min-height: 900px;
+    min-height: 100vh;
+    padding-top: 150px;
     background-color: #FEE715;
     background-image: url("rubber-duck.png");
     background-repeat: no-repeat;
@@ -144,13 +145,13 @@ header {
 
 .hang .left .filters input[type="number"] {
     width: 50px;
+    text-align: center;
 }
 
 .hang .left .choices {
     width: 850px;
     min-height: 80vh;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
 }
@@ -160,12 +161,10 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    /* margin: 500px; */
     gap: 40px;
 }
 
 .hang .left .choices .f_row .card {
-    /* padding: 20px; */
     width: 500px;
     height: 120px;
     background-color: #EDEDED;
@@ -258,12 +257,14 @@ header {
 }
 
 .filre-submit {
-    margin-left: 70%;
+    margin: auto;
 }
+
 
 .hang .left .choices .f_row .card .location:hover,  .filre-submit:hover{
     color: #101820;
     background-color: #FEE715;
+    border: 2px solid #101820;
 }
 
 .hang .right {
@@ -273,9 +274,6 @@ header {
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* margin-right: 5%; */
-    /* position: fixed; */
-    /* right: 5%; */
 }
 
 .hang .right .budget{
@@ -289,11 +287,65 @@ header {
     text-align: left;
 }
 
-.budget input[type = "number"]{
-    width: 70%;
-    padding: 15px;
-    font-size: 20px;
-    margin: 20px;
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.number-input {
+    margin-top: 30px;
+    border: 2px solid #ddd;
+    display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+    box-sizing: border-box;
+}
+
+.number-input button {
+    outline:none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+}
+
+.number-input button:after {
+    display: inline-block;
+    position: absolute;
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    content: '\f077';
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.number-input button.plus:after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.number-input input[type=number] {
+    font-family: sans-serif;
+    max-width: 200px;
+    padding: .5rem;
+    border: solid #ddd;
+    border-width: 0 2px;
+    font-size: 24px;
+    height: 3rem;
+    font-weight: bold;
+    text-align: center;
 }
 
 .hang .right h1{

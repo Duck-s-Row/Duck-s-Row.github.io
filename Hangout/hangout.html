@@ -34,41 +34,6 @@ include("../Functions/Functions.php");
             <li><a href="#contact_us">About</a></li>
             <li><a href="Profile/profile.php" class="profile">Profile</a></li>
           </ul>
-
-          <!-- <div class="sub-menu-wrap" id="subMenu">
-            <div class="sub-menu">
-              <div class="user-info">
-                <img src="/Profile/kareem.jpg" alt="profile-image">
-                <h2>Kareem abdallah</h2>
-              </div>
-              <hr>
-
-              <a href="Profile/profile.php" class="sub-menu-link">
-                <i class="fa-regular fa-user" id="drop-icon"></i>
-                <p>Profile page</p>
-                <span>></span>
-              </a>
-
-              <a href="Log_out/logout.php" class="sub-menu-link">
-                <i class="fa fa-right-from-bracket" id="drop-icon"></i>
-                <p>Logout</p>
-                <span>></span>
-              </a>
-
-              <a href="Sign_UP/ThirdPage/regist.php" class="sub-menu-link">
-                <i class="fa fa-registered" id="drop-icon"></i>
-                <p>Sign Up</p>
-                <span>></span>
-              </a>
-
-              <a href="Log_in/login.php" class="sub-menu-link">
-                <i class="fa fa-lock" id="drop-icon"></i>
-                <p>Login</p>
-                <span>></span>
-              </a>
-
-            </div>
-          </div> -->
         </nav>
        </header>
     <!-- The End of Navbar section -->
@@ -182,8 +147,14 @@ include("../Functions/Functions.php");
     <div class="right">
         <div class="budget">        
             <h1>Your Max budget</h1>
-            <input type="number" name="budget" class="budget-range" id="budget-range" min="100" max="1000" value="500" step="100">
-            <button class="filre-submit">submit</button>
+            <!-- <input type="number" name="budget" class="budget-range" id="budget-range" min="100" max="1000" value="500" step="100">
+            -->
+            <div class="number-input">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                <input type="number" class="quantity" name="quantity" min="100" max="1000" value="500" step="100">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+            </div>
+            <button class="filre-submit">submit</button> 
         </div>
         <hr>
         <div class="food-services">
