@@ -13,11 +13,6 @@ include("../Functions/Functions.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="hangout.css">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/bootstrap.min.css.map">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Bebas+Neue&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <title>Hangout</title>
@@ -25,53 +20,44 @@ include("../Functions/Functions.php");
 <body>
     <!-- The Start of Navbar section -->
     <header>
-        <nav class="navbar navbar-expand-lg p-3 lg-bottom">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                <img src="../home/imgs/ducks.png" alt="logo" width="60px" id="logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa-solid fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                        <a class="nav-link p-lg-3" aria-current="page" href="../index.php">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link p-lg-3" aria-current="page" href="../Profile/profile.php">My Plans</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link p-lg-3" aria-current="page" href="#contact_us">Contact Us</a>
-                        </li>
-                    </ul>
-                    <div class="user" id="user">
-                        <a href="../Log_in/login.php">
-                            <i id="user" class="fa-regular fa-user"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="logo"><img src="../home/imgs/ducks.png" alt=""></div>
+        <div class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+          <ul>
+            <li><a href="../index.php">Home</a></li>
+            <li><a href="Profile/profile.php">My plans</a></li>
+            <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
+            <li><a href="#contact_us">About</a></li>
+            <li><a href="Profile/profile.php" class="profile">Profile</a></li>
+          </ul>
         </nav>
-    </header>
+       </header>
     <!-- The End of Navbar section -->
 
     <!-- The Start of Hangout Section -->
     <section class="hang" id="hangout">
     <div class="left">
-        <div class="filters">
-        <form>
-            <label for="sort">Sort by</label>
-            <select id="sort" name="sort">
-                <option value="top-rating">Top rating</option>
-                <option value="low-rating">Low rating</option>
-            </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <label for="date">At any day?</label>
-            <input type="date" name="date" id="date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <label for="number"><i class="fa-solid fa-user-group"></i></label>
-            <input type="number" name="number" id="number" min="1" max="10" value="1">
+        <form class="filters">
+            <div>
+                <label for="sort">Sort by</label>
+                <select id="sort" name="sort">
+                    <option value="top-rating">Top rating</option>
+                    <option value="low-rating">Low rating</option>
+                </select>
+            </div>
+            <div>
+                <label for="date">At any day?</label>
+                <input type="date" name="date" id="date">
+            </div>
+            <div>
+                <label for="number"><i class="fa-solid fa-user-group"></i></label>
+                <input type="number" name="number" id="number" min="1" max="10" value="1">
+            </div>
         </form>
-        </div>
         <div class="choices">
             <div class="f_row">
 
@@ -161,9 +147,12 @@ include("../Functions/Functions.php");
     <div class="right">
         <div class="budget">        
             <h1>Your Max budget</h1>
-            <input type="range" name="budget" class="budget-range" id="budget-range" min="100" max="1000" step="50">
-            <!-- <button onclick="myfun()">Try it</button> -->
-            <p id="demo">fd</p>
+            <div class="number-input">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                <input type="number" class="quantity" name="quantity" min="100" max="1000" value="500" step="100">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+            </div>
+            <button class="filre-submit">submit</button> 
         </div>
         <hr>
         <div class="food-services">
@@ -259,6 +248,9 @@ include("../Functions/Functions.php");
     </div>
     </section>
     <!-- The End of Contact Us section -->
+    <footer>
+        <a href="#"><i class="fa fa-arrow-up"></i></a>
+    </footer>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js.map"></script>
     <script src="hangout.js"></script>

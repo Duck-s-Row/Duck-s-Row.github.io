@@ -1,3 +1,10 @@
+<?php
+session_start();
+include("connection/connection.php");
+include("Functions/Functions.php");
+$_SESSION;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -5,11 +12,7 @@
         <meta charset="UTF-8">
         <meta name="description" content="GO Fun, GO & run">
         <link rel="stylesheet" href="home/CSS_files/home.css">
-        <link rel="stylesheet" href="css/all.min.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css.map">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Bebas+Neue&display=swap" rel="stylesheet">
         <link rel="website icon" type="png" href="home/imgs/Logo.png">
         <title>Duck's Row</title>
@@ -25,15 +28,56 @@
           </div>
           <nav class="nav-bar">
             <ul>
-              <!-- <li><i class="fa-regular fa-heart"></i></li> -->
               <li><a href="#home">Home</a></li>
               <li><a href="Hangout/hangout.php">Hangout</a></li>
               <li><a href="#services">Services</a></li>
-              <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li>
+              <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
               <li><a href="#about_us">About</a></li>
               <li><a href="Profile/profile.php" class="profile">Profile</a></li>
-              <li><i class="fa-regular fa-user" onclick="pageRedirect()"></i></li>
+              <li><i class="fa fa-right-from-bracket" id="logout"></i><i class="fa-regular fa-user" onclick="toggleMenu()" id="user-icon"></i></li>
             </ul>
+
+            <div class="sub-menu-wrap" id="subMenu">
+              <div class="sub-menu">
+              <?php if(isset($_SESSION['user_id'])): ?>
+                <div class="user-info">
+                  <img src="/Profile/kareem.jpg" alt="profile-image">
+                  <h2>Kareem abdallah</h2>
+                </div>
+                <hr>
+
+                <a href="Profile/profile.php" class="sub-menu-link">
+                  <i class="fa-regular fa-user" id="drop-icon"></i>
+                  <p>Profile page</p>
+                  <span>></span>
+                </a>
+                
+                <a href="Profile/profile.php" class="sub-menu-link">
+                  <i class="fa-regular fa-user" id="drop-icon"></i>
+                  <p>Profile page</p>
+                  <span>></span>
+                </a>
+
+                <a href="Log_out/logout.php" class="sub-menu-link">
+                  <i class="fa fa-right-from-bracket" id="drop-icon"></i>
+                  <p>Logout</p>
+                  <span>></span>
+                </a>
+                <?php else: ?>
+                <a href="Sign_UP/ThirdPage/regist.php" class="sub-menu-link">
+                  <i class="fa fa-registered" id="drop-icon"></i>
+                  <p>Sign Up</p>
+                  <span>></span>
+                </a>
+
+                <a href="Log_in/login.php" class="sub-menu-link">
+                  <i class="fa fa-lock" id="drop-icon"></i>
+                  <p>Login</p>
+                  <span>></span>
+                </a>
+                <?php endif; ?>
+              </div>
+            </div>
           </nav>
          </header>
         <!-- The End of Navbar section -->
@@ -45,7 +89,7 @@
         <section class="home" id="home">
             <h1>Duck's Row</h1>
             <h2>Go Fun, Go & Run</h2>
-          <input type="button" value="Hangout" class="button">
+            <button onclick="window.location.href = 'Hangout/hangout.php';" class="button">Hangout</button>
         </section>
         <!-- The End of Home Section -->
 
@@ -110,14 +154,41 @@
 
         <!-- JS -->
         <script>
-          
           hamburger = document.querySelector(".hamburger");
-          function pageRedirect() {
-            window.location.href = "Profile/profile.php";
+          home = document.getElementById("home");
+          contact_us = document.getElementById("contact_us");
+          about_us = document.getElementById("about_us");
+          services = document.getElementById("services");
+
+          navBar = document.querySelector(".nav-bar");
+
+          let subMenu = document.getElementById("subMenu");
+
+          // Add the open menu class
+          function toggleMenu() {
+            subMenu.classList.toggle("open-menu");
           }
+          // Add the navigation bar active class
           hamburger.onclick = function() {
-            navBar = document.querySelector(".nav-bar");
             navBar.classList.toggle("active");
+          }
+          
+          // Remove the navigation bar active class and the open menu class
+          home.onclick = function() {
+            navBar.classList.remove("active");
+            subMenu.classList.remove("open-menu");
+          }
+          about_us.onclick = function() {
+            navBar.classList.remove("active");
+            subMenu.classList.remove("open-menu");
+          }
+          contact_us.onclick = function() {
+            navBar.classList.remove("active");
+            subMenu.classList.remove("open-menu");
+          }
+          services.onclick = function() {
+            navBar.classList.remove("active");
+            subMenu.classList.remove("open-menu");
           }
        </script>
         <script src="js/all.min.js"></script> <!-- font awesome -->

@@ -19,11 +19,16 @@
                 <input type="password" placeholder="New password" /><br>
                 <input type="password" placeholder="Confirm new password"/>
             </div>
-            <button>Confirm</button>
+            <button onclick="pageRedirect()">Confirm</button>
         </div>
     </section>
     <footer class="logo">
         <img src="../images/pngfind.com-duckling-png-5872453(Y).png" width="90" height="55"/>
     </footer>
+    <script>
+        function pageRedirect() {
+            window.location.href = "../../Log_in/login.php";
+        }
+    </script>
 </body>
 </html>
