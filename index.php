@@ -1,10 +1,6 @@
 <?php
 session_start();
 include("connection/connection.php");
-<<<<<<< HEAD
-include("Functions/Functions.php"); 
-$_SESSION;
-=======
 include("Functions/Functions.php");
 if (isset($_SESSION['user_id'])) {
   $userid = $_SESSION['user_id'];
@@ -16,7 +12,6 @@ if (isset($_SESSION['user_id'])) {
     echo "Error: " . mysqli_error($con);
   }
 }
->>>>>>> d611368c170e82197ac3ceb0319f9f0d18f18f34
 ?>
 
 <!DOCTYPE html>
