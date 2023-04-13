@@ -10,8 +10,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
    $password = $_POST['password'];
 
 
-   if(!empty($username)&&!empty($password)&& !is_numeric($username)&&!is_numeric($password))
-   {
         //read from database
         $user_id = random_num(20);
         $query = "select username,password from users where username = ? limit 1";
@@ -27,6 +25,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 $user_data = mysqli_stmt_fetch($stmt);
                 if(password_verify($password,$rowpassword))
                 {
+                    //getting user_id from database in a quick way till I get the right one
+                    $query2="select * from users where username = '$username' limit 1";
+                    $result= mysqli_query($con,$query2);
+                    $user_data= mysqli_fetch_assoc($result);
                     $_SESSION['user_id'] = $user_data['user_id'];
                     header('Location:../index.php');
                     die;
@@ -34,11 +36,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             }
         }
         echo '<script>alert("Wrong username or password\nPlease Re-Enter them")</script>';
-    }
-   else
-   {
-        echo '<script>alert("Wrong username or password\nPlease Re-Enter them")</script>';
-   }
 }
 ?>
 
@@ -57,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         
         <div class="head">
             <h1>LOGIN</h1>
-            <span>You don't have an account? <a href="../Sign_UP/first page/Sign_UP.php">Signup</a></span>
+            <span>You don't have an account? <a href="../Sign_UP/ThirdPage/regist.php">Signup</a></span>
         </div>
     </header>
     <form method="POST" class="login">
@@ -94,4 +91,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         });
     </script>
 </body>
+
 </html>

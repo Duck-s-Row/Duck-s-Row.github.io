@@ -33,11 +33,11 @@
             cont =a.kind.value
             if(cont=="phone"){
                 //function pageRedirect() {
-                window.location.href = "../page 3/forget3.html";
+                window.location.href = "../page 3/forget3.php";
                 //} 
             }
             else{
-                window.location.href = "../page 4/forget4.html";
+                window.location.href = "../page 4/forget4.php";
             }
         }
          

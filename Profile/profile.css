@@ -15,15 +15,15 @@
 }
 
 img {
-    width: 170px;
-    height: 170px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
 }
 
 .user_choices{
     height: 90vh;
-    width: 40%;
-    margin: 2%;
+    width: 30%;
+    margin: 2% 7% 2% 2%;
 }
 
 #home {
@@ -48,14 +48,12 @@ img {
 .user {
     height: 300px;
     background-color: rgba(254, 231, 21, 1);
-    border-radius: 20px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     padding-bottom: 20px;
+    border-radius: 20px;
 }
 .user img {
     width: 170px;
@@ -64,37 +62,33 @@ img {
 .user h2, .user h3 {
     padding-top: 10px;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 28px;
     letter-spacing: 0.1em;
 }
-
-.chooice {
-    background-color: white;
-    width: 100%;
-    height: 80px;
-    margin: 1% 0%;
+.user_choices{
+    background: white;
     border-radius: 20px;
+}
+.chooice {
+    width: 100%;
+    height: 50px;
+    border: 0;
+    margin-top: 20px;
 }
 
 button a{
     text-decoration: none;
-    color: black;
-    
+    color: black;  
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 28px;
     letter-spacing: 0.1em;
 }
 
 button a:hover {
-    color: black;
+    color: rgb(204, 185, 21);
 }
-
-.active, button:hover{
-    background-color: rgba(255, 255, 255, 0.75);
-}
-
 .details_info, .edit_info, .favorites, .planes{
     display: block;
     width: 60%;
@@ -122,24 +116,21 @@ button a:hover {
     color: black;
     background-color: rgba(254, 231, 21, 1);
     border: none;
-    border-radius: 40px;
-
     font-weight: 600;
     font-size: 24px;
 }
 
 .details {
     height: 15%;
-    border-radius: 20px;
     background-color: rgba(254, 231, 21, 1);
     display: flex;
     justify-content: center;
     align-items: center;
-    
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 28px;
     letter-spacing: 0.1em;
+    border-radius: 20px;
 }
 
 form{
@@ -152,13 +143,13 @@ form{
     font-size: 20px;
     line-height: 28px;
     letter-spacing: 0.1em;
+    
 }
 
 input {
     height: 30px;
     background-color: white;
     border: 0px solid white;
-
     font-size: 20px;
 }
 

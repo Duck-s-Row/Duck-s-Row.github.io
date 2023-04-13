@@ -1,71 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600&display=swap');
 
-body {
+*{
     margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
     font-family: 'Libre Franklin', sans-serif;
 }
 
-header{
+body {
     width: 100%;
+}
+
+
+header {
+    width: 100%;
+    height: 80px;
+    background: #101820;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    /* border-radius: 100px; */
+    position: fixed;
+    z-index: 999;
+    /* margin: 40px 5% 0 5%; */
 }
 
-nav {
-    width: 100%;
-    background-color: #101820;
-    min-height: 10vh;
-}
-
-.favorite a{
-    text-decoration: none;
-    color: white;
-    font-size: 19px;
-}
-
-#f-heart{
-    display: none;
-}
-
-#heart:hover + #f-heart, #f-heart:hover{
-    display: inline;
-}
-
-.favorite a:hover {
-    color: #FEE715; 
-}
-
-#logo {
+.logo img{
     width: 80px;
 }
 
-.container-fluid .navbar-toggler-icon {
-    color: white;
+.hamburger {
+    display: none;
 }
 
-.navbar .navbar-nav .nav-link,
-.navbar .navbar-brand {
-    color: white;
+.nav-bar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
 }
 
-.navbar .navbar-brand:hover {
-    color: #FEE715;
+.nav-bar ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#user {
-    margin-left: 10px;
-    font-size: 25px;
-    color: white;
+.nav-bar ul li a, .fa-user, #logout  {
+    color: #fefefe;
+    font-size: 20px;
+    padding: 10px 25px;
+    transition: 0.2s;
+    text-decoration: none;
 }
 
-.navbar .navbar-nav .nav-link:hover,
-#user:hover {
-    color: #FEE715;
-}
-
-.navbar .navbar-nav .nav-link::after {
+.nav-bar ul li a::after {
     content: '';
     width: 0%;
     height: 2px;
@@ -75,23 +68,12 @@ nav {
     transition: 0.5s;
 }
 
-.navbar .navbar-nav .nav-link:hover::after {
+.nav-bar ul li a:hover::after{
     width: 100%;
 }
 
-.navbar .search{
+.nav-bar ul li a:hover{
     color: #FEE715;
-    border-right: 1px solid white;
-}
-
-.navbar .navbar-toggler {
-    color: white;
-    border: none;
-    font-size: 25px;
-}
-
-.navbar .navbar-toggler:focus {
-    box-shadow: none;
 }
 
 @media (max-width: 90vh) {
@@ -127,6 +109,7 @@ nav {
 .hang {
     width: 100%;
     min-height: 100vh;
+    padding-top: 150px;
     background-color: #FEE715;
     background-image: url("rubber-duck.png");
     background-repeat: no-repeat;
@@ -134,7 +117,7 @@ nav {
     background-size: 220px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
 }
 
@@ -145,29 +128,30 @@ nav {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-left: 80px;
 }
 
 .hang .left .filters {
     width: 840px;
     height: 50px;
-    padding: 10px 0px;
-    background-color: #EDEDED;
-    margin-top: 35px;
     display: flex;
-    justify-content: center;
-    margin-left: px;
-    color: #101820;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #EDEDED;
+    padding: 0 100px;
+    /* position: fixed;
+    top: 15%; */
 }
 
 .hang .left .filters input[type="number"] {
     width: 50px;
+    text-align: center;
 }
 
 .hang .left .choices {
     width: 850px;
     min-height: 80vh;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
 }
@@ -177,12 +161,10 @@ nav {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    /* margin: 500px; */
     gap: 40px;
 }
 
 .hang .left .choices .f_row .card {
-    /* padding: 20px; */
     width: 500px;
     height: 120px;
     background-color: #EDEDED;
@@ -264,7 +246,7 @@ nav {
     font-size: 10px;
     letter-spacing: 0.1em;
 }
-.hang .left .choices .f_row .card .location, .add-plan, .send-comment {
+.hang .left .choices .f_row .card .location, .add-plan, .send-comment, .filre-submit {
     height: 30px;
     width: 70px;
     background-color: #101820;
@@ -272,21 +254,24 @@ nav {
     border: 2px solid #FEE715;
     border-radius: 10px;
     margin-left: 320px;
-    
-    /* position: absolute;
-    left: 25%;
-    top: 25%; */
 }
-.hang .left .choices .f_row .card .location:hover{
+
+.filre-submit {
+    margin: auto;
+}
+
+
+.hang .left .choices .f_row .card .location:hover,  .filre-submit:hover{
     color: #101820;
     background-color: #FEE715;
+    border: 2px solid #101820;
 }
+
 .hang .right {
     width: 350px;
     height: 85vh;
-    margin-left: 200px;
+    margin-left: 100px;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
 }
@@ -302,6 +287,66 @@ nav {
     text-align: left;
 }
 
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.number-input {
+    margin-top: 30px;
+    border: 2px solid #ddd;
+    display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+    box-sizing: border-box;
+}
+
+.number-input button {
+    outline:none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+}
+
+.number-input button:after {
+    display: inline-block;
+    position: absolute;
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    content: '\f077';
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.number-input button.plus:after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.number-input input[type=number] {
+    font-family: sans-serif;
+    max-width: 200px;
+    padding: .5rem;
+    border: solid #ddd;
+    border-width: 0 2px;
+    font-size: 24px;
+    height: 3rem;
+    font-weight: bold;
+    text-align: center;
+}
 
 .hang .right h1{
     margin-top: 20px;
@@ -311,6 +356,7 @@ nav {
 }
 
 .hang .right hr {
+    margin: 20px 0;
     width: 90%;
     height: 3px;
     background-color: #000;
@@ -345,11 +391,9 @@ nav {
     width: 100%;
     height: 100%;
     background-color: #000000be;
-    
     display: none;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center; 
     position: fixed;
     z-index: 999;
     top: 0;
@@ -519,4 +563,31 @@ nav {
 
 .privacy {
     grid-column: 3;
+}
+
+footer {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    background-color: #101820;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    transition: .5s ease-out;
+}
+
+footer i {
+    text-decoration: none;
+    color: #FEE715;
+}
+
+footer:hover i{
+    transform: scale(1.2);
 }
