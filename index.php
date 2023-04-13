@@ -87,9 +87,6 @@ if (isset($_SESSION['user_id'])) {
   </header>
   <!-- The End of Navbar section -->
 
-  <!-- logout button/link -->
-  <!-- <a href="Log_out">logout</a> -->
-
   <!-- The Start of Home Section -->
   <section class="home" id="home">
     <h1>Duck's Row</h1>
