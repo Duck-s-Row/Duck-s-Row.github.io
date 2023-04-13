@@ -28,7 +28,7 @@
 
     <script>
         function pageRedirect() {
-            window.location.href = "../page 2/forget2.php";
+            window.location.href = "../page 4/forget4.php";
         }  
     </script>
 </body>
