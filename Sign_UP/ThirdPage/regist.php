@@ -3,40 +3,32 @@ session_start();
 include("../../connection/connection.php");
 include("../../Functions/Functions.php");
 
-if($_SERVER["REQUEST_METHOD"] == "POST")
-{
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // something was posted
-   $username    = $_POST['username'];
-   $password    = $_POST['password'];
-   $hasedpassword = password_hash($password,PASSWORD_DEFAULT);
-   $Fname       = $_POST['Fname'];
-   $Lname       = $_POST['Lname'];
-   $phone       = $_POST['phone'];
-   $email       = $_POST['email'];
-   $gender      = $_POST['gender'];
-   
-   if(!is_numeric($username)&&!is_numeric($password)&&!is_numeric($email)&&!is_numeric($gender))
-   {
-        //save to database
-        $user_id = random_num(20);
-        $query = "insert into users(user_id,username,password,phone,email,gender,Fname,Lname) values(?,?,?,?,?,?,?,?)";
-        $stmt = mysqli_prepare($con,$query);
-        mysqli_stmt_bind_param($stmt,"isssssss",$user_id,$username,$hasedpassword,$phone,$email,$gender,$Fname,$Lname);
-        mysqli_stmt_execute($stmt);
-        
-       header('Location:../../Log_in/login.php');
-       die();
-    }
-   else
-   {
-        echo '<script>alert("Please Enter Valid Information!")</script>';
-   }
+    $username    = $_POST['username'];
+    $password    = $_POST['password'];
+    $hasedpassword = password_hash($password, PASSWORD_DEFAULT);
+    $Fname       = $_POST['Fname'];
+    $Lname       = $_POST['Lname'];
+    $phone       = $_POST['phone'];
+    $email       = $_POST['email'];
+    $gender      = $_POST['gender'];
+    //save to database
+    $user_id = random_num(20);
+    $query = "insert into users(user_id,username,password,phone,email,gender,Fname,Lname) values(?,?,?,?,?,?,?,?)";
+    $stmt = mysqli_prepare($con, $query);
+    mysqli_stmt_bind_param($stmt, "isssssss", $user_id, $username, $hasedpassword, $phone, $email, $gender, $Fname, $Lname);
+    mysqli_stmt_execute($stmt);
+
+    header('Location:../../Log_in/login.php');
+    die();
 }
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,12 +38,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
     <title>Registration</title>
 </head>
+
 <body>
     <div class="head">
         <h1>SIGN UP</h1>
     </div>
     <div class="content">
-        <form  method="post">
+        <form method="post">
             <div class="reg">
                 <div class="left">
                     <div>
@@ -67,7 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                     <div>
                         <label for="Password">Password</label>
                         <input type="password" placeholder="password" required name="password" id="password">
-                        <i class="fa fa-eye" id="show-Password"></i>                    
+                        <i class="fa fa-eye" id="show-Password"></i>
                     </div>
 
                     <div>
@@ -120,7 +113,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         const showPassword = document.querySelector("#show-Password");
         const password = document.querySelector("#password");
 
-        showPassword.addEventListener("click", function () {
+        showPassword.addEventListener("click", function() {
 
             const type = password.getAttribute("type") === "password" ? "text" : "password";
             password.setAttribute("type", type);
@@ -131,7 +124,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         const ShowRePassword = document.querySelector("#show-re-password");
         const rePassword = document.querySelector("#re-password");
 
-        ShowRePassword.addEventListener("click", function () {
+        ShowRePassword.addEventListener("click", function() {
 
             const type = rePassword.getAttribute("type") === "password" ? "text" : "password";
             rePassword.setAttribute("type", type);
@@ -140,4 +133,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         });
     </script>
 </body>
+
 </html>

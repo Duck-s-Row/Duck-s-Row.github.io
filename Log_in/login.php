@@ -10,8 +10,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
    $password = $_POST['password'];
 
 
-   if(!empty($username)&&!empty($password)&& !is_numeric($username)&&!is_numeric($password))
-   {
         //read from database
         $user_id = random_num(20);
         $query = "select username,password from users where username = ? limit 1";
@@ -38,11 +36,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             }
         }
         echo '<script>alert("Wrong username or password\nPlease Re-Enter them")</script>';
-    }
-   else
-   {
-        echo '<script>alert("Wrong username or password\nPlease Re-Enter them")</script>';
-   }
 }
 ?>
 
