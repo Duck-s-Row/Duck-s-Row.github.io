@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="regist.CSS">
+    <link rel="stylesheet" href="registiration.CSS">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
     <title>Registration</title>
 </head>
@@ -49,24 +49,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="left">
                     <div>
                         <label for="Username">username</label>
-                        <input type="text" placeholder="username" required name="username">
+                        <input type="text" placeholder="username" required name="username" id="username">
                     </div>
 
                     <div>
                         <label for="email">Email</label>
-                        <input type="email" placeholder="email@test.com" required name="email">
+                        <input type="email" placeholder="email@test.com" required name="email" id="email">
                     </div>
 
                     <div>
                         <label for="Password">Password</label>
                         <input type="password" placeholder="password" required name="password" id="password">
-                        <i class="fa fa-eye" id="show-Password"></i>
+                        <i class="fa fa-eye" id="show-Password"></i> 
+                        <p id="message">Password is <span id="strength"></span></p>
                     </div>
+
 
                     <div>
                         <label for="Password">Re-Password</label>
                         <input type="Password" placeholder="Re-Password" required name="re-password" id="re-password">
                         <i class="fa fa-eye" id="show-re-password"></i>
+                        <p id="passtwo">Password is <span id="alert"></span></p>
                     </div>
                 </div>
 
@@ -84,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <div>
                         <label for="phone">Phone</label>
-                        <input type="phone" placeholder="phone number" required name="phone" maxlength="13">
+                        <input type="phone" placeholder="phone number" required name="phone" maxlength="13" id="phone>
                     </div>
 
                     <div class="gender">
@@ -108,6 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <img src="../../home/imgs/gold-ducks.png" alt="Logo">
     </footer>
 
+    <script src="vaild.js"></script>
     <script>
         // Change the Password into text
         const showPassword = document.querySelector("#show-Password");
