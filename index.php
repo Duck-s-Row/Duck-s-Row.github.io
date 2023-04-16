@@ -3,6 +3,18 @@ session_start();
 include("connection/connection.php");
 include("Functions/Functions.php"); 
 $_SESSION;
+include("Functions/Functions.php");
+if (isset($_SESSION['user_id'])) {
+  $userid = $_SESSION['user_id'];
+  $query = "select * from users where user_id = $userid limit 1";
+  $result = mysqli_query($con, $query);
+  if (mysqli_num_rows($result) > 0) {
+    $user_data = mysqli_fetch_array($result);
+  } else {
+    echo "Error: " . mysqli_error($con);
+  }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -77,9 +89,6 @@ $_SESSION;
     </nav>
   </header>
   <!-- The End of Navbar section -->
-
-  <!-- logout button/link -->
-  <!-- <a href="Log_out">logout</a> -->
 
   <!-- The Start of Home Section -->
   <section class="home" id="home">
