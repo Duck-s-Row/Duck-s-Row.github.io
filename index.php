@@ -1,22 +1,8 @@
 <?php
 session_start();
 include("connection/connection.php");
-<<<<<<< HEAD
 include("Functions/Functions.php"); 
 $_SESSION;
-=======
-include("Functions/Functions.php");
-if (isset($_SESSION['user_id'])) {
-  $userid = $_SESSION['user_id'];
-  $query = "select * from users where user_id = $userid limit 1";
-  $result = mysqli_query($con, $query);
-  if (mysqli_num_rows($result) > 0) {
-    $user_data = mysqli_fetch_array($result);
-  } else {
-    echo "Error: " . mysqli_error($con);
-  }
-}
->>>>>>> d611368c170e82197ac3ceb0319f9f0d18f18f34
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +44,7 @@ if (isset($_SESSION['user_id'])) {
           <?php if (isset($_SESSION['user_id'])) : ?>
             <div class="user-info">
               <img src="" alt="profile-image">
-              <h2><?php echo $user_data['Fname'] . " " . $user_data['Lname']; ?></h2>
+              <!-- <h2><?php echo $user_data['Fname'] . " " . $user_data['Lname']; ?></h2> -->
             </div>
             <hr>
 

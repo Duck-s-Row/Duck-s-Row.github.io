@@ -1,5 +1,94 @@
-<!DOCTYPE html>
+<?php
 
+session_start();
+$error = array();
+
+// include("../../connection/connection.php");
+require "../func.php";
+// require "mail.php";
+
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpassword = "";
+$dbname = "ducks_row";
+
+if(!$con = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname))
+{
+    die("failed to connect to database");
+}
+
+	// if(!$con = mysqli_connect("localhost","root","","test")){
+
+	// 	die("could not connect");
+	// }
+
+	$mode = "enter_code";
+	if(isset($_GET['mode'])){
+		$mode = $_GET['mode'];
+	}
+
+    	//something is posted
+	if(count($_POST) > 0){
+
+		switch ($mode) {
+            case 'enter_code':
+				// code...
+				$code = $_POST['code'];
+				$result = is_code_correct($code);
+                
+
+				if($result == "the code is correct"){
+
+                    $_SESSION['forgot']['code'] = $code;
+                    header("Location: ../page 5/forget5.php");
+                    die;
+				}else{
+					$error[] = $result;
+				}
+				break;
+
+				
+		}
+    }
+
+    function is_code_correct($code){
+		global $con;
+
+		$code = addslashes($code);
+		// $expire = time();
+		$email = addslashes($_SESSION['forgot']['email']);
+
+		$query = "select * from codes where code = '$code' && email = '$email' order by id desc limit 1";
+		$result = mysqli_query($con,$query);
+		if($result){
+
+			// if(mysqli_num_rows($result) > 0)
+			// {
+				return "the code is correct";
+
+				// $row = mysqli_fetch_assoc($result);
+				// if($row['expire'] > $expire){
+
+				// 	return "the code is correct";
+				// }
+                // else{
+				// 	return "the code is expired";
+				// }
+
+			// }else{
+			// 	return "the code is incorrect";
+			// }
+		}
+
+		return "the code is incorrect";
+	}
+
+
+?>
+
+
+
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -8,30 +97,65 @@
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <div class="head">
-            <h1>Forget Password</h1>
-            <span>A code has been sent to your E-mail. Enter that code here</span>
-        </div>
-    </header>
-    <section class="forget-password-ways">
-        <h1 class="enter">Enter Code</h1>
-        <div class="code">   
-            <input type="text" maxlength="1">
-            <input type="text" maxlength="1">
-            <input type="text" maxlength="1" class="space">
-            <input type="text" maxlength="1" >
-            <input type="text" maxlength="1">
-            <input type="text" maxlength="1">
-        </div>
-        <a href="#" class="again">send code again?</a>
-        <div>
-            <button class="cont" onclick="pageRedirect()">continue</button>
-        </div>
-    </section>
-    <footer class="logo">
-        <img src="../images/pngfind.com-duckling-png-5872453(Y).png" width="90" height="55"/>
-    </footer>
+
+
+
+    <?php 
+
+    switch ($mode) {
+
+        case 'enter_code':
+            // code...
+            ?>
+            <header>
+                <div class="head">
+                    <h1>Forget Password</h1>
+                    <span>A code has been sent to your E-mail. Enter that code here</span>
+                </div>
+            </header>
+
+            <!-- form -->
+            <form method="post" action="forget4.php?mode=enter_code">
+                <section class="forget-password-ways">
+                    <h1 class="enter">Enter Code</h1>
+                    <div class="code">   
+                        <!--  new input ... handle css -->
+                        <input type="text" name="code" placeholder="Enter Code" />
+                        <!-- <input type="text" maxlength="1">
+                        <input type="text" maxlength="1">
+                        <input type="text" maxlength="1" class="space">
+                        <input type="text" maxlength="1" >
+                        <input type="text" maxlength="1">
+                        <input type="text" maxlength="1"> -->
+                    </div>
+
+                        <!-- new button submit -->
+                    <input type="submit" name="send" value="continue">
+
+                    <!-- <a href="#" class="again">send code again?</a> -->
+
+                    <!-- <div>
+                        
+                        <button class="cont" onclick="pageRedirect()">continue</button>
+                    </div> -->
+                </section>
+            </form>
+
+
+            <footer class="logo">
+                <img src="../images/pngfind.com-duckling-png-5872453(Y).png" width="90" height="55"/>
+            </footer>
+            <?php
+            break;
+        
+        default:
+            // code...
+            break;
+    }
+
+?>
+
+    
     <script>
         const inputs = document.querySelectorAll(".code input");
         inputs.forEach((input, index) => {
@@ -73,9 +197,10 @@
             });
             console.log(otp);
         }
-        function pageRedirect() {
-            window.location.href = "../page 5/forget5.php";
-        }
+
+        // function pageRedirect() {
+        //     window.location.href = "../page 5/forget5.php";
+        // }
     </script>
 </body>
 </html>
