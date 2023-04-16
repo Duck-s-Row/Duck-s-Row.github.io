@@ -2,7 +2,6 @@
 session_start();
 include("../connection/connection.php");
 include("../Functions/Functions.php");
-  $_SESSION;
   $user_data = check_login($con);
 
 ?>

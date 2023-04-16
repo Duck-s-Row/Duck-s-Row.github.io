@@ -51,12 +51,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 </head>
 <body>
     <header>
-        
         <div class="head">
             <h1>LOGIN</h1>
             <span>You don't have an account? <a href="../Sign_UP/ThirdPage/regist.php">Signup</a></span>
         </div>
     </header>
+
     <form method="POST" class="login">
             <input type="text" placeholder="username" name="username">
 
@@ -74,9 +74,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             <a href="#"><img src="images/Rectangle 26hjgyugyu.png" width="40" height="40"/></a>
         </div>
     </form>
+
     <footer class="logo">
         <img src="images/pngfind.com-duckling-png-5872453(Y).png" width="90" height="55"/>
     </footer>
+
     <script>
         // Change the Password into text
         const showPassword = document.querySelector("#show-Password");
@@ -90,6 +92,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             this.classList.toggle("bi-eye");
         });
     </script>
+
 </body>
 
 </html>

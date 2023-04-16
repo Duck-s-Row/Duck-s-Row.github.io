@@ -1,6 +1,8 @@
 <?php
 session_start();
 include("connection/connection.php");
+// include("Functions/Functions.php"); 
+$_SESSION;
 include("Functions/Functions.php");
 if (isset($_SESSION['user_id'])) {
   $userid = $_SESSION['user_id'];
@@ -12,6 +14,7 @@ if (isset($_SESSION['user_id'])) {
     echo "Error: " . mysqli_error($con);
   }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +56,7 @@ if (isset($_SESSION['user_id'])) {
           <?php if (isset($_SESSION['user_id'])) : ?>
             <div class="user-info">
               <img src="" alt="profile-image">
-              <h2><?php echo $user_data['Fname'] . " " . $user_data['Lname']; ?></h2>
+              <!-- <h2><?php echo $user_data['Fname'] . " " . $user_data['Lname']; ?></h2> -->
             </div>
             <hr>
 
@@ -86,9 +89,6 @@ if (isset($_SESSION['user_id'])) {
     </nav>
   </header>
   <!-- The End of Navbar section -->
-
-  <!-- logout button/link -->
-  <!-- <a href="Log_out">logout</a> -->
 
   <!-- The Start of Home Section -->
   <section class="home" id="home">
