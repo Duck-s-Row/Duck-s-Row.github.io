@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("connection/connection.php");
-include("Functions/Functions.php"); 
+// include("Functions/Functions.php"); 
 $_SESSION;
 include("Functions/Functions.php");
 if (isset($_SESSION['user_id'])) {

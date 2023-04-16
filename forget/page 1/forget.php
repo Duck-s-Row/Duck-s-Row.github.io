@@ -72,7 +72,8 @@ if(!$con = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname))
 		//send email here
 
 		// send_mail($email,'Password reset',"Your code is " . $code);
-        mail($email,"password reset","Your code is " . $code, $headers);
+        mail($email,"password reset","Your code is " . $code);
+
 	}
     
     
