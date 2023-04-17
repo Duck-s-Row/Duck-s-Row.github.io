@@ -86,7 +86,7 @@ if(isset($_GET['mode'])){
                         <div class="content">
                             <div class="newpass">
                                 <input type="password" placeholder="New password" name="password"/><br>
-                                <input type="password" placeholder="Confirm new password"  name="password2"/>
+                                <input type="password" placeholder="Confirm new password"  name="password2"/><br>
                                 
                                 <!-- new button submit -->
                                 <input type="submit" value="confirm">
