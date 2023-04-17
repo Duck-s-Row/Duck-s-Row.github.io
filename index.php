@@ -1,9 +1,7 @@
 <?php
 session_start();
-include("connection/connection.php");
-// include("Functions/Functions.php"); 
-$_SESSION;
-include("Functions/Functions.php");
+require("connection/connection.php");
+require("Functions/Functions.php");
 if (isset($_SESSION['user_id'])) {
   $userid = $_SESSION['user_id'];
   $query = "select * from users where user_id = $userid limit 1";
