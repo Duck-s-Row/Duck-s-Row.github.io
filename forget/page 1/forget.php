@@ -111,7 +111,7 @@ if(!$con = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname))
 
                 <div class="email">
                     <form action="forget.php?mode=enter_email" method = "post"> 
-                        <input type="email" placeholder="E-mail" name="email" />
+                        <input type="email" placeholder="E-mail" name="email" /><br>
 
                         <!-- new button submit -->
                         <input type="submit" name="send" value="send">

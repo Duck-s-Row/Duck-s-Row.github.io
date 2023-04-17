@@ -120,7 +120,7 @@ if(!$con = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname))
                     <h1 class="enter">Enter Code</h1>
                     <div class="code">   
                         <!--  new input ... handle css -->
-                        <input type="text" name="code" placeholder="Enter Code" />
+                        <input type="text" name="code" placeholder="Enter Code" /><br>
                         <!-- <input type="text" maxlength="1">
                         <input type="text" maxlength="1">
                         <input type="text" maxlength="1" class="space">

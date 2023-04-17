@@ -87,19 +87,20 @@ section {
 .disabled{
 	opacity: 0.5;
 }
-.cont{
-	margin-top: 20px;
-	color: black;
-	background-color: #FEE715;
-	width: 200px;
-    height: 60px;
-	border-radius: 30px;
-	font-size: 25px;
-	font-family: 'ABeeZee', sans-serif;
-	transition: 0.7s ease;
+input[type="submit"] {
+    width: 10%;
+    height: 50px;
+    background: #FEE715;
+    border-radius: 30px;
+    margin-top: 30px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+    margin-right: 45%;
+    margin-left: 45%;
+    transition: 0.5s ease;
 }
-.cont:hover{
-	margin-top: 30px;
+input[type="submit"]:hover {
+    margin-top: 30px;
 	color: rgb(0, 0, 0);
 	background-color: #ffffff;
 	transform: scale(1.1);
