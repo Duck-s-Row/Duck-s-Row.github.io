@@ -5,7 +5,7 @@ $error = array();
 
 // include("../../connection/connection.php");
 require "../func.php";
-// require "mail.php";
+
 
 $dbhost = "localhost";
 $dbuser = "root";
@@ -17,10 +17,6 @@ if(!$con = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname))
     die("failed to connect to database");
 }
 
-// if(!$con = mysqli_connect("localhost","root","","test")){
-
-// 	die("could not connect");
-// }
 
 $mode = "enter_password";
 if(isset($_GET['mode'])){

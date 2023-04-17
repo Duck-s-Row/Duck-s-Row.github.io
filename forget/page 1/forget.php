@@ -1,11 +1,14 @@
 ﻿<?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'phpmailer/src/Exception.php';
+require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/SMTP.php';
+
 session_start();
 $error = array();
-
-// include("../../connection/connection.php");
-require "../func.php";
-// require "mail.php";
 
 $mode = "enter_email";
 if(isset($_GET['mode'])){
@@ -21,15 +24,8 @@ if(!$con = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname))
 {
     die("failed to connect to database");
 }
-	// if(!$con = mysqli_connect("localhost","root","","test")){
-
-	// 	die("could not connect");
-	// }
 
 
-
-
-    
 	//something is posted
 	if(count($_POST) > 0){
 
@@ -71,10 +67,64 @@ if(!$con = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname))
 
 		//send email here
 
-		// send_mail($email,'Password reset',"Your code is " . $code);
-        mail($email,"password reset","Your code is " . $code);
+		send_mail($email,'Password reset',"Your code is " . $code);
+        // mail($email,"password reset","Your code is " . $code);
 
 	}
+
+
+    function valid_email($email){
+		global $con;
+
+		$email = addslashes($email);
+
+		$query = "select * from users where email = '$email' limit 1";		
+		$result = mysqli_query($con,$query);
+		if($result){
+			if(mysqli_num_rows($result) > 0)
+			{
+				return true;
+ 			}
+		}
+
+		return false;
+
+	}
+
+    function send_mail($recipient,$subject,$message)
+    {
+
+    $mail = new PHPMailer(true);
+
+    $mail->IsSMTP();
+    $mail->Host ='smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'omareidd62@gmail.com';
+    $mail->Password = 'fkyrgmxjszqzldwf';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port = 465;
+
+    $mail->setFrom('omareidd62@gmail.com');
+
+    $mail->addAddress($recipient);
+    
+    $mail->isHTML(true);
+
+    $mail->Subject = $subject;
+    $mail->Body = $message;
+
+    $mail->send();
+
+    echo 
+    "
+    <script>
+    alert('sent successfully);
+    document.location.href = 'index.php';
+    </script>
+    ";
+    
+
+}
     
     
 ?>
@@ -135,13 +185,6 @@ if(!$con = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname))
         }
 
 ?>
-
-    <!-- <script>
-        function pageRedirect() {
-            window.location.href = "../page 4/forget4.php";
-        }  
-    </script> -->
-
 
 </body>
 </html>
