@@ -5,7 +5,7 @@ $error = array();
 
 // include("../../connection/connection.php");
 require "../func.php";
-// require "mail.php";
+
 
 $dbhost = "localhost";
 $dbuser = "root";
@@ -17,10 +17,6 @@ if(!$con = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname))
     die("failed to connect to database");
 }
 
-// if(!$con = mysqli_connect("localhost","root","","test")){
-
-// 	die("could not connect");
-// }
 
 $mode = "enter_password";
 if(isset($_GET['mode'])){
@@ -90,7 +86,7 @@ if(isset($_GET['mode'])){
                         <div class="content">
                             <div class="newpass">
                                 <input type="password" placeholder="New password" name="password"/><br>
-                                <input type="password" placeholder="Confirm new password"  name="password2"/>
+                                <input type="password" placeholder="Confirm new password"  name="password2"/><br>
                                 
                                 <!-- new button submit -->
                                 <input type="submit" value="confirm">

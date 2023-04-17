@@ -5,7 +5,6 @@ $error = array();
 
 // include("../../connection/connection.php");
 require "../func.php";
-// require "mail.php";
 
 $dbhost = "localhost";
 $dbuser = "root";
@@ -17,10 +16,7 @@ if(!$con = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname))
     die("failed to connect to database");
 }
 
-	// if(!$con = mysqli_connect("localhost","root","","test")){
 
-	// 	die("could not connect");
-	// }
 
 	$mode = "enter_code";
 	if(isset($_GET['mode'])){
@@ -65,19 +61,7 @@ if(!$con = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname))
 			// if(mysqli_num_rows($result) > 0)
 			// {
 				return "the code is correct";
-
-				// $row = mysqli_fetch_assoc($result);
-				// if($row['expire'] > $expire){
-
-				// 	return "the code is correct";
-				// }
-                // else{
-				// 	return "the code is expired";
-				// }
-
-			// }else{
-			// 	return "the code is incorrect";
-			// }
+                
 		}
 
 		return "the code is incorrect";
@@ -120,7 +104,7 @@ if(!$con = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname))
                     <h1 class="enter">Enter Code</h1>
                     <div class="code">   
                         <!--  new input ... handle css -->
-                        <input type="text" name="code" placeholder="Enter Code" />
+                        <input type="text" name="code" placeholder="Enter Code" /><br>
                         <!-- <input type="text" maxlength="1">
                         <input type="text" maxlength="1">
                         <input type="text" maxlength="1" class="space">

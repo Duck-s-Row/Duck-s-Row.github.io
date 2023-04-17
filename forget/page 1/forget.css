@@ -59,19 +59,19 @@ input[type="email"] {
     font-size: 20px;
     padding-left: 15px;
 }
-button {
-    width: 200px;
+input[type="submit"] {
+    width: 30%;
     height: 50px;
     background: #FEE715;
     border-radius: 30px;
     margin-top: 30px;
     font-family: 'Bebas Neue', cursive;
     font-size: 30px;
-    align-self: center;
-    justify-self: center;
+    margin-right: 35%;
+    margin-left: 35%;
     transition: 0.5s ease;
 }
-button:hover {
+input[type="submit"]:hover {
     margin-top: 30px;
 	color: rgb(0, 0, 0);
 	background-color: #ffffff;

@@ -25,7 +25,6 @@
             <button class="chooice active"><a href="#"><i class="fa-regular fa-user"></i>&nbsp;Profile</a></button>
             <button class="chooice"><a href="#"><i class="fa-solid fa-location-dot"></i>&nbsp; My Plans</a></button>
             <button class="chooice" onclick="edit_info()"><a href="#"><i class="fa-solid fa-pen"></i>&nbsp;Edit profile</a></button>
-            <button class="chooice"><a href="#"><i class="fa-regular fa-heart"></i>&nbsp;Favorites</a></button>
         </div>
         <div class="details_info" id="details_info">
             <div class="details"><h2><strong id="det">details</strong></h2></div>
@@ -64,6 +63,12 @@
                 <div class="card">
 
                 </div>
+                <div class="card">
+
+                </div>
+                <div class="card2">
+                    <a href="/Hangout/hangout.php"><h2>Add New Plan <span>+</span></h2></a>
+                </div>
         </div>
 
         <!-- Edit Profile -->
@@ -97,11 +102,6 @@
                 <input class="email" type="email" value="ducksrow100@gmail.com"><br>
                 <button type="submit">Save</button>
             </form>
-        </div>
-
-        <!-- Favorites -->
-        <div class="favorites" id="favorites">
-            <div class="details"><h2><strong>Favorites</strong></h2></div>
         </div>
     </section>
     <script src="app.js"></script>
