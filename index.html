@@ -127,18 +127,46 @@ if (isset($_SESSION['user_id'])) {
 
   <!-- The Start of About Us section -->
   <section class="about_us" id="about_us">
-    <img src="home/imgs/about_us.jpg" alt="about-us-Photo">
+    <div class="left">
+      <h1>What Can We Offer For You</h1>
+      <form method="post">
+        <input type="text" placeholder="Your name"><br>
+        <input type="email" placeholder="Your E-mail"><br>
+        <textarea name="" id="" cols="70" rows="10" placeholder="Enter your message"></textarea><br>
+        <input type="submit" value="SEND">
+      </form>
+    </div>
     <div class="content">
       <h3>About <span>Duck’s Row</span></h3>
       <p>
         Duck's Row is trying to organize your time so you can have fun in various locations while staying inside the limits of your preferred spending limit. <br>We need you to enjoy yourself and go to your favourite destinations.
       </p>
+      <div class="icons">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+      <div class="contact">
+        <h3><span>contact</span> us</h3>
+        <p>Telephone : <a href="tel:+201556892517">01556892517</a><br>
+          Email : <a href="mailto:ducksrow100@gmail.com">ducksrow100@gmail.com</a><br>
+        </p>
+      </div>
+      <div class="img1">
+        <img src="home/imgs/pyramids.png" alt="about-us-Photo" width="140" height="120">
+      </div>
+      <!-- <div class="img2">
+        <img src="home/imgs/gold-ducks.png" alt="logo" width="60" height="50">
+      <a href="Privacy&Policy/Privacy&Policy.html" class="privacy">Go to Privacy & Policy</a>
+      </div> -->
     </div>
+    
   </section>
+  
   <!-- The End of About Us section -->
-
+  <!-- <hr color="#9d8e04"> -->
   <!-- The Start of Contact Us section -->
-  <section class="contact_us" id="contact_us">
+  <!-- <section class="contact_us" id="contact_us">
     <div class="left">
       <img src="home/imgs/gold-ducks.png" alt="logo">
       <h3>Duck’s ROW</h3>
@@ -150,7 +178,7 @@ if (isset($_SESSION['user_id'])) {
         <a href="Privacy&Policy/Privacy&Policy.html" class="privacy">Go to Privacy & Policy</a>
       </p>
     </div>
-  </section>
+  </section> -->
   <!-- The End of Contact Us section -->
 
   <!-- The End of the page -->
