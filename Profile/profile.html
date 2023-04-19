@@ -22,40 +22,63 @@
                 <h2>Kareem2003</h2>
                 <h3>kareemabdallah@gmail.com</h3>
             </div>
-            <button class="chooice active"><a href="#"><i class="fa-regular fa-user"></i>&nbsp;Profile</a></button>
+            <button class="chooice active" onclick="edit_info()"><a href="#"><i class="fa-regular fa-user"></i>&nbsp;Profile</a></button>
             <button class="chooice"><a href="#"><i class="fa-solid fa-location-dot"></i>&nbsp; My Plans</a></button>
-            <button class="chooice" onclick="edit_info()"><a href="#"><i class="fa-solid fa-pen"></i>&nbsp;Edit profile</a></button>
+            <!-- <button class="chooice" onclick="edit_info()"><a href="#"><i class="fa-solid fa-pen"></i>&nbsp;Edit profile</a></button> -->
+            <button class="chooice"><a href="#"><i class="fa-solid fa-lock"></i>&nbsp;Change Password</a></button>
+            <button class="chooice"><a href="#"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Logout</a></button>
         </div>
+
+        <!-- start of profile details -->
         <div class="details_info" id="details_info">
             <div class="details"><h2><strong id="det">details</strong></h2></div>
             <form action="" method="post">
-                <label>First Name : </label>
-                <input id="firstName" class="firstName" type="text" value="Kareem" disabled="disabled" name="firstName">
-        
-                <label class="llastName">Last Name : </label>
-                <input id="lastName" class="lastName" type="text" value="Abdallah" disabled="disabled" name="lastName"><br>
-                
-                <label class="lnational">Nationality : </label>
-                <input id="nationality" class="nationality" type="text" value="Egyptian" disabled="disabled" name="nationality"><br>
-                
-                <label class="lphone">Mobile Phone :</label>
-                <input id="phone" class="phone" type="tel" value="01556892517" disabled="disabled" name="phone"><br>
-                
-                <div class="gender">
-                    <label>Gender : </label>
-                    <label class="gmale">Male</label>
-                    <input id="male" class="male" type="radio" checked="checked" disabled="disabled" name="gender">
-            
-                    <label class="gfemale">Female</label>
-                    <input id="female" class="female" type="radio" disabled="disabled" name="gender"><br>
-                </div>
-                <label class="ldate">Date of birth : </label>
-                <input id="date" class="date" type="date" disabled="disabled"><br>
+                <!-- first row -->
+                <div class="c1">
+                    <div class="c1f">
+                        <label>First Name : </label><br>
+                        <input id="firstName" class="firstName" type="text" value="Kareem"  name="firstName">
+                    </div>
 
-                <label class="lemail">Your Email : </label>
-                <input id="email" class="email" type="email" value="ducksrow100@gmail.com" disabled="disabled"><br>
+                    <div class="c1l">
+                        <label class="llastName">Last Name : </label><br>
+                        <input id="lastName" class="lastName" type="text" value="Abdallah"  name="lastName">
+                    </div>
+                </div>
+                <!-- end of the first row -->
+
+                <!-- second row -->
+                <div class="c2">
+                    <label class="lemail">Your Email : </label><br>
+                    <input class="email" type="email" value="ducksrow100@gmail.com">
+                </div>              
+                <!-- end of second row -->
+
+                <!-- third row -->
+                <div class="c3">
+                    <div class="c3f">
+                        <label class="lphone">Phone Number: </label><br>
+                        <input id="phone" class="phone" type="tel" value="01556892517"  name="phone">
+                    </div>
+                    
+                    <div class="gender">
+                        <label>Gender : </label>
+                        <div>
+                            <label class="gmale">Male</label>
+                            <input id="male" class="male" type="radio" checked="checked"  name="gender">
+                        </div>
+                        <div>
+                            <label class="gfemale">Female</label>
+                            <input id="female" class="female" type="radio"  name="gender">
+                        </div> 
+                    </div>
+                </div>
+                <!-- end of third row -->
+
+                <input type="submit" value="Update">
             </form>
         </div>
+        <!-- end of profile details -->
 
         <!-- My Plans -->
         <div class="planes" id="planes">
@@ -70,9 +93,12 @@
                     <a href="/Hangout/hangout.php"><h2>Add New Plan <span>+</span></h2></a>
                 </div>
         </div>
+        <!-- change password -->
+        <div class="pass" id="pass">
 
+        </div>
         <!-- Edit Profile -->
-        <div class="edit_info" id="edit_info">
+        <!-- <div class="edit_info" id="edit_info">
             <div class="details"><h2><strong>Edit details</strong></h2></div>
             <form action="" method="post">
                 <label>First Name : </label>
@@ -81,8 +107,6 @@
                 <label class="llastName">Last Name : </label>
                 <input class="lastName" type="text" value="Abdallah" name="lastName"><br>
                 
-                <label class="lnational">Nationality : </label>
-                <input class="nationality" type="text" value="Egyptian" name="nationality"><br>
                 
                 <label class="lphone">Mobile Phone :</label>
                 <input class="phone" type="tel" value="01556892517" name="phone"><br>
@@ -95,14 +119,11 @@
                     <label class="gfemale">Female</label>
                     <input class="female" type="radio" name="gender"><br>
                 </div>
-                <label class="ldate">Date of birth : </label>
-                <input class="date" type="date" id="myDate"><br>
-
                 <label class="lemail">Your Email : </label>
                 <input class="email" type="email" value="ducksrow100@gmail.com"><br>
                 <button type="submit">Save</button>
             </form>
-        </div>
+        </div> -->
     </section>
     <script src="app.js"></script>
     <!-- <script src="../js/all.min.js"></script>
