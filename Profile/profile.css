@@ -14,18 +14,18 @@
     flex-direction: row;
 }
 
+
+/* start of user&choices */
 img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
 }
-
 .user_choices{
     height: 90vh;
     width: 30%;
     margin: 2% 7% 2% 2%;
 }
-
 #home {
     text-decoration: none;
     background-color: #101820;
@@ -35,16 +35,13 @@ img {
     padding: 7px;
     margin: 10px;
 }
-
 #home span {
     font-size: 20px;
 }
-
 #circle-user{
     width: 150px;
     height: 150px;
 }
-
 .user {
     height: 300px;
     background-color: rgba(254, 231, 21, 1);
@@ -76,7 +73,6 @@ img {
     border: 0;
     margin-top: 20px;
 }
-
 button a{
     text-decoration: none;
     color: black;  
@@ -85,10 +81,12 @@ button a{
     line-height: 28px;
     letter-spacing: 0.1em;
 }
-
 button a:hover {
     color: rgb(204, 185, 21);
 }
+/* end of user&choices */
+
+
 .details_info,.planes,.pass{
     display: block;
     width: 60%;
@@ -97,7 +95,6 @@ button a:hover {
     background-color: white;
     margin: 2%;
 }
-
 .planes , .pass{
     display: none;
 }
@@ -113,6 +110,9 @@ button a:hover {
     letter-spacing: 0.1em;
     border-radius: 20px;
 }
+
+
+/* start of user info */
 .c1{
     display: flex;
     margin: 50px 0 60px 80px;
@@ -155,6 +155,10 @@ form input[type="text"],input[type="email"],input[type="tel"]{
 label {
     font-weight: 700;
 }
+/* end of user info */
+
+
+/* start of my plans */
 .card{
     height: 100px;
     width: 80%;
@@ -186,3 +190,39 @@ label {
 .card2 a h2:hover{
     color: rgb(204, 185, 21);
 }
+/* end of my plans */
+
+
+/* start of Change Password */
+.pass input{
+    font-size: 20px;
+    border: 1px solid rgb(201, 182, 14);
+    border-radius: 10px;
+    padding: 7px;
+    width: 280px;
+}
+.pass input[type="submit"]{
+    width: 30%;
+    height: 50px;
+    color: black;
+    background-color: rgba(254, 231, 21, 1);
+    border: none;
+    font-weight: 600;
+    font-size: 24px;
+    border-radius: 20px;
+    margin: 80px 35% 0 35%;
+}
+.pass .old{
+    margin: 100px 0 0 80px;
+}
+.pass .new{
+    margin: 40px 0 0 80px;
+    display: flex;
+}
+.pass .new .rnew{
+    margin-left: 120px;
+}
+.pass img{
+    margin-left: 80%;
+}
+/* end of Change Password */

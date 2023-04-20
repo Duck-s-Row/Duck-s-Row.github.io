@@ -31,7 +31,7 @@
 
         <!-- start of profile details -->
         <div class="details_info" id="details_info">
-            <div class="details"><h2><strong id="det">details</strong></h2></div>
+            <div class="details"><h2><strong id="det">Details</strong></h2></div>
             <form action="" method="post">
                 <!-- first row -->
                 <div class="c1">
@@ -80,7 +80,8 @@
         </div>
         <!-- end of profile details -->
 
-        <!-- My Plans -->
+
+        <!-- start of My Plans -->
         <div class="planes" id="planes">
             <div class="details"><h2><strong>My Plans</strong></h2></div>
                 <div class="card">
@@ -93,10 +94,39 @@
                     <a href="/Hangout/hangout.php"><h2>Add New Plan <span>+</span></h2></a>
                 </div>
         </div>
-        <!-- change password -->
-        <div class="pass" id="pass">
+        <!-- end of My Plans -->
 
+
+        <!-- start of change password -->
+        <div class="pass" id="pass">
+            <div class="details">
+                <h2><strong>Change Password</strong></h2>
+            </div>
+            <form action="" method="post">
+                <div class="old">
+                    <label>Old Password : </label><br>
+                    <input id="old_pass" class="old_pass" type="password" name="old_pass">
+                </div>
+
+                <div class="new">
+                    <div>
+                        <label>New Password : </label><br>
+                        <input id="new_pass" class="new_pass" type="password" name="new_pass">
+                    </div>
+                    <div class="rnew">
+                        <label>R-New Password : </label><br>
+                        <input id="renew_pass" class="renew_pass" type="password" name="renew_pass">
+                    </div>                  
+                </div>
+                <input type="submit" value="Save">
+            </form>
+            <div>
+                <img src="/home/imgs/pyramids (1).png" alt="">
+            </div>               
         </div>
+        <!-- end of change password -->
+
+
         <!-- Edit Profile -->
         <!-- <div class="edit_info" id="edit_info">
             <div class="details"><h2><strong>Edit details</strong></h2></div>
