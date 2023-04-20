@@ -450,6 +450,7 @@ header {
     padding: 10px;
 }
 .about_us .left input[type="submit"]{
+    cursor: pointer;
     background-color: #101820;
     color: #FEE715;
     width: 20%;
@@ -460,8 +461,6 @@ header {
 .about_us .left input[type="submit"]:hover{
     background-color: white;
     color: #101820;
-    width: 20%;
-    border-radius: 10px;
 }
 .about_us h3{
     font-family: 'Bebas Neue', cursive;
@@ -470,7 +469,7 @@ header {
     font-weight: 400;
     font-size: 50px;
     line-height: 77px;
-    margin-left: 125px;
+    /* margin-left: 125px; */
 }
 .about_us h3 span {
     font-family: 'Bebas Neue', cursive;
@@ -482,7 +481,7 @@ header {
     padding: 0%;
     color: white;
     margin-right: 30%;
-    margin-left: 20%;
+    /* margin-left: 20%; */
 }
 .about_us a{
     color: #FEE715;
@@ -492,7 +491,7 @@ header {
 .about_us .icons{
     margin-top: 20px;
     margin-bottom: 30px;
-    margin-left: 36%;
+    /* margin-left: 36%; */
 }
 .about_us .left h3{
     display: inline;
@@ -504,7 +503,7 @@ header {
     font-size: 35px;
     font-weight: 400;
     line-height: 77px;
-    margin-left: 35%;
+    /* margin-left: 35%; */
 }
 .about_us .contact a{
     font-size: 17px;
@@ -512,8 +511,32 @@ header {
 .about_us a:hover{
     color: #9d8e04;
 }
-.about_us .img1{
-    margin-left: 80%;
+footer .img1{
+    margin-top: -10%;
+}
+footer .img2{
+    margin-top: -5%;
+}
+footer .img2 img{
+    width: 70px;
+}
+footer .img1 a{
+    display: block;
+    text-decoration: none;
+    color: #FEE715;
+    font-size: 13px;
+}
+footer .img1 a:hover{
+    color: #9d8e04;
+}
+
+footer {
+    background-color: #101820;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 40px;
 }
 @media (max-width: 1020px){
     .cards {

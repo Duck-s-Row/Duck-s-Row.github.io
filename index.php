@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 require("connection/connection.php");
 require("Functions/Functions.php");
@@ -6,7 +6,7 @@ if (isset($_SESSION['user_id'])) {
 $user_data=Get_user_data($con);
 }
 
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -123,9 +123,9 @@ $user_data=Get_user_data($con);
     <div class="left">
       <h1>What Can We Offer For You</h1>
       <form method="post">
-        <input type="text" placeholder="Your name"><br>
-        <input type="email" placeholder="Your E-mail"><br>
-        <textarea name="" id="" cols="70" rows="10" placeholder="Enter your message"></textarea><br>
+        <input type="text" placeholder="Your name">
+        <input type="email" placeholder="Your E-mail">
+        <textarea name="" id="" cols="70" rows="10" placeholder="Enter your message"></textarea>
         <input type="submit" value="SEND">
       </form>
     </div>
@@ -145,17 +145,21 @@ $user_data=Get_user_data($con);
           Email : <a href="mailto:ducksrow100@gmail.com">ducksrow100@gmail.com</a><br>
         </p>
       </div>
-      <div class="img1">
-        <img src="home/imgs/pyramids.png" alt="about-us-Photo" width="140" height="120">
-      </div>
-      <!-- <div class="img2">
-        <img src="home/imgs/gold-ducks.png" alt="logo" width="60" height="50">
-      <a href="Privacy&Policy/Privacy&Policy.html" class="privacy">Go to Privacy & Policy</a>
-      </div> -->
+
+
     </div>
     
   </section>
-  
+  <footer>
+      <div class="img2">
+        <img src="home/imgs/gold-ducks.png" alt="logo" width="60" height="50">
+      </div>
+      
+      <div class="img1">
+        <a href="Privacy&Policy/Privacy&Policy.html" class="privacy">Go to Privacy & Policy</a>
+        <img src="home/imgs/pyramids.png" alt="about-us-Photo" width="140" height="120">
+      </div>
+  </footer>
   <!-- The End of About Us section -->
   <!-- <hr color="#9d8e04"> -->
   <!-- The Start of Contact Us section -->

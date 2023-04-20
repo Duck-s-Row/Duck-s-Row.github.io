@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'ABeeZee', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+}

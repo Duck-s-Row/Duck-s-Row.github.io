@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'ABeeZee', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #101820;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h2 {
+    color: #FEE715;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+	font-size: 90px;
+}
+
+form {
+    width: 50%;
+    /* background-color: red; */
+    padding: 50px 0 70px;
+    color: #FEE715;
+    border: 3px solid #FEE715;
+    border-radius: 15px;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+form>div {
+    width: 70%;
+}
+
+label{
+    margin-top: 30px;
+    display: block;
+    font-size: 20px;
+}
+
+input {
+    width: 100%;
+    margin: auto;
+    padding: 7px 10px;
+    margin: 10px 0;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    width: 20%;
+    height: 40px;
+    cursor: pointer;
+    background-color: #101820;
+    border: 5px double #FEE715;
+    color: #FEE715;
+    transition: 0.5s ease-out;
+}
+
+input[type="submit"]:hover {
+    transform: scale(1.1);
+    background-color: #FEE715;
+    border: none;
+    color: #101820;
+}
