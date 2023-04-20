@@ -4,19 +4,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="dashboard.css">
     <title>Dashboard</title>
 </head>
 <body>
     <header>
         <nav>
+            <button onclick="pageRedirect()">My Site</button>
             <ul>
-                <li><a href="">Home</a></li>
+                <li class="active"><a href="#dashboard">dashboard</a></li>
                 <li><a href="">Users</a></li>
                 <li><a href="">places</a></li>
                 <li><a href="">contact</a></li>
             </ul>
         </nav>
     </header>
+    <section class="dashboard" id="dashboard">
+        <h3>Hi, Welcome back</h3>
+        <div class="shortcut">
+            <div class="card">
+                <h2>Users</h2>
+                <i class="fa fa-user"></i>
+                <a href="">Navigate</a>
+            </div>
+            <div class="card">
+                <h2>Places</h2>
+                <i class="fa fa-location-dot"></i>
+                <a href="">Navigate</a>
+            </div>
+            <div class="card">
+                <h2>Contact</h2>
+                <i class="fa fa-phone"></i>
+                <a href="">Navigate</a>
+            </div>
+        </div>
+        <h2>Number of</h2>
+        <div class="shortcut">
+            <div class="card">
+                <h2>Sign ups</h2>
+                <div>
+                    <i class="fa fa-user"></i>
+                    <p>90</p>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Places</h2>
+                <div>
+                    <i class="fa fa-user"></i>
+                    <p>90</p>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Contact</h2>
+                <div>
+                    <i class="fa fa-user"></i>
+                    <p>90</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function pageRedirect() {
+            window.location.href = "../../index.php";
+        }
+    </script>
 </body>
 </html>
