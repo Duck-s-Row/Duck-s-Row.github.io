@@ -3,14 +3,7 @@ session_start();
 require("connection/connection.php");
 require("Functions/Functions.php");
 if (isset($_SESSION['user_id'])) {
-  $userid = $_SESSION['user_id'];
-  $query = "select * from users where user_id = $userid limit 1";
-  $result = mysqli_query($con, $query);
-  if (mysqli_num_rows($result) > 0) {
-    $user_data = mysqli_fetch_array($result);
-  } else {
-    echo "Error: " . mysqli_error($con);
-  }
+$user_data=Get_user_data($con);
 }
 
 ?>
