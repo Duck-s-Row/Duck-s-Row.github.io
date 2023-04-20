@@ -19,7 +19,7 @@ include("../Functions/Functions.php");
 <body>
     <!-- The Start of Navbar section -->
     <header>
-        <div class="logo"><img src="../home/imgs/ducks.png" alt=""></div>
+        <div class="logo"><a href="../index.php"><img src="../home/imgs/ducks.png" alt=""></a></div>
         <div class="hamburger">
           <div class="line"></div>
           <div class="line"></div>
@@ -28,10 +28,10 @@ include("../Functions/Functions.php");
         <nav class="nav-bar">
           <ul>
             <li><a href="../index.php">Home</a></li>
-            <li><a href="Profile/profile.php">My plans</a></li>
+            <li><a href="../Profile/profile.php">My plans</a></li>
             <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
             <li><a href="#contact_us">About</a></li>
-            <li><a href="Profile/profile.php" class="profile">Profile</a></li>
+            <li><a href="../Profile/profile.php" class="profile">Profile</a></li>
           </ul>
         </nav>
        </header>
