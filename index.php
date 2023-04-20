@@ -1,4 +1,4 @@
-<!-- <?php
+ <?php
 session_start();
 require("connection/connection.php");
 require("Functions/Functions.php");
@@ -6,7 +6,7 @@ if (isset($_SESSION['user_id'])) {
 $user_data=Get_user_data($con);
 }
 
-?> -->
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
