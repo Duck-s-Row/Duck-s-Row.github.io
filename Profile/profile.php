@@ -2,10 +2,9 @@
 session_start();
 include("../connection/connection.php");
 include("../Functions/Functions.php");
-$user_data=check_login($con);
+$user_data = check_login($con);
 $user_id = $user_data['user_id'];
-if($_SERVER['REQUEST_METHOD']=='POST')
-{
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $fname = $_POST['firstName'];
     $lname = $_POST['lastName'];
     $gender = $_POST['gender'];
@@ -18,6 +17,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,6 +31,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
     <link rel="stylesheet" href="profilee.css">
     <title>Profile</title>
 </head>
+
 <body>
     <section class="main">
         <div class="user_choices">
@@ -44,23 +45,25 @@ if($_SERVER['REQUEST_METHOD']=='POST')
             <button class="chooice"><a href="#"><i class="fa-solid fa-location-dot"></i>&nbsp; My Plans</a></button>
             <!-- <button class="chooice" onclick="edit_info()"><a href="#"><i class="fa-solid fa-pen"></i>&nbsp;Edit profile</a></button> -->
             <button class="chooice"><a href="#"><i class="fa-solid fa-lock"></i>&nbsp;Change Password</a></button>
-            <button class="chooice" onclick="window.location.href = '../Log_out/logout.php';" ><a href="#"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Logout</a></button>
+            <button class="chooice" onclick="window.location.href = '../Log_out/logout.php';"><a href="#"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Logout</a></button>
         </div>
 
         <!-- start of profile details -->
         <div class="details_info" id="details_info">
-            <div class="details"><h2><strong id="det">Details</strong></h2></div>
+            <div class="details">
+                <h2><strong id="det">Details</strong></h2>
+            </div>
             <form action="" method="post">
                 <!-- first row -->
                 <div class="c1">
                     <div class="c1f">
                         <label>First Name : </label><br>
-                        <input id="firstName" class="firstName" type="text" value="<?php echo $user_data['Fname'] ?>"  name="firstName">
+                        <input id="firstName" class="firstName" type="text" value="<?php echo $user_data['Fname'] ?>" name="firstName">
                     </div>
 
                     <div class="c1l">
                         <label class="llastName">Last Name : </label><br>
-                        <input id="lastName" class="lastName" type="text" value="<?php echo $user_data['Lname'] ?>"  name="lastName">
+                        <input id="lastName" class="lastName" type="text" value="<?php echo $user_data['Lname'] ?>" name="lastName">
                     </div>
                 </div>
                 <!-- end of the first row -->
@@ -69,41 +72,27 @@ if($_SERVER['REQUEST_METHOD']=='POST')
                 <div class="c2">
                     <label class="lemail">Your Email : </label><br>
                     <input class="email" type="email" value="<?php echo $user_data['email'] ?>" readonly>
-                </div>              
+                </div>
                 <!-- end of second row -->
 
                 <!-- third row -->
                 <div class="c3">
                     <div class="c3f">
                         <label class="lphone">Phone Number: </label><br>
-                        <input id="phone" class="phone" type="tel" value="<?php echo $user_data['phone'] ?>"  name="phone" readonly>
+                        <input id="phone" class="phone" type="tel" value="<?php echo $user_data['phone'] ?>" name="phone" readonly>
                     </div>
-                    
-                    <?php if($user_data['gender']=="M"): ?>
+
                     <div class="gender">
                         <label>Gender : </label>
                         <div>
                             <label class="gmale">Male</label>
-                            <input id="male" class="male" type="radio" checked="checked" value="M"  name="gender">
+                            <input id="male" class="male" type="radio" value="M" name="gender">
                         </div>
                         <div>
                             <label class="gfemale">Female</label>
-                            <input id="female" class="female" type="radio" value="F"  name="gender">
-                        </div> 
-                    </div>
-                    <?php else:?>
-                    <div class="gender">
-                        <label>Gender : </label>
-                        <div>
-                            <label class="gmale">Male</label>
-                            <input id="male" class="male" type="radio" value="M"   name="gender">
+                            <input id="female" class="female" type="radio" value="F" name="gender">
                         </div>
-                        <div>
-                            <label class="gfemale">Female</label>
-                            <input id="female" class="female" type="radio" value="F" checked name="gender">
-                        </div> 
                     </div>
-                    <?php endif; ?>
                 </div>
                 <!-- end of third row -->
 
@@ -115,16 +104,20 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 
         <!-- start of My Plans -->
         <div class="planes" id="planes">
-            <div class="details"><h2><strong>My Plans</strong></h2></div>
-                <div class="card">
+            <div class="details">
+                <h2><strong>My Plans</strong></h2>
+            </div>
+            <div class="card">
 
-                </div>
-                <div class="card">
+            </div>
+            <div class="card">
 
-                </div>
-                <div class="card2">
-                    <a href="/Hangout/hangout.php"><h2>Add New Plan <span>+</span></h2></a>
-                </div>
+            </div>
+            <div class="card2">
+                <a href="/Hangout/hangout.php">
+                    <h2>Add New Plan <span>+</span></h2>
+                </a>
+            </div>
         </div>
         <!-- end of My Plans -->
 
@@ -148,13 +141,13 @@ if($_SERVER['REQUEST_METHOD']=='POST')
                     <div class="rnew">
                         <label>R-New Password : </label><br>
                         <input id="renew_pass" class="renew_pass" type="password" name="renew_pass">
-                    </div>                  
+                    </div>
                 </div>
                 <input type="submit" value="Save">
             </form>
             <div>
                 <img src="/home/imgs/pyramids (1).png" alt="">
-            </div>               
+            </div>
         </div>
         <!-- end of change password -->
 
@@ -188,8 +181,16 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         </div> -->
     </section>
     <script src="app.js"></script>
+    <script>
+        <?php if ($user_data['gender'] == "M") : ?>
+            let male = document.getElementById("male").setAttribute("checked","checked");
+        <?php else : ?>
+            let female = document.getElementById("female").setAttribute("checked","checked");
+        <?php endif; ?>
+    </script>
     <!-- <script src="../js/all.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js.map"></script> -->
 </body>
+
 </html>

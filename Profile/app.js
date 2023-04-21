@@ -5,7 +5,6 @@ let pass = document.getElementById("pass");
 let planes = document.getElementById("planes");
 let det = document.getElementById("det");
 
-
 chooice.forEach(button => {
     button.addEventListener("click", () => {
         resetlinks();
