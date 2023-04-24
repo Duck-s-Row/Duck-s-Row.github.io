@@ -15,6 +15,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         mysqli_stmt_execute($stmt_details);
         header('Location:profile.php');
     }
+    if ($_POST['Form_identifier'] == "update_password") {
+        $new_password = $_POST['new_pass'];
+        $hased_new_password = password_hash($new_password,PASSWORD_DEFAULT);
+        $update_password_query = "update users set password=? where user_id=$user_id";
+        $stmt_new_password = mysqli_prepare($con, $update_password_query);
+        mysqli_stmt_bind_param($stmt_new_password, "s", $hased_new_password);
+        mysqli_stmt_execute($stmt_new_password);
+        header('Location:profile.php');
+    }
 }
 ?>
 <!DOCTYPE html>
