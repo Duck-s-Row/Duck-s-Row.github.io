@@ -5,14 +5,16 @@ include("../Functions/Functions.php");
 $user_data = check_login($con);
 $user_id = $user_data['user_id'];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $fname = $_POST['firstName'];
-    $lname = $_POST['lastName'];
-    $gender = $_POST['gender'];
-    $update_query = "update users set Fname=? ,Lname=? ,gender=? where user_id=$user_id";
-    $stmt = mysqli_prepare($con, $update_query);
-    mysqli_stmt_bind_param($stmt, "sss", $fname, $lname, $gender);
-    mysqli_stmt_execute($stmt);
-    header('Location:profile.php');
+    if ($_POST['Form_identifier'] == "update_profile") {
+        $fname = $_POST['firstName'];
+        $lname = $_POST['lastName'];
+        $gender = $_POST['gender'];
+        $update_details_query = "update users set Fname=? ,Lname=? ,gender=? where user_id=$user_id";
+        $stmt_details = mysqli_prepare($con, $update_details_query);
+        mysqli_stmt_bind_param($stmt_details, "sss", $fname, $lname, $gender);
+        mysqli_stmt_execute($stmt_details);
+        header('Location:profile.php');
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -54,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <h2><strong id="det">Details</strong></h2>
             </div>
             <form action="" method="post">
+                <input type="hidden" name="Form_identifier" value="update_profile">
                 <!-- first row -->
                 <div class="c1">
                     <div class="c1f">
@@ -128,19 +131,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <h2><strong>Change Password</strong></h2>
             </div>
             <form action="" method="post">
+                <input type="hidden" name="Form_identifier" value="check_password">
                 <div class="old">
                     <label>Old Password : </label><br>
                     <input id="old_pass" class="old_pass" type="password" name="old_pass">
                 </div>
+                <input type="submit" value="check">
+            </form>
 
+            <form method="post">
+                <input type="hidden" name="Form_identifier" value="update_password">
                 <div class="new">
                     <div>
                         <label>New Password : </label><br>
-                        <input id="new_pass" class="new_pass" type="password" name="new_pass">
+                        <input id="new_pass" class="new_pass" type="password" name="new_pass" readonly>
                     </div>
                     <div class="rnew">
-                        <label>R-New Password : </label><br>
-                        <input id="renew_pass" class="renew_pass" type="password" name="renew_pass">
+                        <label>R-Enter New Password : </label><br>
+                        <input id="renew_pass" class="renew_pass" type="password" name="renew_pass" readonly>
                     </div>
                 </div>
                 <input type="submit" value="Save">
@@ -180,12 +188,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </form>
         </div> -->
     </section>
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_POST['Form_identifier'] == "check_password") {
+            $old_password = $_POST['old_pass'];
+            $check_password_query = "select password from users where user_id = $user_id limit 1";
+            $result_check = mysqli_query($con, $check_password_query);
+            $old_password_DB = mysqli_fetch_assoc($result_check);
+            if (password_verify($old_password, $old_password_DB['password'])) {
+                echo '<script> document.getElementById("renew_pass").removeAttribute("readonly"); </script>';
+                echo '<script> document.getElementById("new_pass").removeAttribute("readonly"); </script>';
+                echo "<script> document.getElementById('old_pass').setAttribute('value', '$old_password') </script>";
+            }
+            else
+            echo '<script>alert("Wrong Password\nPlease Re-Enter It")</script>';
+        }
+    }
+    ?>
     <script src="app.js"></script>
     <script>
         <?php if ($user_data['gender'] == "M") : ?>
-            let male = document.getElementById("male").setAttribute("checked","checked");
+            let male = document.getElementById("male").setAttribute("checked", "checked");
         <?php else : ?>
-            let female = document.getElementById("female").setAttribute("checked","checked");
+            let female = document.getElementById("female").setAttribute("checked", "checked");
         <?php endif; ?>
     </script>
     <!-- <script src="../js/all.min.js"></script>
