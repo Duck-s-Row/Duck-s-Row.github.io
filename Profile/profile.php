@@ -14,15 +14,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         mysqli_stmt_bind_param($stmt_details, "sss", $fname, $lname, $gender);
         mysqli_stmt_execute($stmt_details);
         header('Location:profile.php');
-    }
-    if ($_POST['Form_identifier'] == "update_password") {
+    } elseif ($_POST['Form_identifier'] == "update_password") {
         $new_password = $_POST['new_pass'];
-        $hased_new_password = password_hash($new_password,PASSWORD_DEFAULT);
+        $hased_new_password = password_hash($new_password, PASSWORD_DEFAULT);
         $update_password_query = "update users set password=? where user_id=$user_id";
         $stmt_new_password = mysqli_prepare($con, $update_password_query);
         mysqli_stmt_bind_param($stmt_new_password, "s", $hased_new_password);
         mysqli_stmt_execute($stmt_new_password);
         header('Location:profile.php');
+    } elseif ($_POST['Form_identifier'] == "update_profile_pic") {
+        $image_name = $_FILES['user_pic']['name'];
+        $image_size = $_FILES['user_pic']['size'];
+        $tmp_name = $_FILES['user_pic']['tmp_name'];
+
+        //image validation 
+        $valid_image_ext = ['jpg', 'png', 'jpeg'];
+        $image_ext = explode('.', $image_name);
+        $image_ext = strtolower(end($image_ext));
+        if (!in_array($image_ext, $valid_image_ext)) {
+            echo '
+            <script>alert("Invalid Image Extension");</script>';
+            header('Location:profile.php');
+        } elseif ($image_size > 1200000) {
+            echo '
+            <script>alert("Imgae Size Is Too Large");</script>';
+            header('Location:profile.php');
+        } else {
+            $new_image_name = $user_data['username'];
+            $new_image_name .= "." . $image_ext;
+            $update_profile_pic_query = "update users set user_pic = '$new_image_name' where user_id=$user_id";
+            mysqli_query($con, $update_profile_pic_query);
+            move_uploaded_file($tmp_name, 'imgs/' . $new_image_name);
+            header('Location:profile.php');
+        }
     }
 }
 ?>
@@ -48,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="user_choices">
             <div class="user">
                 <a href="../index.php" id="home"><i class="fa fa-arrow-circle-left"></i><span>&nbsp;Home <i class="fa fa-ducks"></i></span></a>
-                <img src="" alt="profile_picture">
+                <img src="imgs/<?php echo $user_data['user_pic'] ?>" alt="profile_picture">
                 <h2><?php echo $user_data['username'] ?></h2>
                 <h3><?php echo $user_data['email'] ?></h3>
             </div>
@@ -110,8 +134,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <input type="submit" value="Update">
             </form>
+
+            <!-- set profile pic -->
+            <form enctype="multipart/form-data" method="post">
+                <input type="hidden" name="Form_identifier" value="update_profile_pic">
+                <label for="">Enter Your profile Picture</label>
+                <input type="file" name="user_pic" id="" accept=".jpg, .png, .jpeg">
+                <input type="submit" value="Save">
+            </form>
+            <!-- end of profile pic -->
+
         </div>
         <!-- end of profile details -->
+
 
 
         <!-- start of My Plans -->
@@ -208,9 +243,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo '<script> document.getElementById("renew_pass").removeAttribute("readonly"); </script>';
                 echo '<script> document.getElementById("new_pass").removeAttribute("readonly"); </script>';
                 echo "<script> document.getElementById('old_pass').setAttribute('value', '$old_password') </script>";
-            }
-            else
-            echo '<script>alert("Wrong Password\nPlease Re-Enter It")</script>';
+            } else
+                echo '<script>alert("Wrong Password\nPlease Re-Enter It")</script>';
         }
     }
     ?>

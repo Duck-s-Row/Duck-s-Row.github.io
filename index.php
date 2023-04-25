@@ -46,7 +46,7 @@
          <div class="sub-menu">
            <?php if (isset($_SESSION['user_id'])) : ?>
              <div class="user-info">
-               <img src="" alt="profile-image">
+               <img src="Profile/imgs/<?php echo $user_data['user_pic']?>" alt="profile-image">
                <h2><?php echo $user_data['Fname'] . " " . $user_data['Lname']; ?></h2>
              </div>
              <hr>
