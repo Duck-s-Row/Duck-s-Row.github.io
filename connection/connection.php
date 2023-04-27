@@ -1,6 +1,6 @@
 <?php 
 
-$dbhost = "localhost:3308";
+$dbhost = "localhost";
 $dbuser = "root";
 $dbpassword = "";
 $dbname = "ducks_row";
