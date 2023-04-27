@@ -6,6 +6,7 @@ use PHPMailer\PHPMailer\Exception;
 require 'phpmailer/src/Exception.php';
 require 'phpmailer/src/PHPMailer.php';
 require 'phpmailer/src/SMTP.php';
+require '../../connection/connection.php';
 
 session_start();
 $error = array();
@@ -15,15 +16,6 @@ if(isset($_GET['mode'])){
     $mode = $_GET['mode'];
 }
 
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpassword = "";
-$dbname = "ducks_row";
-
-if(!$con = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname))
-{
-    die("failed to connect to database");
-}
 
 
 	//something is posted
