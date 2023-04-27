@@ -58,7 +58,8 @@ create table users(
   gender varchar(7),
   email varchar (255),
   password varchar(255),
-  admin int default 0
+  admin int default 0,
+  user_pic varchar(60)
 );
 
 ALTER TABLE `ducks_row`.`places` 
