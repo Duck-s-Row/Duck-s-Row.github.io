@@ -14,18 +14,18 @@
     flex-direction: row;
 }
 
+
+/* start of user&choices */
 img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
 }
-
 .user_choices{
     height: 90vh;
     width: 30%;
     margin: 2% 7% 2% 2%;
 }
-
 #home {
     text-decoration: none;
     background-color: #101820;
@@ -35,16 +35,13 @@ img {
     padding: 7px;
     margin: 10px;
 }
-
 #home span {
     font-size: 20px;
 }
-
 #circle-user{
     width: 150px;
     height: 150px;
 }
-
 .user {
     height: 300px;
     background-color: rgba(254, 231, 21, 1);
@@ -74,9 +71,8 @@ img {
     width: 100%;
     height: 50px;
     border: 0;
-    margin-top: 40px;
+    margin-top: 20px;
 }
-
 button a{
     text-decoration: none;
     color: black;  
@@ -85,11 +81,13 @@ button a{
     line-height: 28px;
     letter-spacing: 0.1em;
 }
-
 button a:hover {
     color: rgb(204, 185, 21);
 }
-.details_info, .edit_info, .favorites, .planes{
+/* end of user&choices */
+
+
+.details_info,.planes,.pass{
     display: block;
     width: 60%;
     height: 90vh;
@@ -97,24 +95,9 @@ button a:hover {
     background-color: white;
     margin: 2%;
 }
-
-.edit_info{
+.planes , .pass{
     display: none;
 }
-.planes{
-    display: none;
-}
-
-.edit_info button {
-    width: 180px;
-    height: 50px;
-    color: black;
-    background-color: rgba(254, 231, 21, 1);
-    border: none;
-    font-weight: 600;
-    font-size: 24px;
-}
-
 .details {
     height: 15%;
     background-color: rgba(254, 231, 21, 1);
@@ -128,88 +111,54 @@ button a:hover {
     border-radius: 20px;
 }
 
-form{
-    margin: 5%;
-    display: grid;
-    grid-template-columns: 23% 20% 15% 22% 20% ;
-    grid-template-rows: repeat(4, 100px);
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 28px;
-    letter-spacing: 0.1em;
-    
-}
 
-input {
-    height: 30px;
-    background-color: white;
-    border: 0px solid white;
-    font-size: 20px;
+/* start of user info */
+.c1{
+    display: flex;
+    margin: 50px 0 60px 80px;
 }
-
-.edit_info input {
+form input[type="text"],input[type="email"],input[type="tel"]{
+    margin-top: 10px;
+}
+.c1l{
+    margin-left: 120px;
+}
+.c2{
+    margin: 0 0 60px 80px;
+}
+.c3{
+    display: flex;
+    margin: 0 0 80px 80px;
+}
+.gender{
     font-size: 17px;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 5%;
+    margin-left: 130px;
 }
-
+.details_info input {
+    font-size: 20px;
+    border: 1px solid rgb(201, 182, 14);
+    border-radius: 10px;
+    padding: 7px;
+    width: 280px;
+}
+.details_info input[type="submit"] {
+    width: 180px;
+    height: 50px;
+    color: black;
+    background-color: rgba(254, 231, 21, 1);
+    border: none;
+    font-weight: 600;
+    font-size: 24px;
+    border-radius: 20px;
+    margin-left: 80px;
+}
 label {
     font-weight: 700;
 }
+/* end of user info */
 
-.llastName{
-    grid-row: 1;
-    grid-column: 4;
-}
-.lastName{
-    grid-row: 1;
-    grid-column: 5;
-}
-.lnational{
-    grid-row: 2;
-    grid-column: 1;
-}
 
-.nationality {
-    grid-row: 2;
-    grid-column: 2;
-}
-
-.lphone {
-    grid-row: 3;
-    grid-column: 1;
-}
-
-.phone{
-    grid-row: 3;
-    grid-column: 2;
-}
-.gender{
-    grid-column: 4 / 6;
-    grid-row: 2;
-}
-
-.ldate{
-    grid-column: 4;
-    grid-row: 3;
-}
-
-.date{
-    grid-column: 5;
-    grid-row: 3;
-}
-
-.lemail{
-    grid-column: 1;
-    grid-row: 4;
-}
-
-.email {
-    grid-column: 2 / 4;
-    grid-row: 4;
-}
+/* start of my plans */
 .card{
     height: 100px;
     width: 80%;
@@ -241,3 +190,39 @@ label {
 .card2 a h2:hover{
     color: rgb(204, 185, 21);
 }
+/* end of my plans */
+
+
+/* start of Change Password */
+.pass input{
+    font-size: 20px;
+    border: 1px solid rgb(201, 182, 14);
+    border-radius: 10px;
+    padding: 7px;
+    width: 280px;
+}
+.pass input[type="submit"]{
+    width: 30%;
+    height: 50px;
+    color: black;
+    background-color: rgba(254, 231, 21, 1);
+    border: none;
+    font-weight: 600;
+    font-size: 24px;
+    border-radius: 20px;
+    margin: 80px 35% 0 35%;
+}
+.pass .old{
+    margin: 100px 0 0 80px;
+}
+.pass .new{
+    margin: 40px 0 0 80px;
+    display: flex;
+}
+.pass .new .rnew{
+    margin-left: 120px;
+}
+.pass img{
+    margin-left: 80%;
+}
+/* end of Change Password */

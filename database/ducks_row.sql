@@ -54,11 +54,12 @@ create table users(
   username varchar(255) NOT NULL,
   Fname varchar(255),
   Lname varchar(255),
-  phone varchar(11),
-  gender varchar(7),
+  phone varchar(13),
+  gender varchar(1),
   email varchar (255),
   password varchar(255),
-  admin int default 0
+  admin int default 0,
+  user_pic varchar(60)
 );
 
 ALTER TABLE `ducks_row`.`places` 
