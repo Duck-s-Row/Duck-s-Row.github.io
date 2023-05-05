@@ -115,5 +115,3 @@ ADD CONSTRAINT `place_ID`
   REFERENCES `ducks_row`.`places` (`ID`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
-  
-  
