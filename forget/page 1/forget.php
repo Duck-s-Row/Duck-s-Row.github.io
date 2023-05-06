@@ -2,11 +2,26 @@
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+// use PHPMailer\PHPMailer\SMTP;
 
 require 'phpmailer/src/Exception.php';
 require 'phpmailer/src/PHPMailer.php';
 require 'phpmailer/src/SMTP.php';
-require '../../connection/connection.php';
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpassword = "";
+$dbname = "ducks_row";
+
+if(!$con = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname))
+{
+    die("failed to connect to database");
+}
 
 session_start();
 $error = array();
@@ -52,14 +67,15 @@ if(isset($_GET['mode'])){
 		// $expire = time() + (60 * 1);
 		$code = rand(100000,999999);
 		$email = addslashes($email);
-        $headers = "From: omareidd22@gmail.com" . "\r\n" .
+        $headers = "From: ducksrow100@gmail.com" . "\r\n" ;
 
 		$query = "insert into codes (email,code) value ('$email','$code')";
 		mysqli_query($con,$query);
 
 		//send email here
 
-		send_mail($email,'Password reset',"Your code is " . $code);
+		send_mail($email,"Password reset","Your code is " . $code);
+
         // mail($email,"password reset","Your code is " . $code);
 
 	}
@@ -83,20 +99,90 @@ if(isset($_GET['mode'])){
 
 	}
 
-    function send_mail($recipient,$subject,$message)
-    {
+    // third code
+
+    // function send_mail($recipient,$subject,$message)
+    // {
+    //     $mail = new PHPMailer(true);
+
+    //     try {
+    //         $mail->isSMTP();
+    //         $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    //         $mail->Host       = 'smtp.gmail.com';
+    //         $mail->SMTPAuth   = true;
+    //         $mail->Username   = 'ducksrow100@gmail.com';
+    //         $mail->Password   = 'rrxrerksucwnhglx';
+    //         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    //         $mail->Port       = 587;
+
+    //         $mail->setFrom('ducksrow100@gmail.com', 'Your Name');
+    //         $mail->addAddress($recipient);
+
+    //         $mail->isHTML(true);
+    //         $mail->Subject = $subject;
+    //         $mail->Body = $message;
+
+    //         $mail->send();
+    //         return true;
+    //     } catch (Exception $e) {
+    //         return false;
+    //     }
+    // }
+
+
+//second code
+ 
+
+    // function send_mail($recipient,$subject,$message)
+    // {
+
+    // $mail = new PHPMailer(true);
+
+    // $mail->IsSMTP();
+    // $mail->Host ='smtp.gmail.com';
+    // $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    // $mail->Username   = 'ducksrow100@gmail.com';                     //SMTP username
+    // $mail->Password   = 'rrxrerksucwnhglx';                               //SMTP password
+    // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    // $mail->Port       = 465; 
+    // $mail->setFrom('ducksrow100@gmail.com');
+
+    // $mail->addAddress($recipient); 
+    // $mail->isHTML(true);
+
+    // $mail->Subject = $subject;
+    // $mail->Body = $message;
+    
+    // $mail->send();
+
+    // echo 
+    // "
+    // <script>
+    // alert('sent successfully');
+    // document.location.href = 'index.php';
+    // </script>
+    // ";
+    
+    // }
+
+
+ // first code
+
+ 
+function send_mail($recipient,$subject,$message)
+{
 
     $mail = new PHPMailer(true);
 
     $mail->IsSMTP();
     $mail->Host ='smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'omareidd62@gmail.com';
-    $mail->Password = 'fkyrgmxjszqzldwf';
+    $mail->Username = 'ducksrow100@gmail.com';
+    $mail->Password = 'rrxrerksucwnhglx';
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
 
-    $mail->setFrom('omareidd62@gmail.com');
+    $mail->setFrom('ducksrow100@gmail.com');
 
     $mail->addAddress($recipient);
     
@@ -114,8 +200,6 @@ if(isset($_GET['mode'])){
     document.location.href = 'index.php';
     </script>
     ";
-    
-
 }
     
     

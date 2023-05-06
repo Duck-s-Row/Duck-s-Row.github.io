@@ -19,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = mysqli_prepare($con, $query);
     mysqli_stmt_bind_param($stmt, "isssssss", $user_id, $username, $hasedpassword, $phone, $email, $gender, $Fname, $Lname);
     mysqli_stmt_execute($stmt);
-
     header('Location:../../Log_in/login.php');
     die();
 }
