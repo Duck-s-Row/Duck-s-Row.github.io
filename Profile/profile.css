@@ -226,3 +226,83 @@ label {
     margin-left: 80%;
 }
 /* end of Change Password */
+
+/* Mobile Styles */
+@media only screen and (max-width: 800px) {
+    
+    body {
+      background-color: #101820;
+    }
+
+    .main {
+        width: 100%;
+        min-height: 100vh;
+        background-color: #101820;
+        display: flex;
+        flex-direction: column;
+    }
+      .user {
+        background-color: rgba(254, 231, 21, 1);
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100px;
+        justify-content: unset;
+        text-align: unset;
+    }
+
+    .h {
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: 0.1em;
+    }
+
+    #home {
+        text-decoration: none;
+        background-color: #101820;
+        color: #fff;
+        border-radius: 30px;
+        align-self: self-start;
+        
+    }
+
+    .details_info{
+        display: flex;
+        flex-direction: column;
+        margin-top: 150px;
+        width: 100%;
+    }
+
+    .planes{
+        margin-top: 150px;
+        width: 90%;
+    }
+
+    .pass{
+        margin-top: 150px;
+        width: 90%;
+    }
+
+    .user_choices{
+        background-color: rgba(254, 231, 21, 1);
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 30px auto 0 auto;
+        height: 10vh;
+        width: 90%;
+    }
+
+    .btns{
+        display: flex;
+        flex-direction: row;
+    }
+      
+
+  
+  }
+  
