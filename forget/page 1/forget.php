@@ -2,11 +2,11 @@
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
+// use PHPMailer\PHPMailer\SMTP;
 
-require_once 'phpmailer/src/Exception.php';
-require_once 'phpmailer/src/PHPMailer.php';
-require_once 'phpmailer/src/SMTP.php';
+require 'phpmailer/src/Exception.php';
+require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/SMTP.php';
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -73,10 +73,7 @@ if(isset($_GET['mode'])){
 
 		//send email here
 
-		
-
-
-		send_mail($email,'Password reset',"Your code is " . $code);
+		// send_mail($email,'Password reset',"Your code is " . $code);
 
         // mail($email,"password reset","Your code is " . $code);
 
@@ -100,6 +97,8 @@ if(isset($_GET['mode'])){
 		return false;
 
 	}
+
+    // third code
 
     // function send_mail($recipient,$subject,$message)
     // {
@@ -129,8 +128,10 @@ if(isset($_GET['mode'])){
     //     }
     // }
 
+
 //second code
  
+
     // function send_mail($recipient,$subject,$message)
     // {
 
@@ -160,47 +161,47 @@ if(isset($_GET['mode'])){
     // document.location.href = 'index.php';
     // </script>
     // ";
-
-
     
     // }
 
+
  // first code
 
-    function send_mail($recipient,$subject,$message)
-    {
+ 
+//     function send_mail($recipient,$subject,$message)
+//     {
 
-    $mail = new PHPMailer(true);
+//     $mail = new PHPMailer(true);
 
-    $mail->IsSMTP();
-    $mail->Host ='smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'omareidd62@gmail.com';
-    $mail->Password = 'fkyrgmxjszqzldwf';
-    $mail->SMTPSecure = 'ssl';
-    $mail->Port = 465;
+//     $mail->IsSMTP();
+//     $mail->Host ='smtp.gmail.com';
+//     $mail->SMTPAuth = true;
+//     $mail->Username = 'omareidd62@gmail.com';
+//     $mail->Password = 'fkyrgmxjszqzldwf';
+//     $mail->SMTPSecure = 'ssl';
+//     $mail->Port = 465;
 
-    $mail->setFrom('omareidd62@gmail.com');
+//     $mail->setFrom('omareidd62@gmail.com');
 
-    $mail->addAddress($recipient);
+//     $mail->addAddress($recipient);
     
-    $mail->isHTML(true);
+//     $mail->isHTML(true);
 
-    $mail->Subject = $subject;
-    $mail->Body = $message;
+//     $mail->Subject = $subject;
+//     $mail->Body = $message;
 
-    $mail->send();
+//     $mail->send();
 
-    echo 
-    "
-    <script>
-    alert('sent successfully);
-    document.location.href = 'index.php';
-    </script>
-    ";
+//     echo 
+//     "
+//     <script>
+//     alert('sent successfully);
+//     document.location.href = 'index.php';
+//     </script>
+//     ";
     
 
-}
+// }
     
     
 ?>
