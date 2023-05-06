@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'ABeeZee', sans-serif;
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #101820;
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* start of user&choices */
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.user_choices{
+    height: 90vh;
+    width: 30%;
+    margin: 2% 7% 2% 2%;
+}
+#home {
+    text-decoration: none;
+    background-color: #101820;
+    color: #fff;
+    border-radius: 30px;
+    align-self: self-start;
+    padding: 7px;
+    margin: 10px;
+}
+#home span {
+    font-size: 20px;
+}
+#circle-user{
+    width: 150px;
+    height: 150px;
+}
+.user {
+    height: 300px;
+    background-color: rgba(254, 231, 21, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    border-radius: 20px;
+}
+.user img {
+    width: 170px;
+    height: 170px;
+}
+.user h2, .user h3 {
+    padding-top: 10px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+}
+.user_choices{
+    background: white;
+    border-radius: 20px;
+}
+.chooice {
+    width: 100%;
+    height: 50px;
+    border: 0;
+    margin-top: 20px;
+}
+button a{
+    text-decoration: none;
+    color: black;  
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+}
+button a:hover {
+    color: rgb(204, 185, 21);
+}
+/* end of user&choices */
+
+
+.details_info,.planes,.pass{
+    display: block;
+    width: 60%;
+    height: 90vh;
+    border-radius: 20px;
+    background-color: white;
+    margin: 2%;
+}
+.planes , .pass{
+    display: none;
+}
+.details {
+    height: 15%;
+    background-color: rgba(254, 231, 21, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    border-radius: 20px;
+}
+
+
+/* start of user info */
+.c1{
+    display: flex;
+    margin: 50px 0 60px 80px;
+}
+form input[type="text"],input[type="email"],input[type="tel"]{
+    margin-top: 10px;
+}
+.c1l{
+    margin-left: 120px;
+}
+.c2{
+    margin: 0 0 60px 80px;
+}
+.c3{
+    display: flex;
+    margin: 0 0 80px 80px;
+}
+.gender{
+    font-size: 17px;
+    margin-left: 130px;
+}
+.details_info input {
+    font-size: 20px;
+    border: 1px solid rgb(201, 182, 14);
+    border-radius: 10px;
+    padding: 7px;
+    width: 280px;
+}
+.details_info input[type="submit"] {
+    width: 180px;
+    height: 50px;
+    color: black;
+    background-color: rgba(254, 231, 21, 1);
+    border: none;
+    font-weight: 600;
+    font-size: 24px;
+    border-radius: 20px;
+    margin-left: 80px;
+}
+label {
+    font-weight: 700;
+}
+/* end of user info */
+
+
+/* start of my plans */
+.card{
+    height: 100px;
+    width: 80%;
+    margin: 50px 10% 0 10%;
+    background-color: rgba(237, 222, 11, 0.396);
+    text-align: center;
+    border-radius: 50px;
+}
+.card2{
+    height: 100px;
+    width: 80%;
+    margin: 50px 10% 0 10%;
+    background-color: rgba(153, 153, 153, 0.396);
+    text-align: center;
+    border-radius: 50px;
+}
+.card2 a h2{
+    /* color: rgb(204, 185, 21); */
+    color: black;
+    padding-top:33px ;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 3px;
+    word-spacing: 15px;
+    font-size: 25px;
+}
+.card2 a{
+    text-decoration: none;
+}
+.card2 a h2:hover{
+    color: rgb(204, 185, 21);
+}
+/* end of my plans */
+
+
+/* start of Change Password */
+.pass input{
+    font-size: 20px;
+    border: 1px solid rgb(201, 182, 14);
+    border-radius: 10px;
+    padding: 7px;
+    width: 280px;
+}
+.pass input[type="submit"]{
+    width: 30%;
+    height: 50px;
+    color: black;
+    background-color: rgba(254, 231, 21, 1);
+    border: none;
+    font-weight: 600;
+    font-size: 24px;
+    border-radius: 20px;
+    margin: 80px 35% 0 35%;
+}
+.pass .old{
+    margin: 100px 0 0 80px;
+}
+.pass .new{
+    margin: 40px 0 0 80px;
+    display: flex;
+}
+.pass .new .rnew{
+    margin-left: 120px;
+}
+.pass img{
+    margin-left: 80%;
+}
+/* end of Change Password */
