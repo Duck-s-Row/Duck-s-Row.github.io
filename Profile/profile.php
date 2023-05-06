@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
-    <link rel="stylesheet" href="profilee.css">
+    <link rel="stylesheet" href="profile.css">
     <title>Profile</title>
 </head>
 
@@ -72,15 +72,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="user_choices">
             <div class="user">
                 <a href="../index.php" id="home"><i class="fa fa-arrow-circle-left"></i><span>&nbsp;Home <i class="fa fa-ducks"></i></span></a>
+<<<<<<< HEAD
                 <img src="imgs/<?php echo $user_data['user_pic'] ?>" alt="profile_picture">
+                <div class="h">
+=======
+                <img src="user_profile_imgs/<?php echo $user_data['user_pic'] ?>" alt="profile_picture">
+>>>>>>> c60ae156a2587ac2d1a97bf39e67371fe5e555bd
                 <h2><?php echo $user_data['username'] ?></h2>
                 <h3><?php echo $user_data['email'] ?></h3>
+                </div>
             </div>
+            <div class="btns">
             <button class="chooice active" onclick="edit_info()"><a href="#"><i class="fa-regular fa-user"></i>&nbsp;Profile</a></button>
             <button class="chooice"><a href="#"><i class="fa-solid fa-location-dot"></i>&nbsp; My Plans</a></button>
             <!-- <button class="chooice" onclick="edit_info()"><a href="#"><i class="fa-solid fa-pen"></i>&nbsp;Edit profile</a></button> -->
             <button class="chooice"><a href="#"><i class="fa-solid fa-lock"></i>&nbsp;Change Password</a></button>
             <button class="chooice" onclick="window.location.href = '../Log_out/logout.php';"><a href="#"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Logout</a></button>
+            </div>
         </div>
 
         <!-- start of profile details -->

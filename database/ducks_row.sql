@@ -59,7 +59,7 @@ create table users(
   email varchar (255),
   password varchar(255),
   admin int default 0,
-  user_pic varchar(60)
+  user_pic varchar(60) default "non_profile_pic.png"
 );
 
 create table codes(
@@ -121,6 +121,9 @@ ADD CONSTRAINT `place_ID`
   FOREIGN KEY (`place_ID`)
   REFERENCES `ducks_row`.`places` (`ID`)
   ON DELETE NO ACTION
+<<<<<<< HEAD
+  ON UPDATE NO ACTION;
+=======
   ON UPDATE NO ACTION;
   
 
@@ -128,3 +131,4 @@ ADD CONSTRAINT `place_ID`
 ALTER TABLE `ducks_row`.`codes` 
 ADD INDEX `email` (`email` ASC) VISIBLE;
 ;
+>>>>>>> c60ae156a2587ac2d1a97bf39e67371fe5e555bd

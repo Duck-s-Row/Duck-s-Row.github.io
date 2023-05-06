@@ -35,7 +35,7 @@
        <ul>
          <li><a href="#home">Home</a></li>
          <li><a href="Hangout/hangout.php">Hangout</a></li> <!-- we could remove this ancher tag link because of using the button  -->
-         <li><a href="#services">Services</a></li>
+         <li><a href="#services">News</a></li>
          <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li>
          <li><a href="#about_us">About</a></li>
          <li><a href="Profile/profile.php" class="profile">Profile</a></li>
