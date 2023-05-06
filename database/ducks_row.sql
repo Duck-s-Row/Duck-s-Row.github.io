@@ -59,7 +59,7 @@ create table users(
   email varchar (255),
   password varchar(255),
   admin int default 0,
-  user_pic varchar(60)
+  user_pic varchar(60) default "non_profile_pic.png"
 );
 
 create table codes(
