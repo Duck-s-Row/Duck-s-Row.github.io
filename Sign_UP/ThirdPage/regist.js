@@ -1,4 +1,27 @@
 
+// Change the Password into text
+const showPassword = document.querySelector("#show-Password");
+const password = document.querySelector("#password");
+
+showPassword.addEventListener("click", function() {
+
+    const type = password.getAttribute("type") === "password" ? "text" : "password";
+    password.setAttribute("type", type);
+
+    this.classList.toggle("bi-eye");
+});
+
+const ShowRePassword = document.querySelector("#show-re-password");
+const rePassword = document.querySelector("#re-password");
+
+ShowRePassword.addEventListener("click", function() {
+
+    const type = rePassword.getAttribute("type") === "password" ? "text" : "password";
+    rePassword.setAttribute("type", type);
+
+    this.classList.toggle("bi-eye");
+});
+
 var pass = document.getElementById("password");
 var msg = document.getElementById("message");
 var str = document.getElementById("strength");
@@ -6,6 +29,7 @@ var str = document.getElementById("strength");
 var pass2 = document.getElementById("re-password");
 var msg2 = document.getElementById("passtwo");
 var alertt= document.getElementById("alert");
+
 
 pass.addEventListener('input',()=>{
     if(pass.value.length > 0){
@@ -51,7 +75,4 @@ pass2.addEventListener('input',()=>{
         alertt.style.borderColor = "red";
         msg2.style.color = "red";
     }
-
-
-
 })

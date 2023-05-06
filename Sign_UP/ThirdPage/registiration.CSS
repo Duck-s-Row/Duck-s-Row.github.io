@@ -135,8 +135,8 @@ input::placeholder {
     border: 1px solid #FEE715;
     border-radius: 20px;
 
-    background-color: #101820;
-    color: #FEE715;
+    background-color: #FEE715;
+    color: #101820;
 }
 
 .gender>label {

@@ -252,7 +252,7 @@ header {
 .home {
     width: 100%;
     height: 100vh;
-    background: url(/home/imgs/welcome.jpg) no-repeat;
+    background: url(../imgs/welcome.jpg) no-repeat;
     background-position: center;
     background-size: cover;
     display: flex;
@@ -344,7 +344,7 @@ header {
     position: absolute;
     height: 40%;
     width: 60%;
-    background-image: url("/home/imgs/welcome.jpg");
+    background-image: url("../imgs/welcome.jpg");
     background-position: center;
     background-size: cover;
     right: 0;

@@ -37,6 +37,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="registiration.CSS">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
     <title>Registration</title>
+    <style>
+      .password-input {
+        position: relative;
+      }
+
+      .password-toggle {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+    </style>
 </head>
 
 <body>
@@ -58,9 +71,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
 
                     <div>
-                        <label for="Password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password">
+                    <span class="password-toggle" onclick="togglePasswordVisibility()">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
+                    </span>
+                        <!-- <label for="Password">Password</label>
                         <input type="password" placeholder="password" required name="password" id="password">
-                        <i class="fa fa-eye" id="show-Password"></i> 
+                        <i class="fa fa-eye" id="show-Password"></i>  -->
                         <p id="message">Password is <span id="strength"></span></p>
                     </div>
 
@@ -87,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <div>
                         <label for="phone">Phone</label>
-                        <input type="phone" placeholder="phone number" required name="phone" maxlength="13" id="phone>
+                        <input type="phone" placeholder="phone number" required name="phone" maxlength="13" id="phone">
                     </div>
 
                     <div class="gender">
@@ -111,22 +128,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <img src="../../home/imgs/gold-ducks.png" alt="Logo">
     </footer>
 
-    <script src="vaild.js"></script>
+    <script src="regist.js"></script>
     <script>
         // Change the Password into text
-        const showPassword = document.querySelector("#show-Password");
-        const password = document.querySelector("#password");
+        function togglePasswordVisibility() {
+        var passwordInput = document.getElementById("password");
+        var passwordToggle = document.querySelector(".password-toggle svg path");
 
-        showPassword.addEventListener("click", function() {
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          passwordToggle.setAttribute("d", "M12 3a9 9 0 0 1 2.97 17.3l1.43 1.44a1 1 0 0 1-1.42 1.42l-1.44-1.43A9 9 0 1 1 12 3zm0 2a7 7 0 0 0-.65 13.96l.65.04V5zm0 4a3 3 0 1 1 0 6 3 3 0 0 1 0-6zM9 9a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm6 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z");
+        } else {
+          passwordInput.type = "password";
+          passwordToggle.setAttribute("d", "M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z");
+        }
+      }
 
-            const type = password.getAttribute("type") === "password" ? "text" : "password";
-            password.setAttribute("type", type);
-
-            this.classList.toggle("bi-eye");
-        });
-
-        const ShowRePassword = document.querySelector("#show-re-password");
-        const rePassword = document.querySelector("#re-password");
+        const ShowRePassword = document.getElementById("#show-re-password");
+        const rePassword = document.getElementById("#re-password");
 
         ShowRePassword.addEventListener("click", function() {
 
