@@ -2,6 +2,8 @@
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
 // use PHPMailer\PHPMailer\SMTP;
 
 require 'phpmailer/src/Exception.php';
@@ -20,7 +22,6 @@ if(!$con = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname))
 {
     die("failed to connect to database");
 }
-
 
 session_start();
 $error = array();
@@ -73,7 +74,7 @@ if(isset($_GET['mode'])){
 
 		//send email here
 
-		// send_mail($email,'Password reset',"Your code is " . $code);
+		send_mail($email,"Password reset","Your code is " . $code);
 
         // mail($email,"password reset","Your code is " . $code);
 
@@ -110,7 +111,7 @@ if(isset($_GET['mode'])){
     //         $mail->Host       = 'smtp.gmail.com';
     //         $mail->SMTPAuth   = true;
     //         $mail->Username   = 'ducksrow100@gmail.com';
-    //         $mail->Password   = 'itbyzstsrhravuxr';
+    //         $mail->Password   = 'rrxrerksucwnhglx';
     //         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     //         $mail->Port       = 587;
 
@@ -141,7 +142,7 @@ if(isset($_GET['mode'])){
     // $mail->Host ='smtp.gmail.com';
     // $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     // $mail->Username   = 'ducksrow100@gmail.com';                     //SMTP username
-    // $mail->Password   = 'itbyzstsrhravuxr';                               //SMTP password
+    // $mail->Password   = 'rrxrerksucwnhglx';                               //SMTP password
     // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     // $mail->Port       = 465; 
     // $mail->setFrom('ducksrow100@gmail.com');
@@ -168,40 +169,38 @@ if(isset($_GET['mode'])){
  // first code
 
  
-//     function send_mail($recipient,$subject,$message)
-//     {
+function send_mail($recipient,$subject,$message)
+{
 
-//     $mail = new PHPMailer(true);
+    $mail = new PHPMailer(true);
 
-//     $mail->IsSMTP();
-//     $mail->Host ='smtp.gmail.com';
-//     $mail->SMTPAuth = true;
-//     $mail->Username = 'omareidd62@gmail.com';
-//     $mail->Password = 'fkyrgmxjszqzldwf';
-//     $mail->SMTPSecure = 'ssl';
-//     $mail->Port = 465;
+    $mail->IsSMTP();
+    $mail->Host ='smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'ducksrow100@gmail.com';
+    $mail->Password = 'rrxrerksucwnhglx';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port = 465;
 
-//     $mail->setFrom('omareidd62@gmail.com');
+    $mail->setFrom('ducksrow100@gmail.com');
 
-//     $mail->addAddress($recipient);
+    $mail->addAddress($recipient);
     
-//     $mail->isHTML(true);
+    $mail->isHTML(true);
 
-//     $mail->Subject = $subject;
-//     $mail->Body = $message;
+    $mail->Subject = $subject;
+    $mail->Body = $message;
 
-//     $mail->send();
+    $mail->send();
 
-//     echo 
-//     "
-//     <script>
-//     alert('sent successfully);
-//     document.location.href = 'index.php';
-//     </script>
-//     ";
-    
-
-// }
+    echo 
+    "
+    <script>
+    alert('sent successfully);
+    document.location.href = 'index.php';
+    </script>
+    ";
+}
     
     
 ?>
