@@ -62,6 +62,13 @@ create table users(
   user_pic varchar(60)
 );
 
+create table codes(
+id int primary key auto_increment,
+email varchar(100),
+code varchar(6),
+expire varchar(100)
+);
+
 ALTER TABLE `ducks_row`.`places` 
 ADD INDEX `details_ID_idx` (`details_ID` ASC) VISIBLE,
 ADD INDEX `budget_ID_idx` (`budget_ID` ASC) VISIBLE,
@@ -116,4 +123,8 @@ ADD CONSTRAINT `place_ID`
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
   
-  
+
+
+ALTER TABLE `ducks_row`.`codes` 
+ADD INDEX `email` (`email` ASC) VISIBLE;
+;

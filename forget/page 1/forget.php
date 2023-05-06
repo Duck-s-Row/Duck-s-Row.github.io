@@ -101,35 +101,35 @@ if(isset($_GET['mode'])){
 
 	}
 
-    function send_mail($recipient,$subject,$message)
-    {
-        $mail = new PHPMailer(true);
+    // function send_mail($recipient,$subject,$message)
+    // {
+    //     $mail = new PHPMailer(true);
 
-        try {
-            $mail->isSMTP();
-            $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-            $mail->Host       = 'smtp.gmail.com';
-            $mail->SMTPAuth   = true;
-            $mail->Username   = 'ducksrow100@gmail.com';
-            $mail->Password   = 'itbyzstsrhravuxr';
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port       = 587;
+    //     try {
+    //         $mail->isSMTP();
+    //         $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    //         $mail->Host       = 'smtp.gmail.com';
+    //         $mail->SMTPAuth   = true;
+    //         $mail->Username   = 'ducksrow100@gmail.com';
+    //         $mail->Password   = 'itbyzstsrhravuxr';
+    //         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    //         $mail->Port       = 587;
 
-            $mail->setFrom('ducksrow100@gmail.com', 'Your Name');
-            $mail->addAddress($recipient);
+    //         $mail->setFrom('ducksrow100@gmail.com', 'Your Name');
+    //         $mail->addAddress($recipient);
 
-            $mail->isHTML(true);
-            $mail->Subject = $subject;
-            $mail->Body = $message;
+    //         $mail->isHTML(true);
+    //         $mail->Subject = $subject;
+    //         $mail->Body = $message;
 
-            $mail->send();
-            return true;
-        } catch (Exception $e) {
-            return false;
-        }
-    }
+    //         $mail->send();
+    //         return true;
+    //     } catch (Exception $e) {
+    //         return false;
+    //     }
+    // }
 
-//escond code
+//second code
  
     // function send_mail($recipient,$subject,$message)
     // {
@@ -167,40 +167,40 @@ if(isset($_GET['mode'])){
 
  // first code
 
-//     function send_mail($recipient,$subject,$message)
-//     {
+    function send_mail($recipient,$subject,$message)
+    {
 
-//     $mail = new PHPMailer(true);
+    $mail = new PHPMailer(true);
 
-//     $mail->IsSMTP();
-//     $mail->Host ='smtp.gmail.com';
-//     $mail->SMTPAuth = true;
-//     $mail->Username = 'omareidd62@gmail.com';
-//     $mail->Password = 'fkyrgmxjszqzldwf';
-//     $mail->SMTPSecure = 'ssl';
-//     $mail->Port = 465;
+    $mail->IsSMTP();
+    $mail->Host ='smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'omareidd62@gmail.com';
+    $mail->Password = 'fkyrgmxjszqzldwf';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port = 465;
 
-//     $mail->setFrom('omareidd62@gmail.com');
+    $mail->setFrom('omareidd62@gmail.com');
 
-//     $mail->addAddress($recipient);
+    $mail->addAddress($recipient);
     
-//     $mail->isHTML(true);
+    $mail->isHTML(true);
 
-//     $mail->Subject = $subject;
-//     $mail->Body = $message;
+    $mail->Subject = $subject;
+    $mail->Body = $message;
 
-//     $mail->send();
+    $mail->send();
 
-//     echo 
-//     "
-//     <script>
-//     alert('sent successfully);
-//     document.location.href = 'index.php';
-//     </script>
-//     ";
+    echo 
+    "
+    <script>
+    alert('sent successfully);
+    document.location.href = 'index.php';
+    </script>
+    ";
     
 
-// }
+}
     
     
 ?>
