@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="user">
                 <a href="../index.php" id="home"><i class="fa fa-arrow-circle-left"></i><span>&nbsp;Home <i class="fa fa-ducks"></i></span></a>
 <<<<<<< HEAD
-                <img src="imgs/<?php echo $user_data['user_pic'] ?>" alt="profile_picture">
+                <img src="user_profile_imgs/<?php echo $user_data['user_pic'] ?>" alt="profile_picture">
                 <div class="h">
 =======
                 <img src="user_profile_imgs/<?php echo $user_data['user_pic'] ?>" alt="profile_picture">
