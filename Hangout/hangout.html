@@ -145,13 +145,9 @@ include("../Functions/Functions.php");
     </div>
     <div class="right">
         <div class="budget">        
-            <h1>Your Max budget</h1>
-            <div class="number-input">
-                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-                <input type="number" class="quantity" name="quantity" min="100" max="1000" value="500" step="100">
-                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-            </div>
-            <button class="filre-submit">submit</button> 
+            <h1>Your Max budget / Persone</h1>
+            <input type="range" class="range" name="budget" min="100" max="1000" step="100" value="500" onchange="rangeChange(this.value)">
+            <span id="rangeVlaue">500</span>
         </div>
         <hr>
         <div class="food-services">
@@ -250,8 +246,6 @@ include("../Functions/Functions.php");
     <footer>
         <a href="#"><i class="fa fa-arrow-up"></i></a>
     </footer>
-    <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="../js/bootstrap.bundle.min.js.map"></script>
-    <script src="hangout.js"></script>
+    <script src="./hangout.js"></script>
 </body>
 </html>

@@ -8,3 +8,8 @@ button.addEventListener("click", () =>{
 exit.addEventListener("click", () =>{
   popup.style.display = "none";
 })
+
+let range = document.getElementById("rangeVlaue");
+function rangeChange(value) {
+  range.innerHTML = value;
+}
