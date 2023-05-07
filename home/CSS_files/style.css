@@ -14,6 +14,19 @@ body {
     width: 100%;
 }
 
+.loading {
+    background: #101820 url(../imgs/marryMe.gif) no-repeat center center;
+    background-size: 20%;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 999;
+}
+
+main {
+    display: none;
+}
+
 header {
     width: 90%;
     height: 80px;
@@ -24,7 +37,7 @@ header {
     padding: 0 60px 0 100px;
     border-radius: 100px;
     position: fixed;
-    z-index: 999;
+    z-index: 1;
     margin: 40px 5% 0 5%;
 }
 

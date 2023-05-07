@@ -15,7 +15,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
    <meta charset="UTF-8">
    <meta name="description" content="GO Fun, GO & run">
-   <link rel="stylesheet" href="home/CSS_files/index.css">
+   <link rel="stylesheet" href="home/CSS_files/style.css">
    <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Bebas+Neue&display=swap" rel="stylesheet">
    <link rel="website icon" type="png" href="home/imgs/Logo.png">
@@ -23,6 +23,7 @@
  </head>
 
  <body>
+  <div class="loading" id="loader"></div>
    <!-- The Start of Navbar section -->
    <header>
      <div class="logo"><a href="#home"><img src="home/imgs/ducks.png" alt=""></a></div>
@@ -181,46 +182,7 @@
    <!-- The End of the page -->
 
    <!-- JS -->
-   <script>
-     hamburger = document.querySelector(".hamburger");
-     home = document.getElementById("home");
-     contact_us = document.getElementById("contact_us");
-     about_us = document.getElementById("about_us");
-     services = document.getElementById("services");
-
-     navBar = document.querySelector(".nav-bar");
-
-     let subMenu = document.getElementById("subMenu");
-
-     // Add the open menu class
-     function toggleMenu() {
-       subMenu.classList.toggle("open-menu");
-     }
-     // Add the navigation bar active class
-     hamburger.onclick = function() {
-       navBar.classList.toggle("active");
-     }
-
-     // Remove the navigation bar active class and the open menu class
-     home.onclick = function() {
-       navBar.classList.remove("active");
-       subMenu.classList.remove("open-menu");
-     }
-     about_us.onclick = function() {
-       navBar.classList.remove("active");
-       subMenu.classList.remove("open-menu");
-     }
-     contact_us.onclick = function() {
-       navBar.classList.remove("active");
-       subMenu.classList.remove("open-menu");
-     }
-     services.onclick = function() {
-       navBar.classList.remove("active");
-       subMenu.classList.remove("open-menu");
-     }
-   </script>
-   <script src="js/all.min.js"></script> <!-- font awesome -->
-   <script src="js/bootstrap.bundle.min.js"></script> <!-- bootstrap -->
+   <script src="home/app.js"></script>
  </body>
 
  </html>
