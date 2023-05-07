@@ -72,12 +72,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="user_choices">
             <div class="user">
                 <a href="../index.php" id="home"><i class="fa fa-arrow-circle-left"></i><span>&nbsp;Home <i class="fa fa-ducks"></i></span></a>
-<<<<<<< HEAD
-                <img src="imgs/<?php echo $user_data['user_pic'] ?>" alt="profile_picture">
-                <div class="h">
-=======
                 <img src="user_profile_imgs/<?php echo $user_data['user_pic'] ?>" alt="profile_picture">
->>>>>>> c60ae156a2587ac2d1a97bf39e67371fe5e555bd
+                <div class="h">
                 <h2><?php echo $user_data['username'] ?></h2>
                 <h3><?php echo $user_data['email'] ?></h3>
                 </div>

@@ -121,14 +121,11 @@ ADD CONSTRAINT `place_ID`
   FOREIGN KEY (`place_ID`)
   REFERENCES `ducks_row`.`places` (`ID`)
   ON DELETE NO ACTION
-<<<<<<< HEAD
   ON UPDATE NO ACTION;
-=======
-  ON UPDATE NO ACTION;
-  
-
 
 ALTER TABLE `ducks_row`.`codes` 
 ADD INDEX `email` (`email` ASC) VISIBLE;
-;
->>>>>>> c60ae156a2587ac2d1a97bf39e67371fe5e555bd
+
+alter table places add column category varchar(50);
+alter table places add column location varchar(255);
+alter table places add column website varchar(255);
