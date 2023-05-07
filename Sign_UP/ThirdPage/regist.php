@@ -14,14 +14,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email       = $_POST['email'];
     $gender      = $_POST['gender'];
     //save to database
-    $user_id = random_num(20);
-    $query = "insert into users(user_id,username,password,phone,email,gender,Fname,Lname) values(?,?,?,?,?,?,?,?)";
-    $stmt = mysqli_prepare($con, $query);
-    mysqli_stmt_bind_param($stmt, "isssssss", $user_id, $username, $hasedpassword, $phone, $email, $gender, $Fname, $Lname);
-    mysqli_stmt_execute($stmt);
-    header('Location:../../Log_in/login.php');
-    die();
+    if (!$con) {
+        die("Connection failed: " . mysqli_connect_error());
+      }
+      
+      // Check if the username already exists in the database
+      $username = mysqli_real_escape_string($con, $_POST['username']);
+      $sql = "SELECT * FROM users WHERE username = '$username'";
+      $result = mysqli_query($con, $sql);
+      
+      if (mysqli_num_rows($result) > 0) {
+        // Username already exists, alert the user
+        echo "<script>alert('The username you entered already exists. Please choose a different username.');</script>";
+
+
+      } 
+      else{
+        // Username doesn't exist, store the user signup information in the database
+        $user_id = random_num(20);
+        $query = "insert into users(user_id,username,password,phone,email,gender,Fname,Lname) values(?,?,?,?,?,?,?,?)";
+        $stmt = mysqli_prepare($con, $query);
+        mysqli_stmt_bind_param($stmt, "isssssss", $user_id, $username, $hasedpassword, $phone, $email, $gender, $Fname, $Lname);
+        mysqli_stmt_execute($stmt);
+        header('Location:../../Log_in/login.php');
+        die();
+        } 
+    
+      
+      
+      mysqli_close($con);
 }
+
 
 ?>
 
@@ -62,7 +85,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div>
                         <label for="Username">username</label>
                         <input type="text" placeholder="username" required name="username" id="username">
+                        
+                        <?php
+                        // Check connection
+
+                        ?>
                     </div>
+
 
                     <div>
                         <label for="email">Email</label>
@@ -74,9 +103,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <span class="password-toggle" onclick="togglePasswordVisibility()">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
                     </span>
-                        <!-- <label for="Password">Password</label>
+                        <label for="Password">Password</label>
                         <input type="password" placeholder="password" required name="password" id="password">
-                        <i class="fa fa-eye" id="show-Password"></i>  -->
+                        <i class="fa fa-eye" id="show-Password"></i> 
                         <p id="message">Password is <span id="strength"></span></p>
                     </div>
 
