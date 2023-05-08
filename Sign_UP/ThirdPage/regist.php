@@ -14,35 +14,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email       = $_POST['email'];
     $gender      = $_POST['gender'];
     //save to database
-    if (!$con) {
-        die("Connection failed: " . mysqli_connect_error());
-      }
-      
-      // Check if the username already exists in the database
-      $username = mysqli_real_escape_string($con, $_POST['username']);
-      $sql = "SELECT * FROM users WHERE username = '$username'";
-      $result = mysqli_query($con, $sql);
-      
-      if (mysqli_num_rows($result) > 0) {
-        // Username already exists, alert the user
-        echo "<script>alert('The username you entered already exists. Please choose a different username.');</script>";
 
-
-      } 
-      else{
-        // Username doesn't exist, store the user signup information in the database
-        $user_id = random_num(20);
-        $query = "insert into users(user_id,username,password,phone,email,gender,Fname,Lname) values(?,?,?,?,?,?,?,?)";
-        $stmt = mysqli_prepare($con, $query);
-        mysqli_stmt_bind_param($stmt, "isssssss", $user_id, $username, $hasedpassword, $phone, $email, $gender, $Fname, $Lname);
-        mysqli_stmt_execute($stmt);
-        header('Location:../../Log_in/login.php');
-        die();
-        } 
+    // Check if the username already exists in the database
+    $username = mysqli_real_escape_string($con, $_POST['username']);
+    $sql = "SELECT * FROM users WHERE username = '$username'";
+    $result = mysqli_query($con, $sql);
     
-      
-      
-      mysqli_close($con);
+    if (mysqli_num_rows($result) > 0) {
+      // Username already exists, alert the user
+      echo "<script>alert('The username you entered already exists. Please choose a different username.');</script>";
+    }else{
+      // Username doesn't exist, store the user signup information in the database
+      $user_id = random_num(20);
+      $query = "insert into users(user_id,username,password,phone,email,gender,Fname,Lname) values(?,?,?,?,?,?,?,?)";
+      $stmt = mysqli_prepare($con, $query);
+      mysqli_stmt_bind_param($stmt, "isssssss", $user_id, $username, $hasedpassword, $phone, $email, $gender, $Fname, $Lname);
+      mysqli_stmt_execute($stmt);
+      header('Location:../../Log_in/login.php');
+      die();
+    }
 }
 
 
