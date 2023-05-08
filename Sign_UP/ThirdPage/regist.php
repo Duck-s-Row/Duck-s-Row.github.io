@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       
       if (mysqli_num_rows($result) > 0) {
         // Username already exists, alert the user
-        echo "<script>alert('The username you entered already exists. Please choose a different username.');</script>";
+       echo "<script>alert('The username you entered already exists. Please choose a different username.');</script>"; 
 
 
       } 
