@@ -37,15 +37,7 @@ min_price int,
 max_price int,
 index(place_id)
 );
-
-
-delimiter //
-create trigger after_insert_min_max after insert
-on places 
-for each row 
-update places set average_budget = (new.max_price+new.min_price)/2 where place_id = new.place_id;
-delimiter ; 
-
+ 
 create table place_pics(
 id int primary key auto_increment,
 photo_id bigint,
