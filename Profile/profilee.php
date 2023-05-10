@@ -1,7 +1,7 @@
 <?php
 session_start();
-include("../connection/connection.php");
-include("../Functions/Functions.php");
+require("../connection/connection.php");
+require("../Functions/Functions.php");
 $user_data = check_login($con);
 $user_id = $user_data['user_id'];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
