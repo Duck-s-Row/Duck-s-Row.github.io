@@ -55,12 +55,7 @@ index(photo_id)
 );
 alter table place_pics add foreign key(place_id) references places(place_id);
 
-delimiter //
-create trigger after_insert_photo after insert 
-on place_pics
-for each row
-update place_pics set photo_name = concat(new.photo_id,".png") where photo_id = new.photo_id;
-delimiter ;
+
 
 create table user_plans(
 id int primary key auto_increment,
