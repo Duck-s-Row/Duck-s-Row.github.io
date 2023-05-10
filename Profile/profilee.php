@@ -40,12 +40,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <script>alert("Imgae Size Is Too Large");</script>';
             header('Location:profile.php');
         } else {
-            $new_image_name = $user_data['username'];
+            $new_image_name = random_num(10);
             $new_image_name .= "." . $image_ext;
             $update_profile_pic_query = "update users set user_pic = '$new_image_name' where user_id=$user_id";
             mysqli_query($con, $update_profile_pic_query);
-            move_uploaded_file($tmp_name, 'imgs/' . $new_image_name);
-            header('Location:profile.php');
+            move_uploaded_file($tmp_name, 'user_profile_imgs/' . $new_image_name);
+            header('Location:profilee.php');
         }
     }
 }
