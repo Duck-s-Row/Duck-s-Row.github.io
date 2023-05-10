@@ -50,7 +50,7 @@ create table place_pics(
 id int primary key auto_increment,
 photo_id bigint,
 place_id bigint,
-place_name varchar(255),
+photo_name varchar(255),
 index(photo_id)
 );
 alter table place_pics add foreign key(place_id) references places(place_id);
