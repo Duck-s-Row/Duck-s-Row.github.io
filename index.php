@@ -52,7 +52,7 @@
              </div>
              <hr>
 
-             <a href="Profile/profile.php" class="sub-menu-link">
+             <a href="Profile/profilee.php" class="sub-menu-link">
                <i class="fa-regular fa-user" id="drop-icon"></i>
                <p>Profile page</p>
                <span>></span>
@@ -124,10 +124,29 @@
      <div class="left">
        <h1>What Can We Offer For You</h1>
        <form method="post">
-         <input type="text" placeholder="Your name">
-         <input type="email" placeholder="Your E-mail">
-         <textarea name="" id="" cols="70" rows="10" placeholder="Enter your message"></textarea>
-         <input type="submit" value="SEND">
+         <input type="text" placeholder="Your name" name="name">
+         <input type="email" placeholder="Your E-mail" name="email">
+         <textarea name="message" id="" cols="70" rows="10" placeholder="Enter your message"></textarea>
+         <input type="submit" value="SEND" name="send">
+         <?php
+         
+        if(!empty($_POST["send"])) {
+	      $userName = $_POST["name"];
+        $userEmail = $_POST["email"];
+      	$userMessage = $_POST["message"];
+      	$toEmail = "ducksrow100@gmail.com";
+  
+      	$mailHeaders = "Name: ".$userName."\r\n Email: ". $userEmail ."\r\n Message: " . $userMessage . "\r\n";
+
+	    if(mail($toEmail, $userName, $mailHeaders)) {
+        echo "<script>alert('you message have been sent.');</script>"; 
+	    }
+      else{
+        echo "<script>alert('sorry there have been a problem in sending your message please try again later.');</script>"; 
+      }
+}
+?>
+
        </form>
      </div>
      <div class="content">
