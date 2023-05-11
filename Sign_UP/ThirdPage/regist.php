@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="registiration.CSS">
+    <link rel="stylesheet" href="reg.CSS">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
     <title>Registration</title>
     <style>
@@ -89,13 +89,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
 
                     <div>
-                    <input type="password" id="password" placeholder="Enter your password">
-                    <span class="password-toggle" onclick="togglePasswordVisibility()">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
-                    </span>
                         <label for="Password">Password</label>
                         <input type="password" placeholder="password" required name="password" id="password">
-                        <i class="fa fa-eye" id="show-Password"></i> 
+                        <i class="fa fa-eye" id="toggle-password" onclick="togglePassword()"></i>
                         <p id="message">Password is <span id="strength"></span></p>
                     </div>
 
@@ -103,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div>
                         <label for="Password">Re-Password</label>
                         <input type="Password" placeholder="Re-Password" required name="re-password" id="re-password">
-                        <i class="fa fa-eye" id="show-re-password"></i>
+                        <i class="fa fa-eye" id="toggle-re-password" onclick="toggleRePassword()"></i>
                         <p id="passtwo">Password is <span id="alert"></span></p>
                     </div>
                 </div>
@@ -145,34 +141,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <footer>
         <img src="../../home/imgs/gold-ducks.png" alt="Logo">
     </footer>
-
-    <script src="regist.js"></script>
-    <script>
-        // Change the Password into text
-        function togglePasswordVisibility() {
-        var passwordInput = document.getElementById("password");
-        var passwordToggle = document.querySelector(".password-toggle svg path");
-
-        if (passwordInput.type === "password") {
-          passwordInput.type = "text";
-          passwordToggle.setAttribute("d", "M12 3a9 9 0 0 1 2.97 17.3l1.43 1.44a1 1 0 0 1-1.42 1.42l-1.44-1.43A9 9 0 1 1 12 3zm0 2a7 7 0 0 0-.65 13.96l.65.04V5zm0 4a3 3 0 1 1 0 6 3 3 0 0 1 0-6zM9 9a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm6 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z");
-        } else {
-          passwordInput.type = "password";
-          passwordToggle.setAttribute("d", "M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z");
-        }
-      }
-
-        const ShowRePassword = document.getElementById("#show-re-password");
-        const rePassword = document.getElementById("#re-password");
-
-        ShowRePassword.addEventListener("click", function() {
-
-            const type = rePassword.getAttribute("type") === "password" ? "text" : "password";
-            rePassword.setAttribute("type", type);
-
-            this.classList.toggle("bi-eye");
-        });
-    </script>
+      
+    <script src="reg.js"></script>
 </body>
 
 </html>

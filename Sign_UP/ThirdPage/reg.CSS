@@ -95,11 +95,16 @@ input[type="password"] {
     font-size: 20px;
 }
 
-.fa-eye{
+#toggle-password, #toggle-re-password{
     display: inline;
     color: #101820;
     cursor: pointer;
     margin-left: -40px;
+    /* position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer; */
 }
 
 #message{
@@ -135,8 +140,8 @@ input::placeholder {
     border: 1px solid #FEE715;
     border-radius: 20px;
 
-    background-color: #FEE715;
-    color: #101820;
+    background-color: #101820;
+    color: #FEE715;
 }
 
 .gender>label {
