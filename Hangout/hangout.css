@@ -191,11 +191,14 @@ header {
 
 .hang .left .choices .f_row .card .text1 h1 {
     font-weight: 600;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 10px;
     margin-top: 17px;
 }
-
+.hang .left .choices .f_row .card .text1 p{
+    margin-top: 5px;
+    font-size: 11px;
+}
 .hang .left .choices .f_row .card .text1 h2 {
     /* New family --> Libre frankin */
     font-weight: 600;
@@ -570,4 +573,12 @@ footer i {
 
 footer:hover i{
     transform: scale(1.2);
+}
+select optgroup{
+    color: #bd570a;
+    font-size: 16px;
+}
+select option{
+    color: #000;
+    font-size: 13px;
 }

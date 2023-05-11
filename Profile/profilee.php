@@ -73,6 +73,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="user">
                 <a href="../index.php" id="home"><i class="fa fa-arrow-circle-left"></i><span>&nbsp;Home <i class="fa fa-ducks"></i></span></a>
                 <img src="user_profile_imgs/<?php echo $user_data['user_pic'] ?>" alt="profile_picture">
+                <div class="pic">
+                    <form enctype="multipart/form-data" method="post">
+                        <input type="hidden" name="Form_identifier" value="update_profile_pic">
+                        <input type="file" name="user_pic" id="" accept=".jpg, .png, .jpeg">
+                        <div class="icon">
+                            <i class="fa-solid fa-camera" style="color: #fbf704;"></i>
+                        </div>
+                    </form>
+                </div>
                 <div class="h">
                 <h2><?php echo $user_data['username'] ?></h2>
                 <h3><?php echo $user_data['email'] ?></h3>
@@ -140,12 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </form>
 
             <!-- set profile pic -->
-            <form enctype="multipart/form-data" method="post">
-                <input type="hidden" name="Form_identifier" value="update_profile_pic">
-                <label for="">Enter Your profile Picture</label>
-                <input type="file" name="user_pic" id="" accept=".jpg, .png, .jpeg">
-                <input type="submit" value="Save">
-            </form>
+            
             <!-- end of profile pic -->
 
         </div>
