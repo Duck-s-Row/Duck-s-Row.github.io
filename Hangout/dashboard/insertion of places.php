@@ -67,7 +67,12 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         <label for="details">details:</label>
         <input type="text" name="details" id="details"><br>
         <label for="category">Category:</label>
-        <input type="text" name="category" id="category"><br>
+        <select name="category" id="">
+            <option value="Cafe">Cafe</option>
+            <option value="Restaurants">Restaurants</option>
+            <option value="Park">Park</option>
+            <option value="Museums">Museums</option>
+        </select><br>
         <label for="location">Location:</label>
         <input type="url" name="location" id="location"><br>
         <label for="min">Min:</label>
