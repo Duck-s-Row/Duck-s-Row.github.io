@@ -111,14 +111,13 @@ header {
     min-height: 100vh;
     padding-top: 150px;
     background-color: #FEE715;
-    background-image: url("rubber-duck.png");
-    background-repeat: no-repeat;
-    background-position: 900px;
-    background-size: 220px;
     display: flex;
     flex-direction: row;
     /* justify-content: center; */
     align-items: center;
+    background-image: url("/home/imgs/giza.png");
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .hang .left {
@@ -278,7 +277,6 @@ header {
     align-items: center;
     flex-direction: column;
 }
-
 .hang .right .budget{
     width: 100%;
     height: 200px;
