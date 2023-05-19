@@ -5,6 +5,8 @@ require('../../Functions/Functions.php');
 check_privilege_hangout($con);
 $select_places = "select * from places";
 $result = mysqli_query($con,$select_places);
+$select_places1 = "select * from places";
+$result1 = mysqli_query($con,$select_places1);
 if($_SERVER['REQUEST_METHOD']=="POST"){
     if ($_POST['Form_identifier'] == "insert_new_place"){
         $p_name = $_POST['p_name'];
@@ -31,11 +33,11 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         if (!in_array($image_ext, $valid_image_ext)) {
             echo '
             <script>alert("Invalid Image Extension");</script>';
-            header('Location:profile.php');
+            header('Location:insertion of places.php');
         } elseif ($image_size > 1200000) {
             echo '
             <script>alert("Imgae Size Is Too Large");</script>';
-            header('Location:profile.php');
+            header('Location:insertion of places.php');
         } else {
             $photo_id= random_num(10);
             $new_image_name = random_num(10);
@@ -43,9 +45,37 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
             $insert_new_place_pic = "INSERT INTO place_pics(photo_id,place_id,photo_name) VALUES($photo_id,$place_id,'$new_image_name')";
             mysqli_query($con, $insert_new_place_pic);
             move_uploaded_file($tmp_name, '../places_imgs/' . $new_image_name);
-            header('Location:profilee.php');
+            header('Location:insertion of places.php');
+        }
+    }else if ($_POST['Form_identifier'] == "insert_logo"){
+        $place_id = $_POST['place_id'];
+        $logo_name = $_FILES['logo_name']['name'];
+        $logo_size = $_FILES['logo_name']['size'];
+        $tmp_name = $_FILES['logo_name']['tmp_name'];
+
+        //image validation 
+        $valid_logo_ext = ['jpg', 'png', 'jpeg'];
+        $logo_ext = explode('.', $logo_name);
+        $logo_ext = strtolower(end($logo_ext));
+        if (!in_array($logo_ext, $valid_logo_ext)) {
+            echo '
+            <script>alert("Invalid logo Extension");</script>';
+            header('Location:insertion of places.php');
+        } elseif ($logo_size > 1200000) {
+            echo '
+            <script>alert("Logo Size Is Too Large");</script>';
+            header('Location:insertion of places.php');
+        } else {
+            $photo_id= random_num(10);
+            $new_logo_name = random_num(10);
+            $new_logo_name .= "." . $logo_ext;
+            $update_logo = "UPDATE places SET logo = '$new_logo_name' WHERE place_id = $place_id";
+            mysqli_query($con, $update_logo);
+            move_uploaded_file($tmp_name, '../logos/' . $new_logo_name);
+            header('Location:insertion of places.php');
         }
     }
+    
     header('Location:insertion of places.php');
 }
 ?>
@@ -83,15 +113,27 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     </form><br><br>
     <form method="post" align=center enctype="multipart/form-data">
     <input type="hidden" name="Form_identifier" value="insert_photo">
-        <label for="p_name">choose a place:</label>
-        <select id="p_name" name="place_id">
-            <?php while($row = mysqli_fetch_assoc($result)): ?>
+    <label for="p_name">choose a place:</label>
+    <select id="p_name" name="place_id">
+        <?php while($row = mysqli_fetch_assoc($result)): ?>
             <option value="<?php echo $row['place_id']?>"><?php echo $row['p_name'] ?></option>
             <?php endwhile; ?>
         </select><br>
         <label for="photo_name">insert photo</label>
         <input type="file" name="photo_name" id="photo_name" accept=".jpg, .png, .jpeg"><br>
         <input type="submit" value="save">
+    </form><br>
+    <form method="post" enctype="multipart/form-data" align=center>
+        <select id="p_name" name="place_id">
+            <?php while($row1 = mysqli_fetch_assoc($result1)): ?>
+                <option value="<?php echo $row1['place_id']?>"><?php echo $row1['p_name'] ?></option>
+            <?php endwhile; ?>
+        </select><br>
+        <input type="hidden" name="Form_identifier" value="insert_logo">
+        <label for="logo_name">insert logo</label>
+        <input type="file" name="logo_name" id="logo_name" accept=".jpg, .png, .jpeg"><br>
+        <input type="submit" value="save">
+        
     </form>
 </body>
 </html>
