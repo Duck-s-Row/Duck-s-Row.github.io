@@ -439,7 +439,7 @@ header {
     height: 90%;
     margin-top: 5%;
     margin-bottom: 5%;
-    width: 1200px;
+    width: 100%;
     border-radius: 50px;
 }
 .about_us .left h1{
@@ -555,6 +555,10 @@ footer {
     .cards {
         margin: 10px 45px;
     }
+      
+      footer {
+        height: 110px;
+      }
 }
 
 @media (max-width: 768px) {
