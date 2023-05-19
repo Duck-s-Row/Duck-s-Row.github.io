@@ -79,11 +79,28 @@ function getAllplaces($con){
     }
     return $places;
 }
-function getplacesByLocation($con,$location){
-    $selectPlacesBylocatoin = "SELECT * FROM places WHERE p_branch= '$location'";
-    $result = mysqli_query($con,$selectPlacesBylocatoin);
-    while($row = mysqli_fetch_assoc($result)){
-        $places[]= $row;
+
+function filterLocationSort($con,$location,$sort){
+    $sql = "SELECT * FROM places";
+    $condition = [];
+    if(!empty($location)){
+        $location = mysqli_real_escape_string($con,$location);
+        $condition[]="p_branch = '$location'";
     }
-    return $places;
+
+    if(!empty($condition)){
+        $sql .= " WHERE ".implode(" AND ",$condition);
+    }
+
+    if ($sort == "top-Average") {
+        $sql .= " ORDER BY average_budget DESC";
+    } elseif ($sort == "low-Average") {
+        $sql .= " ORDER BY average_budget ASC";
+    }
+    $result = mysqli_query($con, $sql);
+    $filteredResults = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $filteredResults[] = $row;
+    }
+    return $filteredResults;
 }
