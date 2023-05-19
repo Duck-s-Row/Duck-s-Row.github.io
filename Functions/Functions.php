@@ -70,3 +70,20 @@ function check_privilege_hangout($con)
         die;
     }
 }
+
+function getAllplaces($con){
+    $selectAllplaces = "SELECT * FROM places ORDER BY Rand() ";
+    $result = mysqli_query($con,$selectAllplaces);
+    while($row = mysqli_fetch_assoc($result)){
+        $places[]= $row;
+    }
+    return $places;
+}
+function getplacesByLocation($con,$location){
+    $selectPlacesBylocatoin = "SELECT * FROM places WHERE p_branch= '$location'";
+    $result = mysqli_query($con,$selectPlacesBylocatoin);
+    while($row = mysqli_fetch_assoc($result)){
+        $places[]= $row;
+    }
+    return $places;
+}
