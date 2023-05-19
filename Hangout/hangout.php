@@ -12,7 +12,7 @@ $user_data = check_login($con);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="hangout.css">
+    <link rel="stylesheet" href="hang.css">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <title>Hangout</title>
@@ -76,23 +76,27 @@ $user_data = check_login($con);
                             <img src="logos/<?php echo $place['logo'] ?>" alt="Logo Picture">
                             <div class="text1">
                                 <h1><?php echo $place['p_name'] ?></h1>
-                                <p>
-                                    <?php echo $place['details'] ?>
-                                </p>
+                                <div class="dis">
+                                    <p>
+                                        <?php echo $place['details'] ?>
+                                    </p>
+                                </div>
                                 <h6>Average: </h6>
                                 <?php echo $place['average_budget'] ?>
                             </div>
-                            <hr>
                             <div class="location-text">
                                 <i class="fa-solid fa-location-dot"></i>
                                 <p><?php echo $place['p_branch'] ?></p>
                             </div>
-                            <button class="location" id="more">More</button>
+                            <div class="more">
+                                <form method="post">
+                                    <input type="submit" name="more" id="more" value="More">
+                                </form>
+                            </div>
                         </div>
                     <?php
                     endforeach;
-                    ?>
-                    
+                    ?>    
                 </div>
             </div>
         </div>

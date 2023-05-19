@@ -110,14 +110,10 @@ header {
     width: 100%;
     min-height: 100vh;
     padding-top: 150px;
-    background-color: #FEE715;
+    background: linear-gradient(120deg, #FEE715,#9d8e04);
     display: flex;
     flex-direction: row;
     /* justify-content: center; */
-    align-items: center;
-    background-image: url("/home/imgs/giza.png");
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 .hang .left {
@@ -131,24 +127,24 @@ header {
 }
 
 .hang .left .filters {
-    width: 840px;
+    width: 100%;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #EDEDED;
     padding: 0 100px;
-    /* position: fixed;
-    top: 15%; */
 }
-
-.hang .left .filters input[type="number"] {
-    width: 50px;
-    text-align: center;
+select optgroup{
+    color: #bd570a;
+    font-size: 16px;
 }
-
+select option{
+    color: #000;
+    font-size: 13px;
+}
 .hang .left .choices {
-    width: 850px;
+    width: 100%;
     min-height: 80vh;
     display: flex;
     align-items: center;
@@ -159,96 +155,64 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    gap: 40px;
+    flex-direction: column;
 }
 
 .hang .left .choices .f_row .card {
-    width: 500px;
+    width: 100%;
     height: 120px;
     background-color: #EDEDED;
-    margin: 40px 0 20px 0;
-    display: grid;
-    grid-template-columns: repeat(3, 120px);
-    grid-template-rows: repeat(3, 70px);
-    border: 2px solid #101820;
+    margin: 20px 0 10px 0;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #000000;
 }
 
 .hang .left .choices .f_row .card img {
     width: 115px;
     height: 115px;
-    grid-column: 1 / 2;
-
+    margin-left: 10px;
 }
 
 .hang .left .choices .f_row .card .text1 {
-    grid-column: 2 / 5;
-    grid-row: 1 / 3;
-    justify-content: center;
-    flex-direction: column;
+    margin-left: 20px;
 }
-
 .hang .left .choices .f_row .card .text1 h1 {
     font-weight: 600;
     font-size: 15px;
     line-height: 10px;
-    margin-top: 17px;
+    margin-top: 17px; 
 }
 .hang .left .choices .f_row .card .text1 p{
-    margin-top: 5px;
+    margin-top: 10px;
     font-size: 11px;
 }
-.hang .left .choices .f_row .card .text1 h2 {
-    /* New family --> Libre frankin */
+.dis{
+    width: 400px;
+}
+.hang .left .choices .f_row .card .text1 h6 {
     font-weight: 600;
     font-size: 13px;
     line-height: 10px;
     letter-spacing: 0.1em;
     color: #cbb704;
+    margin-top: 20px;
 }
-
-.hang .left .choices .f_row .card .text1 ul{
-    padding-left: 0;
-}
-
-.hang .left .choices .f_row .card .text1 ul li {
-    font-weight: 600;
-    font-size: 10px;
-    line-height: 12px;
-    letter-spacing: 0.1em;
-    padding-bottom: 5px;
-    list-style: none;
-}
-.hang .left .choices .f_row .card hr {
-    width: 65px;
-    height: 0px;
-
-    grid-column: 4;
-    grid-row: 1 / 3 ;
-    margin-top: 60%;
-    
-    opacity: 1;
-    transform: rotate(90deg);
-}
-
 .hang .left .choices .f_row .card .location-text p {
-    margin: 0;
-    padding: 2px;
+    font-size: 15px;
+    padding-left: 2px;
 }
 
 .hang .left .choices .f_row .card .location-text{
-    grid-row: 1 / 3;
-    grid-column: 4 / 7;
     margin-left: 40px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
     font-size: 10px;
     letter-spacing: 0.1em;
+    margin-top: 80px;
+    width: 120px;
 }
-.hang .left .choices .f_row .card .location, .add-plan, .send-comment, .filre-submit {
+.hang .left .choices .f_row .card .add-plan, .send-comment, .filre-submit {
     height: 30px;
     width: 70px;
     background-color: #101820;
@@ -257,25 +221,28 @@ header {
     border-radius: 10px;
     margin-left: 320px;
 }
-
+.more{
+    margin-left: 60px;
+    margin-top: 75px;
+}
+.more input[type="submit"]{
+    text-align: right;
+    color: #FEE715;
+    background-color: #101820;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+}
+.more input[type="submit"]:hover{
+    color: #101820;
+    background-color: #9d8e04;
+}
 .filre-submit {
     margin: auto;
 }
-
-
-.hang .left .choices .f_row .card .location:hover,  .filre-submit:hover{
-    color: #101820;
-    background-color: #FEE715;
-    border: 2px solid #101820;
-}
-
 .hang .right {
     width: 350px;
     height: 85vh;
-    margin-left: 100px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    margin: 0 0 0 80px;
 }
 .hang .right .budget{
     width: 100%;
@@ -287,7 +254,6 @@ header {
     flex-direction: column;
     text-align: left;
 }
-
 input[type="number"] {
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
@@ -338,6 +304,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .hang .right hr {
     margin: 20px 0;
+    margin-left: 15px;
     width: 90%;
     height: 3px;
     background-color: #000;
@@ -347,11 +314,9 @@ input[type=number]::-webkit-outer-spin-button {
     width: 100%;
     height: auto;
     background-color: #EDEDED;
-
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    
+    flex-direction: column;  
     padding: 20px 20px;
 }
 
@@ -551,17 +516,16 @@ footer {
     height: 30px;
     border-radius: 50%;
     cursor: pointer;
-
-    background-color: #101820;
-
+    background-color: #FEE715;
     display: flex;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center;  
     position: fixed;
     bottom: 50px;
     right: 50px;
     transition: .5s ease-out;
+    border: 2px black solid;
+    color: red;
 }
 
 footer i {
@@ -571,12 +535,4 @@ footer i {
 
 footer:hover i{
     transform: scale(1.2);
-}
-select optgroup{
-    color: #bd570a;
-    font-size: 16px;
-}
-select option{
-    color: #000;
-    font-size: 13px;
 }
