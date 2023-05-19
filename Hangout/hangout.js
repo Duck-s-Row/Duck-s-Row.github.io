@@ -13,3 +13,42 @@ let range = document.getElementById("rangeVlaue");
 function rangeChange(value) {
   range.innerHTML = value;
 }
+
+var selectLocation = document.querySelector("#p_branch");
+
+selectLocation.addEventListener("change",function(){
+  let locationName = this.value;
+  // alert("something selected "+locationName);
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function(){
+    if(this.readyState== 4 && this.status==200){
+      var response = JSON.parse(this.responseText);
+      var out = "";
+      for(var item of response){
+        out +=`
+        <div class="card">
+        <img src="logos/${item.logo}" alt="Logo Picture">
+        <div class="text1">
+        <h1>${item.p_name}</h1>
+        <p>
+        ${item.details}
+        </p>
+        <h6>Average: </h6>
+        ${item.average_budget}
+        </div>
+        <hr>
+        <div class="location-text">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>${item.p_branch}</p>
+        </div>
+        <button class="location" id="more">More</button>
+    </div>
+        `;
+      }
+       document.querySelector(".f_row").innerHTML=out;
+    }
+  }
+  xhr.open('POST','script.php');
+  xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+  xhr.send("location="+locationName);
+});
