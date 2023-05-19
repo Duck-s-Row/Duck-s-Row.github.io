@@ -63,8 +63,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="profilee.css">
     <title>Profile</title>
+    <style>
+        
+    </style>
 </head>
 
 <body>
@@ -160,19 +163,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <!-- start of My Plans -->
         <div class="planes" id="planes">
             <div class="details">
-                <h2><strong>My Plans</strong></h2>
+                <h2><strong>My Plan</strong></h2>
             </div>
-            <div class="card">
-
-            </div>
-            <div class="card">
-
-            </div>
-            <div class="card2">
-                <a href="/Hangout/hangout.php">
-                    <h2>Add New Plan <span>+</span></h2>
-                </a>
-            </div>
+            <form method="post">
+                <label for="p_num">People</label>
+                <input type="number" name="p_num">
+            </form>
         </div>
         <!-- end of My Plans -->
 
@@ -188,9 +184,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <label>Old Password : </label><br>
                     <input id="old_pass" class="old_pass" type="password" name="old_pass">
                 </div>
-                <input type="submit" value="check">
+                <div class="check">
+                    <input type="submit" value="check">
+                </div>
             </form>
-
+            <hr>
             <form method="post">
                 <input type="hidden" name="Form_identifier" value="update_password">
                 <div class="new">
@@ -203,11 +201,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <input id="renew_pass" class="renew_pass" type="password" name="renew_pass" readonly>
                     </div>
                 </div>
-                <input type="submit" value="Save">
+                    <input type="submit" value="Save">
             </form>
-            <div>
-                <img src="/home/imgs/pyramids (1).png" alt="">
-            </div>
         </div>
         <!-- end of change password -->
 
