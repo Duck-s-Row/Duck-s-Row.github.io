@@ -1,4 +1,3 @@
-drop database ducks_row;
 create database ducks_row;
 use ducks_row;
 
@@ -57,6 +56,6 @@ place_id bigint
 );
 alter table user_plans add foreign key(user_id) references users(user_id);
 alter table user_plans add foreign key(place_id) references places(place_id);
-alter table places modify column logo varchar(255) default "default_logo.png";
+alter table places add column logo varchar(255) default "default_logo.png";
 
 
