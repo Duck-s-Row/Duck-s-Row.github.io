@@ -92,8 +92,20 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     <input type="hidden" name="Form_identifier" value="insert_new_place">
         <label for="p_name">place :</label>
         <input type="text" name="p_name" id="p_name"><br>
+        <!-- <input type="text" name="p_branch" id="p_branch"><br> -->
         <label for="p_branch">place branch:</label>
-        <input type="text" name="p_branch" id="p_branch"><br>
+        <select id="p_branch" name="p_branch">
+                    <optgroup label="GIZA">
+                        <option value="haram">haram</option>
+                        <option value="fisal">fisal</option>
+                        <option value="el doki">el doki</option>
+                        <option value="zamalek">zamalek</option>
+                        <option value="6th october">6th october</option>
+                        <option value="el shiekh zayed">el shiekh zayed</option>
+                        <option value="el mohandseen">el Mohandseen</option>
+                        <option value="el manial">el Manial</option>
+                    </optgroup>
+        </select><br>
         <label for="details">details:</label>
         <input type="text" name="details" id="details"><br>
         <label for="category">Category:</label>
