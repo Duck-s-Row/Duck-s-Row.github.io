@@ -15,7 +15,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
    <meta charset="UTF-8">
    <meta name="description" content="GO Fun, GO & run">
-   <link rel="stylesheet" href="home/CSS_files/styleeee.css">
+   <link rel="stylesheet" href="home/CSS_files/sty.css">
    <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Bebas+Neue&display=swap" rel="stylesheet">
    <link rel="website icon" type="png" href="home/imgs/Logo.png">
@@ -23,7 +23,7 @@
  </head>
 
  <body>
-  <div class="loading" id="loader"></div>
+  <!-- <div class="loading" id="loader"></div> -->
    <!-- The Start of Navbar section -->
    <header>
      <div class="logo"><a href="#home"><img src="home/imgs/ducks.png" alt=""></a></div>
@@ -36,7 +36,7 @@
        <ul>
          <li><a href="#home">Home</a></li>
          <li><a href="Hangout/hangout.php">Hangout</a></li> <!-- we could remove this ancher tag link because of using the button  -->
-         <li><a href="#services">News</a></li>
+         <li><a href="#services">Services</a></li>
          <li><a href="Sign_UP/first page/Sign_up.php">My Plans</a></li>
          <li><a href="#about_us">About</a></li>
          <li><a href="Profile/profile.php" class="profile">Profile</a></li>
@@ -92,30 +92,39 @@
 
    <!-- The Start of Services Section -->
    <section class="services" id="services">
-     <div class="cards">
-       <div class="pra">
-         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio dolores, voluptas voluptatibus deserunt praesentium quo maxime ipsa eaque? Consequuntur, eveniet </p>
-       </div>
-       <div class="btn">
-         <button>See More</button>
-       </div>
-     </div>
-     <div class="cards">
-       <div class="pra">
-         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio dolores, voluptas voluptatibus deserunt praesentium quo maxime ipsa eaque? Consequuntur, eveniet </p>
-       </div>
-       <div class="btn">
-         <button>See More</button>
-       </div>
-     </div>
-     <div class="cards">
-       <div class="pra">
-         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio dolores, voluptas voluptatibus deserunt praesentium quo maxime ipsa eaque? Consequuntur, eveniet </p>
-       </div>
-       <div class="btn">
-         <button>See More</button>
-       </div>
-     </div>
+   <div class="content">
+            <div class="card">
+                <div class="icon">
+                  <i class="fa-solid fa-sack-dollar"></i>
+                </div>
+                <div class="info">
+                    <h3>Specific budget</h3>
+                    <p>You can decide on a budget, and we'll show you the appropriate places depending on that.</p>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="card">
+                <div class="icon">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="info">
+                    <h3>Various places</h3>
+                    <p>We'll highlight various locations in the Giza Governorate that are appropriate for all groups.</p>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="card">
+                <div class="icon">
+                  <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div class="info">
+                    <h3>Make your plan</h3>
+                    <p>To visit the locations you add at any moment, you can make your own plan.</p>
+                </div>
+            </div>
+        </div>
    </section>
    <!-- The End of services Section -->
 
