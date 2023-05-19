@@ -120,69 +120,6 @@ $user_data = check_login($con);
     </section>
     <!-- The End of Hangout Section -->
 
-    <!-- The Start of Popup page  -->
-    <section class="popup" id="popup">
-        <div class="popup-content">
-            <img src="imgs/exit.png" alt="exit" id="exit" class="exit">
-            <img src="imgs/Find-a-Restaurant.jpg" alt="photo" class="popup-image">
-            <div class="content">
-                <h2>Macdonald's</h2>
-                <p>McDonald's Corporation is an American multinational fast food chain, founded in 1940 as a restaurant operated by Richard and Maurice McDonald, in San Bernardino, California, United States.</p>
-            </div>
-
-            <div class="pop-budget">
-                <h3>Budget</h3>
-                <p>70 EG - 300 EG <br> per persone</p>
-            </div>
-            <div class="pop-Capacity">
-                <h3>Capacity</h3>
-                <p>1 - 50 <br>persones</p>
-            </div>
-            <div class="pop-More-details">
-                <h3>More details</h3>
-                <ul>
-                    <li>Breakfast</li>
-                    <li>Lunch</li>
-                    <li>McCafé</li>
-                    <li>Happy meal</li>
-                </ul>
-            </div>
-            <div class="rating">
-                <div class="stars">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-stroke"></i>
-                </div>
-                <div>98% satisfied</div>
-            </div>
-            <div class="pop-rate">
-                <h3>Rate that place</h3>
-                <span>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </span>
-                <textarea type="text-box" placeholder="Add a comment about that place" maxlength="120"></textarea>
-                <div class="send">
-                    <button type="submit" class="send-comment">Send</button>
-                </div>
-            </div>
-            <div class="more-comments">
-                <h3>the best comment</h3>
-                <span>profile name</span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odio accusantium distinctio incidunt corporis cupiditate.</p>
-            </div>
-            <div class="plans">
-                <button class="add-plan">Add to my planes</button>
-            </div>
-        </div>
-    </section>
-    <!-- The End of Popup page  -->
-
     <!-- The Start of Contact Us section -->
     <section class="contact_us" id="contact_us">
         <div class="left">
