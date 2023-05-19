@@ -36,22 +36,27 @@ function filter() {
             <img src="logos/${item.logo}" alt="Logo Picture">
             <div class="text1">
               <h1>${item.p_name}</h1>
-              <p>${item.details}</p>
+              <div class="dis">
+                <p>${item.details}</p>
+              </div>
               <h6>Average: </h6>
-              ${item.average_budget}
+                ${item.average_budget}
             </div>
-            <hr>
             <div class="location-text">
               <i class="fa-solid fa-location-dot"></i>
               <p>${item.p_branch}</p>
             </div>
-            <button class="location" id="more">More</button>
+              <div class="more">
+              <form method="post">
+                <input type="submit" name="more" id="more" value="More">
+              </form>
+            </div>
           </div>
         `;
       }
       container.innerHTML = out;
     }
-  };
+  };  
   xhr.open('POST', 'script.php');
   xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
   xhr.send("location=" + location + "&sort=" + sort);
