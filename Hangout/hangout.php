@@ -69,7 +69,7 @@ $user_data = check_login($con);
             <div class="choices">
                 <div class="f_row">
                     <?php
-                    $places = getAllplaces($con,"haram");
+                    $places = getAllplaces($con);
                     foreach ($places as $place) :
                     ?>
                         <div class="card">
