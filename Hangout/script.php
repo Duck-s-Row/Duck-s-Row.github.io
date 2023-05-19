@@ -1,12 +1,8 @@
 <?php
 require("../connection/connection.php");
 require("../Functions/Functions.php");
-if (isset($_REQUEST['location'])) {
-    $location = $_REQUEST['location'];
-    if ($location === "") {
-        $places = getAllplaces($con);
-    } else {
-        $places = getplacesByLocation($con,$location);
-    }
-    echo json_encode($places);
-}
+
+$location = isset($_POST['location']) ? $_POST['location'] : "";
+$sort = isset($_POST['sort']) ? $_POST['sort'] : "";
+$places = filterLocationSort($con,$location,$sort);
+echo json_encode($places);

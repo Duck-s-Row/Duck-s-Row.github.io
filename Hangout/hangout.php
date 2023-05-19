@@ -12,7 +12,7 @@ $user_data = check_login($con);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="hangout.css">
+    <link rel="stylesheet" href="hangoutt.css">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <title>Hangout</title>
@@ -46,6 +46,7 @@ $user_data = check_login($con);
                 <div>
                     <label for="sort">Sort by</label>
                     <select id="sort" name="sort">
+                        <option value="" >None</option>
                         <option value="top-Average">Top Average</option>
                         <option value="low-Average">Low Average</option>
                     </select>
