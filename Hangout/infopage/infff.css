@@ -15,53 +15,152 @@ body{
     width: 100%;
     background-color: #101820;
 }
-
+header {
+    width: 100%;
+    height: 80px;
+    background: #dfca13;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px 0 50px;
+    /* border-radius: 100px; */
+    position: fixed;
+    z-index: 999;
+    /* margin: 40px 5% 0 5%; */
+}
+.main{
+    width: 100%;
+    height: 91vh;
+    padding-top: 150px;
+    display: flex;
+    flex-direction: row;
+}
+.logo img{
+    width: 80px;
+}
 .back-arrow{
-    padding-left: 20px;
-    padding-top: 20px;
+    padding-right: 40px;
     width: 30px;
     height: 30px;
-    color: #fee715;
+    color: #101820;
+    padding-bottom: 10px;
+}
+.hamburger {
+    display: none;
+}
+
+.nav-bar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.nav-bar ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-bar ul li a, .fa-user, #logout  {
+    color: #101820;
+    font-size: 20px;
+    padding: 10px 25px;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+.nav-bar ul li a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #101820;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-bar ul li a:hover::after{
+    width: 100%;
+}
+
+.nav-bar ul li a:hover{
+    color: #101820;
+}
+
+@media (max-width: 90vh) {
+    nav {
+        min-height: 5vh;
+        top: 20px;
+    }
+
+    .navbar .navbar-toggler {
+        color: white;
+        border: none;
+        font-size: 40px;
+    }
+
+    #user {
+        margin-left: 10px;
+        font-size: 40px;
+        color: white;
+    }
+
+    #logo {
+        width: 90px;
+    }
+
+    .navbar .navbar-nav .nav-link,.navbar .navbar-brand {
+        font-size: 30px;
+    }
+
 }
 
 .photo{
     display: flex;
     width: 100%;
-    height: 90%;
+    height: 100%;
 }
 
 .img{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 40%;
 }
 
 .img img{
-    margin-left: 20px;
-    width: 100%;
-    height: 70%;
-    padding: 20px 0;
+    margin-left: 55px;
+    padding: 30px 0;
     border-radius: 50px;
+    width: 500px;
+    height: 500px;
 }
 
 .img h1{
     color: white;
-    margin:0 auto;
+    margin: auto;
 }
 
 .disc{
     display: flex;
     flex-direction: column;
     width: 50%;
-    padding: 100px;
+    padding: 70px;
     color: white;
 }
-
-.disc p{
-    margin-bottom: 40px;
-    text-align: justify;
+.disc a{
+    color: white;
 }
-
+.disc a:hover{
+    color: white;
+}
+.disc p{
+    text-align: justify;
+    margin-bottom: 20px;
+}
+.disc h2{
+    color: #dfca13;
+}
 .box{
     display: flex;
     flex-direction: column;
@@ -87,11 +186,13 @@ body{
 }
 
 .btn button{
-    background-color: #fee715;
+    background: #dfca13;
     width: 200px;
     height: 50px;
     color: black;
     border-radius: 50px;
+    margin-bottom: 20px;
+    font-size: 16px;
 }
 
 .btn button:hover{
@@ -150,7 +251,7 @@ body{
   .contact_us{
     width: 100%;
     min-height: fit-content;
-    background-color: #101820;
+    background: #dfca13;
     display: grid;
     grid-template-columns: repeat(3, 33.33%);
     grid-template-rows: repeat(2, 50%);
@@ -169,7 +270,7 @@ body{
 
 .contact_us .left a h3{
     font-family: 'Bebas Neue', cursive;
-    color: #FEE715;
+    color: #101820;
     text-transform: uppercase;
     display: inline;
 }
@@ -181,7 +282,7 @@ body{
 
 .contact_us .info h3{
     text-transform: uppercase;
-    color: #FEE715;
+    color: #101820;
     font-family: 'Bebas Neue', cursive;
 }
 
@@ -191,7 +292,7 @@ body{
 
 .contact_us .info a {
     text-decoration: none;
-    color: #FEE715;
+    color: #101820;
 }
 
 .contact_us .info a:hover {

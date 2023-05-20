@@ -191,6 +191,7 @@ select option{
 
 .dis{
     width: 400px;
+    height: 35px;
 }
 
 .hang .left .choices .f_row .card .text1 h6 {
@@ -198,8 +199,8 @@ select option{
     font-size: 13px;
     line-height: 10px;
     letter-spacing: 0.1em;
-    color: #cbb704;
-    margin-top: 20px;
+    color: #cb0b04;
+    margin-top: 10px;
 }
 
 .hang .left .choices .f_row .card .location-text p {
