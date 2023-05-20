@@ -25,9 +25,7 @@ chooice[0].addEventListener("click", () => {
 });
 
 chooice[1].addEventListener("click", () => {
-    details_info.style.display = 'none';
-    planes.style.display = 'block';
-    pass.style.display = 'none';
+    window.location.href = '../plans/plans.php';
 });
 
 

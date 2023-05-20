@@ -249,7 +249,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
     ?>
-    <script src="app.js"></script>
+    <script src="apps.js"></script>
     <script>
         <?php if ($user_data['gender'] == "M") : ?>
             let male = document.getElementById("male").setAttribute("checked", "checked");
