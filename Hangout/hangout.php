@@ -83,7 +83,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                 <h1><?php echo $place['p_name'] ?></h1>
                                 <div class="dis">
                                     <p>
-                                        <?php echo $place['category'] ?>
+                                        <?php echo $place['category'] ?><br>
+                                        <?php echo $place['small_details'] ?>
                                     </p>
                                 </div>
                                 <h6>Average: </h6>
@@ -108,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </div>
         <div class="right">
             <div class="budget">
-                <h1>Your Max budget / Person</h1>
+                <h1>Your Max budget / Place</h1>
                 <input type="range" class="range" name="budget" min="100" max="1000" step="100" value="500" onchange="rangeChange(this.value)">
                 <span id="rangeVlaue">500</span>
             </div>
@@ -149,7 +150,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <footer>
         <a href="#"><i class="fa fa-arrow-up"></i></a>
     </footer>
+    <script src="hangout.js"></script>
 </body>
 
 </html>
-<script src="hangoutt.js"></script>
