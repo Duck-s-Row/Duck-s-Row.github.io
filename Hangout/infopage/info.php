@@ -18,6 +18,7 @@ $result_pics = mysqli_query($con,$pics_query);
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
     <link rel="stylesheet" href="info.css">
     <title>info</title>
 </head>
@@ -37,7 +38,7 @@ $result_pics = mysqli_query($con,$pics_query);
         <div class="disc">
 
             <h2><?php echo $row['p_name']; ?></h2>
-            <p><?php echo $row['details']; ?></p>
+            <p><?php echo $row['category']; ?></p>
 
             <div class="box">
 
@@ -59,12 +60,7 @@ $result_pics = mysqli_query($con,$pics_query);
                         <div>
     
                             <h3>More Details</h3>
-                                <ol>
-                                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, fuga!</li>
-                                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, fuga!</li>
-                                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, fuga!</li>
-                                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, fuga!</li>
-                                </ol>
+                            <p><?php echo $row['details'] ?></p>
                         </div>
     
                     </div>
