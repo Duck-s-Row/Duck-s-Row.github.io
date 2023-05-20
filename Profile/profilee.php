@@ -139,8 +139,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <div>
                             <label class="gmale">Male</label>
                             <input id="male" class="male" type="radio" value="M" name="gender">
-                        </div>
-                        <div>
                             <label class="gfemale">Female</label>
                             <input id="female" class="female" type="radio" value="F" name="gender">
                         </div>

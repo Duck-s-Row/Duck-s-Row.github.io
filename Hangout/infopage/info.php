@@ -7,6 +7,7 @@ $result = mysqli_query($con,$Data);
 if($result && mysqli_num_rows($result)>0){
  $row = mysqli_fetch_assoc($result);   
 }
+//picture query 
 $pics_query = "SELECT * FROM place_pics WHERE place_id = $place_id";
 $result_pics = mysqli_query($con,$pics_query);
 ?>

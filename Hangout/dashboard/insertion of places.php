@@ -9,14 +9,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if ($_POST['Form_identifier'] == "insert_new_place") {
         $p_name = $_POST['p_name'];
         $p_branch = $_POST['p_branch'];
-        $details = $_POST['details'];
+        $small_details = $_POST['small_details'];
+        $more_details = $_POST['more_details'];
         $location = $_POST['location'];
         $category = $_POST['category'];
         $min = $_POST['min'];
         $max = $_POST['max'];
         $place_id = random_num(10);
         $average = ($min + $max) / 2;
-        $insert_place = "INSERT INTO places(p_name,p_branch,details,location,category,min_price,max_price,place_id,average_budget) VALUES('$p_name','$p_branch','$details','$location','$category',$min,$max,$place_id,$average)";
+        $insert_place = "INSERT INTO places(p_name,p_branch,small_details,location,category,min_price,max_price,place_id,average_budget,more_details) VALUES('$p_name','$p_branch','$small_details','$location','$category',$min,$max,$place_id,$average,'$more_details')";
         mysqli_query($con, $insert_place);
     } else if ($_POST['Form_identifier'] == "insert_photo") {
         $place_id = $_POST['place_id'];
@@ -106,8 +107,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <option value="el manial">el Manial</option>
             </optgroup>
         </select><br>
-        <label for="details">details:</label>
-        <input type="text" name="details" id="details"><br>
+        <label for="small_details">Small details:</label>
+        <input type="text" name="small_details" id="small_details"><br>
+        <label for="more_details">More details:</label>
+        <input type="text" name="more_details" id="more_details"><br>
         <label for="category">Category:</label>
         <select name="category" id="">
             <option value="Cafe">Cafe</option>

@@ -57,3 +57,5 @@ place_id bigint
 alter table user_plans add foreign key(user_id) references users(user_id);
 alter table user_plans add foreign key(place_id) references places(place_id);
 alter table places add column logo varchar(255) default "default_logo.png";
+alter table places rename column details to small_details;
+alter table places add column more_details varchar(255);
