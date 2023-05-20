@@ -2,16 +2,13 @@
 include("../../connection/connection.php");
 session_start();
 $place_id =$_SESSION['place_id'];
-$Data = "SELECT * FROM places WHERE place_id ='$place_id' LIMIT 1";
+$Data = "SELECT * FROM places WHERE place_id = $place_id LIMIT 1";
 $result = mysqli_query($con,$Data);
 if($result && mysqli_num_rows($result)>0){
  $row = mysqli_fetch_assoc($result);   
 }
-$pics_query = "SELECT * FROM place_pics WHERE place_id = '$place_id'";
+$pics_query = "SELECT * FROM place_pics WHERE place_id = $place_id";
 $result_pics = mysqli_query($con,$pics_query);
-if($result_pics && mysqli_num_rows($result_pics)>0){
- $row_pics = mysqli_fetch_assoc($result_pics);   
-}
 ?>
 
 <!DOCTYPE html>
@@ -31,9 +28,10 @@ if($result_pics && mysqli_num_rows($result_pics)>0){
         <div class="img">
 
         <a href="../hangout.php"><i class="fa-regular fa-circle-left back-arrow"></i></a>
-        <h1>Mcdonalds</h1>
-        <img src="../" alt="mcdonalds">
-
+        <h1><?php echo $row['p_name'] ?></h1>
+        <?php while($row_pics = mysqli_fetch_assoc($result_pics)): ?>
+            <img src="../places_imgs/<?php echo $row_pics['photo_name'] ?>" alt="<?php echo $row['p_name'] ?>">
+        <?php endwhile; ?>
         </div>
 
         <div class="disc">
