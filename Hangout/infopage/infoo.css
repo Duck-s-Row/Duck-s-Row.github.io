@@ -147,3 +147,62 @@ body{
       width: 100%;
     }
   }
+  .contact_us{
+    width: 100%;
+    min-height: fit-content;
+    background-color: #101820;
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    grid-template-rows: repeat(2, 50%);
+    font-family: 'ABeeZee', sans-serif;
+    padding: 20px;
+}
+
+.contact_us .left {
+    grid-row: 2;
+    margin-left: 30px;
+}
+
+.contact_us .left a {
+    text-decoration: none;
+}
+
+.contact_us .left a h3{
+    font-family: 'Bebas Neue', cursive;
+    color: #FEE715;
+    text-transform: uppercase;
+    display: inline;
+}
+
+.contact_us .info {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.contact_us .info h3{
+    text-transform: uppercase;
+    color: #FEE715;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.contact_us .info p {
+    color: white;
+}
+
+.contact_us .info a {
+    text-decoration: none;
+    color: #FEE715;
+}
+
+.contact_us .info a:hover {
+    color: white;
+}
+
+.contact_us img {
+    width: 66px;
+    height: 40px;
+}
+
+.privacy {
+    grid-column: 3;
+}

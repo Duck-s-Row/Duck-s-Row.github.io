@@ -20,7 +20,7 @@ $result_pics = mysqli_query($con,$pics_query);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-    <link rel="stylesheet" href="info.css">
+    <link rel="stylesheet" href="infoo.css">
     <title>info</title>
 </head>
 <body>
@@ -71,10 +71,26 @@ $result_pics = mysqli_query($con,$pics_query);
         </div>
         
     </div>
-
     <footer class="btn">
         <button> Add to my plans </button>
     </footer>
+    <!-- The Start of Contact Us section -->
+    <section class="contact_us" id="contact_us">
+        <div class="left">
+            <a href="../index.php">
+                <img src="/" alt="logo">
+                <h3>Duck’s ROW</h3>
+            </a>
+        </div>
+        <div class="info">
+            <h3>contact us</h3>
+            <p>Telephone: <a href="tel:+201556892517">01556892517</a><br>
+                Email: <a href="mailto:ducksrow100@gmail.com">ducksrow100@gmail.com</a><br><br>
+                <a href="../Privacy&Policy/Privacy&Policy.html" class="privacy">Go to Privacy & Policy</a>
+            </p>
+        </div>
+    </section>
+    <!-- The End of Contact Us section -->
 
 </body>
 </html>
