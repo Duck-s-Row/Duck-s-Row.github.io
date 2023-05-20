@@ -64,12 +64,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             <div>
                 <input type="submit" value="Login">
             </div>
-            <a href="../forget/page 1/forget.php" class="forget">Forget password?</a>
+            <!-- <a href="../forget/page 1/forget.php" class="forget">Forget password?</a>
 
         <div class="icons">
             <a href="#"><img src="images/Rectangle 27jhftyf.png" width="40" height="40"/></a>
             <a href="#"><img src="images/Rectangle 26hjgyugyu.png" width="40" height="40"/></a>
-        </div>
+        </div> -->
     </form>
 
     <footer class="logo">

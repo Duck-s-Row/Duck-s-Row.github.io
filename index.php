@@ -15,7 +15,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
    <meta charset="UTF-8">
    <meta name="description" content="GO Fun, GO & run">
-   <link rel="stylesheet" href="home/CSS_files/sty.css">
+   <link rel="stylesheet" href="home/CSS_files/st.css">
    <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Bebas+Neue&display=swap" rel="stylesheet">
    <link rel="website icon" type="png" href="home/imgs/Logo.png">
@@ -37,7 +37,7 @@
          <li><a href="#home">Home</a></li>
          <li><a href="Hangout/hangout.php">Hangout</a></li> <!-- we could remove this ancher tag link because of using the button  -->
          <li><a href="#services">Services</a></li>
-         <li><a href="Sign_UP/first page/Sign_up.php">My Plans</a></li>
+         <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Plans</a></li> -->
          <li><a href="#about_us">About</a></li>
          <li><a href="Profile/profile.php" class="profile">Profile</a></li>
          <li><i class="fa fa-right-from-bracket" id="logout"></i><i class="fa-regular fa-user" onclick="toggleMenu()" id="user-icon"></i></li>
@@ -130,7 +130,7 @@
 
    <!-- The Start of About Us section -->
    <section class="about_us" id="about_us">
-     <div class="left">
+     <!-- <div class="left">
        <h1>What Can We Offer For You</h1>
        <form method="post">
          <input type="text" placeholder="Your name" name="name">
@@ -139,25 +139,25 @@
          <input type="submit" value="SEND" name="send">
          <?php
          
-        if(!empty($_POST["send"])) {
-	      $userName = $_POST["name"];
-        $userEmail = $_POST["email"];
-      	$userMessage = $_POST["message"];
-      	$toEmail = "ducksrow100@gmail.com";
+//         if(!empty($_POST["send"])) {
+// 	      $userName = $_POST["name"];
+//         $userEmail = $_POST["email"];
+//       	$userMessage = $_POST["message"];
+//       	$toEmail = "ducksrow100@gmail.com";
   
-      	$mailHeaders = "Name: ".$userName."\r\n Email: ". $userEmail ."\r\n Message: " . $userMessage . "\r\n";
+//       	$mailHeaders = "Name: ".$userName."\r\n Email: ". $userEmail ."\r\n Message: " . $userMessage . "\r\n";
 
-	    if(mail($toEmail, $userName, $mailHeaders)) {
-        echo "<script>alert('you message have been sent.');</script>"; 
-	    }
-      else{
-        echo "<script>alert('sorry there have been a problem in sending your message please try again later.');</script>"; 
-      }
-}
+// 	    if(mail($toEmail, $userName, $mailHeaders)) {
+//         echo "<script>alert('you message have been sent.');</script>"; 
+// 	    }
+//       else{
+//         echo "<script>alert('sorry there have been a problem in sending your message please try again later.');</script>"; 
+//       }
+// }
 ?>
 
        </form>
-     </div>
+     </div> -->
      <div class="content">
        <h3>About <span>Duck’s Row</span></h3>
        <p>
