@@ -45,7 +45,7 @@
                 <li><a href="../plans/plans.php"><b>My plans</b></a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
                 <li><a href="#contact_us"><b>About</b></a></li>
-                <li><a href="../Profile/profilee.php" class="profile"><b>Profile</b></a></li>
+                <li><a href="../Profile/profile.php" class="profile"><b>Profile</b></a></li>
             </ul>
         </nav>
     </header>
