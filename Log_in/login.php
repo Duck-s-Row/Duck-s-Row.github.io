@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 ?>
 
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,7 +53,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             <span>You don't have an account? <a href="../Sign_UP/ThirdPage/regist.php">Signup</a></span>
         </div>
     </header>
-
     <form method="POST" class="login">
             <input type="text" placeholder="username" name="username">
 
@@ -71,11 +70,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             <a href="#"><img src="images/Rectangle 26hjgyugyu.png" width="40" height="40"/></a>
         </div> -->
     </form>
-
     <footer class="logo">
         <img src="images/pngfind.com-duckling-png-5872453(Y).png" width="90" height="55"/>
     </footer>
-
     <script>
         // Change the Password into text
         const showPassword = document.querySelector("#show-Password");
