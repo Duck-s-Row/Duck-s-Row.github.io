@@ -1,15 +1,17 @@
 <?php
-include("../../connection/connection.php");
-session_start();
-$place_id =$_SESSION['place_id'];
-$Data = "SELECT * FROM places WHERE place_id = $place_id LIMIT 1";
-$result = mysqli_query($con,$Data);
-if($result && mysqli_num_rows($result)>0){
- $row = mysqli_fetch_assoc($result);   
-}
-//picture query 
-$pics_query = "SELECT * FROM place_pics WHERE place_id = $place_id";
-$result_pics = mysqli_query($con,$pics_query);
+    include("../../connection/connection.php");
+    session_start();
+    $place_id =$_SESSION['place_id'];
+    $user_id =$_SESSION['user_id'];
+
+    $Data = "SELECT * FROM places WHERE place_id = $place_id LIMIT 1";
+    $result = mysqli_query($con,$Data);
+    if($result && mysqli_num_rows($result)>0){
+    $row = mysqli_fetch_assoc($result);   
+    }
+    //picture query
+    $pics_query = "SELECT * FROM place_pics WHERE place_id = $place_id";
+    $result_pics = mysqli_query($con,$pics_query);
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +22,7 @@ $result_pics = mysqli_query($con,$pics_query);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-    <link rel="stylesheet" href="info.css">
+    <link rel="stylesheet" href="place_info.css">
     <title>info</title>
 </head>
 <body>
@@ -71,9 +73,25 @@ $result_pics = mysqli_query($con,$pics_query);
         </div>
         
     </div>
-
+    
     <footer class="btn">
-        <button> Add to my plans </button>
+        <?php
+            if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                $check_query  = "SELECT COUNT(*) as count FROM user_plans WHERE user_id = '$user_id' AND place_id = '$place_id'";
+                $check_result = mysqli_query($con, $check_query);
+                $check_row = mysqli_fetch_assoc($check_result);
+                if ($check_row['count'] > 0) {
+                    echo "<script>alert('The Place already exists in your plan')</script>";
+                }
+                else {
+                    $plans = "INSERT INTO user_plans (user_id, place_id) VALUES ('$user_id', '$place_id')";
+                    mysqli_query($con,$plans);
+                }
+            }
+        ?>
+        <form method="post">
+            <input type="submit" name="plans" value="Add to my plans " class="button">
+        </form>
     </footer>
 
 </body>

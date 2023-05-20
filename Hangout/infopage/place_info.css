@@ -86,7 +86,8 @@ body{
     margin-right: 50px;
 }
 
-.btn button{
+.button{
+  cursor: pointer;
     background-color: #fee715;
     width: 200px;
     height: 50px;
@@ -94,7 +95,7 @@ body{
     border-radius: 50px;
 }
 
-.btn button:hover{
+.button:hover{
     background-color: white;
 }
 
@@ -143,7 +144,7 @@ body{
       margin: 0;
     }
     
-    .btn button {
+    .btn .button {
       width: 100%;
     }
   }
