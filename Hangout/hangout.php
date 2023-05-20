@@ -111,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <div class="budget">
                 <h1>Your Max budget / Place</h1>
                 <input type="range" class="range" name="budget" min="100" max="1000" step="100" value="500" onchange="rangeChange(this.value)">
-                <span id="rangeVlaue">500</span>
+                <input type="number"  id="rangeValue">
             </div>
             <hr>
             <div class="food-services">
@@ -150,7 +150,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <footer>
         <a href="#"><i class="fa fa-arrow-up"></i></a>
     </footer>
-    <script src="hangout.js"></script>
+    <script src="filters.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
