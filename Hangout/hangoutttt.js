@@ -58,3 +58,4 @@ function filter() {
   xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
   xhr.send("location=" + encodeURIComponent(location) + "&sort=" + encodeURIComponent(sort) + "&categories=" + encodeURIComponent(JSON.stringify(selectdCategories)));
 }
+
