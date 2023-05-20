@@ -50,6 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <div>
                     <label for="sort">Sort by</label>
                     <select id="sort" name="sort">
+                        <option value="" hidden></option>
                         <option value="top-Average">Top Average</option>
                         <option value="low-Average">Low Average</option>
                     </select>
