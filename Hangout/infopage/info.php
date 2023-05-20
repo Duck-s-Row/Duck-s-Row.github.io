@@ -26,7 +26,7 @@
     <title>info</title>
 </head>
 <body>
-        <!-- The Start of Navbar section -->
+<!-- The Start of Navbar section -->
     <header>
         
         <div class="logo">
@@ -42,7 +42,7 @@
         <nav class="nav-bar">
             <ul>
                 <li><a href="../index.php"><b>Home</b></a></li>
-                <li><a href="../Profile/profilee.php"><b>My plans</b></a></li>
+                <li><a href="../plans/plans.php"><b>My plans</b></a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
                 <li><a href="#contact_us"><b>About</b></a></li>
                 <li><a href="../Profile/profilee.php" class="profile"><b>Profile</b></a></li>
@@ -102,7 +102,7 @@
             }
         ?>
         <form method="post">
-            <input type="submit" name="plans" value="Add to my plans " class="button">
+            <input type="submit" name="plans" value="+ Add to my plans " class="button">
         </form>
     </footer>
     <!-- The Start of Contact Us section -->
