@@ -3,7 +3,11 @@ session_start();
 include("../connection/connection.php");
 include("../Functions/Functions.php");
 $user_data = check_login($con);
-
+if($_SERVER['REQUEST_METHOD']=="POST"){
+    $place_id = $_POST['place_id'];
+    $_SESSION['place_id'] = $place_id;
+    header('Location:infopage/info.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,7 +93,8 @@ $user_data = check_login($con);
                                 <p><?php echo $place['p_branch'] ?></p>
                             </div>
                             <div class="more">
-                                <form method="post">
+                                <form method="POST">
+                                    <input type="hidden" name="place_id" value="<?php echo $place['place_id']; ?>">
                                     <input type="submit" name="more" id="more" value="More">
                                 </form>
                             </div>
@@ -140,7 +145,7 @@ $user_data = check_login($con);
     <footer>
         <a href="#"><i class="fa fa-arrow-up"></i></a>
     </footer>
-    <script src="hangout.js"></script>
 </body>
 
 </html>
+<script src="hangoutt.js"></script>

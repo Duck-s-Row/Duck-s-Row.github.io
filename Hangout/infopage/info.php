@@ -1,3 +1,19 @@
+<?php
+include("../../connection/connection.php");
+session_start();
+$place_id =$_SESSION['place_id'];
+$Data = "SELECT * FROM places WHERE place_id ='$place_id' LIMIT 1";
+$result = mysqli_query($con,$Data);
+if($result && mysqli_num_rows($result)>0){
+ $row = mysqli_fetch_assoc($result);   
+}
+$pics_query = "SELECT * FROM place_pics WHERE place_id = '$place_id'";
+$result_pics = mysqli_query($con,$pics_query);
+if($result_pics && mysqli_num_rows($result_pics)>0){
+ $row_pics = mysqli_fetch_assoc($result_pics);   
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,25 +30,23 @@
 
         <div class="img">
 
-        <i class="fa-regular fa-circle-left back-arrow"></i>
+        <a href="../hangout.php"><i class="fa-regular fa-circle-left back-arrow"></i></a>
         <h1>Mcdonalds</h1>
-        <img src="https://www.mcdonalds.eg/Cms_Data/Contents/Ar/Media/images/pages/Find-a-Restaurant.jpg" alt="mcdonalds">
+        <img src="../" alt="mcdonalds">
 
         </div>
 
         <div class="disc">
 
-            <h2>Disc</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam eum maxime numquam facere quam molestias inventore veritatis magnam quasi, commodi consequuntur neque asperiores? Beatae natus impedit amet qui perferendis magni.
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam eum maxime numquam facere quam molestias inventore veritatis magnam quasi, commodi consequuntur neque asperiores? Beatae natus impedit amet qui perferendis magni.
-            </p>
+            <h2><?php echo $row['p_name']; ?></h2>
+            <p><?php echo $row['details']; ?></p>
 
             <div class="box">
 
                 <div class="box1">
                     <div>
                         <h3>Budget</h3>
-                        <p>70-300 L.E/Person</p>
+                        <p><?php echo $row['min_price'] ?>-<?php echo $row['max_price'] ?> L.E/Person</p>
                     </div>
                     
                     <div>
