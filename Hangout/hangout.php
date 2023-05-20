@@ -3,7 +3,7 @@ session_start();
 include("../connection/connection.php");
 include("../Functions/Functions.php");
 $user_data = check_login($con);
-if($_SERVER['REQUEST_METHOD']=="POST"){
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $place_id = $_POST['place_id'];
     $_SESSION['place_id'] = $place_id;
     header('Location:infopage/info.php');
@@ -60,11 +60,11 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                         <optgroup label="GIZA">
                             <option value="">All in Giza</option>
                             <?php
-                                $select_all_locations = "SELECT DISTINCT p_branch from places";
-                                $result = mysqli_query($con, $select_all_locations);
-                                while ($row = mysqli_fetch_assoc($result)) :
+                            $select_all_locations = "SELECT DISTINCT p_branch from places";
+                            $result = mysqli_query($con, $select_all_locations);
+                            while ($row = mysqli_fetch_assoc($result)) :
                             ?>
-                                    <option value="<?php echo $row['p_branch']?>"><?php echo $row['p_branch'] ?></option>
+                                <option value="<?php echo $row['p_branch'] ?>"><?php echo $row['p_branch'] ?></option>
                             <?php endwhile; ?>
                         </optgroup>
                     </select>
@@ -101,7 +101,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                         </div>
                     <?php
                     endforeach;
-                    ?>    
+                    ?>
                 </div>
             </div>
         </div>
@@ -113,13 +113,16 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
             </div>
             <hr>
             <div class="food-services">
-                <form>
-                    <label for="food" class="food">Food & Services</label><br>
-                    <input type="checkbox" name="food" id="cafe" value="cafe"> <label for="cafe">Cafe</label><br>
-                    <input type="checkbox" name="food" id="restaurant" value="restaurant"><label for="restaurant">Restaurants</label><br>
-                    <input type="checkbox" name="food" id="park" value="park"><label for="park">Park</label><br>
-                    <input type="checkbox" name="food" id="museum" value="museum"><label for="museum">Museums</label><br>
-                </form>
+                <!-- <form> -->
+                <label for="food" class="food">Food & Services</label><br>
+                <?php
+                $select_category = "SELECT DISTINCT category FROM places";
+                $result_category = mysqli_query($con, $select_category);
+                while ($row_category = mysqli_fetch_assoc($result_category)) :
+                ?>
+                    <label><input type="checkbox" name="category[]" value="<?php echo $row_category['category'] ?>"><?php echo $row_category['category'] ?></label>
+                    <!-- </form> -->
+                <?php endwhile; ?>
             </div>
         </div>
     </section>
