@@ -52,7 +52,7 @@
              </div>
              <hr>
 
-             <a href="Profile/profilee.php" class="sub-menu-link">
+             <a href="Profile/profile.php" class="sub-menu-link">
                <i class="fa-regular fa-user" id="drop-icon"></i>
                <p>Profile page</p>
                <span>></span>

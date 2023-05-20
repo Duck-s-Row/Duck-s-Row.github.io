@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $update_profile_pic_query = "update users set user_pic = '$new_image_name' where user_id=$user_id";
             mysqli_query($con, $update_profile_pic_query);
             move_uploaded_file($tmp_name, 'user_profile_imgs/' . $new_image_name);
-            header('Location:profilee.php');
+            header('Location:profile.php');
         }
     }
 }

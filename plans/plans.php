@@ -45,7 +45,7 @@
                 <li><a href="../Hangout/hangout.php">Hnagout</a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
                 <li><a href="#contact_us">About</a></li>
-                <li><a href="../Profile/profilee.php" class="profile">Profile</a></li>
+                <li><a href="../Profile/profile.php" class="profile">Profile</a></li>
             </ul>
         </nav>
     </header>
