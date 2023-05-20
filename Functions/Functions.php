@@ -72,13 +72,18 @@ function getAllplaces($con)
     return $places;
 }
 
-function filterLocationSort($con, $location, $sort, $categories)
+function filterLocationSort($con, $location, $sort, $categories,$budget)
 {
     $sql = "SELECT * FROM places";
     $condition = [];
     if (!empty($location)) {
         $location = mysqli_real_escape_string($con, $location);
         $condition[] = "p_branch = '$location'";
+    }
+
+    if (!empty($budget)) {
+        $location = mysqli_real_escape_string($con, $budget);
+        $condition[] = "average_budget <= '$budget'";
     }
 
     if (!empty($categories)) {

@@ -83,7 +83,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                 <h1><?php echo $place['p_name'] ?></h1>
                                 <div class="dis">
                                     <p>
-                                        <?php echo $place['category'] ?>
+                                        <?php echo $place['category'] ?><br>
+                                        <?php echo $place['small_details'] ?>
                                     </p>
                                 </div>
                                 <h6>Average: </h6>
@@ -107,13 +108,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             </div>
         </div>
         <div class="right">
-            <div class="budget">
-                <h1>Your Max budget / Place</h1>
-                <input type="range" class="range" name="budget" min="100" max="1000" step="100" value="500" onchange="rangeChange(this.value)">
-                <span id="rangeVlaue">500</span>
-            </div>
-            <hr>
             <div class="food-services">
+                <label for="budget">Maximum Average Budget / Place</label>
+                <select id="budget" name="budget">
+                    <option value="">All</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                    <option value="500">500</option>
+                    <option value="750">750</option>
+                    <option value="1000">1000</option>
+                    <option value="2000">2000</option>
+                </select>
+                <hr>
                 <form method="POST">
                     <label for="food" class="food">Food & Services</label><br>
                     <?php
@@ -149,7 +156,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <footer>
         <a href="#"><i class="fa fa-arrow-up"></i></a>
     </footer>
-    <script src="hangoutt.js"></script>
+    <script src="filters.js"></script>
 </body>
 
 </html>

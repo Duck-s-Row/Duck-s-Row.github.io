@@ -1,12 +1,11 @@
-let range = document.getElementById("rangeVlaue");
-function rangeChange(value) {
-  range.innerHTML = value;
-}
 //Filter
 var selectLocation = document.getElementById("p_branch");
 var selectSort = document.getElementById("sort");
+var selectbudget = document.getElementById("budget");
 var container = document.querySelector(".f_row");
 var checkboxes = document.querySelectorAll('input[name="category[]"]');
+
+selectbudget.addEventListener("change",filter);
 selectLocation.addEventListener("change", filter);
 selectSort.addEventListener("change", filter);
 for(var checkbox of checkboxes){
@@ -16,6 +15,7 @@ for(var checkbox of checkboxes){
 function filter() {
   var location = selectLocation.value;
   var sort = selectSort.value;
+  var budget = selectbudget.value;
   var selectdCategories = Array.from(document.querySelectorAll('input[name="category[]"]:checked')).map(function(checkbox){
     return checkbox.value
   });
@@ -32,7 +32,8 @@ function filter() {
             <div class="text1">
               <h1>${item.p_name}</h1>
               <div class="dis">
-                <p>${item.category}</p>
+                <p>${item.category}<br>
+                ${item.small_details}</p>
               </div>
               <h6>Average: </h6>
                 ${item.average_budget}
@@ -54,7 +55,8 @@ function filter() {
     }
   }; 
 
-  xhr.open('POST', 'script.php');
+  xhr.open('POST', 'filters.php');
   xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-  xhr.send("location=" + encodeURIComponent(location) + "&sort=" + encodeURIComponent(sort) + "&categories=" + encodeURIComponent(JSON.stringify(selectdCategories)));
+  xhr.send("location=" + encodeURIComponent(location) + "&sort=" + encodeURIComponent(sort)+"&budget=" + encodeURIComponent(budget) + "&categories=" + encodeURIComponent(JSON.stringify(selectdCategories)));
 }
+
