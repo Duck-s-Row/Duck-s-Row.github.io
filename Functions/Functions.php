@@ -72,13 +72,22 @@ function getAllplaces($con)
     return $places;
 }
 
-function filterLocationSort($con, $location, $sort)
+function filterLocationSort($con, $location, $sort, $categories)
 {
     $sql = "SELECT * FROM places";
     $condition = [];
     if (!empty($location)) {
         $location = mysqli_real_escape_string($con, $location);
         $condition[] = "p_branch = '$location'";
+    }
+
+    if (!empty($categories)) {
+        $categoryConditions = [];
+        foreach ($categories as $category) {
+            $category = mysqli_real_escape_string($con, $category);
+            $categoryConditions[] = "category = '$category'";
+        }
+        $condition[] = "(" . implode(" OR ", $categoryConditions) . ")";
     }
 
     if (!empty($condition)) {

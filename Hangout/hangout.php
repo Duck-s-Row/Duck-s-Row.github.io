@@ -3,7 +3,11 @@ session_start();
 include("../connection/connection.php");
 include("../Functions/Functions.php");
 $user_data = check_login($con);
-
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $place_id = $_POST['place_id'];
+    $_SESSION['place_id'] = $place_id;
+    header('Location:infopage/info.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,11 +60,11 @@ $user_data = check_login($con);
                         <optgroup label="GIZA">
                             <option value="">All in Giza</option>
                             <?php
-                                $select_all_locations = "SELECT DISTINCT p_branch from places";
-                                $result = mysqli_query($con, $select_all_locations);
-                                while ($row = mysqli_fetch_assoc($result)) :
+                            $select_all_locations = "SELECT DISTINCT p_branch from places";
+                            $result = mysqli_query($con, $select_all_locations);
+                            while ($row = mysqli_fetch_assoc($result)) :
                             ?>
-                                    <option value="<?php echo $row['p_branch']?>"><?php echo $row['p_branch'] ?></option>
+                                <option value="<?php echo $row['p_branch'] ?>"><?php echo $row['p_branch'] ?></option>
                             <?php endwhile; ?>
                         </optgroup>
                     </select>
@@ -78,7 +82,7 @@ $user_data = check_login($con);
                                 <h1><?php echo $place['p_name'] ?></h1>
                                 <div class="dis">
                                     <p>
-                                        <?php echo $place['details'] ?>
+                                        <?php echo $place['category'] ?>
                                     </p>
                                 </div>
                                 <h6>Average: </h6>
@@ -89,31 +93,35 @@ $user_data = check_login($con);
                                 <p><?php echo $place['p_branch'] ?></p>
                             </div>
                             <div class="more">
-                                <form method="post">
+                                <form method="POST">
+                                    <input type="hidden" name="place_id" value="<?php echo $place['place_id']; ?>">
                                     <input type="submit" name="more" id="more" value="More">
                                 </form>
                             </div>
                         </div>
                     <?php
                     endforeach;
-                    ?>    
+                    ?>
                 </div>
             </div>
         </div>
         <div class="right">
             <div class="budget">
-                <h1>Your Max budget / Persone</h1>
+                <h1>Your Max budget / Person</h1>
                 <input type="range" class="range" name="budget" min="100" max="1000" step="100" value="500" onchange="rangeChange(this.value)">
                 <span id="rangeVlaue">500</span>
             </div>
             <hr>
             <div class="food-services">
-                <form>
+                <form method="POST">
                     <label for="food" class="food">Food & Services</label><br>
-                    <input type="checkbox" name="food" id="cafe" value="cafe"> <label for="cafe">Cafe</label><br>
-                    <input type="checkbox" name="food" id="restaurant" value="restaurant"><label for="restaurant">Restaurants</label><br>
-                    <input type="checkbox" name="food" id="park" value="park"><label for="park">Park</label><br>
-                    <input type="checkbox" name="food" id="museum" value="museum"><label for="museum">Museums</label><br>
+                    <?php
+                    $select_category = "SELECT DISTINCT category FROM places";
+                    $result_category = mysqli_query($con, $select_category);
+                    while ($row_category = mysqli_fetch_assoc($result_category)) :
+                    ?>
+                        <label><input type="checkbox" name="category[]" value="<?php echo $row_category['category'] ?>"><?php echo $row_category['category'] ?></label><br>
+                    <?php endwhile; ?>
                 </form>
             </div>
         </div>
@@ -140,7 +148,7 @@ $user_data = check_login($con);
     <footer>
         <a href="#"><i class="fa fa-arrow-up"></i></a>
     </footer>
-    <script src="hangout.js"></script>
 </body>
 
 </html>
+<script src="hangoutt.js"></script>
