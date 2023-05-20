@@ -32,7 +32,8 @@ function filter() {
             <div class="text1">
               <h1>${item.p_name}</h1>
               <div class="dis">
-                <p>${item.category}</p>
+                <p>${item.category}<br>
+                ${item.small_details}</p>
               </div>
               <h6>Average: </h6>
                 ${item.average_budget}

@@ -83,7 +83,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                 <h1><?php echo $place['p_name'] ?></h1>
                                 <div class="dis">
                                     <p>
-                                        <?php echo $place['category'] ?>
+                                        <?php echo $place['category'] ?><br>
+                                        <?php echo $place['small_details'] ?>
                                     </p>
                                 </div>
                                 <h6>Average: </h6>
@@ -149,7 +150,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <footer>
         <a href="#"><i class="fa fa-arrow-up"></i></a>
     </footer>
-    <script src="hangoutt.js"></script>
+    <script src="hangout.js"></script>
 </body>
 
 </html>
