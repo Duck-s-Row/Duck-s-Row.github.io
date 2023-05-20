@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                 <h1><?php echo $place['p_name'] ?></h1>
                                 <div class="dis">
                                     <p>
-                                        <?php echo $place['details'] ?>
+                                        <?php echo $place['category'] ?>
                                     </p>
                                 </div>
                                 <h6>Average: </h6>
@@ -107,22 +107,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </div>
         <div class="right">
             <div class="budget">
-                <h1>Your Max budget / Persone</h1>
+                <h1>Your Max budget / Person</h1>
                 <input type="range" class="range" name="budget" min="100" max="1000" step="100" value="500" onchange="rangeChange(this.value)">
                 <span id="rangeVlaue">500</span>
             </div>
             <hr>
             <div class="food-services">
-                <!-- <form> -->
-                <label for="food" class="food">Food & Services</label><br>
-                <?php
-                $select_category = "SELECT DISTINCT category FROM places";
-                $result_category = mysqli_query($con, $select_category);
-                while ($row_category = mysqli_fetch_assoc($result_category)) :
-                ?>
-                    <label><input type="checkbox" name="category[]" value="<?php echo $row_category['category'] ?>"><?php echo $row_category['category'] ?></label>
-                    <!-- </form> -->
-                <?php endwhile; ?>
+                <form method="POST">
+                    <label for="food" class="food">Food & Services</label><br>
+                    <?php
+                    $select_category = "SELECT DISTINCT category FROM places";
+                    $result_category = mysqli_query($con, $select_category);
+                    while ($row_category = mysqli_fetch_assoc($result_category)) :
+                    ?>
+                        <label><input type="checkbox" name="category[]" value="<?php echo $row_category['category'] ?>"><?php echo $row_category['category'] ?></label><br>
+                    <?php endwhile; ?>
+                </form>
             </div>
         </div>
     </section>
