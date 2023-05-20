@@ -166,6 +166,7 @@ select option{
     display: flex;
     flex-direction: row;
     border: 2px solid #000000;
+    justify-content: center;
 }
 
 .hang .left .choices .f_row .card img {
@@ -187,17 +188,21 @@ select option{
     margin-top: 10px;
     font-size: 11px;
 }
+
 .dis{
     width: 400px;
+    height: 35px;
 }
+
 .hang .left .choices .f_row .card .text1 h6 {
     font-weight: 600;
     font-size: 13px;
     line-height: 10px;
     letter-spacing: 0.1em;
-    color: #cbb704;
-    margin-top: 20px;
+    color: #cb0b04;
+    margin-top: 10px;
 }
+
 .hang .left .choices .f_row .card .location-text p {
     font-size: 15px;
     padding-left: 2px;
@@ -209,8 +214,8 @@ select option{
     flex-direction: row;
     font-size: 10px;
     letter-spacing: 0.1em;
-    margin-top: 80px;
-    width: 120px;
+    width: 190px;
+    margin-top: 50px;
 }
 .hang .left .choices .f_row .card .add-plan, .send-comment, .filre-submit {
     height: 30px;
@@ -222,7 +227,6 @@ select option{
     margin-left: 320px;
 }
 .more{
-    margin-left: 60px;
     margin-top: 75px;
 }
 .more input[type="submit"]{

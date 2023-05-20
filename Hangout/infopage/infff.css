@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'ABeeZee', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: #101820;
+}
+header {
+    width: 100%;
+    height: 80px;
+    background: #dfca13;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px 0 50px;
+    /* border-radius: 100px; */
+    position: fixed;
+    z-index: 999;
+    /* margin: 40px 5% 0 5%; */
+}
+.main{
+    width: 100%;
+    height: 91vh;
+    padding-top: 150px;
+    display: flex;
+    flex-direction: row;
+}
+.logo img{
+    width: 80px;
+}
+.back-arrow{
+    padding-right: 40px;
+    width: 30px;
+    height: 30px;
+    color: #101820;
+    padding-bottom: 10px;
+}
+.hamburger {
+    display: none;
+}
+
+.nav-bar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.nav-bar ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-bar ul li a, .fa-user, #logout  {
+    color: #101820;
+    font-size: 20px;
+    padding: 10px 25px;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+.nav-bar ul li a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #101820;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-bar ul li a:hover::after{
+    width: 100%;
+}
+
+.nav-bar ul li a:hover{
+    color: #101820;
+}
+
+@media (max-width: 90vh) {
+    nav {
+        min-height: 5vh;
+        top: 20px;
+    }
+
+    .navbar .navbar-toggler {
+        color: white;
+        border: none;
+        font-size: 40px;
+    }
+
+    #user {
+        margin-left: 10px;
+        font-size: 40px;
+        color: white;
+    }
+
+    #logo {
+        width: 90px;
+    }
+
+    .navbar .navbar-nav .nav-link,.navbar .navbar-brand {
+        font-size: 30px;
+    }
+
+}
+
+.photo{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.img{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.img img{
+    margin-left: 55px;
+    padding: 30px 0;
+    border-radius: 50px;
+    width: 500px;
+    height: 500px;
+}
+
+.img h1{
+    color: white;
+    margin: auto;
+}
+
+.disc{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 70px;
+    color: white;
+}
+.disc a{
+    color: white;
+}
+.disc a:hover{
+    color: white;
+}
+.disc p{
+    text-align: justify;
+    margin-bottom: 20px;
+}
+.disc h2{
+    color: #dfca13;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+}
+
+.box1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.box2{
+    display: flex;
+    justify-content: space-between;
+}
+
+.box2 ol{
+    margin: 20px;
+}
+
+.btn{
+    text-align: right;
+    margin-right: 50px;
+}
+
+.btn button{
+    background: #dfca13;
+    width: 200px;
+    height: 50px;
+    color: black;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.btn button:hover{
+    background-color: white;
+}
+
+@media only screen and (max-width: 820px) {
+    
+    .photo {
+      flex-direction: column;
+      height: auto;
+    }
+    
+    .img,
+    .disc {
+      width: 100%;
+      padding: 50px;
+      text-align: center;
+    }
+    
+    .img img {
+      margin-left: 0;
+      margin-bottom: 20px;
+      border-radius: 0;
+    }
+    
+    .disc h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    
+    .disc p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    
+    .box1,
+    .box2 {
+      flex-direction: column;
+      text-align: left;
+    }
+    
+    .box2 ol {
+      margin: 20px 0;
+    }
+    
+    .btn {
+      text-align: center;
+      margin: 0;
+    }
+    
+    .btn button {
+      width: 100%;
+    }
+  }
+  .contact_us{
+    width: 100%;
+    min-height: fit-content;
+    background: #dfca13;
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    grid-template-rows: repeat(2, 50%);
+    font-family: 'ABeeZee', sans-serif;
+    padding: 20px;
+}
+
+.contact_us .left {
+    grid-row: 2;
+    margin-left: 30px;
+}
+
+.contact_us .left a {
+    text-decoration: none;
+}
+
+.contact_us .left a h3{
+    font-family: 'Bebas Neue', cursive;
+    color: #101820;
+    text-transform: uppercase;
+    display: inline;
+}
+
+.contact_us .info {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.contact_us .info h3{
+    text-transform: uppercase;
+    color: #101820;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.contact_us .info p {
+    color: white;
+}
+
+.contact_us .info a {
+    text-decoration: none;
+    color: #101820;
+}
+
+.contact_us .info a:hover {
+    color: white;
+}
+
+.contact_us img {
+    width: 66px;
+    height: 40px;
+}
+
+.privacy {
+    grid-column: 3;
+}
