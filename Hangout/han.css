@@ -421,3 +421,39 @@ footer i {
 footer:hover i{
     transform: scale(1.2);
 }
+
+@media (max-width: 1020px) {
+
+    /* Collapse the left and right columns on mobile devices */
+    .hang {
+      display: flex;
+      flex-direction: column-reverse;
+
+    }
+  
+    .hang .left,
+    .hang .right {
+      width: 100%;
+      height: 60vh;
+      width: 70%;
+      
+    }
+.hang .left .choices .f_row .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.hang{
+    padding-bottom: 1300px;
+}
+
+.hang .left .filters {
+    padding: 0 20px;
+}
+
+.contact_us{
+    padding-top: 200px;
+}
+  
+  }
