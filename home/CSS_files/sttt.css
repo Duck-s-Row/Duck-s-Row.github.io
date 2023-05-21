@@ -224,13 +224,13 @@ header {
     }
 
     .nav-bar.active{
-        height: 430px;
+        height: 370px;
     }
 
     .nav-bar ul {
         display: block;
         width: fit-content;
-        margin: 80px auto 0 auto;
+        margin: 20px auto 0 auto;
         padding: 0;
         text-align: center;
         transition: 0.5s;
@@ -608,7 +608,7 @@ footer {
         margin-top: 40px;
     }
     .home h1 {
-        margin-top: 50%;
+        margin-top: 100%;
         font-size: 50px;
     }
 

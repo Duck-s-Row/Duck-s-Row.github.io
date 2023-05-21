@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $update_profile_pic_query = "update users set user_pic = '$new_image_name' where user_id=$user_id";
             mysqli_query($con, $update_profile_pic_query);
             move_uploaded_file($tmp_name, 'user_profile_imgs/' . $new_image_name);
-            header('Location:profilee.php');
+            header('Location:profile.php');
         }
     }
 }
@@ -74,16 +74,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <section class="main">
         <div class="user_choices">
             <div class="user">
-                <a href="../index.php" id="home"><i class="fa fa-arrow-circle-left"></i><span>&nbsp;Home <i class="fa fa-ducks"></i></span></a>
+                <a href="../index.php" id="home"><i class="fa fa-arrow-circle-left"></i><span>&nbsp;Home</span></a>
                 <img src="user_profile_imgs/<?php echo $user_data['user_pic'] ?>" alt="profile_picture">
                 <div class="pic">
-                    <form enctype="multipart/form-data" method="post">
+                    <form enctype="multipart/form-data" method="post" id="form">
                         <input type="hidden" name="Form_identifier" value="update_profile_pic">
-                        <input type="file" name="user_pic" id="" accept=".jpg, .png, .jpeg">
+                        <input type="file" name="user_pic" id="user_pic" accept=".jpg, .png, .jpeg">
                         <div class="icon">
                             <i class="fa-solid fa-camera" style="color: #fbf704;"></i>
                         </div>
                     </form>
+                    <script>
+                        document.getElementById("user_pic").onchange = function(){
+                            document.getElementById("form").submit();
+                        }
+                    </script>
                 </div>
                 <div class="h">
                 <h2><?php echo $user_data['username'] ?></h2>
@@ -249,7 +254,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
     ?>
-    <script src="app.js"></script>
+    <script src="apps.js"></script>
     <script>
         <?php if ($user_data['gender'] == "M") : ?>
             let male = document.getElementById("male").setAttribute("checked", "checked");

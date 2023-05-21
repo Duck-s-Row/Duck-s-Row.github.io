@@ -15,7 +15,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
    <meta charset="UTF-8">
    <meta name="description" content="GO Fun, GO & run">
-   <link rel="stylesheet" href="home/CSS_files/st.css">
+   <link rel="stylesheet" href="home/CSS_files/sttt.css">
    <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Bebas+Neue&display=swap" rel="stylesheet">
    <link rel="website icon" type="png" href="home/imgs/Logo.png">
@@ -23,7 +23,7 @@
  </head>
 
  <body>
-  <!-- <div class="loading" id="loader"></div> -->
+  <div class="loading" id="loader"></div>
    <!-- The Start of Navbar section -->
    <header>
      <div class="logo"><a href="#home"><img src="home/imgs/ducks.png" alt=""></a></div>
@@ -52,7 +52,7 @@
              </div>
              <hr>
 
-             <a href="Profile/profilee.php" class="sub-menu-link">
+             <a href="Profile/profile.php" class="sub-menu-link">
                <i class="fa-regular fa-user" id="drop-icon"></i>
                <p>Profile page</p>
                <span>></span>
