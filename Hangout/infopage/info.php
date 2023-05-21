@@ -10,7 +10,7 @@
     $row = mysqli_fetch_assoc($result);   
     }
     //picture query
-    $pics_query = "SELECT * FROM place_pics WHERE place_id = $place_id";
+    $pics_query = "SELECT * FROM place_pics WHERE place_id = $place_id ORDER BY RAND() LIMIT 1";
     $result_pics = mysqli_query($con,$pics_query);
 ?>
 
