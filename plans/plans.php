@@ -65,7 +65,7 @@
                         $total += $row2['average_budget'];
             ?>
             <div class="card">
-                <img src="../Hangout/logos/ echo $row2['logo'] ?>" alt="Logo Picture">
+                <img src="../Hangout/logos/<?php echo $row2['logo'] ?>" alt="<?php echo $row2['logo'] ?>">
                 <div class="text1">
                     <h1><?=$row2['p_name']?></h1>
                     <div class="dis">
