@@ -67,6 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="head">
         <h1>SIGN UP</h1>
+        <span>You have already an account? <a href="../../Log_in/login.php">Login</a></span>
     </div>
     <div class="content">
         <form method="post">
