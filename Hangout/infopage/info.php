@@ -31,7 +31,7 @@
         
         <div class="logo">
             <a href="../hangout.php"><i class="fa-regular fa-circle-left back-arrow"></i></a>
-            <a href="../index.php"><img src="black-duck.png" alt="logo"></a>
+            <a href="../../index.php"><img src="black-duck.png" alt="logo"></a>
         </div>
         
         <div class="hamburger">
@@ -41,11 +41,11 @@
         </div>
         <nav class="nav-bar">
             <ul>
-                <li><a href="../index.php"><b>Home</b></a></li>
-                <li><a href="../plans/plans.php"><b>My plans</b></a></li>
+                <li><a href="../../index.php"><b>Home</b></a></li>
+                <li><a href="../../plans/plans.php"><b>My plans</b></a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
                 <li><a href="#contact_us"><b>About</b></a></li>
-                <li><a href="../Profile/profile.php" class="profile"><b>Profile</b></a></li>
+                <li><a href="../../Profile/profile.php" class="profile"><b>Profile</b></a></li>
             </ul>
         </nav>
     </header>
