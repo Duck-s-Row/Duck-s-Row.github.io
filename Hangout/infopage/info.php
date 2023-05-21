@@ -10,7 +10,7 @@
     $row = mysqli_fetch_assoc($result);   
     }
     //picture query
-    $pics_query = "SELECT * FROM place_pics WHERE place_id = $place_id";
+    $pics_query = "SELECT * FROM place_pics WHERE place_id = $place_id ORDER BY RAND() LIMIT 1";
     $result_pics = mysqli_query($con,$pics_query);
 ?>
 
@@ -22,7 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-    <link rel="stylesheet" href="infoooo.css">
+    <link rel="stylesheet" href="ino.css">
     <title>info</title>
 </head>
 <body>
@@ -31,7 +31,7 @@
         
         <div class="logo">
             <a href="../hangout.php"><i class="fa-regular fa-circle-left back-arrow"></i></a>
-            <a href="../index.php"><img src="black-duck.png" alt="logo"></a>
+            <a href="../../index.php"><img src="black-duck.png" alt="logo"></a>
         </div>
         
         <div class="hamburger">
@@ -41,11 +41,11 @@
         </div>
         <nav class="nav-bar">
             <ul>
-                <li><a href="../index.php"><b>Home</b></a></li>
-                <li><a href="../plans/plans.php"><b>My plans</b></a></li>
+                <li><a href="../../index.php"><b>Home</b></a></li>
+                <li><a href="../../plans/plans.php"><b>My plans</b></a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
                 <li><a href="#contact_us"><b>About</b></a></li>
-                <li><a href="../Profile/profile.php" class="profile"><b>Profile</b></a></li>
+                <li><a href="../../Profile/profile.php" class="profile"><b>Profile</b></a></li>
             </ul>
         </nav>
     </header>
@@ -53,8 +53,7 @@
 
 <section class="main">
         <div class="photo">
-            <div class="img">
-                
+            <div class="img">  
                 <?php while($row_pics = mysqli_fetch_assoc($result_pics)): ?>
                     <img src="../places_imgs/<?php echo $row_pics['photo_name'] ?>" alt="<?php echo $row['p_name'] ?>">
                 <?php endwhile; ?>

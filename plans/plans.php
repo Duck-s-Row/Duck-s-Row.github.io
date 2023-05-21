@@ -27,7 +27,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="plane.css">
+    <link rel="stylesheet" href="planeee.css">
     <title>My Planes</title>
 </head>
 <body>

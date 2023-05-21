@@ -77,13 +77,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <a href="../index.php" id="home"><i class="fa fa-arrow-circle-left"></i><span>&nbsp;Home</span></a>
                 <img src="user_profile_imgs/<?php echo $user_data['user_pic'] ?>" alt="profile_picture">
                 <div class="pic">
-                    <form enctype="multipart/form-data" method="post">
+                    <form enctype="multipart/form-data" method="post" id="form">
                         <input type="hidden" name="Form_identifier" value="update_profile_pic">
-                        <input type="file" name="user_pic" id="" accept=".jpg, .png, .jpeg">
+                        <input type="file" name="user_pic" id="user_pic" accept=".jpg, .png, .jpeg">
                         <div class="icon">
                             <i class="fa-solid fa-camera" style="color: #fbf704;"></i>
                         </div>
                     </form>
+                    <script>
+                        document.getElementById("user_pic").onchange = function(){
+                            document.getElementById("form").submit();
+                        }
+                    </script>
                 </div>
                 <div class="h">
                 <h2><?php echo $user_data['username'] ?></h2>
