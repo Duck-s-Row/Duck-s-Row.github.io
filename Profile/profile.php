@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
-    <link rel="stylesheet" href="profilee.css">
+    <link rel="stylesheet" href="pro.css">
     <title>Profile</title>
     <style>
         
@@ -197,14 +197,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="new">
                     <div>
                         <label>New Password : </label><br>
-                        <input id="new_pass" class="new_pass" type="password" name="new_pass" readonly>
+                        <input id="new_pass" class="new_pass" type="password" name="new_pass" readonly required>
                     </div>
                     <div class="rnew">
                         <label>R-Enter New Password : </label><br>
-                        <input id="renew_pass" class="renew_pass" type="password" name="renew_pass" readonly>
+                        <input id="renew_pass" class="renew_pass" type="password" name="renew_pass" readonly required>
+                        <p id="passtwo">Password is <span id="alert"></span></p>
                     </div>
                 </div>
-                    <input type="submit" value="Save">
+                    <input type="submit" value="Save" id="sub-btn">
             </form>
         </div>
         <!-- end of change password -->
@@ -254,7 +255,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
     ?>
-    <script src="apps.js"></script>
+    <script src="profile_page.js"></script>
     <script>
         <?php if ($user_data['gender'] == "M") : ?>
             let male = document.getElementById("male").setAttribute("checked", "checked");

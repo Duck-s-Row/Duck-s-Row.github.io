@@ -97,7 +97,7 @@
         </div>
         <div class="right">
             <h1>The average budget you will have is</h1>
-            <p id="total">AVG = <?=$total?> EGP</p>
+            <p id="total"><?=number_format($total/1.5, 2)?> EGP</p>
         </div>
     </section>
 

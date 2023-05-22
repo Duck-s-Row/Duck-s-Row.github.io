@@ -46,12 +46,12 @@ function toggleRePassword() {
     }
   }
 
-
 var msg = document.getElementById("message");
 var str = document.getElementById("strength");
 
 var msg2 = document.getElementById("passtwo");
 var alertt= document.getElementById("alert");
+var sub= document.getElementById("sub-btn");
 
 
 pass.addEventListener('input',()=>{
@@ -82,7 +82,6 @@ pass2.addEventListener('input',()=>{
 
     if(pass2.value.length > 0){
         msg2.style.display = "block";
-        
     }
     else
     {
@@ -92,10 +91,12 @@ pass2.addEventListener('input',()=>{
         alertt.innerHTML = "the same";
         alertt.style.borderColor = "green"
         msg2.style.color = "green";
+        sub.disabled = false;
     }
     else{
         alertt.innerHTML = "not the same";
         alertt.style.borderColor = "red";
         msg2.style.color = "red";
+        sub.disabled = true;
     }
 })

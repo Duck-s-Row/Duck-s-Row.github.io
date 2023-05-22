@@ -42,7 +42,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duck's Row</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="login_page.css">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
 </head>
@@ -58,7 +58,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
             <div class="pass">
                 <input type="password" placeholder="Password"name="password" id="password">
-                <i class="fa fa-eye" id="show-Password"></i>
+                <!-- <i class="fa fa-eye" id="show-Password"></i> -->
             </div>
             <div>
                 <input type="submit" value="Login">

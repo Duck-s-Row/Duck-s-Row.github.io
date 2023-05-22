@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="reg.CSS">
+    <link rel="stylesheet" href="registiration.CSS">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
     <title>Registration</title>
     <style>
@@ -135,7 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div class="submit">
-                <input type="submit" value="submit">
+                <input type="submit" value="submit" id="sub-btn">
             </div>
         </form>
     </div>
@@ -143,7 +143,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <img src="../../home/imgs/gold-ducks.png" alt="Logo">
     </footer>
       
-    <script src="reg.js"></script>
+    <script src="registiration.js"></script>
 </body>
 
 </html>
