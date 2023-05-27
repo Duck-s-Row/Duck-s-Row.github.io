@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+body {
+    width: 100%;
+}
+
+
+header {
+    width: 100%;
+    height: 80px;
+    background: #101820;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    /* border-radius: 100px; */
+    position: fixed;
+    z-index: 999;
+    /* margin: 40px 5% 0 5%; */
+}
+
+.logo img{
+    width: 80px;
+}
+
+.hamburger {
+    display: none;
+}
+
+.nav-bar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.nav-bar ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-bar ul li a, .fa-user, #logout  {
+    color: #fefefe;
+    font-size: 20px;
+    padding: 10px 25px;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+.nav-bar ul li a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #FEE715;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-bar ul li a:hover::after{
+    width: 100%;
+}
+
+.nav-bar ul li a:hover{
+    color: #FEE715;
+}
+
+@media (max-width: 90vh) {
+    nav {
+        min-height: 5vh;
+        top: 20px;
+    }
+
+    .navbar .navbar-toggler {
+        color: white;
+        border: none;
+        font-size: 40px;
+    }
+
+    #user {
+        margin-left: 10px;
+        font-size: 40px;
+        color: white;
+    }
+
+    #logo {
+        width: 90px;
+    }
+
+    .navbar .navbar-nav .nav-link,.navbar .navbar-brand {
+        font-size: 30px;
+    }
+
+}
