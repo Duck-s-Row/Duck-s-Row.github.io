@@ -2,9 +2,9 @@
   session_start();
   require("connection/connection.php");
   require("Functions/Functions.php");
-  if (isset($_SESSION['user_id'])) {
+  // if (isset($_SESSION['user_id'])) {
     $user_data = Get_user_data($con);
-  }
+  // }
 
   ?>
 
@@ -15,7 +15,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
    <meta charset="UTF-8">
    <meta name="description" content="GO Fun, GO & run">
-   <link rel="stylesheet" href="home/CSS_files/sttt.css">
+   <link rel="stylesheet" href="home/CSS_files/hom.css">
    <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Bebas+Neue&display=swap" rel="stylesheet">
    <link rel="website icon" type="png" href="home/imgs/Logo.png">
@@ -23,7 +23,7 @@
  </head>
 
  <body>
-  <div class="loading" id="loader"></div>
+  <!-- <div class="loading" id="loader"></div> -->
    <!-- The Start of Navbar section -->
    <header>
      <div class="logo"><a href="#home"><img src="home/imgs/ducks.png" alt=""></a></div>
@@ -130,34 +130,18 @@
 
    <!-- The Start of About Us section -->
    <section class="about_us" id="about_us">
-     <!-- <div class="left">
+     <div class="left">
        <h1>What Can We Offer For You</h1>
        <form method="post">
-         <input type="text" placeholder="Your name" name="name">
-         <input type="email" placeholder="Your E-mail" name="email">
-         <textarea name="message" id="" cols="70" rows="10" placeholder="Enter your message"></textarea>
-         <input type="submit" value="SEND" name="send">
-         <?php
-         
-//         if(!empty($_POST["send"])) {
-// 	      $userName = $_POST["name"];
-//         $userEmail = $_POST["email"];
-//       	$userMessage = $_POST["message"];
-//       	$toEmail = "ducksrow100@gmail.com";
-  
-//       	$mailHeaders = "Name: ".$userName."\r\n Email: ". $userEmail ."\r\n Message: " . $userMessage . "\r\n";
-
-// 	    if(mail($toEmail, $userName, $mailHeaders)) {
-//         echo "<script>alert('you message have been sent.');</script>"; 
-// 	    }
-//       else{
-//         echo "<script>alert('sorry there have been a problem in sending your message please try again later.');</script>"; 
-//       }
-// }
-?>
-
+         <input type="text" id="name" placeholder="Your name" value="<?php if(isset($_SESSION['user_id'])) echo $user_data['username'] ?>" required>
+         <input type="email" id="email" placeholder="Your E-mail" value="<?php if(isset($_SESSION['user_id']))  echo $user_data['email'] ?>" required>
+         <textarea id="message" cols="70" rows="10" placeholder="Enter your message" required></textarea>
+         <!-- <input type="submit" value="SEND" name="send"> -->
+         <button type="button" onclick="sendMail()">SEND</button>
        </form>
-     </div> -->
+       <p id="checking_form" style="margin: 0 0 10px 10%"></p>
+       
+     </div>
      <div class="content">
        <h3>About <span>Duck’s Row</span></h3>
        <p>
@@ -211,6 +195,7 @@
 
    <!-- JS -->
    <script src="home/app.js"></script>
+   <script src="home/sendmail.js"></script>
  </body>
 
  </html>
