@@ -59,11 +59,23 @@
                 <?php endwhile; ?>
             </div>
             <div class="disc">
+                <div class="map-container">
+                    <h2>Location : <?php echo $row['p_branch'] ?></h2>
+                    <iframe
+                        width="50%"
+                        height="200"
+                        frameborder="0"
+                        scrolling="no"
+                        marginheight="0"
+                        marginwidth="0"
+                        src="https://www.google.com/maps?q=<?php echo urlencode($row['location']); ?>&output=embed"
+                        allowfullscreen
+                    ></iframe>
+                </div>
                 <div>
                     <h2><?php echo $row['p_name']; ?></h2>
                     <p><?php echo $row['category']; ?></p>
-                    <h2>Location : <?php echo $row['p_branch'] ?></h2>
-                    <p><a href="<?php echo $row['location']; ?>" target="_blank">click here</a> </p>
+                    
                 </div>
                 <div class="box">
                     <div class="box1">
