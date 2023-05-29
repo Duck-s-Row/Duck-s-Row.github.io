@@ -82,6 +82,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="insertion.css">
+    <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -89,13 +91,33 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 </head>
 
 <body>
-    <form method="post" align='center'>
+    <header>
+        <div class="logo"><a href="../../index.php"><img src="../../home/imgs/ducks.png" alt=""></a></div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="../../index.php">Home</a></li>
+                <li><a href="../../plans/plans.php">My Plans</a></li>
+                <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
+                <!-- <li><a href="#contact_us">About</a></li> -->
+                <li><a href="../../Profile/profile.php" class="profile">Profile</a></li>
+                <li><a href="../hangout.php" class="profile">Hangout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <form method="post" align='center' class="place">
         <input type="hidden" name="Form_identifier" value="insert_new_place">
         <label for="p_name">place :</label>
         <input type="text" name="p_name" id="p_name"><br>
         <!-- <input type="text" name="p_branch" id="p_branch"><br> -->
         <label for="p_branch">place branch:</label>
-        <select id="p_branch" name="p_branch">
+        <select id="p_branch" name="p_branch" >
             <optgroup label="GIZA">
                 <option value="haram">haram</option>
                 <option value="fisal">fisal</option>
@@ -126,7 +148,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <input type="number" name="max" id="mx"><br>
         <input type="submit" value="save">
     </form><br><br>
-    <form method="post" align=center enctype="multipart/form-data">
+
+
+    <form method="post" align=center enctype="multipart/form-data" class="photo">
         <input type="hidden" name="Form_identifier" value="insert_photo">
         <label for="p_name">choose a place:</label>
         <select id="p_name" name="place_id">
@@ -139,7 +163,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <input type="file" name="photo_name" id="photo_name" accept=".jpg, .png, .jpeg"><br>
         <input type="submit" value="save">
     </form><br>
-    <form method="post" enctype="multipart/form-data" align=center>
+
+
+
+    <form method="post" enctype="multipart/form-data" align=center class="logo">
         <select id="p_name" name="p_name">
             <?php
             $select_places1 = "SELECT DISTINCT p_name FROM places";
