@@ -155,24 +155,23 @@ select option{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
 .hang .left .choices .f_row .card {
-    width: 100%;
+    width: 400px;
     height: 120px;
     background-color: #EDEDED;
-    margin: 20px 0 10px 0;
+    margin: 20px auto auto auto;
     display: flex;
     flex-direction: row;
-    border: 2px solid #000000;
     justify-content: center;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .hang .left .choices .f_row .card img {
-    width: 115px;
-    height: 115px;
-    margin-left: 10px;
+    width: 120px;
+    height: 120px;
 }
 
 .hang .left .choices .f_row .card .text1 {
@@ -190,7 +189,6 @@ select option{
 }
 
 .dis{
-    width: 400px;
     height: 35px;
 }
 

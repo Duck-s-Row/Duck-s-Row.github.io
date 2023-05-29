@@ -418,6 +418,24 @@ header {
     background-color: white;
     color: #101820;
 }
+
+button[type='button']{
+    cursor: pointer;
+    background-color: #101820;
+    color: #FEE715;
+    width: 20%;
+    border-radius: 10px;
+    font-size: 15px;
+    border: 0;
+    height: 35px;
+    margin: 10px 0 10px 10%;
+}
+
+button[type='button']:hover{
+    background-color: white;
+    color: #101820;
+}
+
 .about_us h3{
     font-family: 'Bebas Neue', cursive;
     text-transform: uppercase;

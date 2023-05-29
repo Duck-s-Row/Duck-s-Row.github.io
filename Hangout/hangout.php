@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="hanggg.css">
+    <link rel="stylesheet" href="hangggg.css">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <title>Hangout</title>
@@ -55,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         <option value="low-Average">Low Average</option>
                     </select>
                 </div>
+                <button onclick="window.location.reload()";><i class="fa-solid fa-repeat"></i></button>
                 <div>
                     <label for="p_branch">Location</label>
                     <select id="p_branch" name="p_branch">
@@ -71,11 +72,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     </select>
                 </div>
             </form>
+
             <div class="choices">
                 <div class="f_row">
                     <?php
                     $places = getAllplaces($con);
-                    foreach ($places as $place) :
+                    $limit = 2;
+                    $count = 0;
+                    // for($i=0;$i<$places;$i++){
+                        foreach ($places as $place) :
+                            if ($count == $limit) {
+                                break;
+                            }
                     ?>
                         <div class="card">
                             <img src="logos/<?php echo $place['logo'] ?>" alt="Logo Picture">
@@ -102,7 +110,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                             </div>
                         </div>
                     <?php
+                    $count++;
                     endforeach;
+                    // }
                     ?>
                 </div>
             </div>
