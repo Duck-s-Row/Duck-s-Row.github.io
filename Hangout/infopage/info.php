@@ -59,7 +59,6 @@
                 <?php endwhile; ?>
             </div>
             <div class="disc">
-<<<<<<< Updated upstream
                 <div>
                     <h2><?php echo $row['category']; ?></h2>
                     <p><?php echo $row['p_name']; ?></p>
@@ -87,50 +86,14 @@
                     <iframe
                         width="50%"
                         height="200"
-=======
-                <div class="map-container">
-                    </div>
-                    <div>
-                        <h2><?php echo $row['category']; ?></h2>
-                        <p><?php echo $row['p_name']; ?></p>
-                        
-                    </div>
-                    <div class="box">
-                        <div class="box1">
-                            <div>
-                                <h2>Budget</h2>
-                                <p><?php echo $row['min_price'] ?>-<?php echo $row['max_price'] ?> L.E/Person</p>
-                                <h2>Average</h2>
-                                <p><?php echo $row['average_budget']; ?></p>
-                            </div>
-                        </div>
-                        <div class="box2">
-                            <div>
-                                <h2>Details</h2>
-                                <p><?php echo $row['more_details'] ?></p>
-                            </div>
-                        </div>
-                    </div>
-                    <h2>Location : <?php echo $row['p_branch'] ?></h2>
-                    <a href="<?php echo ($row['location']); ?>">Click here</a>
-                    <!-- <iframe
-                        width="25%"
-                        height="100"
->>>>>>> Stashed changes
                         frameborder="0"
                         scrolling="no"
                         marginheight="0"
                         marginwidth="0"
-<<<<<<< Updated upstream
                         src="https://www.google.com/maps?q=<?php echo urlencode($row['location']); ?>&output=embed"
                         allowfullscreen
                     ></iframe>
                 </div>
-=======
-                        src="<?php //echo ($row['location']); ?>"
-                        allowfullscreen
-                    ></iframe> -->
->>>>>>> Stashed changes
             </div>
         </div>
     </section>
