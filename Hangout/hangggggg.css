@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+
 
 *{
     margin: 0;
@@ -109,8 +111,8 @@ header {
 .hang {
     width: 100%;
     min-height: 100vh;
-    padding-top: 150px;
-    background: linear-gradient(120deg, #FEE715,#9d8e04);
+    padding-top: 140px;
+    background: linear-gradient(-120deg, #ebeabf,#9d8e04);
     display: flex;
     flex-direction: row;
     /* justify-content: center; */
@@ -120,7 +122,6 @@ header {
     width: 850px;
     margin-right: 40px;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-left: 80px;
@@ -132,20 +133,31 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #EDEDED;
+    background-color: #101820;
     padding: 0 100px;
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, .2);
+    border-radius: 20px;
+    color: #FEE715;
+}
+select{
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #5c6664;
+    padding: 0 .5em;
+    font-size: 15px;
 }
 select optgroup{
-    color: #bd570a;
+    color: black;
     font-size: 16px;
 }
 select option{
-    color: #000;
+    color: #FEE715;
     font-size: 13px;
+    background-color: #101820;
 }
 .hang .left .choices {
     width: 100%;
-    min-height: 80vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -160,101 +172,90 @@ select option{
 .hang .left .choices .f_row .card {
     width: 400px;
     height: 120px;
-    background-color: #EDEDED;
-    margin: 20px auto auto auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    background-color: #101820;
+    margin: 20px auto 10px auto;
     border-radius: 20px;
     overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    display: none;
+    color: #FEE715;
+    transition: 1.0s ease;
 }
-
+.hang .left .choices .f_row .card:hover{
+    transform: scale(1.1);
+}
+.see-more{
+    color: #FEE715;
+    background-color: #101820;
+    padding: 15px 70px;
+    border: 0;
+    cursor: pointer;
+    margin: 10px 0 10px 0;
+    display: block;
+    transition: .5s linear;
+}
+.see-more:hover{
+    opacity: .8;
+    color: #101820;
+    background-color: white;
+}
+.card .card2{
+    display: flex;
+}
 .hang .left .choices .f_row .card img {
     width: 120px;
     height: 120px;
 }
-
 .hang .left .choices .f_row .card .text1 {
-    margin-left: 20px;
+    margin-left: 10px;
+    width: 200px;
 }
 .hang .left .choices .f_row .card .text1 h1 {
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 10px;
-    margin-top: 17px; 
+    font-size: 17px;
+    margin-top: 10px;
 }
 .hang .left .choices .f_row .card .text1 p{
-    margin-top: 10px;
-    font-size: 11px;
+    margin-top: 3px;
 }
 
 .dis{
-    height: 35px;
+    font-size: 10px;
 }
 
 .hang .left .choices .f_row .card .text1 h6 {
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 10px;
-    letter-spacing: 0.1em;
-    color: #cb0b04;
-    margin-top: 10px;
+    margin-top: 5px;
+    font-size: 12px;
 }
 
 .hang .left .choices .f_row .card .location-text p {
-    font-size: 15px;
-    padding-left: 2px;
+    margin-left: 5px;
 }
 
 .hang .left .choices .f_row .card .location-text{
-    margin-left: 40px;
     display: flex;
     flex-direction: row;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    width: 190px;
-    margin-top: 50px;
-}
-.hang .left .choices .f_row .card .add-plan, .send-comment, .filre-submit {
-    height: 30px;
-    width: 70px;
-    background-color: #101820;
-    color: #cbb704;
-    border: 2px solid #FEE715;
-    border-radius: 10px;
-    margin-left: 320px;
-}
-.more{
-    margin-top: 75px;
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-top: 10px;
+    color: white;
 }
 .more input[type="submit"]{
-    text-align: right;
-    color: #FEE715;
-    background-color: #101820;
+    color: #101820;
+    background-color: #FEE715;
     padding: 5px 10px 5px 10px;
     border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+    margin-top: 90%;
 }
 .more input[type="submit"]:hover{
-    color: #101820;
-    background-color: #9d8e04;
-}
-.filre-submit {
-    margin: auto;
+    color: #000;
+    background-color: white;
 }
 .hang .right {
     width: 350px;
     height: 85vh;
     margin: 0 0 0 80px;
-}
-.hang .right .budget{
-    width: 100%;
-    height: 200px;
-    background-color: #EDEDED;
-    border: 2px solid #000;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: left;
 }
 input[type="number"] {
     -webkit-appearance: textfield;
@@ -296,7 +297,20 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 5px 20px;
     border: 1px solid #000;
   }
-
+  .hang .right .food-services {
+    width: 100%;
+    height: auto;
+    background-color: #101820;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;  
+    padding: 20px 20px;
+    color: #FEE715;
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, .2)
+}
+.hang .right .food-services select{
+    margin-top: 10px;
+}
 .hang .right h1{
     margin-top: 20px;
     font-weight: 600;
@@ -312,16 +326,6 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #000;
 }
 
-.hang .right .food-services {
-    width: 100%;
-    height: auto;
-    background-color: #EDEDED;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;  
-    padding: 20px 20px;
-}
-
 .hang .right .food-services .food{
     font-weight: 600;
     font-size: 20px;
@@ -333,7 +337,19 @@ input[type=number]::-webkit-outer-spin-button {
     display: inline-block;
     padding: 100px;
 }
-
+.hang .right .offers{
+    height: 300px;
+    width: 100%;
+    margin-top: 30px;
+    background-size: 100%;
+}
+.hang .right .offers img{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    transition: 0.3s;
+    height: 300px;
+}
 .contact_us{
     width: 100%;
     min-height: fit-content;
