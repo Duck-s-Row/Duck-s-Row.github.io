@@ -27,28 +27,33 @@ function filter() {
       var out = "";
       for (var item of response) {
         out += `
-          <div class="card">
-            <img src="logos/${item.logo}" alt="Logo Picture">
-            <div class="text1">
-              <h1>${item.p_name}</h1>
-              <div class="dis">
-                <p>${item.category}<br>
-                ${item.small_details}</p>
-              </div>
-              <h6>Average: </h6>
-                ${item.average_budget}
+
+        
+            <div class="card">
+                <div class="card2">
+                    <img src="logos/${item.logo}" alt="Logo Picture">
+                    <div class="text1">
+                        <h1><b>${item.p_name}</b></h1>
+                        <div class="dis">
+                            <p>
+                            ${item.category}
+                            </p>
+                        </div>
+                        <h6>Average: <br>${item.average_budget}</h6>
+                        <div class="location-text">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>${item.p_branch}</p>
+                        </div>
+                    </div>
+                    <div class="more">
+                        <form method="POST">
+                            <input type="hidden" name="place_id" value="${item.place_id}">
+                            <input type="submit" name="more" id="more" value="More">
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="location-text">
-              <i class="fa-solid fa-location-dot"></i>
-              <p>${item.p_branch}</p>
-            </div>
-              <div class="more">
-              <form method="post">
-              <input type="hidden" name="place_id" value="${item.place_id}">
-                <input type="submit" name="more" id="more" value="More">
-              </form>
-            </div>
-          </div>
+
         `;
       }
       container.innerHTML = out;
@@ -59,4 +64,3 @@ function filter() {
   xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
   xhr.send("location=" + encodeURIComponent(location) + "&sort=" + encodeURIComponent(sort)+"&budget=" + encodeURIComponent(budget) + "&categories=" + encodeURIComponent(JSON.stringify(selectdCategories)));
 }
-

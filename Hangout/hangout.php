@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="hangggggg.css">
+    <link rel="stylesheet" href="hanggggggل.css">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
@@ -168,9 +168,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <!-- The End of Contact Us section -->
     <footer>
         <a href="#"><i class="fa fa-arrow-up"></i></a>
-    </footer>
-    <script src="filters.js"></script>
-    <script>
+    </footer> 
+    <!-- <script>
         $(document).ready(function(){
             $(".card").slice(0, 6).fadeIn();
 
@@ -188,7 +187,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 loadMoreBtn.style.display = 'none';
             }
         }});
-    </script>
+    </script> -->
     <script>
         let image = document.getElementById('image');
         let images = ['mcdonalds.jpg','buffalo.png','bazooka.jpg']
@@ -197,5 +196,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             image.src = images[random];
         }, 2000);
     </script>
+    <script src="filterss.js"></script>
 </body>
 </html>

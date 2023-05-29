@@ -167,6 +167,7 @@ select option{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
 }
 
 .hang .left .choices .f_row .card {
@@ -177,14 +178,14 @@ select option{
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
-    display: none;
+    /* display: none; */
     color: #FEE715;
     transition: 1.0s ease;
 }
 .hang .left .choices .f_row .card:hover{
     transform: scale(1.1);
 }
-.see-more{
+/* .see-more{
     color: #FEE715;
     background-color: #101820;
     padding: 15px 70px;
@@ -193,7 +194,7 @@ select option{
     margin: 10px 0 10px 0;
     display: block;
     transition: .5s linear;
-}
+} */
 .see-more:hover{
     opacity: .8;
     color: #101820;
