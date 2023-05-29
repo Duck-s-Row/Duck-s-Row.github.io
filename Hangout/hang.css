@@ -167,7 +167,7 @@ select option{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .hang .left .choices .f_row .card {
@@ -181,6 +181,7 @@ select option{
     /* display: none; */
     color: #FEE715;
     transition: 1.0s ease;
+
 }
 .hang .left .choices .f_row .card:hover{
     transform: scale(1.1);

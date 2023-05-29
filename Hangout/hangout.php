@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="hanggggggل.css">
+    <link rel="stylesheet" href="hang.css">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <div class="f_row">
                     <?php
                     $places = getAllplaces($con);
-                    $count = 0;
+                    // $count = 0;
                         foreach ($places as $place) :
                     ?>
                         <div class="card">
@@ -102,13 +102,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                         <input type="submit" name="more" id="more" value="More">
                                     </form>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                     <?php
-                    $count++;
-                    if ($count % 2 == 0) {
-                        echo '</div><div class="f_row">';
-                    }
+                    // $count++;
+                    // if ($count % 2 == 0) {
+                    //     echo '</div><div class="f_row">';
+                    // }
                     endforeach;
                     ?>
                 </div>
