@@ -2,7 +2,7 @@
 var selectLocation = document.getElementById("p_branch");
 var selectSort = document.getElementById("sort");
 var selectbudget = document.getElementById("budget");
-var container = document.querySelector(".f_row");
+var container = document.querySelector(".choices");
 var checkboxes = document.querySelectorAll('input[name="category[]"]');
 
 selectbudget.addEventListener("change",filter);
@@ -27,8 +27,8 @@ function filter() {
       var out = "";
       for (var item of response) {
         out += `
-
-        
+        <div class="choices">
+          <div class="f_row">
             <div class="card">
                 <div class="card2">
                     <img src="logos/${item.logo}" alt="Logo Picture">
@@ -53,8 +53,9 @@ function filter() {
                     </div>
                 </div>
             </div>
-
+        </div>
         `;
+        
       }
       container.innerHTML = out;
     }

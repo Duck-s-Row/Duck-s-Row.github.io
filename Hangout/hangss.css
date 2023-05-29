@@ -167,7 +167,7 @@ select option{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .hang .left .choices .f_row .card {
