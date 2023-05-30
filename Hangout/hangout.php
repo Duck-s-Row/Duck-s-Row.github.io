@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <?php
                     $places = getAllplaces($con);
                     $count = 0;
-                        foreach ($places as $place) :
+                    foreach ($places as $place) :
                     ?>
                         <div class="card">
                             <div class="card2">
@@ -102,13 +102,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                         <input type="submit" name="more" id="more" value="More">
                                     </form>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     <?php
-                    $count++;
-                    if ($count % 2 == 0) {
-                        echo '</div><div class="f_row">';
-                    }
+                        $count++;
+                        if ($count % 2 == 0) {
+                            echo '</div><div class="f_row">';
+                        }
                     endforeach;
                     ?>
                 </div>
@@ -170,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <!-- The End of Contact Us section -->
     <footer>
         <a href="#"><i class="fa fa-arrow-up"></i></a>
-    </footer> 
+    </footer>
     <!-- <script>
         $(document).ready(function(){
             $(".card").slice(0, 6).fadeIn();
@@ -191,13 +191,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }});
     </script> -->
     <script>
+        let images = [];
+        <?php
+        $select_offer = "SELECT * FROM offers";
+        $result_offer = mysqli_query($con, $select_offer);
+        while ($row_offers = mysqli_fetch_array($result_offer)) {
+            echo "images.push('" . $row_offers['offer_image'] . "');";
+        }
+        ?>
+
         let image = document.getElementById('image');
-        let images = ['mcdonalds.jpg','buffalo.png','bazooka.jpg']
-        setInterval(function(){
-            let random = Math.floor(Math.random() * 3);
-            image.src = images[random];
+        setInterval(function() {
+            let random = Math.floor(Math.random() * images.length);
+            image.src = 'offers/'+images[random];
         }, 2000);
     </script>
     <script src="filter.js"></script>
 </body>
+
 </html>

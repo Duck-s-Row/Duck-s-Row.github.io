@@ -73,6 +73,32 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             move_uploaded_file($tmp_name, '../logos/' . $new_logo_name);
             header('Location:insertion of places.php');
         }
+    } else if ($_POST['Form_identifier'] == "insert_offer") {
+        $offer_name = $_FILES['offer']['name'];
+        $offer_size = $_FILES['offer']['size'];
+        $tmp_name = $_FILES['offer']['tmp_name'];
+
+        //image validation 
+        $valid_offer_ext = ['jpg', 'png', 'jpeg'];
+        $offer_ext = explode('.', $offer_name);
+        $offer_ext = strtolower(end($offer_ext));
+        if (!in_array($offer_ext, $valid_offer_ext)) {
+            echo '
+            <script>alert("Invalid logo Extension");</script>';
+            header('Location:insertion of places.php');
+        } elseif ($offer_size > 1200000) {
+            echo '
+            <script>alert("Logo Size Is Too Large");</script>';
+            header('Location:insertion of places.php');
+        } else {
+            $offer_id = random_num(10);
+            $new_offer_name = random_num(10);
+            $new_offer_name .= "." . $offer_ext;
+            $insert_offer = "INSERT INTO offers VALUES($offer_id,'$new_offer_name')";
+            mysqli_query($con, $insert_offer);
+            move_uploaded_file($tmp_name, '../offers/' . $new_offer_name);
+            header('Location:insertion of places.php');
+        }
     }
 
     header('Location:insertion of places.php');
@@ -117,7 +143,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <input type="text" name="p_name" id="p_name"><br>
         <!-- <input type="text" name="p_branch" id="p_branch"><br> -->
         <label for="p_branch">place branch:</label>
-        <select id="p_branch" name="p_branch" >
+        <select id="p_branch" name="p_branch">
             <optgroup label="GIZA">
                 <option value="haram">haram</option>
                 <option value="fisal">fisal</option>
@@ -179,7 +205,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <label for="logo_name">insert logo</label>
         <input type="file" name="logo_name" id="logo_name" accept=".jpg, .png, .jpeg"><br>
         <input type="submit" value="save">
+    </form>
 
+    <form method="post" enctype="multipart/form-data" align=center>
+        <input type="hidden" name="Form_identifier" value="insert_offer">
+        <label for="offer">Insert offer picture</label>
+        <input type="file" name="offer" id="offer" accept=".jpg, .png, .jpeg">
+        <input type="submit" value="save">
     </form>
 </body>
 
