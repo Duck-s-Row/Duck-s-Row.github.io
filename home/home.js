@@ -42,3 +42,4 @@ services.onclick = function() {
  navBar.classList.remove("active");
  subMenu.classList.remove("open-menu");
 }
+

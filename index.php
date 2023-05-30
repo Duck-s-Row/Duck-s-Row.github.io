@@ -3,7 +3,7 @@
   require("connection/connection.php");
   require("Functions/Functions.php");
   // if (isset($_SESSION['user_id'])) {
-    $user_data = Get_user_data($con);
+  $user_data = Get_user_data($con);
   // }
 
   ?>
@@ -23,7 +23,7 @@
  </head>
 
  <body>
-  <!-- <div class="loading" id="loader"></div> -->
+   <!-- <div class="loading" id="loader"></div> -->
    <!-- The Start of Navbar section -->
    <header>
      <div class="logo"><a href="#home"><img src="home/imgs/ducks.png" alt=""></a></div>
@@ -39,12 +39,12 @@
          <li><a href="#services">Services</a></li>
          <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Plans</a></li> -->
          <li><a href="#about_us">About</a></li>
-         <?php if (isset($_SESSION['user_id'])): ?>  
-          <li><a href="Profile/profile.php" class="profile">Profile</a></li>
-          <?php else: ?>
-          <li><a href="Sign_UP/ThirdPage/regist.php" class="profile">Sign Up</a></li>
-          <li><a href="Log_in/login.php" class="profile">Login</a></li>
-          <?php endif; ?>
+         <?php if (isset($_SESSION['user_id'])) : ?>
+           <li><a href="Profile/profile.php" class="profile">Profile</a></li>
+         <?php else : ?>
+           <li><a href="Sign_UP/ThirdPage/regist.php" class="profile">Sign Up</a></li>
+           <li><a href="Log_in/login.php" class="profile">Login</a></li>
+         <?php endif; ?>
          <li><i class="fa fa-right-from-bracket" id="logout"></i><i class="fa-regular fa-user" onclick="toggleMenu()" id="user-icon"></i></li>
        </ul>
 
@@ -52,7 +52,7 @@
          <div class="sub-menu">
            <?php if (isset($_SESSION['user_id'])) : ?>
              <div class="user-info">
-               <img src="Profile/user_profile_imgs/<?php echo $user_data['user_pic']?>" alt="profile-image">
+               <img src="Profile/user_profile_imgs/<?php echo $user_data['user_pic'] ?>" alt="profile-image">
                <h2><?php echo $user_data['Fname'] . " " . $user_data['Lname']; ?></h2>
              </div>
              <hr>
@@ -97,39 +97,45 @@
 
    <!-- The Start of Services Section -->
    <section class="services" id="services">
-   <div class="content">
-            <div class="card">
-                <div class="icon">
-                  <i class="fa-solid fa-sack-dollar"></i>
-                </div>
-                <div class="info">
-                    <h3>Specific budget</h3>
-                    <p>You can decide on a budget, and we'll show you the appropriate places depending on that.</p>
-                </div>
-            </div>
+     <div class="content">
+      <a href="Hangout/hangout.php">
+        <div class="card">
+          <div class="icon">
+            <i class="fa-solid fa-sack-dollar"></i>
+          </div>
+          <div class="info">
+            <h3>Specific budget</h3>
+            <p>You can decide on a budget, and we'll show you the appropriate places depending on that.</p>
+          </div>
         </div>
-        <div class="content">
-            <div class="card">
-                <div class="icon">
-                  <i class="fa-solid fa-location-dot"></i>
-                </div>
-                <div class="info">
-                    <h3>Various places</h3>
-                    <p>We'll highlight various locations in the Giza Governorate that are appropriate for all groups.</p>
-                </div>
-            </div>
+      </a>
+     </div>
+     <div class="content">
+      <a href="Hangout/hangout.php">
+        <div class="card">
+          <div class="icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div class="info">
+            <h3>Various places</h3>
+            <p>We'll highlight various locations in the Giza Governorate that are appropriate for all groups.</p>
+          </div>
         </div>
-        <div class="content">
-            <div class="card">
-                <div class="icon">
-                  <i class="fa-solid fa-list-check"></i>
-                </div>
-                <div class="info">
-                    <h3>Make your plan</h3>
-                    <p>To visit the locations you add at any moment, you can make your own plan.</p>
-                </div>
-            </div>
+      </a>
+     </div>
+     <div class="content">
+      <a href="plans/plans.php">
+        <div class="card">
+          <div class="icon">
+            <i class="fa-solid fa-list-check"></i>
+          </div>
+          <div class="info">
+            <h3>Make your plan</h3>
+            <p>To visit the locations you add at any moment, you can make your own plan.</p>
+          </div>
         </div>
+      </a>
+     </div>
    </section>
    <!-- The End of services Section -->
 
@@ -138,14 +144,14 @@
      <div class="left">
        <h1>What Can We Offer For You</h1>
        <form method="post">
-         <input type="text" id="name" placeholder="Your name" value="<?php if(isset($_SESSION['user_id'])) echo $user_data['username'] ?>" required>
-         <input type="email" id="email" placeholder="Your E-mail" value="<?php if(isset($_SESSION['user_id']))  echo $user_data['email'] ?>" required>
+         <input type="text" id="name" placeholder="Your name" value="<?php if (isset($_SESSION['user_id'])) echo $user_data['username'] ?>" required>
+         <input type="email" id="email" placeholder="Your E-mail" value="<?php if (isset($_SESSION['user_id']))  echo $user_data['email'] ?>" required>
          <textarea id="message" cols="70" rows="10" placeholder="Enter your message" required></textarea>
          <!-- <input type="submit" value="SEND" name="send"> -->
          <button type="button" onclick="sendMail()">SEND</button>
        </form>
        <p id="checking_form" style="margin: 0 0 10px 10%"></p>
-       
+
      </div>
      <div class="content">
        <h3>About <span>Duck’s Row</span></h3>
@@ -199,7 +205,7 @@
    <!-- The End of the page -->
 
    <!-- JS -->
-   <script src="home/app.js"></script>
+   <script src="home/home.js"></script>
    <script src="home/sendmail.js"></script>
  </body>
 

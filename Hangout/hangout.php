@@ -142,9 +142,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <?php endwhile; ?>
                 </form>
             </div>
+            <!-- Start of offers section  -->
             <div class="offers">
                 <img src="" alt="" id="image">
             </div>
+            <!-- End of offers section  -->
         </div>
     </section>
     <!-- The End of Hangout Section -->
