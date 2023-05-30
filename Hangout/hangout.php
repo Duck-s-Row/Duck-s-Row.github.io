@@ -113,9 +113,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     ?>
                 </div>
             </div>
-            <div class="see-more" id="see-more">
+            <!-- <div class="see-more" id="see-more">
                 See More
-            </div>
+            </div> -->
         </div>
         <div class="right">
             <div class="food-services">
@@ -144,7 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             </div>
             <!-- Start of offers section  -->
             <div class="offers">
-                <img src="" alt="" id="image">
+                <img src="offers/264439926.jpg" alt="" id="image">
             </div>
             <!-- End of offers section  -->
         </div>
