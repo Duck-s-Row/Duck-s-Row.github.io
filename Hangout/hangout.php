@@ -196,6 +196,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             image.src = images[random];
         }, 2000);
     </script>
-    <script src="filterss.js"></script>
+    <script src="filter.js"></script>
 </body>
 </html>
