@@ -39,9 +39,12 @@
          <li><a href="#services">Services</a></li>
          <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Plans</a></li> -->
          <li><a href="#about_us">About</a></li>
-         <?php //if (isset($_SESSION['user_id'])): ?>
-         <li><a href="Profile/profile.php" class="profile">Profile</a></li>
-         <?php //endif; ?>
+         <?php if (isset($_SESSION['user_id'])): ?>  
+          <li><a href="Profile/profile.php" class="profile">Profile</a></li>
+          <?php else: ?>
+          <li><a href="Sign_UP/ThirdPage/regist.php" class="profile">Sign Up</a></li>
+          <li><a href="Log_in/login.php" class="profile">Login</a></li>
+          <?php endif; ?>
          <li><i class="fa fa-right-from-bracket" id="logout"></i><i class="fa-regular fa-user" onclick="toggleMenu()" id="user-icon"></i></li>
        </ul>
 
