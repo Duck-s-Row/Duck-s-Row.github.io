@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="insertion.css">
+    <link rel="stylesheet" href="insertions.css">
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -194,6 +194,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
     <form method="post" enctype="multipart/form-data" align=center class="logo">
+    <label for="p_name">choose a place:</label>
         <select id="p_name" name="p_name">
             <?php
             $select_places1 = "SELECT DISTINCT p_name FROM places";
@@ -208,10 +209,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <input type="submit" value="save">
     </form>
 
-    <form method="post" enctype="multipart/form-data" align=center>
+    <form method="post" enctype="multipart/form-data" align=center class="offers">
         <input type="hidden" name="Form_identifier" value="insert_offer">
         <label for="offer">Insert offer picture</label>
-        <input type="file" name="offer" id="offer" accept=".jpg, .png, .jpeg">
+        <input type="file" name="offer" id="offer" accept=".jpg, .png, .jpeg"><br>
         <input type="submit" value="save">
     </form>
 </body>

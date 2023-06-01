@@ -165,24 +165,28 @@ select{
   }
   
   .photo,
-  .logo {
+  .logo,
+  .offers {
     margin-top: 30px;
     color: #FEE715;
   }
   
   .photo label,
-  .logo label {
+  .logo label,
+  .offers {
     display: block;
     margin-bottom: 5px;
   }
   
   .photo input[type="file"],
-  .logo input[type="file"] {
+  .logo input[type="file"],
+  .offers input[type="file"] {
     margin-bottom: 10px;
   }
   
   .photo input[type="submit"],
-  .logo input[type="submit"] {
+  .logo input[type="submit"],
+  .offers input[type="submit"] {
     padding: 10px 20px;
     background-color: #FEE715;
     color: #101820;
@@ -192,7 +196,15 @@ select{
   }
   
   .photo input[type="submit"]:hover,
-  .logo input[type="submit"]:hover {
+  .logo input[type="submit"]:hover,
+  .offers input[type="submit"]:hover {
     background-color: #45a049;
     transform: scale(1.1);
+  }
+
+ 
+
+  .offers label{
+    display: block;
+    margin-bottom: 5px;
   }
