@@ -16,8 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="hanggg.css">
+    <link rel="stylesheet" href="han.css">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <title>Hangout</title>
 </head>
@@ -71,41 +72,50 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     </select>
                 </div>
             </form>
+
             <div class="choices">
                 <div class="f_row">
                     <?php
                     $places = getAllplaces($con);
+                    $count = 0;
                     foreach ($places as $place) :
                     ?>
                         <div class="card">
-                            <img src="logos/<?php echo $place['logo'] ?>" alt="Logo Picture">
-                            <div class="text1">
-                                <h1><?php echo $place['p_name'] ?></h1>
-                                <div class="dis">
-                                    <p>
-                                        <?php echo $place['category'] ?><br>
-                                        <?php echo $place['small_details'] ?>
-                                    </p>
+                            <div class="card2">
+                                <img src="logos/<?php echo $place['logo'] ?>" alt="Logo Picture">
+                                <div class="text1">
+                                    <h1><b><?php echo $place['p_name'] ?></b></h1>
+                                    <div class="dis">
+                                        <p>
+                                            <?php echo $place['category'] ?><br>
+                                        </p>
+                                    </div>
+                                    <h6>Average: <br><?php echo $place['average_budget'] ?></h6>
+                                    <div class="location-text">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <p><?php echo $place['p_branch'] ?></p>
+                                    </div>
                                 </div>
-                                <h6>Average: </h6>
-                                <?php echo $place['average_budget'] ?>
-                            </div>
-                            <div class="location-text">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <p><?php echo $place['p_branch'] ?></p>
-                            </div>
-                            <div class="more">
-                                <form method="POST">
-                                    <input type="hidden" name="place_id" value="<?php echo $place['place_id']; ?>">
-                                    <input type="submit" name="more" id="more" value="More">
-                                </form>
+                                <div class="more">
+                                    <form method="POST">
+                                        <input type="hidden" name="place_id" value="<?php echo $place['place_id']; ?>">
+                                        <input type="submit" name="more" id="more" value="More">
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     <?php
+                        $count++;
+                        if ($count % 2 == 0) {
+                            echo '</div><div class="f_row">';
+                        }
                     endforeach;
                     ?>
                 </div>
             </div>
+            <!-- <div class="see-more" id="see-more">
+                See More
+            </div> -->
         </div>
         <div class="right">
             <div class="food-services">
@@ -132,6 +142,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <?php endwhile; ?>
                 </form>
             </div>
+            <!-- Start of offers section  -->
+            <div class="offers">
+                <img src="offers/264439926.jpg" alt="" id="image">
+            </div>
+            <!-- End of offers section  -->
         </div>
     </section>
     <!-- The End of Hangout Section -->
@@ -156,7 +171,42 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <footer>
         <a href="#"><i class="fa fa-arrow-up"></i></a>
     </footer>
-    <script src="filters.js"></script>
+    <!-- <script>
+        $(document).ready(function(){
+            $(".card").slice(0, 6).fadeIn();
+
+            let loadMoreBtn = document.querySelector('#see-more');
+            let currentItem = 6;
+            loadMoreBtn.onclick = () =>{
+            let boxes = [...document.querySelectorAll('.hang .left .choices .f_row .card')];
+            for (var i = currentItem; i < currentItem + 8; i++){
+                if (boxes[i]) {
+                    boxes[i].style.display = 'inline-block';
+                }
+            }
+            currentItem += 8;
+            if (currentItem >= boxes.length) {
+                loadMoreBtn.style.display = 'none';
+            }
+        }});
+    </script> -->
+    <script>
+        let images = [];
+        <?php
+        $select_offer = "SELECT * FROM offers";
+        $result_offer = mysqli_query($con, $select_offer);
+        while ($row_offers = mysqli_fetch_array($result_offer)) {
+            echo "images.push('" . $row_offers['offer_image'] . "');";
+        }
+        ?>
+
+        let image = document.getElementById('image');
+        setInterval(function() {
+            let random = Math.floor(Math.random() * images.length);
+            image.src = 'offers/'+images[random];
+        }, 2000);
+    </script>
+    <script src="filter.js"></script>
 </body>
 
 </html>

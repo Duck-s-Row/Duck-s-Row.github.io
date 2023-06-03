@@ -275,7 +275,7 @@ label {
 /* end of Change Password */
 
 /* Mobile Styles */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1020px) {
     
     body {
       background-color: #101820;
@@ -333,8 +333,7 @@ label {
     .pass{
         margin-top: 150px;
         width: 96.5%;
-        display: flex;
-        flex-direction: column;
+        height: 80vh;
     }
 
     .user_choices{
@@ -356,7 +355,7 @@ label {
         width: 100px;
         height: 100px;
         margin-left: 10px;
-        margin-top: 10px;
+        margin-top: 30px;
     }
 
     .details_info input {
@@ -399,7 +398,7 @@ label {
 
     .details_info{
 
-        height: 100vh;
+        height: 80vh;
     }
 
     .details_info input[type="submit"] {
@@ -427,6 +426,23 @@ label {
     img {
         width: 50px;
         height: 50px;
+    }
+
+    .chooice{
+        height: 60px;
+    }
+
+    button a {
+        font-size: 15px;
+        line-height: unset;
+        letter-spacing:unset; 
+        display: flex;
+        flex-direction: column;
+    }
+
+    .user .pic{
+        left: 43%;
+        top: 115px;
     }
 
   

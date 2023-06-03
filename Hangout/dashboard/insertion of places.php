@@ -73,6 +73,32 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             move_uploaded_file($tmp_name, '../logos/' . $new_logo_name);
             header('Location:insertion of places.php');
         }
+    } else if ($_POST['Form_identifier'] == "insert_offer") {
+        $offer_name = $_FILES['offer']['name'];
+        $offer_size = $_FILES['offer']['size'];
+        $tmp_name = $_FILES['offer']['tmp_name'];
+
+        //image validation 
+        $valid_offer_ext = ['jpg', 'png', 'jpeg'];
+        $offer_ext = explode('.', $offer_name);
+        $offer_ext = strtolower(end($offer_ext));
+        if (!in_array($offer_ext, $valid_offer_ext)) {
+            echo '
+            <script>alert("Invalid logo Extension");</script>';
+            header('Location:insertion of places.php');
+        } elseif ($offer_size > 1200000) {
+            echo '
+            <script>alert("Logo Size Is Too Large");</script>';
+            header('Location:insertion of places.php');
+        } else {
+            $offer_id = random_num(10);
+            $new_offer_name = random_num(10);
+            $new_offer_name .= "." . $offer_ext;
+            $insert_offer = "INSERT INTO offers VALUES($offer_id,'$new_offer_name')";
+            mysqli_query($con, $insert_offer);
+            move_uploaded_file($tmp_name, '../offers/' . $new_offer_name);
+            header('Location:insertion of places.php');
+        }
     }
 
     header('Location:insertion of places.php');
@@ -82,14 +108,37 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="insertions.css">
+    <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
     <title>insertion</title>
 </head>
 
 <body>
-    <form method="post" align='center'>
+    <header>
+        <div class="logo"><a href="../../index.php"><img src="../../home/imgs/ducks.png" alt=""></a></div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="../../index.php">Home</a></li>
+                <li><a href="../../plans/plans.php">My Plans</a></li>
+                <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
+                <!-- <li><a href="#contact_us">About</a></li> -->
+                <li><a href="../../Profile/profile.php" class="profile">Profile</a></li>
+                <li><a href="../hangout.php" class="profile">Hangout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <form method="post" align='center' class="place">
         <input type="hidden" name="Form_identifier" value="insert_new_place">
         <label for="p_name">place :</label>
         <input type="text" name="p_name" id="p_name"><br>
@@ -126,7 +175,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <input type="number" name="max" id="mx"><br>
         <input type="submit" value="save">
     </form><br><br>
-    <form method="post" align=center enctype="multipart/form-data">
+
+
+    <form method="post" align=center enctype="multipart/form-data" class="photo">
         <input type="hidden" name="Form_identifier" value="insert_photo">
         <label for="p_name">choose a place:</label>
         <select id="p_name" name="place_id">
@@ -139,7 +190,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <input type="file" name="photo_name" id="photo_name" accept=".jpg, .png, .jpeg"><br>
         <input type="submit" value="save">
     </form><br>
-    <form method="post" enctype="multipart/form-data" align=center>
+
+
+
+    <form method="post" enctype="multipart/form-data" align=center class="logo">
+    <label for="p_name">choose a place:</label>
         <select id="p_name" name="p_name">
             <?php
             $select_places1 = "SELECT DISTINCT p_name FROM places";
@@ -152,7 +207,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <label for="logo_name">insert logo</label>
         <input type="file" name="logo_name" id="logo_name" accept=".jpg, .png, .jpeg"><br>
         <input type="submit" value="save">
+    </form>
 
+    <form method="post" enctype="multipart/form-data" align=center class="offers">
+        <input type="hidden" name="Form_identifier" value="insert_offer">
+        <label for="offer">Insert offer picture</label>
+        <input type="file" name="offer" id="offer" accept=".jpg, .png, .jpeg"><br>
+        <input type="submit" value="save">
     </form>
 </body>
 

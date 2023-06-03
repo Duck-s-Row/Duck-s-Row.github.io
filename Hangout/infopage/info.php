@@ -62,17 +62,20 @@
             <div class="disc">
                 <div class="map-container">
                     <h2>Location : <?php echo $row['p_branch'] ?></h2>
-                    <iframe src="<?php echo $row['location']; ?>" 
-                        width="350" 
-                        height="200" 
-                        style="border:0;" 
-                        allowfullscreen=""
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                    <iframe
+                        width="50%"
+                        height="200"
+                        frameborder="0"
+                        scrolling="no"
+                        marginheight="0"
+                        marginwidth="0"
+                        src="https://www.google.com/maps?q=<?php echo urlencode($row['location']); ?>&output=embed"
+                        allowfullscreen
+                    ></iframe>
                 </div>
                 <div>
-                    <h2><?php echo $row['p_name']; ?></h2>
-                    <p><?php echo $row['category']; ?></p>
+                    <h2><?php echo $row['category']; ?></h2>
+                    <p><?php echo $row['p_name']; ?></p>
                     
                 </div>
                 <div class="box">
@@ -86,10 +89,24 @@
                     </div>
                     <div class="box2">
                         <div>
-                            <h2>More Details</h2>
+                            <h2>Details</h2>
                             <p><?php echo $row['more_details'] ?></p>
                         </div>
                     </div>
+                </div>
+                
+                <div class="map-container">
+                    <h2>Location : <?php echo $row['p_branch'] ?></h2>
+                    <iframe
+                        width="50%"
+                        height="200"
+                        frameborder="0"
+                        scrolling="no"
+                        marginheight="0"
+                        marginwidth="0"
+                        src="https://www.google.com/maps?q=<?php echo urlencode($row['location']); ?>&output=embed"
+                        allowfullscreen
+                    ></iframe>
                 </div>
             </div>
         </div>
