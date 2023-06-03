@@ -16,6 +16,23 @@ body {
     width: 100%;
 }
 
+h2, h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 40px;
+}
+
+h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.card h3 {
+    font-family: 'ABeeZee', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
 header {
     width: 100%;
     height: 80px;
@@ -111,59 +128,167 @@ header {
     gap: 100px;
     background: linear-gradient(120deg, #FEE715,#9d8e04);
     display: flex;
-    
+    align-items: flex-start;
 }
 
 .left {
-    width: 60%;
+    width: 70%;
+    display: flex;
 }
 
+.left .ad {
+    width: 40%;
+    height: 50%;
+    position: sticky;
+    top: 100px;
+    margin-bottom: 50px;
+}
+
+.left .ad img{
+    width: 80%;
+    height: 400px;
+
+}
+
+.plan_card {
+    width: 100%;
+    height: 80px;
+    border-radius: 20px;
+    cursor: pointer;
+
+    color: #FEE715;
+    background-color: #101820;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 0 50px;
+    margin: 25px 0;
+    
+    transition: 0.5s ease-out;
+}
+
+.plan_card:hover {
+    transform: scale(1.1);
+}
+
+
 .right {
-    width: 35%;
-    height: 200px;
-    background-color: #fefefe;
-    border: 2px solid #000000;
+    width: 30%;
+    min-height: 200px;
+
+    color: #101820;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 48px;
+
+    position: sticky;
+    top: 80px;
+    
+    margin-bottom: 50px;
 }
 
-.right p {
-    font-size: 30px;
-    margin-top: 40px;
+.right .card {
+    width: 80%;
+    min-height: 200px;
+}
+.right .card img{
+    width: 40%;
+    height: 30%;
+}
+.right .more {
+    padding: 0;
 }
 
-.card {
+.content {
+    width: 60%;
+}
+
+.popup {
     width: 100%;
-    height: 120px;
-    background-color: #EDEDED;
-    margin: 20px 0 10px 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup_content {
+    width: 40%;
+    height: 90%;
+    background-color: #fefefe;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    overflow-y: auto;
+
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup_content::-webkit-scrollbar{
+    width: 10px;
+}
+.popup_content::-webkit-scrollbar-thumb{
+    background-color: #9d8e04;
+    border-radius: 20px;
+}
+
+.popup #close {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: relative;
+    top: -330px;
+    left: 20px;
+    background-color: #FEE715;
+    border-radius: 50%;
+}
+
+/* Cards */
+.card {
+    width: 60%;
+    min-height: 300px;
+    background-color: #101820;
+    color: #FEE715;
+    margin: 10px 0 5px 0;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     border: 2px solid #000000;
-    padding: 0 10px 0 0;
+    border-radius: 20px;
+    padding: 20px;
+    transition: 0.5s ease-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
 }
 
 .card img {
     width: 115px;
     height: 115px;
-    margin-left: 10px;
 }
 
 .card .text1 {
-    width: 40%;
-    margin-left: 20px;
+    width: 80%;
+    text-align: center;
+    margin: 20px 0;
     
 }
 .card .text1 h1 {
     font-weight: 600;
-    font-size: 15px;
+    font-size: 25px;
     line-height: 10px;
-    margin-top: 17px; 
 }
 .card .text1 p{
     margin-top: 10px;
@@ -173,31 +298,7 @@ header {
     width: 400px;
     height: 10px;
 }
-.card .text1 h6 {
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 10px;
-    letter-spacing: 0.1em;
-    color: #cbb704;
-    margin-top: 20px;
-}
-.card .location-text p {
-    font-size: 15px;
-    padding-left: 2px;
-}
 
-.card .location-text{
-    width: 200px;
-    height: 100%;
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 10px;
-    letter-spacing: 0.1em;
-}
 .card .add-plan, .send-comment, .filre-submit {
     height: 30px;
     width: 70px;
@@ -208,11 +309,10 @@ header {
     margin-left: 320px;
 }
 .more{
-    margin-left: 60px;
+    width: 100%;
     display: flex;
-    gap: 30px;
-    flex-direction: column;
-    /* margin-top: 75px; */
+    justify-content: space-between;
+    padding: 0 30px;
 }
 .more input[type="submit"]{
     width: 100px;
@@ -221,6 +321,7 @@ header {
     color: #FEE715;
     background-color: #101820;
     border-radius: 10px;
+    border: 2px solid #FEE715;
 }
 .more input[type="submit"]:hover{
     color: #101820;

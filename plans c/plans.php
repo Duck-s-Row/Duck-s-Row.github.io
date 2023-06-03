@@ -27,7 +27,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="planeee.css">
+    <link rel="stylesheet" href="planeees.css">
     <title>My Planes</title>
 </head>
 <body>
@@ -53,16 +53,21 @@
 
     <section class="plans">
         <div class="left">
-            <h1>Places from your choice</h1>
+            <div class="ad">
+                <img src="../home/imgs/about_us.jpg" alt="">
+            </div>
+            <div class="content">
+                <h1>Places from your choice</h1>
+            
             <?php
-                    $total = 0;
-                    $plans = "SELECT * FROM user_plans WHERE user_id =". $_SESSION['user_id'].";";
-                    $result = mysqli_query($con,$plans);
-                    while ($row = mysqli_fetch_array($result)) :
-                        $place = "SELECT * FROM places WHERE place_id =". $row['place_id'].";";
-                        $result2 = mysqli_query($con,$place);
-                        $row2 = mysqli_fetch_array($result2);
-                        $total += $row2['average_budget'];
+                $total = 0;
+                $plans = "SELECT * FROM user_plans WHERE user_id =". $_SESSION['user_id'].";";
+                $result = mysqli_query($con,$plans);
+                while ($row = mysqli_fetch_array($result)) :
+                    $place = "SELECT * FROM places WHERE place_id =". $row['place_id'].";";
+                    $result2 = mysqli_query($con,$place);
+                    $row2 = mysqli_fetch_array($result2);
+                    $total += $row2['average_budget'];
             ?>
             <div class="card">
                 <img src="../Hangout/logos/<?php echo $row2['logo'] ?>" alt="<?php echo $row2['logo'] ?>">
@@ -94,6 +99,7 @@
                 </div>
             </div>
             <?php endwhile; ?>
+            </div>
         </div>
         <div class="right">
             <h1>The average budget you will have is</h1>

@@ -3,6 +3,7 @@
     session_start();
     $place_id =$_SESSION['place_id'];
     $user_id =$_SESSION['user_id'];
+    $plan_id =1;
 
     $Data = "SELECT * FROM places WHERE place_id = $place_id LIMIT 1";
     $result = mysqli_query($con,$Data);
@@ -22,7 +23,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-    <link rel="stylesheet" href="ino.css">
+    <link rel="stylesheet" href="inoformations.css">
     <title>info</title>
 </head>
 <body>
@@ -61,16 +62,13 @@
             <div class="disc">
                 <div class="map-container">
                     <h2>Location : <?php echo $row['p_branch'] ?></h2>
-                    <iframe
-                        width="50%"
-                        height="200"
-                        frameborder="0"
-                        scrolling="no"
-                        marginheight="0"
-                        marginwidth="0"
-                        src="https://www.google.com/maps?q=<?php echo urlencode($row['location']); ?>&output=embed"
-                        allowfullscreen
-                    ></iframe>
+                    <iframe src="<?php echo $row['location']; ?>" 
+                        width="350" 
+                        height="200" 
+                        style="border:0;" 
+                        allowfullscreen=""
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
                 <div>
                     <h2><?php echo $row['p_name']; ?></h2>
@@ -100,22 +98,34 @@
     <footer class="btn">
         <?php
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                $check_query  = "SELECT COUNT(*) as count FROM user_plans WHERE user_id = '$user_id' AND place_id = '$place_id'";
+                $check_query  = "SELECT COUNT(*) as count FROM user_plans WHERE user_id = '$user_id' AND place_id = '$place_id' AND plan_id = '$plan_id'";
                 $check_result = mysqli_query($con, $check_query);
                 $check_row = mysqli_fetch_assoc($check_result);
                 if ($check_row['count'] > 0) {
                     echo "<script>alert('The Place already exists in your plan')</script>";
                 }
                 else {
-                    $plans = "INSERT INTO user_plans (user_id, place_id) VALUES ('$user_id', '$place_id')";
+                    $plans = "INSERT INTO user_plans (plan_id, user_id, place_id) VALUES ('$plan_id', '$user_id', '$place_id')";
                     mysqli_query($con,$plans);
                 }
             }
         ?>
-        <form method="post">
-            <input type="submit" name="plans" value="+ Add to my plans " class="button">
-        </form>
+
+        <button class="open" id="open">+ Add to my plans</button>
     </footer>
+
+    <section class="popup" id="popup">
+        <button id="close"><i class="fa fa-x"></i></button>
+        <div class="popup_content" id="popup_content">
+            <form method="post">
+                <input type="submit" name="plans" value="+ Make a new plan " class="button">
+            </form>
+            <form method="post">
+                <input type="submit" name="plans" value="+ Add to my plans " class="button">
+            </form>
+        </div>
+    </section>
+
     <!-- The Start of Contact Us section -->
     <section class="contact_us" id="contact_us">
         <div class="left">
@@ -133,5 +143,6 @@
         </div>
     </section>
     <!-- The End of Contact Us section -->
+    <script src="app.js"></script>
 </body>
 </html>
