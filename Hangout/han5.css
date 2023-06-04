@@ -462,7 +462,7 @@ footer:hover i{
         width: 160px;
     }
 }
-@media (max-width: 1020px) {
+@media (max-width: 600px) {
 
     /* Collapse the left and right columns on mobile devices */
     .hang {
@@ -472,7 +472,9 @@ footer:hover i{
         justify-content: center;
         padding-top: 100px;
     }
-  
+    .hang .right .food-services{
+        box-shadow: none;
+    }
     .hang .right {
         display: flex;
         flex-direction: column;
@@ -491,7 +493,70 @@ footer:hover i{
         height: 100%;
     }
     .hang .left .choices .f_row .card .text1{
-        width: 160px;
+        width: 150px;
+    }
+
+    .hang .left .choices .f_row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hang .left .filters {
+        padding: 0 20px;
+    }
+    select{
+        padding: 0;
+    }
+    select optgroup{
+        font-size: 13px;
+    }
+    select option{
+        font-size: 10px;
+    }
+
+    .contact_us .info{
+        margin-left: -70px;
+    }
+
+    .contact_us .left{
+        grid-row: 1;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+  }
+  @media (min-width: 700px){
+    .hang {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        padding-top: 100px;
+    }
+    .hang .right .food-services{
+        box-shadow: none;
+    }
+    .hang .right {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 70vh;
+        margin: 0;
+    }
+    .hang .left{
+        width: 90%;
+        margin: 0;
+    }
+    .hang .left .choices .f_row .card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .hang .left .choices .f_row .card .text1{
+        width: 530px;
     }
 
     .hang .left .choices .f_row {
