@@ -437,62 +437,91 @@ footer i {
 footer:hover i{
     transform: scale(1.2);
 }
-
+@media (max-width: 450px){
+    .hang{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+    .hang .right .food-services{
+        box-shadow: none;
+    }
+    .hang .left{
+        width: 90%;
+        margin: 0;
+    }
+    .hang .left .filters{
+        font-size: 15px;
+        margin: auto;
+        justify-content: space-between;
+        text-align: center;
+        height: 70px;
+    }
+    .hang .left .choices .f_row .card .text1{
+        width: 160px;
+    }
+}
 @media (max-width: 1020px) {
 
     /* Collapse the left and right columns on mobile devices */
     .hang {
-      display: flex;
-      flex-direction: column-reverse;
-
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        padding-top: 100px;
     }
   
-    .hang .left,
     .hang .right {
-      width: 100%;
-      height: 70vh;
-      width: 70%;
-      
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 70vh;
+        margin: 0;
     }
-.hang .left .choices .f_row .card {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
+    .hang .left{
+        width: 90%;
+        margin: 0;
+    }
+    .hang .left .choices .f_row .card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .hang .left .choices .f_row .card .text1{
+        width: 160px;
+    }
 
-.hang .left .choices .f_row {
-    display: flex;
-    flex-direction: column;
-}
+    .hang .left .choices .f_row {
+        display: flex;
+        flex-direction: column;
+    }
 
-.hang{
-    padding-bottom: 1300px;
-}
+    .hang .left .filters {
+        padding: 0 20px;
+    }
+    select{
+        padding: 0;
+    }
+    select optgroup{
+        font-size: 13px;
+    }
+    select option{
+        font-size: 10px;
+    }
 
-.hang .left .filters {
-    padding: 0 20px;
-}
+    .contact_us .info{
+        margin-left: -70px;
+    }
 
-.contact_us{
-    padding-top: 200px;
-}
+    .contact_us .left{
+        grid-row: 1;
+    }
 
-.contact_us .info{
-    margin-left: -70px;
-}
-
-.contact_us .left{
-    grid-row: 1;
-}
-
-.hamburger {
-    display: block;
-    cursor: pointer;
-}
-
-.nav-bar{
-    
-}
-  
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
   }
