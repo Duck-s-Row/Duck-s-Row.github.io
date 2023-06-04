@@ -527,7 +527,7 @@ footer:hover i{
         cursor: pointer;
     }
   }
-  @media (min-width: 700px){
+  /* @media (min-width: 700px){
     .hang {
         display: flex;
         flex-direction: column-reverse;
@@ -589,4 +589,4 @@ footer:hover i{
         display: block;
         cursor: pointer;
     }
-  }
+  } */
