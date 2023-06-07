@@ -328,8 +328,12 @@ header {
 .popup_content {
     width: 40%;
     height: 90%;
-    background-color: #fefefe;
+    
+    color: #FEE715;
+    background-color: #101820;
     border-radius: 10px;
+    border: 5px double #FEE715;
+
     padding: 20px;
     text-align: center;
     overflow-y: auto;
@@ -356,4 +360,103 @@ header {
     left: 20px;
     background-color: #FEE715;
     border-radius: 50%;
+}
+
+.plan_form_btn {
+    width: 50%;
+    height: 50px;
+    
+    background-color: #FEE715;
+    color: #101820;
+    border-radius: 30px;
+
+    cursor: pointer;
+    /* margin: 30px 0; */
+    font-size: 20px;
+    font-weight: 500;
+
+    transition: 0.5s ease-out;
+}
+
+.plan_form_btn:hover {
+    border: 4px double #FEE715;
+    background-color: #101820;
+    color: #FEE715;
+
+    transform: scale(1.07);
+}
+
+.addpopform {
+    width: 70%;
+    padding-top: 20px;
+    display: none;
+    flex-direction: column;
+    text-align: left;
+}
+.addpopform input{
+    width: 100%;
+    margin-bottom: 20px;
+    height: 30px;
+    border: 2px solid #FEE715;
+    border-radius: 20px;
+
+    padding: 0 20px;
+}
+
+.addpopform input[type="submit"] {
+    width: 50%;
+    height: 30px;
+    cursor: pointer;
+
+    background-color: #FEE715;
+    color: #101820;
+    
+    border-radius: 20px;
+    border: 2px solid #FEE715;
+
+    transition: 0.5s ease-out;
+}
+
+.addpopform input[type="submit"]:hover {
+    border: 4px double #FEE715;
+    background-color: #101820;
+    color: #FEE715;
+
+    transform: scale(1.07);
+}
+
+.plan_card {
+    width: 100%;
+    height: 60px;
+    border-radius: 20px;
+    cursor: pointer;
+
+    color: #101820;
+    background-color: #FEE715;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 0 50px;
+    margin: 25px 0;
+    
+    transition: 0.5s ease-out;
+}
+
+.plan_card:hover {
+    transform: scale(1.1);
+}
+
+.expopform {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.expopform a {
+    width: 90%;
 }

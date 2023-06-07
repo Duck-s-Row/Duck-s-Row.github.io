@@ -14,7 +14,6 @@
     $pics_query = "SELECT * FROM place_pics WHERE place_id = $place_id ORDER BY RAND() LIMIT 1";
     $result_pics = mysqli_query($con,$pics_query);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,13 +22,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-    <link rel="stylesheet" href="inoformations.css">
+    <link rel="stylesheet" href="inofomss.css">
     <title>info</title>
 </head>
 <body>
 <!-- The Start of Navbar section -->
     <header>
-        
         <div class="logo">
             <a href="../hangout.php"><i class="fa-regular fa-circle-left back-arrow"></i></a>
             <a href="../../index.php"><img src="black-duck.png" alt="logo"></a>
@@ -60,7 +58,7 @@
                 <?php endwhile; ?>
             </div>
             <div class="disc">
-                <div class="map-container">
+                <!-- <div class="map-container">
                     <h2>Location : <?php echo $row['p_branch'] ?></h2>
                     <iframe
                         width="50%"
@@ -72,7 +70,7 @@
                         src="https://www.google.com/maps?q=<?php echo urlencode($row['location']); ?>&output=embed"
                         allowfullscreen
                     ></iframe>
-                </div>
+                </div> -->
                 <div>
                     <h2><?php echo $row['category']; ?></h2>
                     <p><?php echo $row['p_name']; ?></p>
@@ -104,7 +102,7 @@
                         scrolling="no"
                         marginheight="0"
                         marginwidth="0"
-                        src="https://www.google.com/maps?q=<?php echo urlencode($row['location']); ?>&output=embed"
+                        src="<?php echo $row['location']; ?>&output=embed"
                         allowfullscreen
                     ></iframe>
                 </div>
@@ -134,12 +132,43 @@
     <section class="popup" id="popup">
         <button id="close"><i class="fa fa-x"></i></button>
         <div class="popup_content" id="popup_content">
-            <form method="post">
-                <input type="submit" name="plans" value="+ Make a new plan " class="button">
+            <button class="plan_form_btn" id="plan_form_btn">New Plan</button>
+            <form method="post" class="addpopform" id="addpopform">
+                <div>
+                    <label for="plane_name">Plan Name</label>
+                    <input type="text" name="plane_name">
+                </div>
+                <div>
+                    <label for="plane_date">Plan Date</label>
+                    <input type="date" name="plane_date">
+                </div>
+                <input type="submit" name="add_plan" value="add plan">
             </form>
-            <form method="post">
+
+            <form method="post" class="expopform">
+                <h2>Exists Plans</h2>
+                <a href="#">
+                    <div class="plan_card" id="open">
+                        <h3>Plan Name</h3>
+                        <h3>Average: 200</h3>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="plan_card" id="open">
+                        <h3>Plan Name</h3>
+                        <h3>Average: 200</h3>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="plan_card" id="open">
+                        <h3>Plan Name</h3>
+                        <h3>Average: 200</h3>
+                    </div>
+                </a>
+            </form>
+            <!-- <form method="post">
                 <input type="submit" name="plans" value="+ Add to my plans " class="button">
-            </form>
+            </form> -->
         </div>
     </section>
 
@@ -160,6 +189,6 @@
         </div>
     </section>
     <!-- The End of Contact Us section -->
-    <script src="app.js"></script>
+    <script src="apps.js"></script>
 </body>
 </html>
