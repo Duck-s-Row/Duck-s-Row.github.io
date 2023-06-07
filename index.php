@@ -15,7 +15,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
    <meta charset="UTF-8">
    <meta name="description" content="GO Fun, GO & run">
-   <link rel="stylesheet" href="home/CSS_files/hom.css">
+   <link rel="stylesheet" href="home/CSS_files/hom4.css">
    <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Bebas+Neue&display=swap" rel="stylesheet">
    <link rel="website icon" type="png" href="home/imgs/Logo.png">

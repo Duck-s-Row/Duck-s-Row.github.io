@@ -58,7 +58,7 @@
                 <?php endwhile; ?>
             </div>
             <div class="disc">
-                <!-- <div class="map-container">
+                <div class="map-container">
                     <h2>Location : <?php echo $row['p_branch'] ?></h2>
                     <iframe
                         width="50%"
@@ -70,11 +70,10 @@
                         src="https://www.google.com/maps?q=<?php echo urlencode($row['location']); ?>&output=embed"
                         allowfullscreen
                     ></iframe>
-                </div> -->
+                </div>
                 <div>
-                    <h2><?php echo $row['category']; ?></h2>
-                    <p><?php echo $row['p_name']; ?></p>
-                    
+                    <h2><?php echo $row['p_name']; ?></h2>
+                    <p><?php echo $row['category']; ?></p>
                 </div>
                 <div class="box">
                     <div class="box1">
@@ -175,7 +174,7 @@
     <!-- The Start of Contact Us section -->
     <section class="contact_us" id="contact_us">
         <div class="left">
-            <a href="../index.php">
+            <a href="../../index.php">
                 <img src="black-duck.png" alt="logo">
                 <h3>Duck’s ROW</h3>
             </a>
