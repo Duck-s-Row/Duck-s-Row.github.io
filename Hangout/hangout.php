@@ -190,6 +190,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             }
         }});
     </script> -->
+    <script src="filters.js"></script>
     <script>
         let images = [];
         <?php
@@ -206,7 +207,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             image.src = 'offers/'+images[random];
         }, 2000);
     </script>
-    <script src="filters.js"></script>
+    
 </body>
 
 </html>
