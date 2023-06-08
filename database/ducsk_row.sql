@@ -61,3 +61,7 @@ add column more_details varchar(255);
 alter table user_plans drop column plan_id;
 ALTER TABLE `ducks_row`.`places` 
 CHANGE COLUMN `location` `location` LONGTEXT;
+create table offers(
+offer_id bigint primary key,
+offer_image varchar(255)
+);
