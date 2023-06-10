@@ -45,11 +45,18 @@ function filter() {
                     <p>${item1.p_branch}</p>
                   </div>
                 </div>
-                <div class="more">
-                  <form method="POST">
-                    <input type="hidden" name="place_id" value="${item1.place_id}">
-                    <input type="submit" name="more" id="more" value="More">
-                  </form>
+                <div class="text2">
+                  <!-- <div class="more"> -->
+                    <form method="POST" id="hidden_form_${item1.place_id}" style="display: none;" >
+                      <input type="hidden" name="place_id" value="${item1.place_id}">
+                      <input type="submit" name="more" id="more" value="More">
+                    </form>
+                  <!-- </div> -->
+                  <div class="icons">
+                    <a href="" onclick="event.preventDefault(); document.getElementById('hidden_form_${item1.place_id}').submit();"><i class="fa-solid fa-eye"></i></a>
+                    <a href=""><i class="fa-solid fa-plus"></i></a>
+                    <a href=""><i class="fa-solid fa-heart"></i></a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -68,11 +75,18 @@ function filter() {
                     <p>${item2.p_branch}</p>
                   </div>
                 </div>
-                <div class="more">
-                  <form method="POST">
-                    <input type="hidden" name="place_id" value="${item2.place_id}">
-                    <input type="submit" name="more" id="more" value="More">
-                  </form>
+                <div class="text2">
+                  <!-- <div class="more"> -->
+                    <form method="POST" id="hidden_form_${item2.place_id}" style="display: none;" >
+                      <input type="hidden" name="place_id" value="${item2.place_id}">
+                      <input type="submit" name="more" id="more" value="More">
+                    </form>
+                  <!-- </div> -->
+                  <div class="icons">
+                    <a href="" onclick="event.preventDefault(); document.getElementById('hidden_form_${item2.place_id}').submit();"><i class="fa-solid fa-eye"></i></a>
+                    <a href=""><i class="fa-solid fa-plus"></i></a>
+                    <a href=""><i class="fa-solid fa-heart"></i></a>
+                  </div>
                 </div>
               </div>
             </div>
