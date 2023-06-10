@@ -1,13 +1,21 @@
+<?php
+session_start();
+require('../connection/connection.php');
+require('../Functions/Functions.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="planeees.css">
+    <link rel="stylesheet" href="plans.css">
     <title>My Planes</title>
 </head>
+
 <body>
     <!-- The Start of Navbar section -->
     <header>
@@ -22,7 +30,7 @@
                 <li><a href="../index.php">Home</a></li>
                 <li><a href="../Hangout/hangout.php">Hnagout</a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
-                <li><a href="#contact_us">About</a></li>
+                <li><a href="#about_us">About</a></li>
                 <li><a href="../Profile/profile.php" class="profile">Profile</a></li>
             </ul>
         </nav>
@@ -32,7 +40,7 @@
     <section class="plans">
         <div class="left">
             <div class="ad">
-                <img src="./download.jpeg" alt="">
+                <img src="../Hangout/offers/4911930.png" alt="" id="image">
             </div>
             <div class="content">
                 <h1>Users Plans</h1>
@@ -132,7 +140,7 @@
 
     <section class="popup" id="popup">
         <button id="close"><i class="fa fa-x"></i></button>
-        
+
         <div class="popup_content">
             <h1>Plan Name</h1>
             <div class="card">
@@ -209,12 +217,29 @@
             <div class="contact">
                 <h3><span>contact</span> us</h3>
                 <p>Telephone : <a href="tel:+201556892517">01556892517</a><br>
-                Email : <a href="mailto:ducksrow100@gmail.com">ducksrow100@gmail.com</a><br>
+                    Email : <a href="mailto:ducksrow100@gmail.com">ducksrow100@gmail.com</a><br>
                 </p>
             </div>
         </div>
-     </section>
+    </section>
 
-     <script src="app.js"></script>
+    <script src="app.js"></script>
+    <script>
+        let images = [];
+        <?php
+        $select_offer = "SELECT * FROM offers";
+        $result_offer = mysqli_query($con, $select_offer);
+        while ($row_offers = mysqli_fetch_array($result_offer)) {
+            echo "images.push('" . $row_offers['offer_image'] . "');";
+        }
+        ?>
+
+        let image = document.getElementById('image');
+        setInterval(function() {
+            let random = Math.floor(Math.random() * images.length);
+            image.src = '../Hangout/offers/' + images[random];
+        }, 2000);
+    </script>
 </body>
+
 </html>
