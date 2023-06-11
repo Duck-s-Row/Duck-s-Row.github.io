@@ -2,7 +2,20 @@
 session_start();
 require('../connection/connection.php');
 require('../Functions/Functions.php');
+$user_data = check_login($con);
 
+//
+$select_two = "SELECT * FROM places ORDER BY RAND() LIMIT 2";
+$result = mysqli_query($con ,$select_two);
+
+//
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    if($_POST['Form_identifier']=="more"){
+        $place_id = $_POST['place_id'];
+        $_SESSION['place_id'] = $place_id;
+        header('Location:../Hangout/infopage/info.php');
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +26,7 @@ require('../Functions/Functions.php');
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="plans.css">
+   <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <title>My Planes</title>
 </head>
 
@@ -97,44 +111,28 @@ require('../Functions/Functions.php');
 
         <div class="right">
             <h2>suggestion</h2>
+            <?php while($row = mysqli_fetch_assoc($result)): ?>
             <div class="card">
-                <img src="../Hangout/logos/22050178.png" alt="logo">
+                <img src="../Hangout/logos/<?php echo $row['logo']; ?>" alt="logo">
                 <div class="text1">
-                    <h3>Dunkin</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, cupiditate!</p>
+                    <h3><?php echo $row['p_name']; ?></h3>
+                    <h4> <?php echo $row['p_branch']; ?></h4>
+                    <p><?php echo $row['more_details'] ?></p>
                 </div>
                 <div class="more">
                     <form method="POST">
-                        <input type="hidden" name="place_id_delete" value="<?php echo $row2['place_id']; ?>">
-                        <input type="hidden" name="Form_identifier" value="Delete">
+                        <input type="hidden" name="Form_identifier" value="add_to_plan">
+                        <input type="hidden" name="place_id" value="<?php echo $row['place_id']; ?>">
                         <input type="submit" name="delete" id="delete" value="Add to Plan">
                     </form>
                     <form method="POST">
-                        <input type="hidden" name="place_id" value="<?php echo $row2['place_id']; ?>">
-                        <input type="hidden" name="Form_identifier" value="More">
-                        <input type="submit" name="more" id="more" value="More">
+                        <input type="hidden" name="Form_identifier" value="more">
+                        <input type="hidden" name="place_id" value="<?php echo $row['place_id']; ?>">
+                        <input type="submit" name="more" id="more" value="more">
                     </form>
                 </div>
             </div>
-            <div class="card">
-                <img src="../Hangout/logos/22050178.png" alt="logo">
-                <div class="text1">
-                    <h3>Dunkin</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, cupiditate!</p>
-                </div>
-                <div class="more">
-                    <form method="POST">
-                        <input type="hidden" name="place_id_delete" value="<?php echo $row2['place_id']; ?>">
-                        <input type="hidden" name="Form_identifier" value="Delete">
-                        <input type="submit" name="delete" id="delete" value="Add to Plan">
-                    </form>
-                    <form method="POST">
-                        <input type="hidden" name="place_id" value="<?php echo $row2['place_id']; ?>">
-                        <input type="hidden" name="Form_identifier" value="More">
-                        <input type="submit" name="more" id="more" value="More">
-                    </form>
-                </div>
-            </div>
+            <?php endwhile; ?>
         </div>
     </section>
 
@@ -151,12 +149,12 @@ require('../Functions/Functions.php');
                 </div>
                 <div class="more">
                     <form method="POST">
-                        <input type="hidden" name="place_id_delete" value="<?php echo $row2['place_id']; ?>">
+                        <input type="hidden" name="place_id_delete" value="<?php //echo $row2['place_id']; ?>">
                         <input type="hidden" name="Form_identifier" value="Delete">
                         <input type="submit" name="delete" id="delete" value="Delete">
                     </form>
                     <form method="POST">
-                        <input type="hidden" name="place_id" value="<?php echo $row2['place_id']; ?>">
+                        <input type="hidden" name="place_id" value="<?php //echo $row2['place_id']; ?>">
                         <input type="hidden" name="Form_identifier" value="More">
                         <input type="submit" name="more" id="more" value="More">
                     </form>
@@ -170,12 +168,12 @@ require('../Functions/Functions.php');
                 </div>
                 <div class="more">
                     <form method="POST">
-                        <input type="hidden" name="place_id_delete" value="<?php echo $row2['place_id']; ?>">
+                        <input type="hidden" name="place_id_delete" value="<?php // echo $row2['place_id']; ?>">
                         <input type="hidden" name="Form_identifier" value="Delete">
                         <input type="submit" name="delete" id="delete" value="Delete">
                     </form>
                     <form method="POST">
-                        <input type="hidden" name="place_id" value="<?php echo $row2['place_id']; ?>">
+                        <input type="hidden" name="place_id" value="<?php // echo $row2['place_id']; ?>">
                         <input type="hidden" name="Form_identifier" value="More">
                         <input type="submit" name="more" id="more" value="More">
                     </form>
@@ -189,12 +187,12 @@ require('../Functions/Functions.php');
                 </div>
                 <div class="more">
                     <form method="POST">
-                        <input type="hidden" name="place_id_delete" value="<?php echo $row2['place_id']; ?>">
+                        <input type="hidden" name="place_id_delete" value="<?php // echo $row2['place_id']; ?>">
                         <input type="hidden" name="Form_identifier" value="Delete">
                         <input type="submit" name="delete" id="delete" value="Delete">
                     </form>
                     <form method="POST">
-                        <input type="hidden" name="place_id" value="<?php echo $row2['place_id']; ?>">
+                        <input type="hidden" name="place_id" value="<?php // echo $row2['place_id']; ?>">
                         <input type="hidden" name="Form_identifier" value="More">
                         <input type="submit" name="more" id="more" value="More">
                     </form>

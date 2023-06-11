@@ -3,7 +3,10 @@
     session_start();
     $place_id =$_SESSION['place_id'];
     $user_id =$_SESSION['user_id'];
-    $plan_id =1;
+
+//make the user must login to enter here first
+    if(!isset($user_id))
+        header("Location:../../Log_in/login.php");
 
     $Data = "SELECT * FROM places WHERE place_id = $place_id LIMIT 1";
     $result = mysqli_query($con,$Data);
@@ -58,19 +61,6 @@
                 <?php endwhile; ?>
             </div>
             <div class="disc">
-                <!-- <div class="map-container">
-                    <h2>Location : <?php //echo $row['p_branch'] ?></h2>
-                    <iframe
-                        width="50%"
-                        height="200"
-                        frameborder="0"
-                        scrolling="no"
-                        marginheight="0"
-                        marginwidth="0"
-                        src="https://www.google.com/maps?q=<?php //echo urlencode($row['location']); ?>&output=embed"
-                        allowfullscreen
-                    ></iframe>
-                </div> -->
                 <div>
                     <h2><?php echo $row['category']; ?></h2>
                     <p><?php echo $row['p_name']; ?></p>
