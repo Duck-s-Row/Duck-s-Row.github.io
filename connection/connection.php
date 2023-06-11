@@ -2,7 +2,7 @@
 
 $dbhost = "localhost";
 $dbuser = "root";
-$dbpassword = "Abdo1234";
+$dbpassword = "";
 $dbname = "ducks_row";
 
 if(!$con = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname))
