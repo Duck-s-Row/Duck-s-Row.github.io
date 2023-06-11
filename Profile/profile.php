@@ -153,11 +153,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <input type="submit" value="Update">
             </form>
-
-            <!-- set profile pic -->
-            
-            <!-- end of profile pic -->
-
         </div>
         <!-- end of profile details -->
 

@@ -96,20 +96,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                         <p><?php echo $place['p_branch'] ?></p>
                                     </div>
                                 </div>
-                                <!-- <div class="more">
-                                    <form method="POST">
-                                        <input type="hidden" name="place_id" value="<?php echo $place['place_id']; ?>">
-                                        <input type="submit" name="more" id="more" value="More">
-                                    </form>
-                                </div> -->
                                 <div class="text2">
-                                    <form method="post">
+                                    <!-- <div class="more"> -->
+                                        <form method="POST" id="hidden_form_<?php echo $place['place_id'];?>" style="display: none;">
+                                            <input type="hidden" name="place_id" value="<?php echo $place['place_id']; ?>">
+                                            <input type="submit" name="more" id="more" value="More">
+                                        </form>
+                                    <!-- </div> -->
                                         <div class="icons">
-                                            <a href="./infopage/info.php"><i class="fa-solid fa-eye"></i></a>
+                                            <a href="" onclick="event.preventDefault(); document.getElementById('hidden_form_<?php echo $place['place_id']; ?>').submit();"><i class="fa-solid fa-eye"></i></a>
                                             <a href=""><i class="fa-solid fa-plus"></i></a>
                                             <a href=""><i class="fa-solid fa-heart"></i></a>
                                         </div>
-                                    </form>
                                 </div>
                                 
                             </div>
@@ -201,7 +199,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             }
         }});
     </script> -->
-    <script src="filters.js"></script>
+    <script src="filter.js"></script>
     <script>
         let images = [];
         <?php

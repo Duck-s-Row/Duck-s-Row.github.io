@@ -63,6 +63,12 @@
                <span>></span>
              </a>
 
+             <a href="plans/plans.php" class="sub-menu-link">
+               <i class="fa-solid fa-location-dot" id="drop-icon"></i>
+               <p>My Plans</p>
+               <span>></span>
+             </a>
+
              <a href="Log_out/logout.php" class="sub-menu-link">
                <i class="fa fa-right-from-bracket" id="drop-icon"></i>
                <p>Logout</p>
