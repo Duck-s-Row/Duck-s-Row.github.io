@@ -181,10 +181,45 @@ select option{
     /* display: none; */
     color: #FEE715;
     transition: 1.0s ease;
-
+}
+.text2{
+    position: relative;
+    left: 70px;
+}
+.icons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 5px #73690d solid;
+    border-bottom: 0;
+    border-top: 0;
+    border-right: 0;
+}
+.icons a{
+    color: #101820;
+    font-size: 17px;
+    padding: 10px;
+}
+.icons a:hover{
+    color: white;
+    border: 0;
+}
+@keyframes icon{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-70px);
+    }
+}
+.card:hover .icons{
+    animation: icon 0.3s ease-in both;
+    height: 150px;
+    width: 100px;
+    background-color: #fee715ed;
 }
 .hang .left .choices .f_row .card:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 /* .see-more{
     color: #FEE715;
@@ -437,62 +472,156 @@ footer i {
 footer:hover i{
     transform: scale(1.2);
 }
-
-@media (max-width: 1020px) {
+@media (max-width: 450px){
+    .hang{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+    .hang .right .food-services{
+        box-shadow: none;
+    }
+    .hang .left{
+        width: 90%;
+        margin: 0;
+    }
+    .hang .left .filters{
+        font-size: 15px;
+        margin: auto;
+        justify-content: space-between;
+        text-align: center;
+        height: 70px;
+    }
+    .hang .left .choices .f_row .card .text1{
+        width: 160px;
+    }
+}
+@media (max-width: 600px) {
 
     /* Collapse the left and right columns on mobile devices */
     .hang {
-      display: flex;
-      flex-direction: column-reverse;
-
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        padding-top: 100px;
     }
-  
-    .hang .left,
+    .hang .right .food-services{
+        box-shadow: none;
+    }
     .hang .right {
-      width: 100%;
-      height: 70vh;
-      width: 70%;
-      
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 70vh;
+        margin: 0;
     }
-.hang .left .choices .f_row .card {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
+    .hang .left{
+        width: 90%;
+        margin: 0;
+    }
+    .hang .left .choices .f_row .card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .hang .left .choices .f_row .card .text1{
+        width: 150px;
+    }
 
-.hang .left .choices .f_row {
-    display: flex;
-    flex-direction: column;
-}
+    .hang .left .choices .f_row {
+        display: flex;
+        flex-direction: column;
+    }
 
-.hang{
-    padding-bottom: 1300px;
-}
+    .hang .left .filters {
+        padding: 0 20px;
+    }
+    select{
+        padding: 0;
+    }
+    select optgroup{
+        font-size: 13px;
+    }
+    select option{
+        font-size: 10px;
+    }
 
-.hang .left .filters {
-    padding: 0 20px;
-}
+    .contact_us .info{
+        margin-left: -70px;
+    }
 
-.contact_us{
-    padding-top: 200px;
-}
+    .contact_us .left{
+        grid-row: 1;
+    }
 
-.contact_us .info{
-    margin-left: -70px;
-}
-
-.contact_us .left{
-    grid-row: 1;
-}
-
-.hamburger {
-    display: block;
-    cursor: pointer;
-}
-
-.nav-bar{
-    
-}
-  
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
   }
+  /* @media (min-width: 700px){
+    .hang {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        padding-top: 100px;
+    }
+    .hang .right .food-services{
+        box-shadow: none;
+    }
+    .hang .right {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 70vh;
+        margin: 0;
+    }
+    .hang .left{
+        width: 90%;
+        margin: 0;
+    }
+    .hang .left .choices .f_row .card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .hang .left .choices .f_row .card .text1{
+        width: 530px;
+    }
+
+    .hang .left .choices .f_row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hang .left .filters {
+        padding: 0 20px;
+    }
+    select{
+        padding: 0;
+    }
+    select optgroup{
+        font-size: 13px;
+    }
+    select option{
+        font-size: 10px;
+    }
+
+    .contact_us .info{
+        margin-left: -70px;
+    }
+
+    .contact_us .left{
+        grid-row: 1;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+  } */

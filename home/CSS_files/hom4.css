@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Bebas+Neue&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -524,6 +523,9 @@ footer {
         width: 200px;
         height: 300px;
     }
+    .about_us .left{
+        margin: 0 30px 0 0;
+    }
 
       
       footer {
@@ -533,13 +535,15 @@ footer {
 
 @media (max-width: 768px) {
     .services {
-        height: 1400px;
         align-items: center;
         text-align: center;
         justify-content: center;
     }
     .card{
         width: 200px;
+    }
+    .card .icon{
+        margin-top: 40px;
     }
     .home h1 {
         margin-top: 25%;
@@ -572,7 +576,9 @@ footer {
         align-items: center;
         justify-content: center;
     }
-
+    .about_us .left{
+        margin: 0;
+    }
     .content {
         padding-left: 0px;
         text-align: center;
@@ -646,7 +652,24 @@ footer {
         line-height: 77px;
     }
     
-    
+    .about_us .left{
+        margin: 0;
+    }
+    .about_us .left h1{
+        font-size: 20px;
+    }
+    .about_us .left input{
+        height: 20px;
+    }
+    .about_us .left textarea{
+        height: 100px;
+    }
+    button[type='button']{
+        width: 20%;
+        font-size: 12px;
+        height: 25;
+        margin: 10px 40% auto 40%;
+    }
     .about_us img{
         width: 70%;
         height: 170px;
@@ -689,7 +712,6 @@ footer {
 
 @media (max-width: 350px) {
     .services {
-        height: 900px;
         align-items: center;
         text-align: center;
         justify-content: center;
@@ -697,7 +719,8 @@ footer {
     .card {
         min-height: 300px;
         width: 60%;
-        margin: 70px 10px 70px 10px;
+        margin: 60px auto auto auto;
+        height: 350px;
     }
     .pra{
         font-size: 10px;
@@ -733,5 +756,25 @@ footer {
     .about_us p{
         width: 100%;
         margin: 0;
+    }
+    .about_us .left{
+        margin: 0;
+        width: 250px;
+    }
+    .about_us .left h1{
+        font-size: 20px;
+    }
+    .about_us .left input{
+        height: 20px;
+    }
+    .about_us .left textarea{
+        height: 100px;
+    }
+    .about_us button[type='button']{
+        width: 20%;
+        font-size: 10px;
+        height: 25;
+        margin: auto 40% auto 40%;
+        
     }
 }
