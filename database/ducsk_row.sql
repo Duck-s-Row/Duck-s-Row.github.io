@@ -59,9 +59,27 @@ alter table places
 alter table places
 add column more_details varchar(255);
 alter table user_plans drop column plan_id;
-ALTER TABLE `ducks_row`.`places` 
-CHANGE COLUMN `location` `location` LONGTEXT;
+ALTER TABLE `ducks_row`.`places` CHANGE COLUMN `location` `location` LONGTEXT;
 create table offers(
-offer_id bigint primary key,
-offer_image varchar(255)
+    offer_id bigint primary key,
+    offer_image varchar(255)
 );
+drop table if exists user_plans;
+create table exist_plan(
+    id int primary key auto_increment,
+    plan_id bigint,
+    place_id bigint,
+    user_id bigint
+);
+create table user_plans(
+    plan_id bigint primary key,
+    plan_name varchar(255),
+    creation_date timestamp,
+    plan_date date
+);
+alter table exist_plan
+add foreign key(plan_id) references user_plans(plan_id);
+alter table exist_plan
+add foreign key(user_id) references users(user_id);
+alter table exist_plan
+add foreign key(place_id) references places(place_id);
