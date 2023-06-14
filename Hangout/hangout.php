@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="h2.css">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <title>Hangout</title>
@@ -99,20 +99,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                 </div>
                                 <div class="text2">
                                     <!-- <div class="more"> -->
-                                        <!-- <form method="POST" id="hidden_form_<?php echo $place['place_id'];?>" style="display: none;">
+                                        <form method="POST" id="hidden_form_<?php echo $place['place_id'];?>" style="display: none;">
                                             <input type="hidden" name="place_id" value="<?php echo $place['place_id']; ?>">
                                             <input type="submit" name="more" id="more" value="More">
-                                        </form> -->
+                                        </form>
                                     <!-- </div> -->
                                         <div class="icons">
                                             <a href="" onclick="event.preventDefault(); document.getElementById('hidden_form_<?php echo $place['place_id']; ?>').submit();"><i class="fa-solid fa-eye"></i></a>
                                             <a href=""><i class="fa-solid fa-plus"></i></a>
                                             <a href=""><i class="fa-solid fa-heart"></i></a>
                                         </div>
-                                </div>
-                                
-                            </div>
-                            
+                                </div>  
+                            </div>   
                         </div>
                     <?php
                         $count++;
