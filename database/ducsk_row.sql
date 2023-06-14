@@ -83,3 +83,7 @@ alter table exist_plan
 add foreign key(user_id) references users(user_id);
 alter table exist_plan
 add foreign key(place_id) references places(place_id);
+alter table user_plans
+add column user_id bigint;
+alter table user_plans
+add foreign key(user_id) references users(user_id);

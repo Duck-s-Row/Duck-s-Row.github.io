@@ -120,9 +120,9 @@ $result_pics = mysqli_query($con, $pics_query);
                     $plan_date = $_POST['plan_date'];
                 }
 
-                $query2 = "INSERT INTO user_plans(plan_id,plan_name,plan_date,creation_date) VALUES(?,?,?,?)";
+                $query2 = "INSERT INTO user_plans(plan_id,plan_name,plan_date,creation_date,user_id) VALUES(?,?,?,?,?)";
                 $stmt2 = mysqli_prepare($con, $query2);
-                mysqli_stmt_bind_param($stmt2, 'isss' , $plan_id, $plan_name, $plan_date, $creation_date);
+                mysqli_stmt_bind_param($stmt2, 'issss' , $plan_id, $plan_name, $plan_date, $creation_date,$user_id);
                 mysqli_stmt_execute($stmt2);
 
                 $query1 = "INSERT INTO exist_plan(plan_id,user_id,place_id) VALUES(?,?,?)";
@@ -156,7 +156,7 @@ $result_pics = mysqli_query($con, $pics_query);
                 <input type="submit" value="add plan">
             </form>
             <?php 
-            $selectAllPlans = "SELECT * FROM user_plans,exist_plan WHERE exist_plan.plan_id = user_plans.plan_id" ;
+            $selectAllPlans = "SELECT * FROM user_plans WHERE user_id = $user_id" ;
             $allPlans = mysqli_query($con,$selectAllPlans);
             ?>
             <!-- <form method="post" class="expopform"> -->
@@ -197,8 +197,8 @@ $result_pics = mysqli_query($con, $pics_query);
         </div>
     </section>
     <!-- The End of Contact Us section -->
-    <script src="apps.js"></script>
-    <script src="add_exist_plan.js"></script>
+    <script src="apps.js"></script> <!-- script for pop up page -->
+    <script src="add_exist_plan.js"></script> <!-- script for the ajax of adding to an exist plan -->
 </body>
 
 </html>
