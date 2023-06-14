@@ -180,7 +180,7 @@ select option{
     box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
     /* display: none; */
     color: #FEE715;
-    transition: 1.0s ease;
+    transition: 0.7s ease;
 }
 .text2{
     position: relative;
@@ -213,7 +213,7 @@ select option{
     }
 }
 .card:hover .icons{
-    animation: icon 0.3s ease-in both;
+    animation: icon 0.4s ease-in both;
     height: 150px;
     width: 100px;
     background-color: #fee715ed;
@@ -228,14 +228,14 @@ select option{
     border: 0;
     cursor: pointer;
     margin: 10px 0 10px 0;
-    display: block;
+    display: inline-block;
     transition: .5s linear;
-} */
+}
 .see-more:hover{
     opacity: .8;
     color: #101820;
     background-color: white;
-}
+} */
 .card .card2{
     display: flex;
 }
@@ -293,6 +293,8 @@ select option{
     width: 350px;
     height: 85vh;
     margin: 0 0 0 80px;
+    position: sticky;
+    top: 140px;
 }
 input[type="number"] {
     -webkit-appearance: textfield;
