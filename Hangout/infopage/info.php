@@ -1,10 +1,17 @@
 <?php
-    include("../../connection/connection.php");
-    session_start();
-    $place_id =$_SESSION['place_id'];
-    $user_id =$_SESSION['user_id'];
-    $plan_id =1;
+include("../../Functions/Functions.php");
+require("../../connection/connection.php");
+session_start();
+$place_id = $_SESSION['place_id'];
+$user_id = $_SESSION['user_id'];
 
+//make the user must login to enter here first
+if (!isset($user_id))
+    header("Location:../../Log_in/login.php");
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     $Data = "SELECT * FROM places WHERE place_id = $place_id LIMIT 1";
     $result = mysqli_query($con,$Data);
     if($result && mysqli_num_rows($result)>0){
@@ -18,15 +25,39 @@
     $result_pics2 = mysqli_query($con,$pics_query2);
 
     // $result_pics = mysqli_query($con,$pics_query);
+=======
+=======
+>>>>>>> e739648d2787e7333a52667c4bb01b7b296c8e93
+=======
+>>>>>>> e739648d2787e7333a52667c4bb01b7b296c8e93
+$Data = "SELECT * FROM places WHERE place_id = $place_id LIMIT 1";
+$result = mysqli_query($con, $Data);
+if ($result && mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+}
+//picture query
+$pics_query = "SELECT * FROM place_pics WHERE place_id = $place_id ORDER BY RAND() LIMIT 1";
+$result_pics = mysqli_query($con, $pics_query);
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> e739648d2787e7333a52667c4bb01b7b296c8e93
+=======
+>>>>>>> e739648d2787e7333a52667c4bb01b7b296c8e93
+=======
+>>>>>>> e739648d2787e7333a52667c4bb01b7b296c8e93
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     <link rel="stylesheet" href="inofomss.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -36,16 +67,26 @@
     <!-- slick slider JS library file -->
     <script type="text/javascript" src="slick/slick/slick.min.js"></script>
 
+=======
+    <link rel="stylesheet" href="info.css">
+>>>>>>> e739648d2787e7333a52667c4bb01b7b296c8e93
+=======
+    <link rel="stylesheet" href="info.css">
+>>>>>>> e739648d2787e7333a52667c4bb01b7b296c8e93
+=======
+    <link rel="stylesheet" href="info.css">
+>>>>>>> e739648d2787e7333a52667c4bb01b7b296c8e93
     <title>info</title>
 </head>
+
 <body>
-<!-- The Start of Navbar section -->
+    <!-- The Start of Navbar section -->
     <header>
         <div class="logo">
             <a href="../hangout.php"><i class="fa-regular fa-circle-left back-arrow"></i></a>
             <a href="../../index.php"><img src="black-duck.png" alt="logo"></a>
         </div>
-        
+
         <div class="hamburger">
             <div class="line"></div>
             <div class="line"></div>
@@ -61,8 +102,11 @@
             </ul>
         </nav>
     </header>
-<!-- The End of Navbar section -->
+    <!-- The End of Navbar section -->
+<<<<<<< HEAD
+<<<<<<< HEAD
 
+<<<<<<< HEAD
 <script>
 $(document).ready(function(){
     $('.img').slick({
@@ -74,9 +118,12 @@ $(document).ready(function(){
     });
 });
 </script>
+=======
+>>>>>>> e739648d2787e7333a52667c4bb01b7b296c8e93
 
-<section class="main">
+    <section class="main">
         <div class="photo">
+<<<<<<< HEAD
 
             <!-- image class -->
             <div class="img">  
@@ -91,23 +138,25 @@ $(document).ready(function(){
                     </div>
                 <?php endwhile; 
                     }  ?>
+=======
+    <section class="main">
+        <div class="photo">
+=======
+>>>>>>> e739648d2787e7333a52667c4bb01b7b296c8e93
+=======
+
+    <section class="main">
+        <div class="photo">
+>>>>>>> e739648d2787e7333a52667c4bb01b7b296c8e93
+            <div class="img">
+                <?php while ($row_pics = mysqli_fetch_assoc($result_pics)) : ?>
+                    <img src="../places_imgs/<?php echo $row_pics['photo_name'] ?>" alt="<?php echo $row['p_name'] ?>">
+                <?php endwhile; ?>
+>>>>>>> e739648d2787e7333a52667c4bb01b7b296c8e93
             </div>
 
 
             <div class="disc">
-                <!-- <div class="map-container">
-                    <h2>Location : <?php //echo $row['p_branch'] ?></h2>
-                    <iframe
-                        width="50%"
-                        height="200"
-                        frameborder="0"
-                        scrolling="no"
-                        marginheight="0"
-                        marginwidth="0"
-                        src="https://www.google.com/maps?q=<?php //echo urlencode($row['location']); ?>&output=embed"
-                        allowfullscreen
-                    ></iframe>
-                </div> -->
                 <div>
                     <h2><?php echo $row['category']; ?></h2>
                     <p><?php echo $row['p_name']; ?></p>
@@ -128,38 +177,56 @@ $(document).ready(function(){
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="map-container">
                     <h2>Location : <?php echo $row['p_branch'] ?></h2>
-                    <iframe
-                        width="50%"
-                        height="200"
-                        frameborder="0"
-                        scrolling="no"
-                        marginheight="0"
-                        marginwidth="0"
-                        src="<?php echo $row['location']; ?>&output=embed"
-                        allowfullscreen
-                    ></iframe>
+                    <iframe width="50%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="<?php echo $row['location']; ?>&output=embed" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <footer class="btn">
         <?php
-            if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                $check_query  = "SELECT COUNT(*) as count FROM user_plans WHERE user_id = '$user_id' AND place_id = '$place_id' AND plan_id = '$plan_id'";
-                $check_result = mysqli_query($con, $check_query);
-                $check_row = mysqli_fetch_assoc($check_result);
-                if ($check_row['count'] > 0) {
-                    echo "<script>alert('The Place already exists in your plan')</script>";
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            if ($_POST['Form_identifier'] == 'add_new') {
+                // $check_query  = "SELECT COUNT(*) as count FROM user_plans WHERE user_id = '$user_id' AND place_id = '$place_id' AND plan_id = '$plan_id'";
+                // $check_result = mysqli_query($con, $check_query);
+                // $check_row = mysqli_fetch_assoc($check_result);
+                // if ($check_row['count'] > 0) {
+                //     echo "<script>alert('The Place already exists in your plan')</script>";
+                // } else {
+                $plan_id = random_num(5);
+                $creation_date = date('Y-m-d H:i:s');
+
+                //check if the plan name is empty 
+                if (empty($_POST['plan_name'])) {
+                    $plan_name = "plan";
+                } else {
+                    $plan_name = $_POST['plan_name'];
                 }
-                else {
-                    $plans = "INSERT INTO user_plans (plan_id, user_id, place_id) VALUES ('$plan_id', '$user_id', '$place_id')";
-                    mysqli_query($con,$plans);
+
+                //check if the plan date is empty 
+                if (empty($_POST['plan_date'])) {
+                    $plan_date = date('Y-m-d');
+                } else {
+                    $plan_date = $_POST['plan_date'];
                 }
+
+                $query2 = "INSERT INTO user_plans(plan_id,plan_name,plan_date,creation_date,user_id) VALUES(?,?,?,?,?)";
+                $stmt2 = mysqli_prepare($con, $query2);
+                mysqli_stmt_bind_param($stmt2, 'issss' , $plan_id, $plan_name, $plan_date, $creation_date,$user_id);
+                mysqli_stmt_execute($stmt2);
+
+                $query1 = "INSERT INTO exist_plan(plan_id,user_id,place_id) VALUES(?,?,?)";
+                $stmt1 = mysqli_prepare($con, $query1);
+                mysqli_stmt_bind_param($stmt1, 'iii', $plan_id, $user_id, $place_id);
+                mysqli_stmt_execute($stmt1);
+                
+                header("Location:info.php");
+                // }
             }
+        }
         ?>
 
         <button class="open" id="open">+ Add to my plans</button>
@@ -170,38 +237,36 @@ $(document).ready(function(){
         <div class="popup_content" id="popup_content">
             <button class="plan_form_btn" id="plan_form_btn">New Plan</button>
             <form method="post" class="addpopform" id="addpopform">
+                <input type="hidden" name="Form_identifier" value="add_new">
                 <div>
                     <label for="plane_name">Plan Name</label>
-                    <input type="text" name="plane_name">
+                    <input type="text" name="plan_name">
                 </div>
                 <div>
                     <label for="plane_date">Plan Date</label>
-                    <input type="date" name="plane_date">
+                    <input type="date" name="plan_date">
                 </div>
-                <input type="submit" name="add_plan" value="add plan">
+                <input type="submit" value="add plan">
             </form>
-
-            <form method="post" class="expopform">
+            <?php 
+            $selectAllPlans = "SELECT * FROM user_plans WHERE user_id = $user_id" ;
+            $allPlans = mysqli_query($con,$selectAllPlans);
+            ?>
+            <!-- <form method="post" class="expopform"> -->
+                <?php if(mysqli_num_rows($allPlans)): ?> 
                 <h2>Exists Plans</h2>
-                <a href="#">
-                    <div class="plan_card" id="open">
-                        <h3>Plan Name</h3>
-                        <h3>Average: 200</h3>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="plan_card" id="open">
-                        <h3>Plan Name</h3>
-                        <h3>Average: 200</h3>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="plan_card" id="open">
-                        <h3>Plan Name</h3>
-                        <h3>Average: 200</h3>
-                    </div>
-                </a>
-            </form>
+                <?php while($eachPlan = mysqli_fetch_assoc($allPlans)):?>
+                    <a href="#" class="plan-card-link" data-planid="<?php echo $eachPlan['plan_id'] ?>">
+                        <div class="plan_card" id="open">
+                            <h3><?php echo $eachPlan['plan_name'] ?></h3>
+                            <!-- <h3>Average: 200</h3> -->
+                        </div>
+                    </a>
+                    <?php endwhile; ?>
+                    <?php  else: ?>
+                        <h2>You didn't make any plans yet Please make new one.</h2>
+                    <?php endif; ?>
+            <!-- </form> -->
             <!-- <form method="post">
                 <input type="submit" name="plans" value="+ Add to my plans " class="button">
             </form> -->
@@ -225,6 +290,8 @@ $(document).ready(function(){
         </div>
     </section>
     <!-- The End of Contact Us section -->
-    <script src="apps.js"></script>
+    <script src="apps.js"></script> <!-- script for pop up page -->
+    <script src="add_exist_plan.js"></script> <!-- script for the ajax of adding to an exist plan -->
 </body>
+
 </html>

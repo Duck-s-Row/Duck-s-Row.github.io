@@ -60,6 +60,7 @@ function filter() {
                 </div>
               </div>
             </div>
+            
             ${item2 ? `
             <div class="card">
               <div class="card2">
