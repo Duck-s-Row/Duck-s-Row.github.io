@@ -107,7 +107,9 @@ input[type="submit"] {
 	border-radius: 30px;
 	font-family: 'Bebas Neue', cursive;
 	font-size: 30px;
-	transition: 1s ease;
+	transition: 0.7s ease;
+	cursor: pointer;
+	margin-top: 20px;
 }
 
 input[type="submit"]:hover {
