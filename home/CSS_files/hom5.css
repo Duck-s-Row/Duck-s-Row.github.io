@@ -293,29 +293,29 @@ header {
 }
 
 .home .button {
-    width: 250px;
+    width: 300px;
     height: 70px;
-    margin: 8%;
-
+    margin: 10%;
     font-family: 'Bebas Neue';
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
-    line-height: 65px;
-    letter-spacing: 0.1em;
-
+    line-height: 70px;
+    letter-spacing: 0.2em;
     background: #FEE715;
-    border-radius: 100px;
+    color: #101820;
     border: none;
-
+    cursor: pointer;
     position: relative;
-    transition: 1s ease;
+    transform:  ease-out;
+    border-radius: 100px;
 } 
 
 .home .button:hover {
-    transform: scale(1.1);
+    color: #FEE715;
+    background: #101820;
+    transition: 0.8s;
 }
-
 /* #myVideo {
     position: absolute;
     z-index: -1;
