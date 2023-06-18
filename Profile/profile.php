@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
-    <link rel="stylesheet" href="pro1.css">
+    <link rel="stylesheet" href="pro4.css">
     <title>Profile</title>
     <style>
         
@@ -90,12 +90,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         }
                     </script>
                 </div>
-                <div class="h">
-                    <h2><?php echo $user_data['username'] ?></h2>
-                    <h3><?php echo $user_data['email'] ?></h3>
-                </div>
-                <br><hr>
             </div>
+            <div class="h">
+            <h2><?php echo $user_data['username'] ?></h2> 
+            <h3><?php echo $user_data['email'] ?></h3>
+            </div>
+            <br>
             <div class="btns">
                 <button class="chooice active" onclick="edit_info()"><a href="#"><i class="fa-regular fa-user"></i>&nbsp;Profile</a></button>
                 <button class="chooice"><a href="#"><i class="fa-solid fa-location-dot"></i>&nbsp; My Plans</a></button>

@@ -72,7 +72,15 @@ input[type="file"]::-webkit-file-upload-button{
     align-items: center;
     padding-bottom: 20px;
     color: white;
-    height: 330px;
+}
+
+.h {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    letter-spacing: 0.1em;
+    margin-left: 20px;
+    color: #fff;
 }
 .user img {
     width: 150px;
@@ -284,60 +292,48 @@ label {
         flex-direction: column;
     }
       .user {
-        background-color: rgba(254, 231, 21, 1);
+        
         display: flex;
         flex-direction: row;
         width: 100%;
         height: 100px;
         justify-content: unset;
         text-align: unset;
-    }
-
-    .h {
-        display: flex;
-        flex-direction: column;
-        padding-top: 10px;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 28px;
-        letter-spacing: 0.1em;
-        margin-left: 20px;
+        padding-bottom:40px ;
     }
 
     #home {
-        text-decoration: none;
-        background-color: #101820;
-        color: #fff;
         border-radius: 30px;
         align-self: self-start;
+        margin: 25px;
         
     }
 
     .details_info{
         display: flex;
         flex-direction: column;
-        margin-top: 150px;
+        margin-top: 10px;
         width: 96.5%;
     }
 
     .planes{
-        margin-top: 150px;
+        margin-top: 10px;
         width: 96.5%;
     }
 
     .pass{
-        margin-top: 150px;
+        margin-top: 10px;
         width: 96.5%;
         height: 80vh;
     }
 
     .user_choices{
-        background-color: rgba(254, 231, 21, 1);
+        
         display: flex;
         flex-direction: column;
         width: 100%;
         margin: 30px auto 0 auto;
-        height: 10vh;
+        height: 35vh;
         width: 90%;
     }
 
@@ -436,9 +432,11 @@ label {
     }
 
     .user .pic{
-        left: 43%;
-        top: 115px;
+        left: 50%;
+        top: 125px;
     }
+
+    
 
   
   }
