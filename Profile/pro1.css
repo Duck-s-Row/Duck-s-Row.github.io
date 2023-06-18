@@ -9,7 +9,7 @@
 .main {
     width: 100%;
     min-height: 100vh;
-    background-color: #101820;
+    background: linear-gradient(-120deg, #FEE715,#9d8e04);
     display: flex;
     flex-direction: row;
 }
@@ -50,34 +50,37 @@ input[type="file"]::-webkit-file-upload-button{
 }
 #home {
     text-decoration: none;
-    background-color: #101820;
-    color: #fff;
+    background-color: black;
+    color: #FEE715;
     border-radius: 30px;
     align-self: self-start;
     padding: 7px;
-    margin: 10px;
+    margin: 15px;
+}
+#home:hover{
+    background-color: #fff;
+    color: #101820;
 }
 #home span {
     font-size: 20px;
 }
-#circle-user{
-    width: 150px;
-    height: 150px;
-}
 .user {
-    height: 300px;
-    background-color: rgba(254, 231, 21, 1);
+    background-color: #101820;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-bottom: 20px;
-    border-radius: 20px;
+    color: white;
+    height: 330px;
 }
 .user img {
-    width: 170px;
-    height: 170px;
-    margin-bottom: 20px;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 15px;
+}
+hr{
+    width: 100%;
 }
 .user h2, .user h3 {
     padding-top: 10px;
@@ -88,16 +91,25 @@ input[type="file"]::-webkit-file-upload-button{
     text-align: center;
 }
 .user_choices{
-    background: white;
-    border-radius: 20px;
+    background: #101820;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.btns{
+    text-align: center;
 }
 .chooice {
     width: 100%;
-    height: 50px;
+    height: 60px;
     border: 0;
-    margin-top: 20px;
     margin-right: 10px;
+    margin-bottom: 10px;
     border-radius: 20px;
+    cursor: pointer;
+    background: #0b1016;
+}
+.chooice:hover{
+    background: none;
 }
 button a{
     text-decoration: none;
@@ -106,9 +118,7 @@ button a{
     font-size: 20px;
     line-height: 28px;
     letter-spacing: 0.1em;
-}
-button a:hover {
-    color: rgb(204, 185, 21);
+    color: #FEE715;
 }
 /* end of user&choices */
 
@@ -117,8 +127,9 @@ button a:hover {
     display: block;
     width: 60%;
     height: 90vh;
-    border-radius: 20px;
-    background-color: white;
+    border-radius: 50px;
+    overflow: hidden;
+    background-color: #101820;
     margin: 2%;
 }
 .planes , .pass{
@@ -126,7 +137,8 @@ button a:hover {
 }
 .details {
     height: 10%;
-    background-color: rgba(254, 231, 21, 1);
+    background-color: black;
+    color: #FEE715;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -168,10 +180,18 @@ form input[type="text"],input[type="email"],input[type="tel"]{
 }
 .details_info input {
     font-size: 20px;
-    border: 1px solid rgb(201, 182, 14);
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #FEE715;
     border-radius: 10px;
-    padding: 7px;
+    padding: 7px 7px 0 7px;
     width: 280px;
+    color: #fff;
+}
+.details_info input:hover{
+    border: 1px solid white;
 }
 .details_info input[type="submit"] {
     width: 180px;
@@ -181,61 +201,35 @@ form input[type="text"],input[type="email"],input[type="tel"]{
     font-size: 24px;
     border-radius: 20px;
     margin-left: 80px;
-    background-color: #101820;
+    background-color: black;
     color: rgba(254, 231, 21, 1);
+    cursor: pointer;
 }
 .details_info input[type="submit"]:hover{
     color: #101820;
-    background-color: rgba(254, 231, 21, 1);
+    background-color: white;
 }
 label {
     font-weight: 700;
+    color: #FEE715;
+    padding-bottom: 5px;
 }
 /* end of user info */
 
-
-/* start of my plans */
-.card{
-    height: 100px;
-    width: 80%;
-    margin: 50px 10% 0 10%;
-    background-color: rgba(237, 222, 11, 0.396);
-    text-align: center;
-    border-radius: 50px;
-}
-.card2{
-    height: 100px;
-    width: 80%;
-    margin: 50px 10% 0 10%;
-    background-color: rgba(153, 153, 153, 0.396);
-    text-align: center;
-    border-radius: 50px;
-}
-.card2 a h2{
-    /* color: rgb(204, 185, 21); */
-    color: black;
-    padding-top:33px ;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    letter-spacing: 3px;
-    word-spacing: 15px;
-    font-size: 25px;
-}
-.card2 a{
-    text-decoration: none;
-}
-.card2 a h2:hover{
-    color: rgb(204, 185, 21);
-}
-/* end of my plans */
 
 
 /* start of Change Password */
 .pass input{
     font-size: 20px;
-    border: 1px solid rgb(201, 182, 14);
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #FEE715;
     border-radius: 10px;
-    padding: 7px;
+    padding: 7px 7px 0 7px;
     width: 280px;
+    color: #fff;
 }
 .pass input[type="submit"]{
     width: 30%;
@@ -245,12 +239,13 @@ label {
     font-size: 24px;
     border-radius: 20px;
     margin: 50px 35% 0 35%;
-    background-color: #101820;
+    background-color: black;
     color: rgba(254, 231, 21, 1);
+    cursor: pointer;
 }
 .pass input[type="submit"]:hover{
     color: #101820;
-    background-color: rgba(254, 231, 21, 1);
+    background-color: white;
 }
 .pass .check input[type="submit"]{
     width: 20%;
