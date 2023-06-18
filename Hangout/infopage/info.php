@@ -16,7 +16,6 @@ if (!isset($user_id))
     $row = mysqli_fetch_assoc($result);   
     }
     //picture query
-<<<<<<< HEAD
     $pics_query2 = "SELECT * FROM place_pics WHERE place_id = $place_id ORDER BY RAND() ";
 
     // $pics_query = "SELECT * FROM place_pics WHERE place_id = $place_id ORDER BY RAND() LIMIT 1";
@@ -34,10 +33,6 @@ if ($result && mysqli_num_rows($result) > 0) {
 $pics_query = "SELECT * FROM place_pics WHERE place_id = $place_id ORDER BY RAND() LIMIT 1";
 $result_pics = mysqli_query($con, $pics_query);
 
-=======
-    $pics_query = "SELECT * FROM place_pics WHERE place_id = $place_id ORDER BY RAND() LIMIT 1";
-    $result_pics = mysqli_query($con,$pics_query);
->>>>>>> parent of 1df1766 (image slider in info page)
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +45,6 @@ $result_pics = mysqli_query($con, $pics_query);
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
 
     <link rel="stylesheet" href="inofomss.css">
-<<<<<<< HEAD
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <!-- slick slider CSS library files -->
@@ -65,8 +59,6 @@ $result_pics = mysqli_query($con, $pics_query);
     <link rel="stylesheet" href="info.css">
 
     <link rel="stylesheet" href="info.css">
-=======
->>>>>>> parent of 1df1766 (image slider in info page)
     <title>info</title>
 </head>
 
@@ -96,7 +88,6 @@ $result_pics = mysqli_query($con, $pics_query);
     <!-- The End of Navbar section -->
 
 
-<<<<<<< HEAD
 <script>
 $(document).ready(function(){
     $('.img').slick({
@@ -140,15 +131,9 @@ $(document).ready(function(){
                     <img src="../places_imgs/<?php echo $row_pics['photo_name'] ?>" alt="<?php echo $row['p_name'] ?>">
                 <?php endwhile; ?>
 
-=======
-<section class="main">
-        <div class="photo">
-            <div class="img">  
-                <?php while($row_pics = mysqli_fetch_assoc($result_pics)): ?>
-                    <img src="../places_imgs/<?php echo $row_pics['photo_name'] ?>" alt="<?php echo $row['p_name'] ?>">
-                <?php endwhile; ?>
->>>>>>> parent of 1df1766 (image slider in info page)
             </div>
+
+
             <div class="disc">
                 <div>
                     <h2><?php echo $row['category']; ?></h2>
