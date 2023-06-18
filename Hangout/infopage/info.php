@@ -9,6 +9,21 @@ $user_id = $_SESSION['user_id'];
 if (!isset($user_id))
     header("Location:../../Log_in/login.php");
 
+
+    $Data = "SELECT * FROM places WHERE place_id = $place_id LIMIT 1";
+    $result = mysqli_query($con,$Data);
+    if($result && mysqli_num_rows($result)>0){
+    $row = mysqli_fetch_assoc($result);   
+    }
+    //picture query
+    $pics_query2 = "SELECT * FROM place_pics WHERE place_id = $place_id ORDER BY RAND() ";
+
+    // $pics_query = "SELECT * FROM place_pics WHERE place_id = $place_id ORDER BY RAND() LIMIT 1";
+    
+    $result_pics2 = mysqli_query($con,$pics_query2);
+
+    // $result_pics = mysqli_query($con,$pics_query);
+
 $Data = "SELECT * FROM places WHERE place_id = $place_id LIMIT 1";
 $result = mysqli_query($con, $Data);
 if ($result && mysqli_num_rows($result) > 0) {
@@ -17,6 +32,7 @@ if ($result && mysqli_num_rows($result) > 0) {
 //picture query
 $pics_query = "SELECT * FROM place_pics WHERE place_id = $place_id ORDER BY RAND() LIMIT 1";
 $result_pics = mysqli_query($con, $pics_query);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +43,21 @@ $result_pics = mysqli_query($con, $pics_query);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
+
+    <link rel="stylesheet" href="inofomss.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- slick slider CSS library files -->
+    <link rel="stylesheet" type="text/css" href="slick/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick/slick-theme.css"/>
+    <!-- slick slider JS library file -->
+    <script type="text/javascript" src="slick/slick/slick.min.js"></script>
+
+
+    <link rel="stylesheet" href="info.css">
+
+    <link rel="stylesheet" href="info.css">
+
     <link rel="stylesheet" href="info.css">
     <title>info</title>
 </head>
@@ -56,13 +87,53 @@ $result_pics = mysqli_query($con, $pics_query);
     </header>
     <!-- The End of Navbar section -->
 
+
+<script>
+$(document).ready(function(){
+    $('.img').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        infinite: true,
+        arrows: true
+    });
+});
+</script>
+
+
     <section class="main">
         <div class="photo">
+
+
+            <!-- image class -->
+            <div class="img">  
+                <?php 
+                if($result_pics2->num_rows > 0){
+                    while($row_pics = $result_pics2->fetch_assoc()):
+                        // $imageURL = '../places_imgs/'.$row_pics['photo_name']; 
+                ?>
+                    <div class="slide">
+                    <img src="../places_imgs/<?php echo $row_pics['photo_name'] ?>" 
+                    alt="<?php echo $row['p_name'] ?>">
+                    </div>
+                <?php endwhile; 
+                    }  ?>
+
+    <section class="main">
+        <div class="photo">
+
+
+    <section class="main">
+        <div class="photo">
+
             <div class="img">
                 <?php while ($row_pics = mysqli_fetch_assoc($result_pics)) : ?>
                     <img src="../places_imgs/<?php echo $row_pics['photo_name'] ?>" alt="<?php echo $row['p_name'] ?>">
                 <?php endwhile; ?>
+
             </div>
+
+
             <div class="disc">
                 <div>
                     <h2><?php echo $row['category']; ?></h2>
