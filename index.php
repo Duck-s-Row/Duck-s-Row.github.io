@@ -151,7 +151,7 @@
        <h1>What Can We Offer For You</h1>
        <form method="post">
          <input type="text" id="name" placeholder="Your name" value="<?php if (isset($_SESSION['user_id'])) echo $user_data['username'] ?>" required>
-         <input type="email" id="email" placeholder="Your E-mail" value="<?php if (isset($_SESSION['user_id']))  echo $user_data['email'] ?>" required>
+         <input type="email" id="email" placeholder="Your E-mail" value="<?php if (isset($_SESSION['user_id']))  echo $user_data['email'] ?>" required readonly>
          <textarea id="message" cols="70" rows="10" placeholder="Enter your message" required></textarea>
          <!-- <input type="submit" value="SEND" name="send"> -->
          <button type="button" onclick="sendMail()">SEND</button>
