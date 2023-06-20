@@ -3,6 +3,7 @@ session_start();
 require('../connection/connection.php');
 require('../Functions/Functions.php');
 $user_data = check_login($con);
+$user_id = $_SESSION['user_id'];
 
 //
 $select_two = "SELECT * FROM places ORDER BY RAND() LIMIT 2";
@@ -57,55 +58,23 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <img src="../Hangout/offers/4911930.png" alt="" id="image">
             </div>
             <div class="content">
+                <?php
+                    $selectPlansQuery = "SELECT * FROM user_plans WHERE user_id = $user_id";
+                    $allPlans = mysqli_query($con,$selectPlansQuery);
+                ?>
+                <?php if(mysqli_num_rows($allPlans)>0): ?>
                 <h1>Users Plans</h1>
+                <?php while($eachPlan = mysqli_fetch_assoc($allPlans)): ?>
                 <div class="plan_card" id="open">
-                    <h3>Plan Name</h3>
-                    <h3>Average: 200</h3>
+                    <h3><?php echo $eachPlan['plan_name'] ?></h3>
+                    <h3>Plan Date: <?php echo $eachPlan['plan_date'] ?></h3>
                 </div>
-                <div class="plan_card" id="open">
-                    <h3>Plan Name</h3>
-                    <h3>Average: 200</h3>
-                </div>
-                <div class="plan_card" id="open">
-                    <h3>Plan Name</h3>
-                    <h3>Average: 200</h3>
-                </div>
-                <div class="plan_card" id="open">
-                    <h3>Plan Name</h3>
-                    <h3>Average: 200</h3>
-                </div>
-                <div class="plan_card" id="open">
-                    <h3>Plan Name</h3>
-                    <h3>Average: 200</h3>
-                </div>
-                <div class="plan_card" id="open">
-                    <h3>Plan Name</h3>
-                    <h3>Average: 200</h3>
-                </div>
-                <div class="plan_card" id="open">
-                    <h3>Plan Name</h3>
-                    <h3>Average: 200</h3>
-                </div>
-                <div class="plan_card" id="open">
-                    <h3>Plan Name</h3>
-                    <h3>Average: 200</h3>
-                </div>
-                <div class="plan_card" id="open">
-                    <h3>Plan Name</h3>
-                    <h3>Average: 200</h3>
-                </div>
-                <div class="plan_card" id="open">
-                    <h3>Plan Name</h3>
-                    <h3>Average: 200</h3>
-                </div>
-                <div class="plan_card" id="open">
-                    <h3>Plan Name</h3>
-                    <h3>Average: 200</h3>
-                </div>
-                <div class="plan_card" id="open">
-                    <h3>Plan Name</h3>
-                    <h3>Average: 200</h3>
-                </div>
+                <?php endwhile; ?>
+                <?php else: ?>
+                <h1>You don't Have Any Plans <a href="../Hangout/hangout.php">Add new one</a></h1>
+
+                <?php endif; ?>
+
             </div>
         </div>
 
@@ -120,11 +89,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <p><?php echo $row['more_details'] ?></p>
                 </div>
                 <div class="more">
-                    <form method="POST">
+                    <!-- <form method="POST">
                         <input type="hidden" name="Form_identifier" value="add_to_plan">
                         <input type="hidden" name="place_id" value="<?php echo $row['place_id']; ?>">
                         <input type="submit" name="delete" id="delete" value="Add to Plan">
-                    </form>
+                    </form> -->
                     <form method="POST">
                         <input type="hidden" name="Form_identifier" value="more">
                         <input type="hidden" name="place_id" value="<?php echo $row['place_id']; ?>">
@@ -155,44 +124,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     </form>
                     <form method="POST">
                         <input type="hidden" name="place_id" value="<?php //echo $row2['place_id']; ?>">
-                        <input type="hidden" name="Form_identifier" value="More">
-                        <input type="submit" name="more" id="more" value="More">
-                    </form>
-                </div>
-            </div>
-            <div class="card">
-                <img src="../Hangout/logos/22050178.png" alt="logo">
-                <div class="text1">
-                    <h3>Dunkin</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, cupiditate!</p>
-                </div>
-                <div class="more">
-                    <form method="POST">
-                        <input type="hidden" name="place_id_delete" value="<?php // echo $row2['place_id']; ?>">
-                        <input type="hidden" name="Form_identifier" value="Delete">
-                        <input type="submit" name="delete" id="delete" value="Delete">
-                    </form>
-                    <form method="POST">
-                        <input type="hidden" name="place_id" value="<?php // echo $row2['place_id']; ?>">
-                        <input type="hidden" name="Form_identifier" value="More">
-                        <input type="submit" name="more" id="more" value="More">
-                    </form>
-                </div>
-            </div>
-            <div class="card">
-                <img src="../Hangout/logos/22050178.png" alt="logo">
-                <div class="text1">
-                    <h3>Dunkin</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, cupiditate!</p>
-                </div>
-                <div class="more">
-                    <form method="POST">
-                        <input type="hidden" name="place_id_delete" value="<?php // echo $row2['place_id']; ?>">
-                        <input type="hidden" name="Form_identifier" value="Delete">
-                        <input type="submit" name="delete" id="delete" value="Delete">
-                    </form>
-                    <form method="POST">
-                        <input type="hidden" name="place_id" value="<?php // echo $row2['place_id']; ?>">
                         <input type="hidden" name="Form_identifier" value="More">
                         <input type="submit" name="more" id="more" value="More">
                     </form>
