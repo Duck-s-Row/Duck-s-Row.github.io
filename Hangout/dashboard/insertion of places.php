@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <script>alert("Logo Size Is Too Large");</script>';
             header('Location:insertion of places.php');
         } else {
-            $photo_id = random_num(10);
+            // $photo_id = random_num(10);
             $new_logo_name = random_num(10);
             $new_logo_name .= "." . $logo_ext;
             $update_logo = "UPDATE places SET logo = '$new_logo_name' WHERE p_name = '$p_name'";
@@ -97,6 +97,33 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $insert_offer = "INSERT INTO offers VALUES($offer_id,'$new_offer_name')";
             mysqli_query($con, $insert_offer);
             move_uploaded_file($tmp_name, '../offers/' . $new_offer_name);
+            header('Location:insertion of places.php');
+        }
+    } else if ($_POST['Form_identifier'] == "Insert_menu") {
+        $menu_image_name = $_FILES['menu_image']['name'];
+        $menu_image_size = $_FILES['menu_image']['size'];
+        $tmp_name = $_FILES['menu_image']['tmp_name'];
+        $placeName = $_POST['place_name_menu'];
+        //image validation 
+        $valid_menu_image_ext = ['jpg', 'png', 'jpeg'];
+        $menu_image_ext = explode('.', $menu_image_name);
+        $menu_image_ext = strtolower(end($menu_image_ext));
+        if (!in_array($menu_image_ext, $valid_menu_image_ext)) {
+            echo '
+            <script>alert("Invalid logo Extension");</script>';
+            header('Location:insertion of places.php');
+        } elseif ($menu_image_size > 1200000) {
+            echo '
+            <script>alert("Logo Size Is Too Large");</script>';
+            header('Location:insertion of places.php');
+        } else {            
+            $new_menu_image_name = date('Y');
+            $new_menu_image_name .= '_' . date('M');
+            $new_menu_image_name .= '_' . "$placeName";
+            $new_menu_image_name .= "." . $menu_image_ext;
+            $insert_menu_image = "UPDATE places SET menu_image = '$new_menu_image_name' WHERE p_name = '$placeName' ";
+            mysqli_query($con, $insert_menu_image);
+            move_uploaded_file($tmp_name, '../menus/' . "$new_menu_image_name");
             header('Location:insertion of places.php');
         }
     }
@@ -166,6 +193,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <option value="Restaurants">Restaurants</option>
             <option value="Park">Park</option>
             <option value="Museums">Museums</option>
+            <option value="Zoo">Zoo</option>
+            <option value="Cinema">Cinema</option>
         </select><br>
         <label for="location">Location:</label>
         <input type="url" name="location" id="location"><br>
@@ -194,7 +223,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
     <form method="post" enctype="multipart/form-data" align=center class="logo">
-    <label for="p_name">choose a place:</label>
+        <label for="p_name">choose a place:</label>
         <select id="p_name" name="p_name">
             <?php
             $select_places1 = "SELECT DISTINCT p_name FROM places";
@@ -214,6 +243,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <label for="offer">Insert offer picture</label>
         <input type="file" name="offer" id="offer" accept=".jpg, .png, .jpeg"><br>
         <input type="submit" value="save">
+    </form>
+    <form method="POST" align='center' enctype="multipart/form-data">
+        <input type="hidden" name="Form_identifier" value="Insert_menu">
+        <label for="place_name_menu">choose place</label>
+        <select name="place_name_menu" id="place_name_menu">
+            <?php
+            $selectALLPlacesN = "SELECT distinct p_name FROM places WHERE category = 'Restaurants' OR category = 'Cafe' OR category = 'Cinema'";
+            $placesNames = mysqli_query($con, $selectALLPlacesN);
+            while ($eachPlaceName = mysqli_fetch_array($placesNames)) :
+            ?>
+                <option value="<?php echo $eachPlaceName['p_name'] ?>"><?php echo $eachPlaceName['p_name'] ?></option>
+            <?php endwhile; ?>
+        </select><br>
+        <label for="menu_image">Insert Menu Image</label>
+        <input type="file" name="menu_image" id="menu_image" accept=".jpg, .png, .jpeg"><br>
+        <input type="submit" value="Save">  
     </form>
 </body>
 
