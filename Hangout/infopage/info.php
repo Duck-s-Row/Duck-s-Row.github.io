@@ -101,12 +101,19 @@ $(document).ready(function(){
 </script>
 
 
+    <!-- <section class="main">
+        <div class="photo"> -->
+
+
+    <!-- <section class="main">
+        <div class="photo"> -->
+
+
     <section class="main">
         <div class="photo">
 
-
-            <!-- image class -->
-            <div class="img">  
+                    <!-- image class -->
+                    <div class="img">  
                 <?php 
                 if($result_pics2->num_rows > 0){
                     while($row_pics = $result_pics2->fetch_assoc()):
@@ -119,19 +126,13 @@ $(document).ready(function(){
                 <?php endwhile; 
                     }  ?>
 
-    <section class="main">
-        <div class="photo">
-
-
-    <section class="main">
-        <div class="photo">
-
-            <div class="img">
                 <?php while ($row_pics = mysqli_fetch_assoc($result_pics)) : ?>
                     <img src="../places_imgs/<?php echo $row_pics['photo_name'] ?>" alt="<?php echo $row['p_name'] ?>">
                 <?php endwhile; ?>
-
             </div>
+
+            <!-- <div class="img">
+            </div> -->
 
 
             <div class="disc">
