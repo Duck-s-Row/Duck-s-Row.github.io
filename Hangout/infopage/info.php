@@ -166,12 +166,6 @@ $(document).ready(function(){
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             if ($_POST['Form_identifier'] == 'add_new') {
-                // $check_query  = "SELECT COUNT(*) as count FROM user_plans WHERE user_id = '$user_id' AND place_id = '$place_id' AND plan_id = '$plan_id'";
-                // $check_result = mysqli_query($con, $check_query);
-                // $check_row = mysqli_fetch_assoc($check_result);
-                // if ($check_row['count'] > 0) {
-                //     echo "<script>alert('The Place already exists in your plan')</script>";
-                // } else {
                 $plan_id = random_num(5);
                 $creation_date = date('Y-m-d H:i:s');
 

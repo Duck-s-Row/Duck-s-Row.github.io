@@ -7,14 +7,21 @@ $user_id = $_SESSION['user_id'];
 
 //
 $select_two = "SELECT * FROM places ORDER BY RAND() LIMIT 2";
-$result = mysqli_query($con ,$select_two);
+$result = mysqli_query($con, $select_two);
 
 //
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    if($_POST['Form_identifier']=="more"){
+    if ($_POST['Form_identifier'] == "more") {
         $place_id = $_POST['place_id'];
         $_SESSION['place_id'] = $place_id;
         header('Location:../Hangout/infopage/info.php');
+    }
+    else if ($_POST['Form_identifier'] == "Delete_place"){
+        $place_id_delete = $_POST['place_id'];
+        $plan_id_delete = $_POST['plan_id'];
+        $deletePlaceQuery = "DELETE FROM exist_plan WHERE place_id = $place_id_delete AND plan_id = $plan_id_delete" ;
+        mysqli_query($con,$deletePlaceQuery);
+        header("Location:plans.php");
     }
 }
 ?>
@@ -27,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="plans.css">
-   <link rel="website icon" type="png" href="../home/imgs/Logo.png">
+    <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <title>My Planes</title>
 </head>
 
@@ -43,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <nav class="nav-bar">
             <ul>
                 <li><a href="../index.php">Home</a></li>
-                <li><a href="../Hangout/hangout.php">Hnagout</a></li>
+                <li><a href="../Hangout/hangout.php">Hangout</a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
                 <li><a href="#about_us">About</a></li>
                 <li><a href="../Profile/profile.php" class="profile">Profile</a></li>
@@ -59,19 +66,60 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             </div>
             <div class="content">
                 <?php
-                    $selectPlansQuery = "SELECT * FROM user_plans WHERE user_id = $user_id";
-                    $allPlans = mysqli_query($con,$selectPlansQuery);
+                $selectPlansQuery = "SELECT * FROM user_plans WHERE user_id = $user_id";
+                $allPlans = mysqli_query($con, $selectPlansQuery);
                 ?>
-                <?php if(mysqli_num_rows($allPlans)>0): ?>
-                <h1>Users Plans</h1>
-                <?php while($eachPlan = mysqli_fetch_assoc($allPlans)): ?>
-                <div class="plan_card" id="open">
-                    <h3><?php echo $eachPlan['plan_name'] ?></h3>
-                    <h3>Plan Date: <?php echo $eachPlan['plan_date'] ?></h3>
-                </div>
-                <?php endwhile; ?>
-                <?php else: ?>
-                <h1>You don't Have Any Plans <a href="../Hangout/hangout.php">Add new one</a></h1>
+                <?php if (mysqli_num_rows($allPlans) > 0) : ?>
+                    <h1>Users Plans</h1>
+                    <?php while ($eachPlan = mysqli_fetch_assoc($allPlans)) : ?>
+                        <div class="plan_card" onclick="openPopup(<?php echo $eachPlan['plan_id']; ?>);">
+                            <h3><?php echo $eachPlan['plan_name'] ?></h3>
+                            <h3>Plan Date: <?php echo $eachPlan['plan_date'] ?></h3>
+                        </div>
+                        <section class="popup" id="popup_<?php echo $eachPlan['plan_id']; ?>">
+                            <button id="close" onclick="closePopup(<?php echo $eachPlan['plan_id']; ?>);"><i class="fa fa-x"></i></button>
+
+                            <div class="popup_content">
+                                <h1><?php echo $eachPlan['plan_name'] ?></h1>
+                                <?php
+                                $plan_id = $eachPlan['plan_id'];
+                                $selectAllPlacesQuery = "SELECT * FROM exist_plan,places WHERE exist_plan.user_id = $user_id AND exist_plan.plan_id = $plan_id AND exist_plan.place_id = places.place_id ORDER BY Rand()";
+                                $allPlacesInEachPlan = mysqli_query($con, $selectAllPlacesQuery);
+                                // if(mysqli_num_rows($allPlacesInEachPlan)>0){
+
+                                while ($eachPlace = mysqli_fetch_assoc($allPlacesInEachPlan)) :
+                                ?>
+                                    <div class="card">
+                                        <img src="../Hangout/logos/<?php echo $eachPlace['logo'] ?>" alt="logo">
+                                        <div class="text1">
+                                            <h3><?php echo $eachPlace['p_name'] ?></h3>
+                                            <p><?php echo $eachPlace['more_details'] ?></p>
+                                        </div>
+                                        <div class="more">
+                                            <form method="POST">
+                                                <input type="hidden" name="Form_identifier" value="Delete_place">
+                                                <input type="hidden" name="plan_id" value="<?php echo $plan_id ?>">
+                                                <input type="hidden" name="place_id" value="<?php echo $eachPlace['place_id'];?>">
+                                                <input type="submit" name="delete" id="delete" value="Delete">
+                                            </form>
+                                            <form method="POST">
+                                                <input type="hidden" name="Form_identifier" value="more">
+                                                <input type="hidden" name="place_id" value="<?php echo $eachPlace['place_id']; ?>">
+                                                <input type="submit" name="more" id="more" value="more">
+                                            </form>
+                                        </div>
+                                    </div>
+                                <?php endwhile;
+                                // }else{
+                                //     $delete_plan  = "DELETE FROM exist_plan,user_plans WHERE exist_plan.plan_id = $plan_id AND user_plans = $plan_id";
+                                //     mysqli_query($con,$delete_plan);
+                                // }
+                                ?>
+                            </div>
+                        </section>
+                    <?php endwhile; ?>
+                <?php else : ?>
+                    <h1>You don't Have Any Plans <a href="../Hangout/hangout.php">Add new one</a></h1>
 
                 <?php endif; ?>
 
@@ -80,55 +128,28 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         <div class="right">
             <h2>suggestion</h2>
-            <?php while($row = mysqli_fetch_assoc($result)): ?>
-            <div class="card">
-                <img src="../Hangout/logos/<?php echo $row['logo']; ?>" alt="logo">
-                <div class="text1">
-                    <h3><?php echo $row['p_name']; ?></h3>
-                    <h4> <?php echo $row['p_branch']; ?></h4>
-                    <p><?php echo $row['more_details'] ?></p>
+            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+                <div class="card">
+                    <img src="../Hangout/logos/<?php echo $row['logo']; ?>" alt="logo">
+                    <div class="text1">
+                        <h3><?php echo $row['p_name']; ?></h3>
+                        <h4> <?php echo $row['p_branch']; ?></h4>
+                        <p><?php echo $row['more_details'] ?></p>
+                    </div>
+                    <div class="more">
+                        <!-- <form method="POST">
+                            <input type="hidden" name="Form_identifier" value="add_to_plan">
+                            <input type="hidden" name="place_id" value="<?php //echo $row['place_id']; ?>">
+                            <input type="submit" name="delete" id="delete" value="Add to Plan">
+                        </form> -->
+                        <form method="POST">
+                            <input type="hidden" name="Form_identifier" value="more">
+                            <input type="hidden" name="place_id" value="<?php echo $row['place_id']; ?>">
+                            <input type="submit" name="more" id="more" value="more">
+                        </form>
+                    </div>
                 </div>
-                <div class="more">
-                    <!-- <form method="POST">
-                        <input type="hidden" name="Form_identifier" value="add_to_plan">
-                        <input type="hidden" name="place_id" value="<?php echo $row['place_id']; ?>">
-                        <input type="submit" name="delete" id="delete" value="Add to Plan">
-                    </form> -->
-                    <form method="POST">
-                        <input type="hidden" name="Form_identifier" value="more">
-                        <input type="hidden" name="place_id" value="<?php echo $row['place_id']; ?>">
-                        <input type="submit" name="more" id="more" value="more">
-                    </form>
-                </div>
-            </div>
             <?php endwhile; ?>
-        </div>
-    </section>
-
-    <section class="popup" id="popup">
-        <button id="close"><i class="fa fa-x"></i></button>
-
-        <div class="popup_content">
-            <h1>Plan Name</h1>
-            <div class="card">
-                <img src="../Hangout/logos/22050178.png" alt="logo">
-                <div class="text1">
-                    <h3>Dunkin</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, cupiditate!</p>
-                </div>
-                <div class="more">
-                    <form method="POST">
-                        <input type="hidden" name="place_id_delete" value="<?php //echo $row2['place_id']; ?>">
-                        <input type="hidden" name="Form_identifier" value="Delete">
-                        <input type="submit" name="delete" id="delete" value="Delete">
-                    </form>
-                    <form method="POST">
-                        <input type="hidden" name="place_id" value="<?php //echo $row2['place_id']; ?>">
-                        <input type="hidden" name="Form_identifier" value="More">
-                        <input type="submit" name="more" id="more" value="More">
-                    </form>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -152,7 +173,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </div>
     </section>
 
-    <script src="app.js"></script>
+    <script src="popUp.js"></script>
     <script>
         let images = [];
         <?php
