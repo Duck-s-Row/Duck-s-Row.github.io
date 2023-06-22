@@ -244,7 +244,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <input type="file" name="offer" id="offer" accept=".jpg, .png, .jpeg"><br>
         <input type="submit" value="save">
     </form>
-    <form method="POST" align='center' enctype="multipart/form-data">
+    <form method="POST" align='center' enctype="multipart/form-data" class="menu">
         <input type="hidden" name="Form_identifier" value="Insert_menu">
         <label for="place_name_menu">choose place</label>
         <select name="place_name_menu" id="place_name_menu">
