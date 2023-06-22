@@ -10,25 +10,29 @@
     <title>SIGN UP</title>
 </head>
 <body>
-    <header>
-        <div class="head">
-            <h1>SIGN UP</h1>
-            <span align="center">Already registered?<a href="/../../Log_in/login.php">Login</a></span>
-        </div>
-    </header>
-
-    <section class="forms">
-        <form>
-            <button id="face-btn">Sign up with Facebook <i class="fab fa-facebook"></i></button><br>
-            <button id="google-btn">Sign up with Google<i class="fab fa-google"></i></button><br>
-        </form>
-        <button onclick="pageRedirect()" id="new-acc">Create New Account</button>
-        <img src="images/pngfind.com-duckling-png-5872453(Y).png" width="90" height="55"/>
-    </section>
+    <div class="head">
+        <h1>SIGN UP</h1>
+        <span>You have already an account? <a href="../../Log_in/login.php">Login</a></span>
+    </div>
+    <div class="content">
+        <a href="../ThirdPage/regist.php">
+            <div class="card">
+                <i class="fa fa-user"></i>
+                <h1>User</h1>
+                <p>Make your preferred hangout strategy according to your resources and location. Test out various locations and activities</p>
+            </div>
+        </a>
+        <a href="../ThirdPage/regist.php">
+            <div class="card">
+                <i class="fa-regular fa-building"></i>
+                <h1>Company</h1>
+                <p>You can add your services to a huge social network. Users will add your location to their hangout plans and view their feedback on it.</p>
+            </div>
+        </a>
+    </div>
 
     <script>
         let new_acc = document.getElementById("new-acc");
-        // document.getElementById("new-acc").addEventListener("click", );
         function pageRedirect() {
             window.location.href = "/../Sign_UP/ThirdPage/regist.php";
         }
