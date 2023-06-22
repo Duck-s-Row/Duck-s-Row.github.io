@@ -44,7 +44,7 @@ $result_pics = mysqli_query($con, $pics_query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
 
-    <link rel="stylesheet" href="inofomss.css">
+    <!-- <link rel="stylesheet" href="inofomss.css"> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <!-- slick slider CSS library files -->
@@ -56,9 +56,6 @@ $result_pics = mysqli_query($con, $pics_query);
 
     <link rel="stylesheet" href="info.css">
 
-    <link rel="stylesheet" href="info.css">
-
-    <link rel="stylesheet" href="info.css">
     <title>info</title>
 </head>
 
@@ -169,12 +166,6 @@ $(document).ready(function(){
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             if ($_POST['Form_identifier'] == 'add_new') {
-                // $check_query  = "SELECT COUNT(*) as count FROM user_plans WHERE user_id = '$user_id' AND place_id = '$place_id' AND plan_id = '$plan_id'";
-                // $check_result = mysqli_query($con, $check_query);
-                // $check_row = mysqli_fetch_assoc($check_result);
-                // if ($check_row['count'] > 0) {
-                //     echo "<script>alert('The Place already exists in your plan')</script>";
-                // } else {
                 $plan_id = random_num(5);
                 $creation_date = date('Y-m-d H:i:s');
 
@@ -238,7 +229,7 @@ $(document).ready(function(){
                     <a href="#" class="plan-card-link" data-planid="<?php echo $eachPlan['plan_id'] ?>">
                         <div class="plan_card" id="open">
                             <h3><?php echo $eachPlan['plan_name'] ?></h3>
-                            <!-- <h3>Average: 200</h3> -->
+                            <h3>Plan Date: <?php echo $eachPlan['plan_date'] ?></h3>
                         </div>
                     </a>
                     <?php endwhile; ?>

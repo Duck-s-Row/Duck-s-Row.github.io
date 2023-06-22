@@ -132,10 +132,10 @@ select{
     font-size: 20px;
 }
   
-  .place {
-    margin-top: 50px;
-    color: #FEE715;
-    }
+.place {
+  margin-top: 50px;
+  color: #FEE715;
+ }
   
   .place label {
    display: inline-block;
@@ -166,27 +166,32 @@ select{
   
   .photo,
   .logo,
-  .offers {
+  .offers,
+  .menu {
     margin-top: 30px;
     color: #FEE715;
   }
   
   .photo label,
   .logo label,
-  .offers {
+  .offers label,
+  .menu label{
     display: block;
     margin-bottom: 5px;
   }
+
   
   .photo input[type="file"],
   .logo input[type="file"],
-  .offers input[type="file"] {
+  .offers input[type="file"],
+  .menu input[type="file"] {
     margin-bottom: 10px;
   }
   
   .photo input[type="submit"],
   .logo input[type="submit"],
-  .offers input[type="submit"] {
+  .offers input[type="submit"],
+  .menu input[type="submit"] {
     padding: 10px 20px;
     background-color: #FEE715;
     color: #101820;
@@ -197,14 +202,14 @@ select{
   
   .photo input[type="submit"]:hover,
   .logo input[type="submit"]:hover,
-  .offers input[type="submit"]:hover {
+  .offers input[type="submit"]:hover,
+  .menu input[type="submit"]:hover {
     background-color: #45a049;
     transform: scale(1.1);
   }
-
- 
 
   .offers label{
     display: block;
     margin-bottom: 5px;
   }
+
