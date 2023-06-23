@@ -321,7 +321,7 @@ header {
     line-height: 20px;
 }
 .card .text1 p{
-    margin-top: 15px;
+    margin-top: 10px;
     font-size: 11px;
 }
 .dis{
@@ -362,7 +362,7 @@ header {
     line-height: 30px;
 }
 .right .text1 h4{
-    margin-top: 5px;
+    color: white;
 }
 .right .more input[type="submit"]{
     border: 2px solid #FEE715;
