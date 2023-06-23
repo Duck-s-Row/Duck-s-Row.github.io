@@ -207,6 +207,7 @@ header {
 
 .content {
     width: 60%;
+    text-align: center;
 }
 
 .popup {
@@ -214,9 +215,9 @@ header {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
+    left: 0;
     top: 0;
     z-index: 9999;
-
     display: none;
     justify-content: center;
     align-items: center;
@@ -226,11 +227,11 @@ header {
     width: 40%;
     height: 90%;
     background-color: #fefefe;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 20px;
     text-align: center;
     overflow-y: auto;
-
+    box-shadow: 5px 10px 18px #000000;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -249,10 +250,11 @@ header {
     height: 30px;
     cursor: pointer;
     position: relative;
-    top: -330px;
+    top: -320px;
     left: 20px;
-    background-color: #FEE715;
+    background-color: #cbb704;
     border-radius: 50%;
+    box-shadow: 5px 10px 18px #FEE715;
 }
 
 /* Cards */
@@ -270,8 +272,34 @@ header {
     border-radius: 20px;
     padding: 20px;
     transition: 0.5s ease-out;
+    overflow: hidden;
 }
-
+.popup_content{
+    background-color: #101820;
+    color: #FEE715;
+}
+.popup .card{
+    width: 55%;
+    min-height: 300px;
+    background-color: #cbb704;
+    color: #101820;
+    margin: 20px 0 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    transition: 0.5s ease-out;
+    
+}
+.popup .card:hover{
+    box-shadow: 5px 10px 18px #FEE715;
+}
+.popup .card img{
+    border-radius: 50px;
+}
 .card:hover {
     transform: scale(1.05);
 }
@@ -279,6 +307,7 @@ header {
 .card img {
     width: 115px;
     height: 115px;
+    border-radius: 20px;
 }
 
 .card .text1 {
@@ -287,13 +316,13 @@ header {
     margin: 20px 0;
     
 }
-.card .text1 h1 {
-    font-weight: 600;
+.card .text1 h3 {
+    font-weight: bolder;
     font-size: 25px;
     line-height: 10px;
 }
 .card .text1 p{
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 11px;
 }
 .dis{
@@ -323,11 +352,12 @@ header {
     color: #FEE715;
     background-color: #101820;
     border-radius: 10px;
-    border: 2px solid #FEE715;
+    border: none;
+    cursor: pointer;
 }
 .more input[type="submit"]:hover{
     color: #101820;
-    background-color: #9d8e04;
+    background-color: white;
 }
 
 .more form {
@@ -335,104 +365,62 @@ header {
     flex-direction: column;
 }
 
-.about_us {
+.contact_us{
+    width: 100%;
+    min-height: fit-content;
+    background-color: #101820;
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    grid-template-rows: repeat(2, 50%);
     font-family: 'ABeeZee', sans-serif;
-    width: 100%;
-    min-height: 70vh;
-    background-color: #101820;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 70px;
+    padding: 20px;
 }
-.about_us .left{
-    background-color: #9d8e04;
-    height: 90%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    width: 100%;
-    border-radius: 50px;
-    margin-right: 50px;
+
+.contact_us .left {
+    grid-row: 2;
+    margin-left: 30px;
 }
-.about_us .left h1{
-    color: #101820;
-    margin: 20px 0 0 10%;
-    font-size: 30px;
+
+.contact_us .left a {
+    text-decoration: none;
 }
-.about_us .left input{
-    margin: 10px 0 0 10%;
-    width: 80%;
-    height: 35px;
-    background-color: rgba(255, 255, 255, 0.425);
-    border: 0;
-    padding: 10px;
-}
-.about_us .left textarea{
-    margin: 10px 10% 0 10%;
-    width: 80%;
-    background-color: rgba(255, 255, 255, 0.489);
-    border: 0;
-    padding: 10px;
-}
-.about_us .left input[type="submit"]{
-    cursor: pointer;
-    background-color: #101820;
-    color: #FEE715;
-    width: 20%;
-    border-radius: 10px;
-    font-size: 15px;
-    margin-bottom: 20px;
-}
-.about_us .left input[type="submit"]:hover{
-    background-color: white;
-    color: #101820;
-}
-.about_us h3{
+
+.contact_us .left a h3{
     font-family: 'Bebas Neue', cursive;
+    color: #FEE715;
     text-transform: uppercase;
-    color: white;
-    font-weight: 400;
-    font-size: 50px;
-    line-height: 77px;
-    /* margin-left: 125px; */
-}
-.about_us h3 span {
-    font-family: 'Bebas Neue', cursive;
-    color: #FEE715;
-}
-.about_us p{
-    font-family: 'ABeeZee', sans-serif;
-    text-align: justify;
-    padding: 0%;
-    color: white;
-    margin-right: 30%;
-    /* margin-left: 20%; */
-}
-.about_us a{
-    color: #FEE715;
-    font-size: 30px;
-    margin-right: 15px;
-}
-.about_us .icons{
-    margin-top: 20px;
-    margin-bottom: 30px;
-    /* margin-left: 36%; */
-}
-.about_us .left h3{
     display: inline;
+}
+
+.contact_us .info {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.contact_us .info h3{
     text-transform: uppercase;
     color: #FEE715;
     font-family: 'Bebas Neue', cursive;
 }
-.about_us .contact h3{
-    font-size: 35px;
-    font-weight: 400;
-    line-height: 77px;
-    /* margin-left: 35%; */
+
+.contact_us .info p {
+    color: white;
 }
-.about_us .contact a{
-    font-size: 17px;
+
+.contact_us .info a {
+    text-decoration: none;
+    color: #FEE715;
 }
-.about_us a:hover{
-    color: #9d8e04;
+
+.contact_us .info a:hover {
+    color: white;
+}
+
+.contact_us img {
+    width: 66px;
+    height: 40px;
+}
+
+.privacy {
+    grid-column: 3;
 }

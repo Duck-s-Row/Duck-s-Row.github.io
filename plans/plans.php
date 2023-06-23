@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="plans.css">
+    <link rel="stylesheet" href="plans1.css">
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <title>My Plans</title>
 </head>
@@ -120,9 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <?php endwhile; ?>
                 <?php else : ?>
                     <h1>You don't Have Any Plans <a href="../Hangout/hangout.php">Add new one</a></h1>
-
                 <?php endif; ?>
-
             </div>
         </div>
 
@@ -153,23 +151,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </div>
     </section>
 
-    <section class="about_us" id="about_us">
-        <div class="content">
-            <h3>About <span>Duck’s Row</span></h3>
-            <p>
-                Duck's Row is trying to organize your time so you can have fun in various locations while staying inside the limits of your preferred spending limit. <br>We need you to enjoy yourself and go to your favourite destinations.
+    <section class="contact_us" id="contact_us">
+        <div class="left">
+            <a href="../index.php">
+                <img src="../home/imgs/gold-ducks.png" alt="logo">
+                <h3>Duck’s ROW</h3>
+            </a>
+        </div>
+        <div class="info">
+            <h3>contact us</h3>
+            <p>Telephone: <a href="tel:+201556892517">01556892517</a><br>
+                Email: <a href="mailto:ducksrow100@gmail.com">ducksrow100@gmail.com</a><br><br>
+                <a href="../Privacy&Policy/Privacy&Policy.html" class="privacy">Go to Privacy & Policy</a>
             </p>
-            <div class="icons">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            </div>
-            <div class="contact">
-                <h3><span>contact</span> us</h3>
-                <p>Telephone : <a href="tel:+201556892517">01556892517</a><br>
-                    Email : <a href="mailto:ducksrow100@gmail.com">ducksrow100@gmail.com</a><br>
-                </p>
-            </div>
         </div>
     </section>
 
