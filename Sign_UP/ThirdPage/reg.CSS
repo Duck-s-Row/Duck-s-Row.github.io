@@ -94,8 +94,6 @@ input[type="text"],input[type="phone"],input[type="email"] {
     padding: 5px;
     padding-left: 20px;
     border-radius: 30px;
-
-    border: none;
     font-size: 20px;
 }
 
@@ -105,10 +103,23 @@ input[type="password"] {
     padding: 5px;
     padding-left: 20px;
     border-radius: 30px;
-
     font-size: 20px;
 }
-
+input{
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #FEE715;
+    color: #fff;
+}
+input:hover{
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #ffffff;
+}
 #toggle-password, #toggle-re-password{
     display: inline;
     color: #101820;

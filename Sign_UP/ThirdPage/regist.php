@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="registiration.CSS">
+    <link rel="stylesheet" href="reg.CSS">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
     <title>Registration</title>
     <style>
@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="reg">
                 <div class="left">
                     <div>
-                        <label for="Username">username</label>
+                        <label for="Username">Username</label>
                         <input type="text" placeholder="username" required name="username" id="username">
                         
                         <?php
