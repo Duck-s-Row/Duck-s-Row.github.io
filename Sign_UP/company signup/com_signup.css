@@ -150,6 +150,12 @@ select:hover{
     border-right: none;
     border-bottom: 2px solid #ffffff;
 }
+input:hover{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #ffffff;
+}
 .submit input:hover {
     transform: scale(1.1);
 }
