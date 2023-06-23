@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="plans.css">
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
-    <title>My Planes</title>
+    <title>My Plans</title>
 </head>
 
 <body>

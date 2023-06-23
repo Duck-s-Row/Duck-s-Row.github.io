@@ -241,7 +241,7 @@ select option{
 }
 .hang .left .choices .f_row .card img {
     width: 120px;
-    height: 120px;
+    height: 100%;
 }
 .hang .left .choices .f_row .card .text1 {
     margin-left: 10px;
@@ -497,6 +497,27 @@ footer:hover i{
     }
     .hang .left .choices .f_row .card .text1{
         width: 160px;
+    }
+    .hang .right{
+        display: flex;
+        flex-direction: column-reverse;
+        position: static;
+    }
+    .text2{
+        position: relative;
+        left: 90px;
+    }
+    .icons{
+        border: 2px solid #9d8e04;
+    }
+    .card:hover .icons{
+        animation: icon 0.4s ease-in both;
+        height: 100%;
+        width: 80px;
+        background-color: #fee715ed;
+    }
+    .card img{
+        height: 100%;
     }
 }
 @media (max-width: 600px) {
