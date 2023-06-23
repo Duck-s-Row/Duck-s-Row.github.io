@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="com_signup.css">
+    <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
+    <title>Registration</title>
+</head>
+
+<body>
+    <header class="head">
+        <h1>SIGN UP</h1>
+        <span>You have already an account? <a href="../../Log_in/login.php">Login</a></span>
+    </header>
+    <div class="content">
+        <form method="post">
+            <div class="reg">
+                <div class="r1">
+                    <div>
+                        <label for="cname">Company Name</label>
+                        <input type="text" placeholder="company name" required name="cname" id="cname">
+                    </div>
+
+
+                    <div>
+                        <label for="Password">Password</label>
+                        <input type="password" placeholder="password" required name="password" id="password">
+                        <!-- <i class="fa fa-eye" id="toggle-password" onclick="togglePassword()"></i>
+                        <p id="message">Password is <span id="strength"></span></p> -->
+                    </div>
+
+
+                    <div>
+                        <label for="Password">Re-Password</label>
+                        <input type="Password" placeholder="Re-Password" required name="re-password" id="re-password">
+                        <!-- <i class="fa fa-eye" id="toggle-re-password" onclick="toggleRePassword()"></i>
+                        <p id="passtwo">Password is <span id="alert"></span></p> -->
+                    </div>
+                </div>
+
+
+                <div class="r2">
+                      
+                   <div>
+                        <label for="owner">Owner</label>
+                        <input type="text" placeholder="owner" required name="owner">
+                    </div>
+
+                    <div>
+                        <label for="mail">E-mail</label>
+                        <input type="email" placeholder="email@test.com" required name="mail">
+                    </div>
+
+                    <div>
+                        <label for="phone">Phone Number</label>
+                        <input type="phone" placeholder="phone number" required name="phone" maxlength="13" id="phone">
+                    </div>
+
+                </div>
+
+                <div class="r3">
+                    
+                    <div>
+                        <label for="country">Country</label>
+                        <select id="" name="">
+                            <option value="">Egypt</option> 
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="city">City</label>
+                        <select id="" name="">
+                            <option value="">Giza</option> 
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="state">State</label>
+                        <select id="" name="">
+                            <option value=""></option> 
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="submit">
+                <input type="submit" value="submit" id="sub-btn">
+            </div>
+        </form>
+    </div>
+    <footer>
+        <img src="../../home/imgs/gold-ducks.png" alt="Logo">
+    </footer>
+      
+    <script src="registiration.js"></script>
+</body>
+
+</html>

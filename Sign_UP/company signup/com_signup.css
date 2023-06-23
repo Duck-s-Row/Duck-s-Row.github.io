@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Bebas+Neue&display=swap');
+
+/* 
+Font family: -
+font-family: 'ABeeZee', sans-serif;
+font-family: 'Bebas Neue', cursive;
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background-color: #101820;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.head {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+    background-color: #FEE715;
+    color: #101820;
+}
+
+.head span {
+    font-family: 'ABeeZee', sans-serif;
+}
+
+.head span a {
+    text-decoration: none;
+    color: #101820;
+    font-family: 'Bebas Neue', cursive;
+}
+.head span a:hover {
+    color: blueviolet;
+}
+
+.reg {
+    display: flex;
+    flex-direction: row;
+}
+label {
+    font-family: 'ABeeZee', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 20px;
+    display: block;
+    color: #FEE715;
+    padding: 5px;
+}
+input {
+    height: 40px;
+    padding: 5px;
+    padding-left: 20px;
+    border-radius: 30px;
+    margin: 0 70px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #FEE715;
+    font-size: 20px;
+    background: none;
+    color: #fff;
+}
+#toggle-password, #toggle-re-password{
+    display: inline;
+    color: #101820;
+    cursor: pointer;
+    margin-left: -40px;
+    /* position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer; */
+}
+
+#message{
+    display: none;
+    position: absolute;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 15px;
+}
+
+#passtwo{
+    display: none;
+    position: absolute;
+    
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 15px;
+}
+
+input::placeholder {
+    font-size: 16px;
+}
+
+.submit input{
+    width: 150px;
+    height: 50px;
+    font-size: 26px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Bebas Neue', cursive;
+    background-color: #FEE715;
+    color: #101820;
+    transition: 0.5s ease-out;
+    margin-top: 70px;
+}
+select{
+    height: 40px;
+    padding: 5px;
+    padding-left: 20px;
+    border-radius: 30px;
+    margin: 0 70px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #FEE715;
+    font-size: 20px;
+    background: none;
+    color: #ffffff72;
+    cursor: pointer;
+    width: 276px;
+    font-size: 15px;
+}
+select:hover{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #ffffff;
+}
+.submit input:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    z-index: 1;
+}
+
+footer img {
+    width: 80px;
+    height: 55px;
+    margin: 0 0 0 20px;
+}
+
+@media (max-width: 725px) {
+
+    body{
+        height: min-content;
+    }
+
+    .head {
+        height: 150px;
+        font-size: 30px;
+    }
+
+    .content{
+        width: 100%;
+        height: 850px;
+    }
+
+    .reg {
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .left, .right {
+        padding-left: 0;
+        width: 100%;
+        gap: 0rem;
+    }
+    
+    .right {
+        gap: 0;
+    }
+    
+    label {
+        margin-left: 30px;
+    }
+    
+    input[type="text"],input[type="password"],input[type="phone"],input[type="email"] {
+        height: 25px;
+        width: 80%;
+        padding-left: 15px;
+        margin-bottom: 20px;
+        margin-left: 30px;
+    }
+
+    .gender {
+        margin-left: 30px;
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+    }
+    
+    footer img {
+        width: 80px;
+        height: 55px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 325px) {
+
+    body{
+        height: min-content;
+    }
+
+    .head {
+        height: 150px;
+        font-size: 30px;
+    }
+
+    .content{
+        width: 100%;
+        height: 850px;
+    }
+
+    .reg {
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .left, .right {
+        width: 100%;
+        gap: 0rem;
+        margin-left: 0px;
+        padding-left: 0;
+    }
+    
+    .right {
+        gap: 0;
+    }
+    
+    label {
+        margin-left: 17px;
+    }
+    
+    input[type="text"],input[type="password"],input[type="phone"],input[type="email"] {
+        height: 25px;
+        width: 80%;
+        padding-left: 15px;
+        margin-bottom: 20px;
+        margin-left: 17px;
+    }
+
+    .gender {
+        width: 80%;
+        padding: 5px;
+        margin-left: 17px;
+    }
+}
