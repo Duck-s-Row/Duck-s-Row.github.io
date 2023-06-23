@@ -256,7 +256,6 @@ header {
     border-radius: 50%;
     box-shadow: 5px 10px 18px #FEE715;
 }
-
 /* Cards */
 .card {
     width: 60%;
@@ -313,16 +312,16 @@ header {
 .card .text1 {
     width: 80%;
     text-align: center;
-    margin: 20px 0;
+    margin: 15px 0;
     
 }
 .card .text1 h3 {
-    font-weight: bolder;
-    font-size: 25px;
-    line-height: 10px;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 20px;
 }
 .card .text1 p{
-    margin-top: 20px;
+    margin-top: 15px;
     font-size: 11px;
 }
 .dis{
@@ -359,7 +358,19 @@ header {
     color: #101820;
     background-color: white;
 }
-
+.right .text1 h3{
+    line-height: 30px;
+}
+.right .text1 h4{
+    margin-top: 5px;
+}
+.right .more input[type="submit"]{
+    border: 2px solid #FEE715;
+}
+.right .more input[type="submit"]:hover{
+    color: #101820;
+    background-color: #FEE715;
+}
 .more form {
     display: flex;
     flex-direction: column;
