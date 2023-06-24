@@ -155,20 +155,12 @@ header {
   }
   
   .slider-container .slide-number {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    background-color: #dfca13;
-    color: black;
-    padding: 5px 10px;
-    font-size: 20px;
-    z-index: 2;
-    border-radius: 6px;
+    display: none;
   }
   
   .slider-controls {
     position: absolute;
-    bottom: 10px; /* Add bottom position */
+    bottom: 80px;
     left: 0;
     right: 0;
     overflow: hidden;
@@ -179,13 +171,13 @@ header {
   .slider-controls .next {
     background-color: #dfca13;
     color: black;
-    font-size: 16px;
     text-align: center;
     cursor: pointer;
-    border-radius: 4px;
-    padding: 5px;
+    border-radius: 50px;
     user-select: none;
-    width: 20%;
+    margin-bottom: 230px;
+    font-size: 30px;
+    height: 30px;
   }
   
   .slider-controls .prev {
@@ -204,8 +196,7 @@ header {
   }
   
   .slider-controls .indicators {
-    width: 57%;
-    float: left;
+    display: none;
   }
   
   .slider-controls .indicators ul {
@@ -242,7 +233,7 @@ header {
     display: flex;
     flex-direction: column;
     width: 50%;
-    padding: 70px;
+    padding: 0 70px 70px 70px;
     color: white;
 }
 .disc a{

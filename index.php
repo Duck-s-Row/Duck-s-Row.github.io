@@ -23,7 +23,7 @@
  </head>
 
  <body>
-   <!-- <div class="loading" id="loader"></div> -->
+   <div class="loading" id="loader"></div>
    <!-- The Start of Navbar section -->
    <header>
      <div class="logo"><a href="#home"><img src="home/imgs/ducks.png" alt=""></a></div>

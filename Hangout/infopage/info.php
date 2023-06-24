@@ -43,12 +43,8 @@ $result_pics = mysqli_query($con, $pics_query);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-
     <!-- <link rel="stylesheet" href="inofomss.css"> -->
-
-
-    <link rel="stylesheet" href="info1.css">
-
+    <link rel="stylesheet" href="info2.css">
     <title>info</title>
 </head>
 
@@ -102,9 +98,9 @@ $result_pics = mysqli_query($con, $pics_query);
                 </div>
 
                 <div class="slider-controls">
-                    <span id="prev" class="prev">Previous</span>
+                    <span id="prev" class="prev"><i class="fa-solid fa-circle-arrow-left"></i></span>
                     <span id="indicators" class="indicators"></span>
-                    <span id="next" class="next">Next</span>
+                    <span id="next" class="next"><i class="fa-solid fa-circle-arrow-right"></i></span>
                 </div>
             </div>
             <!-- js for slide  -->
