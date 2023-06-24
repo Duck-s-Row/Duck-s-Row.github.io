@@ -46,13 +46,6 @@ $result_pics = mysqli_query($con, $pics_query);
 
     <!-- <link rel="stylesheet" href="inofomss.css"> -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <!-- slick slider CSS library files -->
-    <link rel="stylesheet" type="text/css" href="slick/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick/slick-theme.css"/>
-    <!-- slick slider JS library file -->
-    <script type="text/javascript" src="slick/slick/slick.min.js"></script>
-
 
     <link rel="stylesheet" href="info.css">
 
@@ -85,52 +78,37 @@ $result_pics = mysqli_query($con, $pics_query);
     <!-- The End of Navbar section -->
 
 
-<script>
-$(document).ready(function(){
-    $('.img').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: false,
-        infinite: true,
-        arrows: true
-    });
-});
-</script>
 
 
-    <!-- <section class="main">
-        <div class="photo"> -->
 
-
-    <!-- <section class="main">
-        <div class="photo"> -->
 
 
     <section class="main">
         <div class="photo">
 
-                    <!-- image class -->
-                    <div class="img">  
-                <?php 
-                if($result_pics2->num_rows > 0){
-                    while($row_pics = $result_pics2->fetch_assoc()):
-                        // $imageURL = '../places_imgs/'.$row_pics['photo_name']; 
-                ?>
-                    <div class="slide">
-                    <img src="../places_imgs/<?php echo $row_pics['photo_name'] ?>" 
-                    alt="<?php echo $row['p_name'] ?>">
-                    </div>
-                <?php endwhile; 
-                    }  ?>
+                    <!--  image class -->
+            <div class="main_slide">        
+                <div class="slider-container">
+                    <div id="slide-number" class="slide-number"></div>
+                    <?php 
+                        if($result_pics2->num_rows > 0){
+                            while($row_pics = $result_pics2->fetch_assoc()):
+                            // $imageURL = '../places_imgs/'.$row_pics['photo_name']; 
+                    ?>
+                        <img src="../places_imgs/<?php echo $row_pics['photo_name'] ?>" 
+                        alt="<?php echo $row['p_name'] ?>">
+                    <?php endwhile; 
+                        }  ?>
+                </div>
 
-                <?php while ($row_pics = mysqli_fetch_assoc($result_pics)) : ?>
-                    <img src="../places_imgs/<?php echo $row_pics['photo_name'] ?>" alt="<?php echo $row['p_name'] ?>">
-                <?php endwhile; ?>
+                <div class="slider-controls">
+                    <span id="prev" class="prev">Previous</span>
+                    <span id="indicators" class="indicators"></span>
+                    <span id="next" class="next">Next</span>
+                </div>
             </div>
-
-            <!-- <div class="img">
-            </div> -->
-
+            <!-- js for slide  -->
+            <script src = "slider.js"></script>   
 
             <div class="disc">
                 <div>
