@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="dashboards.css">
+    <link rel="stylesheet" href="dash.css">
     <title>Dashboard</title>
 </head>
 <body>
@@ -35,30 +35,56 @@
             </div>
             <div class="card">
                 <h2>Requests</h2>
-                <i class="fa fa-phone"></i>
+                <i class="fa fa-envelope"></i>
                 <a href="">Navigate</a>
             </div>
         </div>
         <h2>Number of</h2>
         <div class="shortcut">
-            <div class="card">
+            <div class="card" id="numcard">
                 <h2>Sign ups</h2>
                 <div>
                     <i class="fa fa-user"></i>
-                    <p>90</p>
+                    <p>
+                    <?php
+                        require("../../connection/connection.php");
+
+                        $sql = "SELECT * FROM users";
+                        $result = mysqli_query($con, $sql);
+                        $count_user = 0;
+
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $count_user++;
+                        }
+                        echo $count_user;
+                    ?>
+                    </p>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="numcard">
                 <h2>Places</h2>
                 <div>
-                    <i class="fa fa-user"></i>
-                    <p>90</p>
+                    <i class="fa fa-location-dot"></i>
+                    <p>
+                    <?php
+                        require("../../connection/connection.php");
+
+                        $sql = "SELECT * FROM places";
+                        $result = mysqli_query($con, $sql);
+                        $count_places = 0;
+
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $count_places++;
+                        }
+                        echo $count_places;
+                    ?>
+                    </p>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="numcard">
                 <h2>Requests</h2>
                 <div>
-                    <i class="fa fa-user"></i>
+                <i class="fa fa-envelope"></i>
                     <p>90</p>
                 </div>
             </div>
@@ -79,7 +105,7 @@
                 echo "<td>" . $row["id"] . "</td>";
                 echo "<td>" . $row["Fname"] . " " . $row["Lname"] . "</td>";
                 echo "<td>" . $row["email"] . "</td>";
-                echo "<td><a href='delete_user.php?id=" . $row["id"] . "' onclick='return confirm(\"Are you sure you want to delete this user?\")'>Delete</a></td>";
+                echo "<td><a href='delete_user.php?id=" . $row["user_id"] . "' onclick='return confirm(\"Are you sure you want to delete this user?\")'>Delete</a></td>";
                 echo "</tr>";
             }
             echo "</table>";
@@ -101,7 +127,7 @@
                 echo "<td>" . $row["p_name"] . "</td>";
                 echo "<td>" . $row["p_branch"] . "</td>";
                 echo "<td>" . $row["category"] . "</td>";
-                echo "<td><a href='delete_user.php?id=" . $row["id"] . "' onclick='return confirm(\"Are you sure you want to delete this user?\")'>Delete</a></td>";
+                echo "<td><a href='delete_place.php?id=" . $row["place_id"] . "' onclick='return confirm(\"Are you sure you want to delete this Place?\")'>Delete</a></td>";
                 echo "</tr>";
             }
             echo "</table>";
