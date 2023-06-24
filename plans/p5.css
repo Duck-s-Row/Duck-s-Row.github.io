@@ -53,7 +53,9 @@ header {
     z-index: 999;
     /* margin: 40px 5% 0 5%; */
 }
-
+.content h1 a:hover{
+    color: white;
+}
 .logo img{
     width: 80px;
 }
@@ -197,7 +199,7 @@ header {
     min-height: 200px;
 }
 .right .card:hover{
-    animation: animate 1s linear infinite;
+    animation: animate 2s linear infinite;
 }
 .right .card img{
     width: 40%;

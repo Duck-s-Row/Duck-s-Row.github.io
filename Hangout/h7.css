@@ -111,7 +111,7 @@ header {
     width: 100%;
     min-height: 100vh;
     padding-top: 140px;
-    background: linear-gradient(-120deg, #ebeabf,#9d8e04);
+    background: linear-gradient(120deg, #fff064,#9d8e04);
     display: flex;
     flex-direction: row;
     /* justify-content: center; */
@@ -360,7 +360,6 @@ input[type=number]::-webkit-outer-spin-button {
     box-shadow: 10px 5px 10px rgba(0, 0, 0, .2);
 }
 .hang .right .food-services:hover{
-    border: 1px dotted #FEE715;
     animation: animate 2s linear infinite;
 }
 .hang .right .food-services select{

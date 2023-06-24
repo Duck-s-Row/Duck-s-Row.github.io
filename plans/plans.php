@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="p4.css">
+    <link rel="stylesheet" href="p5.css">
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <title>My Plans</title>
 </head>
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $allPlans = mysqli_query($con, $selectPlansQuery);
                 ?>
                 <?php if (mysqli_num_rows($allPlans) > 0) : ?>
-                    <h1>Users Plans</h1>
+                    <h1>Your Plans</h1>
                     <?php while ($eachPlan = mysqli_fetch_assoc($allPlans)) : ?>
                         <div class="plan_card" onclick="openPopup(<?php echo $eachPlan['plan_id']; ?>);">
                             <h3><?php echo $eachPlan['plan_name'] ?></h3>
@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         </section>
                     <?php endwhile; ?>
                 <?php else : ?>
-                    <h1>You don't Have Any Plans <a href="../Hangout/hangout.php">Add new one</a></h1>
+                    <h1>You don't Have Any Plans ?<br><a href="../Hangout/hangout.php">Add new one</a></h1>
                 <?php endif; ?>
             </div>
         </div>
