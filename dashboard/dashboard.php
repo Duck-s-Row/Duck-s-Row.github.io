@@ -1,5 +1,10 @@
+<?php
+require("../connection/connection.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +13,7 @@
     <link rel="stylesheet" href="dash.css">
     <title>Dashboard</title>
 </head>
+
 <body>
     <header>
         <nav>
@@ -46,8 +52,7 @@
                 <div>
                     <i class="fa fa-user"></i>
                     <p>
-                    <?php
-                        require("../../connection/connection.php");
+                        <?php
 
                         $sql = "SELECT * FROM users";
                         $result = mysqli_query($con, $sql);
@@ -57,7 +62,7 @@
                             $count_user++;
                         }
                         echo $count_user;
-                    ?>
+                        ?>
                     </p>
                 </div>
             </div>
@@ -66,8 +71,7 @@
                 <div>
                     <i class="fa fa-location-dot"></i>
                     <p>
-                    <?php
-                        require("../../connection/connection.php");
+                        <?php
 
                         $sql = "SELECT * FROM places";
                         $result = mysqli_query($con, $sql);
@@ -77,14 +81,14 @@
                             $count_places++;
                         }
                         echo $count_places;
-                    ?>
+                        ?>
                     </p>
                 </div>
             </div>
             <div class="card" id="numcard">
                 <h2>Requests</h2>
                 <div>
-                <i class="fa fa-envelope"></i>
+                    <i class="fa fa-envelope"></i>
                     <p>90</p>
                 </div>
             </div>
@@ -93,44 +97,42 @@
 
     <section class="users" id="users">
         <?php
-             require("../../connection/connection.php");
 
-            $sql = "SELECT * FROM users";
-            $result = mysqli_query($con, $sql);
+        $sql = "SELECT * FROM users";
+        $result = mysqli_query($con, $sql);
 
-            echo "<table>";
-            echo "<tr><th>ID</th><th>Name</th><th>Email</th><th>Delete</th></tr>";
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<tr>";
-                echo "<td>" . $row["id"] . "</td>";
-                echo "<td>" . $row["Fname"] . " " . $row["Lname"] . "</td>";
-                echo "<td>" . $row["email"] . "</td>";
-                echo "<td><a href='delete_user.php?id=" . $row["user_id"] . "' onclick='return confirm(\"Are you sure you want to delete this user?\")'>Delete</a></td>";
-                echo "</tr>";
-            }
-            echo "</table>";
+        echo "<table>";
+        echo "<tr><th>ID</th><th>Name</th><th>Email</th><th>Delete</th></tr>";
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>";
+            echo "<td>" . $row["id"] . "</td>";
+            echo "<td>" . $row["Fname"] . " " . $row["Lname"] . "</td>";
+            echo "<td>" . $row["email"] . "</td>";
+            echo "<td><a href='delete_user.php?id=" . $row["user_id"] . "' onclick='return confirm(\"Are you sure you want to delete this user?\")'>Delete</a></td>";
+            echo "</tr>";
+        }
+        echo "</table>";
         ?>
     </section>
 
     <section class="places" id="places">
-    <?php
-             require("../../connection/connection.php");
+        <?php
 
-            $sql = "SELECT * FROM places";
-            $result = mysqli_query($con, $sql);
+        $sql = "SELECT * FROM places";
+        $result = mysqli_query($con, $sql);
 
-            echo "<table>";
-            echo "<tr><th>ID</th><th>Name</th><th>bransh</th><th>category</th><th>Delete</th></tr>";
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<tr>";
-                echo "<td>" . $row["id"] . "</td>";
-                echo "<td>" . $row["p_name"] . "</td>";
-                echo "<td>" . $row["p_branch"] . "</td>";
-                echo "<td>" . $row["category"] . "</td>";
-                echo "<td><a href='delete_place.php?id=" . $row["place_id"] . "' onclick='return confirm(\"Are you sure you want to delete this Place?\")'>Delete</a></td>";
-                echo "</tr>";
-            }
-            echo "</table>";
+        echo "<table>";
+        echo "<tr><th>ID</th><th>Name</th><th>bransh</th><th>category</th><th>Delete</th></tr>";
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>";
+            echo "<td>" . $row["id"] . "</td>";
+            echo "<td>" . $row["p_name"] . "</td>";
+            echo "<td>" . $row["p_branch"] . "</td>";
+            echo "<td>" . $row["category"] . "</td>";
+            echo "<td><a href='delete_place.php?id=" . $row["place_id"] . "' onclick='return confirm(\"Are you sure you want to delete this Place?\")'>Delete</a></td>";
+            echo "</tr>";
+        }
+        echo "</table>";
         ?>
     </section>
 
@@ -147,7 +149,7 @@
         let request = document.getElementById("request");
         let li_dashboard = document.querySelectorAll(".li_dashboard");
 
-        li_dashboard[0].addEventListener("click", () =>{
+        li_dashboard[0].addEventListener("click", () => {
             dashboard.style.display = "block";
             users.style.display = "none";
             places.style.display = "none";
@@ -159,7 +161,7 @@
             li_dashboard[3].classList.remove("active");
         });
 
-        li_dashboard[1].addEventListener("click", () =>{
+        li_dashboard[1].addEventListener("click", () => {
             dashboard.style.display = "none";
             users.style.display = "block";
             places.style.display = "none";
@@ -171,7 +173,7 @@
             li_dashboard[3].classList.remove("active");
         });
 
-        li_dashboard[2].addEventListener("click", () =>{
+        li_dashboard[2].addEventListener("click", () => {
             dashboard.style.display = "none";
             users.style.display = "none";
             places.style.display = "block";
@@ -183,7 +185,7 @@
             li_dashboard[3].classList.remove("active");
         });
 
-        li_dashboard[3].addEventListener("click", () =>{
+        li_dashboard[3].addEventListener("click", () => {
             dashboard.style.display = "none";
             users.style.display = "none";
             places.style.display = "none";
@@ -194,6 +196,7 @@
             li_dashboard[2].classList.remove("active");
             li_dashboard[3].classList.add("active");
         });
-    </script>       
+    </script>
 </body>
+
 </html>
