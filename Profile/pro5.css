@@ -21,6 +21,9 @@ img {
     height: 150px;
     border-radius: 50%;
 }
+.user a{
+    cursor: pointer;
+}
 .user_choices{
     height: 90vh;
     width: 30%;
@@ -435,8 +438,4 @@ label {
         left: 50%;
         top: 125px;
     }
-
-    
-
-  
   }

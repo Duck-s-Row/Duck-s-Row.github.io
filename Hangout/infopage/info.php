@@ -54,7 +54,7 @@ $result_pics = mysqli_query($con, $pics_query);
     <script type="text/javascript" src="slick/slick/slick.min.js"></script>
 
 
-    <link rel="stylesheet" href="info.css">
+    <link rel="stylesheet" href="info1.css">
 
     <title>info</title>
 </head>
@@ -63,7 +63,7 @@ $result_pics = mysqli_query($con, $pics_query);
     <!-- The Start of Navbar section -->
     <header>
         <div class="logo">
-            <a href="../hangout.php"><i class="fa-regular fa-circle-left back-arrow"></i></a>
+            <a onclick="window.history.back()"><i class="fa-regular fa-circle-left back-arrow"></i></a>
             <a href="../../index.php"><img src="black-duck.png" alt="logo"></a>
         </div>
 
