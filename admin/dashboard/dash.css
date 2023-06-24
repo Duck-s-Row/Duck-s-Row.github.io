@@ -13,12 +13,15 @@
 body {
     min-width: 100%;
     min-height: 100vh;
+    background: #11101b;
+    color: #f2f2f2;
 }
 
 header {
     width: 15%;
     height: 100%;
     background: #11101b;
+    border-right: 15px double #fee715;
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -76,13 +79,18 @@ nav ul li.active {
     padding: 7% 0 0 20%;
 }
 
+
+.users, .places, .request{
+    display: none;
+}
+
 .shortcut {
     width: 95%;
     height: 270px;
     display: flex;
     padding: 0px 10px;
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
 
     margin-top: 20px;
 }
@@ -91,6 +99,8 @@ nav ul li.active {
     width: 300px;
     height: 80%;
     background-color: #fee715c6;
+    box-shadow: 0 5px 10px #fee71599;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -98,9 +108,24 @@ nav ul li.active {
     padding: 20px;
 }
 
-.card i,.card p  {
-    margin-top: 40px;
+.card>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card svg,.card p  {
+    margin-top: 20px;
     font-size: 40px;
+}
+
+#numcard {
+    transition: 0.5s ease-out;
+}
+
+#numcard:hover {
+    transform: scale(1.1);
 }
 
 .card a {
@@ -111,7 +136,7 @@ nav ul li.active {
     color: #fee715;
 
     padding: 5px 10px;
-    margin-top: 50px;
+    margin-top: 20px;
     border-radius: 15px;
     
     font-size: 20px;
@@ -126,29 +151,31 @@ nav ul li.active {
 }
 
 table {
+    color: #f2f2f2;
     border-collapse: collapse;
-    width: 100%;
-  }
-  
-  th, td {
+    border: 2px solid #fee715;
+    width: 90%;
+
+    margin-bottom: 50px;
+}
+
+th, td {
     text-align: left;
     padding: 8px;
-  }
-  
-  th {
-    background-color: #ddd;
+}
+
+th {
+    color: #11101b;
+    background-color: #fee715;
     font-weight: bold;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  a {
-    color: #007bff;
+}
+
+tr:nth-child(even) {
+    border: 2px solid #fee715;
+    background-color: #11101b;
+}
+
+a {
+    color: #fee715;
     text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
+}
