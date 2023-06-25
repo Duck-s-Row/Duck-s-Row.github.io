@@ -74,13 +74,13 @@ nav ul li.active {
     background-color: #fee715c6;
 }
 
-.dashboard, .users, .places, .request {
+.dashboard, .users, .places, .request, .insert {
     display: block;
     padding: 7% 0 0 20%;
 }
 
 
-.users, .places, .request{
+.users, .places, .request, .insert{
     display: none;
 }
 
