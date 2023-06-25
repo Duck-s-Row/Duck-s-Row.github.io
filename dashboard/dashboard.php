@@ -2,6 +2,21 @@
 session_start();
 require("../connection/connection.php");
 require('../Functions/Functions.php');
+if (isset($_SESSION['user_id'])) {
+    $id = $_SESSION['user_id'];
+    $query = "select privilege from users where user_id = '$id' limit 1";
+    $result = mysqli_query($con, $query);
+    if ($result && mysqli_num_rows($result) > 0) {
+        $user_data = mysqli_fetch_assoc($result);
+        if ($user_data['privilege'] == 0)
+            header('Location:../index.php');
+    }
+}
+//redirect to login page
+else {
+    header("Location: ../Log_in/login.php");
+    die;
+}
 ?>
 
 <!DOCTYPE html>
