@@ -35,6 +35,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         mysqli_stmt_bind_param($stmt, "si", $plan_name,$plan_id);
         mysqli_stmt_execute($stmt);
         header("Location:plans.php");
+    } else if (($_POST['Form_identifier'] == "change_date")){
+        $plan_id = $_POST['plan_id'];
+        $plan_date = $_POST['plan_date'];
+        $changeDateQuery = "UPDATE user_plans Set plan_date = ? WHERE plan_id = ?";
+        $stmt = mysqli_prepare($con,$changeDateQuery);
+        mysqli_stmt_bind_param($stmt,"si",$plan_date,$plan_id);
+        mysqli_stmt_execute($stmt);
+        header("Location:plans.php");
     }
 }
 ?>
@@ -107,6 +115,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                     <input type="hidden" name="plan_id" value="<?php echo $eachPlan['plan_id'] ?>">
                                     <input type="text" name="plan_name" id="plan_name" value="<?php echo $eachPlan['plan_name'] ?>">
                                     <input type="submit" value="Save" id="change_name_btn" hidden>
+                                </form>
+                                <form method="post">
+                                    <input type="hidden" name="Form_identifier" value="change_date">
+                                    <input type="hidden" name="plan_id" value="<?php echo $eachPlan['plan_id'] ?>">
+                                    <input type="date" name="plan_date" id="plan_date" value="<?php echo $eachPlan['plan_date'] ?>">
+                                    <input type="submit" value="Save" id="change_date_btn" hidden>
                                 </form>
                                 <?php
                                 $plan_id = $eachPlan['plan_id'];
@@ -215,6 +229,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         var changeNameInput = document.getElementById('plan_name');
         changeNameInput.addEventListener('input', function() {
             var changeNameBtn = document.getElementById('change_name_btn');
+            changeNameBtn.removeAttribute('hidden');
+        });
+        var changeNameInput = document.getElementById('plan_date');
+        changeNameInput.addEventListener('input', function() {
+            var changeNameBtn = document.getElementById('change_date_btn');
             changeNameBtn.removeAttribute('hidden');
         });
     </script>
