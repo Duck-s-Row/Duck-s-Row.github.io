@@ -89,3 +89,5 @@ alter table user_plans
 add foreign key(user_id) references users(user_id);
 alter table places
 add column menu_image varchar(255);
+alter table user_plans
+add column average Double DEFAULT 0;
