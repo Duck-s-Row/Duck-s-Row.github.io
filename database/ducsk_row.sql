@@ -91,7 +91,7 @@ alter table places
 add column menu_image varchar(255);
 alter table user_plans
 add column average Double DEFAULT 0;
--- trigger of the average
+-- triggers of the average
 DELIMITER / / CREATE TRIGGER update_average_after_insert
 AFTER
 INSERT ON exist_plan FOR EACH ROW BEGIN
@@ -111,5 +111,25 @@ WHERE plan_id = plan_id_val;
 -- Update the average in the user_plans table
 UPDATE user_plans
 SET average = total_avg + place_avg
+WHERE plan_id = plan_id_val;
+END / / DELIMITER;
+DELIMITER / / CREATE TRIGGER update_average_after_delete
+AFTER DELETE ON exist_plan FOR EACH ROW BEGIN
+DECLARE total_avg DOUBLE;
+DECLARE place_avg DOUBLE;
+DECLARE plan_id_val BIGINT;
+-- Get the plan_id of the deleted row
+SET plan_id_val = OLD.plan_id;
+-- Calculate the average for the removed place
+SELECT AVG(average_budget) INTO place_avg
+FROM places
+WHERE place_id = OLD.place_id;
+-- Calculate the total average for the plan
+SELECT AVG(average) INTO total_avg
+FROM user_plans
+WHERE plan_id = plan_id_val;
+-- Update the average in the user_plans table
+UPDATE user_plans
+SET average = total_avg - place_avg
 WHERE plan_id = plan_id_val;
 END / / DELIMITER;
