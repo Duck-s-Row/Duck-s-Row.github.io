@@ -4,7 +4,6 @@ require('../connection/connection.php');
 require('../Functions/Functions.php');
 $user_data = check_login($con);
 $user_id = $_SESSION['user_id'];
-
 //
 $select_two = "SELECT * FROM places ORDER BY RAND() LIMIT 2";
 $result = mysqli_query($con, $select_two);
@@ -15,12 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $place_id = $_POST['place_id'];
         $_SESSION['place_id'] = $place_id;
         header('Location:../Hangout/infopage/info.php');
-    }
-    else if ($_POST['Form_identifier'] == "Delete_place"){
+    } else if ($_POST['Form_identifier'] == "Delete_place") {
         $place_id_delete = $_POST['place_id'];
         $plan_id_delete = $_POST['plan_id'];
-        $deletePlaceQuery = "DELETE FROM exist_plan WHERE place_id = $place_id_delete AND plan_id = $plan_id_delete" ;
-        mysqli_query($con,$deletePlaceQuery);
+        $deletePlaceQuery = "DELETE FROM exist_plan WHERE place_id = $place_id_delete AND plan_id = $plan_id_delete";
+        mysqli_query($con, $deletePlaceQuery);
         header("Location:plans.php");
     }
 }
@@ -49,6 +47,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </div>
         <nav class="nav-bar">
             <ul>
+                <?php if ($user_data['privilege'] == 1) :  ?>
+                    <li><a href="../dashboard/dashboard.php">Dashboard</a></li>
+                <?php endif; ?>
                 <li><a href="../index.php">Home</a></li>
                 <li><a href="../Hangout/hangout.php">Hangout</a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
@@ -99,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                             <form method="POST">
                                                 <input type="hidden" name="Form_identifier" value="Delete_place">
                                                 <input type="hidden" name="plan_id" value="<?php echo $plan_id ?>">
-                                                <input type="hidden" name="place_id" value="<?php echo $eachPlace['place_id'];?>">
+                                                <input type="hidden" name="place_id" value="<?php echo $eachPlace['place_id']; ?>">
                                                 <input type="submit" name="delete" id="delete" value="Delete">
                                             </form>
                                             <form method="POST">
@@ -137,7 +138,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <div class="more">
                         <!-- <form method="POST">
                             <input type="hidden" name="Form_identifier" value="add_to_plan">
-                            <input type="hidden" name="place_id" value="<?php //echo $row['place_id']; ?>">
+                            <input type="hidden" name="place_id" value="<?php //echo $row['place_id']; 
+                                                                        ?>">
                             <input type="submit" name="delete" id="delete" value="Add to Plan">
                         </form> -->
                         <form method="POST">
