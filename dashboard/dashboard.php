@@ -116,21 +116,27 @@ else {
 
     <section class="users tap" id="users">
         <?php
+            $sql = "SELECT * FROM users";
+            $result = mysqli_query($con, $sql);
 
-        $sql = "SELECT * FROM users";
-        $result = mysqli_query($con, $sql);
-
-        echo "<table>";
-        echo "<tr><th>ID</th><th>Name</th><th>Email</th><th>Delete</th></tr>";
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo "<tr>";
-            echo "<td>" . $row["id"] . "</td>";
-            echo "<td>" . $row["Fname"] . " " . $row["Lname"] . "</td>";
-            echo "<td>" . $row["email"] . "</td>";
-            echo "<td><a href='delete_user.php?id=" . $row["user_id"] . "' onclick='return confirm(\"Are you sure you want to delete this user?\")'>Delete</a></td>";
-            echo "</tr>";
-        }
-        echo "</table>";
+            echo "<table>";
+            echo "<tr><th>ID</th><th>Name</th><th>Email</th><th>Privilege</th><th>Action</th></tr>";
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>";
+                echo "<td>" . $row["user_id"] . "</td>";
+                echo "<td>" . $row["Fname"] . " " . $row["Lname"] . "</td>";
+                echo "<td>" . $row["email"] . "</td>";
+                echo "<td>
+                    <form method='POST' action='update_user.php'>
+                        <input type='hidden' name='id' value='" . $row["user_id"] . "'>
+                        <input type='text' name='privilege' value='" . $row["privilege"] . "'>
+                        <input type='submit' value='Update'>
+                    </form>
+                </td>";
+                echo "<td><a href='delete_user.php?id=" . $row["user_id"] . "' onclick='return confirm(\"Are you sure you want to delete this user?\")'>Delete</a></td>";
+                echo "</tr>";
+            }
+            echo "</table>";
         ?>
     </section>
 
@@ -144,7 +150,7 @@ else {
         echo "<tr><th>ID</th><th>Name</th><th>bransh</th><th>category</th><th>Delete</th></tr>";
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
-            echo "<td>" . $row["id"] . "</td>";
+            echo "<td>" . $row["place_id"] . "</td>";
             echo "<td>" . $row["p_name"] . "</td>";
             echo "<td>" . $row["p_branch"] . "</td>";
             echo "<td>" . $row["category"] . "</td>";
