@@ -284,6 +284,30 @@ header {
 .popup_content h1{
     animation: animate 2s linear infinite;
 }
+.popup_content input[type="text"]{
+    background: none;
+    border: none;
+    text-align: center;
+    padding: 2px 0;
+    border-radius: 20px;
+    font-size: 30px;
+    color: #FEE715;
+    width: 150px;
+    margin-bottom: 10px;
+}
+.popup_content input[type="date"]{
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #FEE715;
+    text-align: center;
+    padding: 2px 0;
+    border-radius: 20px;
+    font-size: 15px;
+    color: #FEE715;
+    width: 170px;
+}
 .popup .card{
     width: 55%;
     min-height: 300px;
