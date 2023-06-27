@@ -4,7 +4,6 @@ require('../connection/connection.php');
 require('../Functions/Functions.php');
 $user_data = check_login($con);
 $user_id = $_SESSION['user_id'];
-
 //
 $select_two = "SELECT * FROM places ORDER BY RAND() LIMIT 2";
 $result = mysqli_query($con, $select_two);
@@ -15,12 +14,34 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $place_id = $_POST['place_id'];
         $_SESSION['place_id'] = $place_id;
         header('Location:../Hangout/infopage/info.php');
-    }
-    else if ($_POST['Form_identifier'] == "Delete_place"){
+    } else if ($_POST['Form_identifier'] == "Delete_place") {
         $place_id_delete = $_POST['place_id'];
         $plan_id_delete = $_POST['plan_id'];
-        $deletePlaceQuery = "DELETE FROM exist_plan WHERE place_id = $place_id_delete AND plan_id = $plan_id_delete" ;
-        mysqli_query($con,$deletePlaceQuery);
+        $deletePlaceQuery = "DELETE FROM exist_plan WHERE user_id = $user_id AND place_id = $place_id_delete AND plan_id = $plan_id_delete";
+        mysqli_query($con, $deletePlaceQuery);
+        header("Location:plans.php");
+    } else if ($_POST['Form_identifier'] == "remove_plan") {
+        $plan_id_remove = $_POST['plan_id'];
+        $removePlanQuery = "DELETE FROM exist_plan WHERE user_id = $user_id AND  plan_id = $plan_id_remove ";
+        mysqli_query($con, $removePlanQuery);
+        $removePlanQuery = "DELETE FROM user_plans WHERE user_id = $user_id AND plan_id = $plan_id_remove ";
+        mysqli_query($con, $removePlanQuery);
+        header("Location:plans.php");
+    } else if ($_POST['Form_identifier'] == "change_name") {
+        $plan_id = $_POST['plan_id'];
+        $plan_name = $_POST['plan_name'];
+        $changeNameQuery = "UPDATE user_plans SET plan_name = ? WHERE plan_id = ?";
+        $stmt = mysqli_prepare($con, $changeNameQuery);
+        mysqli_stmt_bind_param($stmt, "si", $plan_name,$plan_id);
+        mysqli_stmt_execute($stmt);
+        header("Location:plans.php");
+    } else if (($_POST['Form_identifier'] == "change_date")){
+        $plan_id = $_POST['plan_id'];
+        $plan_date = $_POST['plan_date'];
+        $changeDateQuery = "UPDATE user_plans Set plan_date = ? WHERE plan_id = ?";
+        $stmt = mysqli_prepare($con,$changeDateQuery);
+        mysqli_stmt_bind_param($stmt,"si",$plan_date,$plan_id);
+        mysqli_stmt_execute($stmt);
         header("Location:plans.php");
     }
 }
@@ -33,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="p5.css">
+    <link rel="stylesheet" href="p8.css">
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <title>My Plans</title>
 </head>
@@ -49,6 +70,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </div>
         <nav class="nav-bar">
             <ul>
+                <?php if ($user_data['privilege'] == 1) :  ?>
+                    <li><a href="../dashboard/dashboard.php">Dashboard</a></li>
+                <?php endif; ?>
                 <li><a href="../index.php">Home</a></li>
                 <li><a href="../Hangout/hangout.php">Hangout</a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
@@ -75,12 +99,29 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         <div class="plan_card" onclick="openPopup(<?php echo $eachPlan['plan_id']; ?>);">
                             <h3><?php echo $eachPlan['plan_name'] ?></h3>
                             <h3>Plan Date: <?php echo $eachPlan['plan_date'] ?></h3>
+                            <h3>Average: <?php echo $eachPlan['average'] ?></h3>
                         </div>
+                        <form method="POST">
+                            <input type="hidden" name="Form_identifier" value="remove_plan">
+                            <input type="hidden" name="plan_id" value="<?php echo $eachPlan['plan_id'] ?>">
+                            <input type="submit" value="Remove">
+                        </form>
                         <section class="popup" id="popup_<?php echo $eachPlan['plan_id']; ?>">
                             <button id="close" onclick="closePopup(<?php echo $eachPlan['plan_id']; ?>);"><i class="fa fa-x"></i></button>
 
                             <div class="popup_content">
-                                <h1><?php echo $eachPlan['plan_name'] ?></h1>
+                                <form method="post">
+                                    <input type="hidden" name="Form_identifier" value="change_name">
+                                    <input type="hidden" name="plan_id" value="<?php echo $eachPlan['plan_id'] ?>">
+                                    <input type="text" name="plan_name" id="plan_name" value="<?php echo $eachPlan['plan_name'] ?>">
+                                    <input type="submit" value="Save" id="change_name_btn" hidden>
+                                </form>
+                                <form method="post">
+                                    <input type="hidden" name="Form_identifier" value="change_date">
+                                    <input type="hidden" name="plan_id" value="<?php echo $eachPlan['plan_id'] ?>">
+                                    <input type="date" name="plan_date" id="plan_date" value="<?php echo $eachPlan['plan_date'] ?>">
+                                    <input type="submit" value="Save" id="change_date_btn" hidden>
+                                </form>
                                 <?php
                                 $plan_id = $eachPlan['plan_id'];
                                 $selectAllPlacesQuery = "SELECT * FROM exist_plan,places WHERE exist_plan.user_id = $user_id AND exist_plan.plan_id = $plan_id AND exist_plan.place_id = places.place_id ORDER BY Rand()";
@@ -99,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                             <form method="POST">
                                                 <input type="hidden" name="Form_identifier" value="Delete_place">
                                                 <input type="hidden" name="plan_id" value="<?php echo $plan_id ?>">
-                                                <input type="hidden" name="place_id" value="<?php echo $eachPlace['place_id'];?>">
+                                                <input type="hidden" name="place_id" value="<?php echo $eachPlace['place_id']; ?>">
                                                 <input type="submit" name="delete" id="delete" value="Delete">
                                             </form>
                                             <form method="POST">
@@ -137,7 +178,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <div class="more">
                         <!-- <form method="POST">
                             <input type="hidden" name="Form_identifier" value="add_to_plan">
-                            <input type="hidden" name="place_id" value="<?php //echo $row['place_id']; ?>">
+                            <input type="hidden" name="place_id" value="<?php //echo $row['place_id']; 
+                                                                        ?>">
                             <input type="submit" name="delete" id="delete" value="Add to Plan">
                         </form> -->
                         <form method="POST">
@@ -182,6 +224,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             let random = Math.floor(Math.random() * images.length);
             image.src = '../Hangout/offers/' + images[random];
         }, 2000);
+    </script>
+    <script>
+        var changeNameInput = document.getElementById('plan_name');
+        changeNameInput.addEventListener('input', function() {
+            var changeNameBtn = document.getElementById('change_name_btn');
+            changeNameBtn.removeAttribute('hidden');
+        });
+        var changeNameInput = document.getElementById('plan_date');
+        changeNameInput.addEventListener('input', function() {
+            var changeNameBtn = document.getElementById('change_date_btn');
+            changeNameBtn.removeAttribute('hidden');
+        });
     </script>
 </body>
 

@@ -35,6 +35,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </div>
         <nav class="nav-bar">
             <ul>
+                <?php if ($user_data['privilege'] == 1) :  ?>
+                    <li><a href="../dashboard/dashboard.php">Dashboard</a></li>
+                <?php endif; ?>
                 <li><a href="../index.php">Home</a></li>
                 <li><a href="../plans/plans.php">My Plans</a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
@@ -99,18 +102,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                 </div>
                                 <div class="text2">
                                     <!-- <div class="more"> -->
-                                        <form method="POST" id="hidden_form_<?php echo $place['place_id'];?>" style="display: none;">
-                                            <input type="hidden" name="place_id" value="<?php echo $place['place_id']; ?>">
-                                            <input type="submit" name="more" id="more" value="More">
-                                        </form>
+                                    <form method="POST" id="hidden_form_<?php echo $place['place_id']; ?>" style="display: none;">
+                                        <input type="hidden" name="place_id" value="<?php echo $place['place_id']; ?>">
+                                        <input type="submit" name="more" id="more" value="More">
+                                    </form>
                                     <!-- </div> -->
-                                        <div class="icons">
-                                            <a href="" onclick="event.preventDefault(); document.getElementById('hidden_form_<?php echo $place['place_id']; ?>').submit();"><i class="fa-solid fa-eye"></i></a>
-                                            <a href=""><i class="fa-solid fa-plus"></i></a>
-                                            <a href=""><i class="fa-solid fa-heart"></i></a>
-                                        </div>
-                                </div>  
-                            </div>   
+                                    <div class="icons">
+                                        <a href="" onclick="event.preventDefault(); document.getElementById('hidden_form_<?php echo $place['place_id']; ?>').submit();"><i class="fa-solid fa-eye"></i></a>
+                                        <a href=""><i class="fa-solid fa-plus"></i></a>
+                                        <a href=""><i class="fa-solid fa-heart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     <?php
                         $count++;
@@ -120,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     endforeach;
                     ?>
                 </div>
-                 
+
             </div>
             <!-- <div class="see-more" id="see-more">
                     See More
@@ -219,7 +222,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         let image = document.getElementById('image');
         setInterval(function() {
             let random = Math.floor(Math.random() * images.length);
-            image.src = 'offers/'+images[random];
+            image.src = 'offers/' + images[random];
         }, 2000);
     </script>
 </body>

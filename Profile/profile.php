@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
-    <link rel="stylesheet" href="pro5.css">
+    <link rel="stylesheet" href="pro6.css">
     <title>Profile</title>
     <style>
         
@@ -73,8 +73,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <section class="main">
         <div class="user_choices">
+            <a onclick="window.history.back()" id="home"><i class="fa fa-arrow-circle-left"></i><span>&nbsp;BACK</span></a>
             <div class="user">
-                <a onclick="window.history.back()" id="home"><i class="fa fa-arrow-circle-left"></i><span>&nbsp;BACK</span></a>
                 <img src="user_profile_imgs/<?php echo $user_data['user_pic'] ?>" alt="profile_picture">
                 <div class="pic">
                     <form enctype="multipart/form-data" method="post" id="form">

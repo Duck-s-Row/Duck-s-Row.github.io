@@ -3,17 +3,11 @@ session_start();
 require("../connection/connection.php");
 require('../Functions/Functions.php');
 if (isset($_SESSION['user_id'])) {
-    $id = $_SESSION['user_id'];
-    $query = "select privilege from users where user_id = '$id' limit 1";
-    $result = mysqli_query($con, $query);
-    if ($result && mysqli_num_rows($result) > 0) {
-        $user_data = mysqli_fetch_assoc($result);
-        if ($user_data['privilege'] == 0)
-            header('Location:../index.php');
-    }
-}
-//redirect to login page
-else {
+    $user_data = Get_user_data($con);
+    if ($user_data['privilege'] != 1)
+        header('Location:../index.php');
+} else {
+    //redirect to login page
     header("Location: ../Log_in/login.php");
     die;
 }
@@ -35,7 +29,7 @@ else {
 <body>
     <header>
         <nav>
-            <button onclick="pageRedirect()">My Site</button>
+            <button onclick="window.history.back()">My Site</button>
             <ul>
                 <li class="li_dashboard active"><a href="#dashboard">dashboard</a></li>
                 <li class="li_dashboard" data-tab="users"><a href="#users">Users</a></li>
@@ -279,7 +273,7 @@ else {
                     echo '
                     <script>alert("Logo Size Is Too Large");</script>';
                     header('Location:insertion of places.php');
-                } else {            
+                } else {
                     $new_menu_image_name = date('Y');
                     $new_menu_image_name .= '_' . date('M');
                     $new_menu_image_name .= '_' . "$placeName";
@@ -389,7 +383,7 @@ else {
             </select><br>
             <label for="menu_image">Insert Menu Image</label>
             <input type="file" name="menu_image" id="menu_image" accept=".jpg, .png, .jpeg"><br>
-            <input type="submit" value="Save">  
+            <input type="submit" value="Save">
         </form>
     </section>
 

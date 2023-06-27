@@ -4,25 +4,25 @@ require("../../connection/connection.php");
 session_start();
 $place_id = $_SESSION['place_id'];
 $user_id = $_SESSION['user_id'];
-
+$user_data = Get_user_data($con);
 //make the user must login to enter here first
 if (!isset($user_id))
     header("Location:../../Log_in/login.php");
 
 
-    $Data = "SELECT * FROM places WHERE place_id = $place_id LIMIT 1";
-    $result = mysqli_query($con,$Data);
-    if($result && mysqli_num_rows($result)>0){
-    $row = mysqli_fetch_assoc($result);   
-    }
-    //picture query
-    $pics_query2 = "SELECT * FROM place_pics WHERE place_id = $place_id ORDER BY RAND() ";
+$Data = "SELECT * FROM places WHERE place_id = $place_id LIMIT 1";
+$result = mysqli_query($con, $Data);
+if ($result && mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+}
+//picture query
+$pics_query2 = "SELECT * FROM place_pics WHERE place_id = $place_id ORDER BY RAND() ";
 
-    // $pics_query = "SELECT * FROM place_pics WHERE place_id = $place_id ORDER BY RAND() LIMIT 1";
-    
-    $result_pics2 = mysqli_query($con,$pics_query2);
+// $pics_query = "SELECT * FROM place_pics WHERE place_id = $place_id ORDER BY RAND() LIMIT 1";
 
-    // $result_pics = mysqli_query($con,$pics_query);
+$result_pics2 = mysqli_query($con, $pics_query2);
+
+// $result_pics = mysqli_query($con,$pics_query);
 
 $Data = "SELECT * FROM places WHERE place_id = $place_id LIMIT 1";
 $result = mysqli_query($con, $Data);
@@ -63,6 +63,9 @@ $result_pics = mysqli_query($con, $pics_query);
         </div>
         <nav class="nav-bar">
             <ul>
+                <?php if ($user_data['privilege'] == 1) :  ?>
+                    <li><a href="../../dashboard/dashboard.php"><b>Dashboard</b></a></li>
+                <?php endif; ?>
                 <li><a href="../../index.php"><b>Home</b></a></li>
                 <li><a href="../../plans/plans.php"><b>My plans</b></a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
@@ -82,19 +85,18 @@ $result_pics = mysqli_query($con, $pics_query);
     <section class="main">
         <div class="photo">
 
-                    <!--  image class -->
-            <div class="main_slide">        
+            <!--  image class -->
+            <div class="main_slide">
                 <div class="slider-container">
                     <div id="slide-number" class="slide-number"></div>
-                    <?php 
-                        if($result_pics2->num_rows > 0){
-                            while($row_pics = $result_pics2->fetch_assoc()):
+                    <?php
+                    if ($result_pics2->num_rows > 0) {
+                        while ($row_pics = $result_pics2->fetch_assoc()) :
                             // $imageURL = '../places_imgs/'.$row_pics['photo_name']; 
                     ?>
-                        <img src="../places_imgs/<?php echo $row_pics['photo_name'] ?>" 
-                        alt="<?php echo $row['p_name'] ?>">
-                    <?php endwhile; 
-                        }  ?>
+                            <img src="../places_imgs/<?php echo $row_pics['photo_name'] ?>" alt="<?php echo $row['p_name'] ?>">
+                    <?php endwhile;
+                    }  ?>
                 </div>
 
                 <div class="slider-controls">
@@ -104,7 +106,7 @@ $result_pics = mysqli_query($con, $pics_query);
                 </div>
             </div>
             <!-- js for slide  -->
-            <script src = "slider.js"></script>   
+            <script src="slider.js"></script>
 
             <div class="disc">
                 <div>
@@ -159,14 +161,14 @@ $result_pics = mysqli_query($con, $pics_query);
 
                 $query2 = "INSERT INTO user_plans(plan_id,plan_name,plan_date,creation_date,user_id) VALUES(?,?,?,?,?)";
                 $stmt2 = mysqli_prepare($con, $query2);
-                mysqli_stmt_bind_param($stmt2, 'issss' , $plan_id, $plan_name, $plan_date, $creation_date,$user_id);
+                mysqli_stmt_bind_param($stmt2, 'issss', $plan_id, $plan_name, $plan_date, $creation_date, $user_id);
                 mysqli_stmt_execute($stmt2);
 
                 $query1 = "INSERT INTO exist_plan(plan_id,user_id,place_id) VALUES(?,?,?)";
                 $stmt1 = mysqli_prepare($con, $query1);
                 mysqli_stmt_bind_param($stmt1, 'iii', $plan_id, $user_id, $place_id);
                 mysqli_stmt_execute($stmt1);
-                
+
                 header("Location:info.php");
                 // }
             }
@@ -192,24 +194,24 @@ $result_pics = mysqli_query($con, $pics_query);
                 </div>
                 <input type="submit" value="add plan">
             </form>
-            <?php 
-            $selectAllPlans = "SELECT * FROM user_plans WHERE user_id = $user_id" ;
-            $allPlans = mysqli_query($con,$selectAllPlans);
+            <?php
+            $selectAllPlans = "SELECT * FROM user_plans WHERE user_id = $user_id";
+            $allPlans = mysqli_query($con, $selectAllPlans);
             ?>
             <!-- <form method="post" class="expopform"> -->
-                <?php if(mysqli_num_rows($allPlans)): ?> 
+            <?php if (mysqli_num_rows($allPlans)) : ?>
                 <h2>Exists Plans</h2>
-                <?php while($eachPlan = mysqli_fetch_assoc($allPlans)):?>
+                <?php while ($eachPlan = mysqli_fetch_assoc($allPlans)) : ?>
                     <a href="#" class="plan-card-link" data-planid="<?php echo $eachPlan['plan_id'] ?>">
                         <div class="plan_card" id="open">
                             <h3><?php echo $eachPlan['plan_name'] ?></h3>
                             <h3>Plan Date: <?php echo $eachPlan['plan_date'] ?></h3>
                         </div>
                     </a>
-                    <?php endwhile; ?>
-                    <?php  else: ?>
-                        <h2>You didn't make any plans yet Please make new one.</h2>
-                    <?php endif; ?>
+                <?php endwhile; ?>
+            <?php else : ?>
+                <h2>You didn't make any plans yet Please make new one.</h2>
+            <?php endif; ?>
             <!-- </form> -->
             <!-- <form method="post">
                 <input type="submit" name="plans" value="+ Add to my plans " class="button">
