@@ -44,7 +44,7 @@ $result_pics = mysqli_query($con, $pics_query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
     <!-- <link rel="stylesheet" href="inofomss.css"> -->
-    <link rel="stylesheet" href="info2.css">
+    <link rel="stylesheet" href="i3.css">
     <title>info</title>
 </head>
 
@@ -205,7 +205,7 @@ $result_pics = mysqli_query($con, $pics_query);
                     <a href="#" class="plan-card-link" data-planid="<?php echo $eachPlan['plan_id'] ?>">
                         <div class="plan_card" id="open">
                             <h3><?php echo $eachPlan['plan_name'] ?></h3>
-                            <h3>Plan Date: <?php echo $eachPlan['plan_date'] ?></h3>
+                            <h3><?php echo $eachPlan['plan_date'] ?></h3>
                         </div>
                     </a>
                 <?php endwhile; ?>
