@@ -133,13 +133,12 @@ UPDATE user_plans
 SET average = total_avg - place_avg
 WHERE plan_id = plan_id_val;
 END / / DELIMITER;
-
 -- request table
 create table request(
     request_id bigint primary key,
     place_id bigint,
-    user_id bigint
-    status varchar(255)  default 'pending'
+    user_id bigint,
+    req_status varchar(255) default 'pending'
 );
 create table request_details(
     place_id bigint primary key,
@@ -158,5 +157,16 @@ create table request_details(
 create table request_pics(
     photo_id bigint primary key,
     place_id bigint,
-    photo_name varchar(255),
+    photo_name varchar(255)
 );
+create table request_comment(
+    id int primary key auto_increment,
+    request_id bigint,
+    comment varchar(255)
+);
+alter table request_details
+add foreign key(request_id) references request(request_id);
+alter table request_pics
+add foreign key(place_id) references request_details(place_id);
+alter table request_comment
+add foreign key(request_id) references request(request_id);
