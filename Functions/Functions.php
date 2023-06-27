@@ -103,6 +103,8 @@ function filterLocationSort($con, $location, $sort, $categories,$budget)
         $sql .= " ORDER BY average_budget DESC";
     } elseif ($sort == "low-Average") {
         $sql .= " ORDER BY average_budget ASC";
+    } else{
+        $sql .= " ORDER BY RAND()";
     }
     $result = mysqli_query($con, $sql);
     $filteredResults = [];
