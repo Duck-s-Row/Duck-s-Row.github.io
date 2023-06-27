@@ -133,3 +133,30 @@ UPDATE user_plans
 SET average = total_avg - place_avg
 WHERE plan_id = plan_id_val;
 END / / DELIMITER;
+
+-- request table
+create table request(
+    request_id bigint primary key,
+    place_id bigint,
+    user_id bigint
+    status varchar(255)  default 'pending'
+);
+create table request_details(
+    place_id bigint primary key,
+    request_id bigint,
+    p_name varchar(255),
+    p_branch varchar(255),
+    details varchar(255),
+    logo varchar(255) default "default_logo.png",
+    average_budget double,
+    category varchar(255),
+    location varchar(255),
+    min_price int,
+    max_price int,
+    menu_image varchar(255)
+);
+create table request_pics(
+    photo_id bigint primary key,
+    place_id bigint,
+    photo_name varchar(255),
+);
