@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="p9.css">
+    <link rel="stylesheet" href="p10.css">
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <title>My Plans</title>
 </head>
@@ -96,16 +96,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <?php if (mysqli_num_rows($allPlans) > 0) : ?>
                     <h1>Your Plans</h1>
                     <?php while ($eachPlan = mysqli_fetch_assoc($allPlans)) : ?>
-                        <div class="plan_card" onclick="openPopup(<?php echo $eachPlan['plan_id']; ?>);">
-                            <h3><?php echo $eachPlan['plan_name'] ?></h3>
-                            <h3>Plan Date: <?php echo $eachPlan['plan_date'] ?></h3>
-                            <h3>Average: <?php echo $eachPlan['average'] ?></h3>
+                        <div class="r1">
+                            <div class="plan_card" onclick="openPopup(<?php echo $eachPlan['plan_id']; ?>);">
+                                <h3><?php echo $eachPlan['plan_name'] ?></h3>
+                                <h3><?php echo $eachPlan['plan_date'] ?></h3>
+                                <h3>Average : <?php echo $eachPlan['average'] ?></h3>
+                            </div>
+                            <div class="remove">
+                                <form method="POST">
+                                    <input type="hidden" name="Form_identifier" value="remove_plan">
+                                    <input type="hidden" name="plan_id" value="<?php echo $eachPlan['plan_id'] ?>">
+                                    <button><i class="fa-solid fa-trash"></i><input type="submit" value=""></button>
+                                </form>
+                            </div>
                         </div>
-                        <form method="POST">
-                            <input type="hidden" name="Form_identifier" value="remove_plan">
-                            <input type="hidden" name="plan_id" value="<?php echo $eachPlan['plan_id'] ?>">
-                            <input type="submit" value="Remove">
-                        </form>
                         <section class="popup" id="popup_<?php echo $eachPlan['plan_id']; ?>">
                             <button id="close" onclick="closePopup(<?php echo $eachPlan['plan_id']; ?>);"><i class="fa fa-x"></i></button>
 
@@ -113,13 +117,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                 <form method="post">
                                     <input type="hidden" name="Form_identifier" value="change_name">
                                     <input type="hidden" name="plan_id" value="<?php echo $eachPlan['plan_id'] ?>">
-                                    <input type="text" name="plan_name" id="plan_name" value="<?php echo $eachPlan['plan_name'] ?>">
+                                    <i class="fa-solid fa-pen-to-square"></i><input type="text" name="plan_name" id="plan_name" value=" <?php echo $eachPlan['plan_name'] ?>">
                                     <input type="submit" value="Save" id="change_name_btn" hidden>
                                 </form>
                                 <form method="post">
                                     <input type="hidden" name="Form_identifier" value="change_date">
                                     <input type="hidden" name="plan_id" value="<?php echo $eachPlan['plan_id'] ?>">
-                                    <input type="date" name="plan_date" id="plan_date" value="<?php echo $eachPlan['plan_date'] ?>">
+                                    <input type="date" name="plan_date" id="plan_date" value="<?php echo $eachPlan['plan_date'] ?>"><br>
                                     <input type="submit" value="Save" id="change_date_btn" hidden>
                                 </form>
                                 <?php
