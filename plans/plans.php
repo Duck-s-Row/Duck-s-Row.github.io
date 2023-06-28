@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                     <input type="hidden" name="plan_id" value="<?php echo $eachPlan['plan_id'] ?>">
                                     <i class="fa-solid fa-pen-to-square"></i><input type="text" name="plan_name" value=" <?php echo $eachPlan['plan_name'] ?>"><br>
                                     <input type="date" name="plan_date" value="<?php echo $eachPlan['plan_date'] ?>"><br>
-                                    <input type="submit" value="Save" hidden>
+                                    <input type="submit" value="Save">
                                 </form>
                                 <?php
                                 $plan_id = $eachPlan['plan_id'];
