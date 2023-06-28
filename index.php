@@ -15,7 +15,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
    <meta charset="UTF-8">
    <meta name="description" content="GO Fun, GO & run">
-   <link rel="stylesheet" href="home/CSS_files/hom6.css">
+   <link rel="stylesheet" href="home/CSS_files/hom8.css">
    <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Bebas+Neue&display=swap" rel="stylesheet">
    <link rel="website icon" type="png" href="home/imgs/Logo.png">
@@ -23,9 +23,10 @@
  </head>
 
  <body>
-   <div class="loading" id="loader"></div>
+   <!-- <div class="loading" id="loader"></div> -->
    <!-- The Start of Navbar section -->
    <header>
+    
      <div class="logo"><a href="#home"><img src="home/imgs/ducks.png" alt=""></a></div>
      <div class="hamburger">
        <div class="line"></div>
@@ -51,6 +52,7 @@
            <li><a href="Log_in/login.php" class="profile">Login</a></li>
          <?php endif; ?>
          <li><i class="fa fa-right-from-bracket" id="logout"></i><i class="fa-regular fa-user" onclick="toggleMenu()" id="user-icon"></i></li>
+         <div class="dark"><img src="home/imgs/moon.png" id="icon"></div>
        </ul>
 
        <div class="sub-menu-wrap" id="subMenu">
@@ -216,6 +218,19 @@
    <!-- The End of the page -->
 
    <!-- JS -->
+   <script>
+    var icon = document.getElementById("icon");
+
+    icon.onclick = function(){
+      document.body.classList.toggle("dark-theme")
+      if(document.body.classList.contains("dark-theme")){
+        icon.src = "home/imgs/sun.png";
+      }
+      else{
+        icon.src = "home/imgs/moon.png"
+      }
+    }
+   </script>
    <script src="home/home.js"></script>
    <script src="home/sendmail.js"></script>
  </body>
