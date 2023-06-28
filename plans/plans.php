@@ -27,20 +27,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $removePlanQuery = "DELETE FROM user_plans WHERE user_id = $user_id AND plan_id = $plan_id_remove ";
         mysqli_query($con, $removePlanQuery);
         header("Location:plans.php");
-    } else if ($_POST['Form_identifier'] == "change_name") {
-        $plan_id = $_POST['plan_id'];
+    } else if ($_POST['Form_identifier'] == "change_name_date") {
+        $plan_id_name_date = $_POST['plan_id'];
         $plan_name = $_POST['plan_name'];
-        $changeNameQuery = "UPDATE user_plans SET plan_name = ? WHERE plan_id = ?";
-        $stmt = mysqli_prepare($con, $changeNameQuery);
-        mysqli_stmt_bind_param($stmt, "si", $plan_name,$plan_id);
-        mysqli_stmt_execute($stmt);
-        header("Location:plans.php");
-    } else if (($_POST['Form_identifier'] == "change_date")){
-        $plan_id = $_POST['plan_id'];
         $plan_date = $_POST['plan_date'];
-        $changeDateQuery = "UPDATE user_plans Set plan_date = ? WHERE plan_id = ?";
-        $stmt = mysqli_prepare($con,$changeDateQuery);
-        mysqli_stmt_bind_param($stmt,"si",$plan_date,$plan_id);
+        $changeNameDateQuery = "UPDATE user_plans SET plan_name = ?,plan_date = ? WHERE plan_id = ?";
+        $stmt = mysqli_prepare($con, $changeNameDateQuery);
+        mysqli_stmt_bind_param($stmt, "ssi", $plan_name, $plan_date, $plan_id_name_date);
         mysqli_stmt_execute($stmt);
         header("Location:plans.php");
     }
@@ -115,16 +108,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
                             <div class="popup_content">
                                 <form method="post">
-                                    <input type="hidden" name="Form_identifier" value="change_name">
+                                    <input type="hidden" name="Form_identifier" value="change_name_date">
                                     <input type="hidden" name="plan_id" value="<?php echo $eachPlan['plan_id'] ?>">
-                                    <i class="fa-solid fa-pen-to-square"></i><input type="text" name="plan_name" id="plan_name" value=" <?php echo $eachPlan['plan_name'] ?>">
-                                    <input type="submit" value="Save" id="change_name_btn" hidden>
-                                </form>
-                                <form method="post">
-                                    <input type="hidden" name="Form_identifier" value="change_date">
-                                    <input type="hidden" name="plan_id" value="<?php echo $eachPlan['plan_id'] ?>">
-                                    <input type="date" name="plan_date" id="plan_date" value="<?php echo $eachPlan['plan_date'] ?>"><br>
-                                    <input type="submit" value="Save" id="change_date_btn" hidden>
+                                    <i class="fa-solid fa-pen-to-square"></i><input type="text" name="plan_name" value=" <?php echo $eachPlan['plan_name'] ?>"><br>
+                                    <input type="date" name="plan_date" value="<?php echo $eachPlan['plan_date'] ?>"><br>
+                                    <input type="submit" value="Save" hidden>
                                 </form>
                                 <?php
                                 $plan_id = $eachPlan['plan_id'];
@@ -228,18 +216,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             let random = Math.floor(Math.random() * images.length);
             image.src = '../Hangout/offers/' + images[random];
         }, 2000);
-    </script>
-    <script>
-        var changeNameInput = document.getElementById('plan_name');
-        changeNameInput.addEventListener('input', function() {
-            var changeNameBtn = document.getElementById('change_name_btn');
-            changeNameBtn.removeAttribute('hidden');
-        });
-        var changeNameInput = document.getElementById('plan_date');
-        changeNameInput.addEventListener('input', function() {
-            var changeNameBtn = document.getElementById('change_date_btn');
-            changeNameBtn.removeAttribute('hidden');
-        });
     </script>
 </body>
 

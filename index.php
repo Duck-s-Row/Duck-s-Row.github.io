@@ -34,9 +34,11 @@
      </div>
      <nav class="nav-bar">
        <ul>
-        <?php if($user_data['privilege']==1):  ?>
-         <li><a href="dashboard/dashboard.php">Dashboard</a></li>
-        <?php endif; ?>
+         <?php if (isset($_SESSION['user_id'])) : ?>
+           <?php if ($user_data['privilege'] == 1) :  ?>
+             <li><a href="dashboard/dashboard.php">Dashboard</a></li>
+           <?php endif; ?>
+         <?php endif; ?>
          <li><a href="#home">Home</a></li>
          <li><a href="Hangout/hangout.php">Hangout</a></li> <!-- we could remove this ancher tag link because of using the button  -->
          <li><a href="#services">Services</a></li>
@@ -107,43 +109,43 @@
    <!-- The Start of Services Section -->
    <section class="services" id="services">
      <div class="content">
-      <a href="Hangout/hangout.php">
-        <div class="card">
-          <div class="icon">
-            <i class="fa-solid fa-sack-dollar"></i>
-          </div>
-          <div class="info">
-            <h3>Specific budget</h3>
-            <p>You can decide on a budget, and we'll show you the appropriate places depending on that.</p>
-          </div>
-        </div>
-      </a>
+       <a href="Hangout/hangout.php">
+         <div class="card">
+           <div class="icon">
+             <i class="fa-solid fa-sack-dollar"></i>
+           </div>
+           <div class="info">
+             <h3>Specific budget</h3>
+             <p>You can decide on a budget, and we'll show you the appropriate places depending on that.</p>
+           </div>
+         </div>
+       </a>
      </div>
      <div class="content">
-      <a href="Hangout/hangout.php">
-        <div class="card">
-          <div class="icon">
-            <i class="fa-solid fa-location-dot"></i>
-          </div>
-          <div class="info">
-            <h3>Various places</h3>
-            <p>We'll highlight various locations in the Giza Governorate that are appropriate for all groups.</p>
-          </div>
-        </div>
-      </a>
+       <a href="Hangout/hangout.php">
+         <div class="card">
+           <div class="icon">
+             <i class="fa-solid fa-location-dot"></i>
+           </div>
+           <div class="info">
+             <h3>Various places</h3>
+             <p>We'll highlight various locations in the Giza Governorate that are appropriate for all groups.</p>
+           </div>
+         </div>
+       </a>
      </div>
      <div class="content">
-      <a href="plans/plans.php">
-        <div class="card">
-          <div class="icon">
-            <i class="fa-solid fa-list-check"></i>
-          </div>
-          <div class="info">
-            <h3>Make your plan</h3>
-            <p>To visit the locations you add at any moment, you can make your own plan.</p>
-          </div>
-        </div>
-      </a>
+       <a href="plans/plans.php">
+         <div class="card">
+           <div class="icon">
+             <i class="fa-solid fa-list-check"></i>
+           </div>
+           <div class="info">
+             <h3>Make your plan</h3>
+             <p>To visit the locations you add at any moment, you can make your own plan.</p>
+           </div>
+         </div>
+       </a>
      </div>
    </section>
    <!-- The End of services Section -->
