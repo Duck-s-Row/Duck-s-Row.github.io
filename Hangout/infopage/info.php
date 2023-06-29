@@ -75,13 +75,7 @@ $result_pics = mysqli_query($con, $pics_query);
         </nav>
     </header>
     <!-- The End of Navbar section -->
-
-
-
-
-
-
-
+    
     <section class="main">
         <div class="photo">
 

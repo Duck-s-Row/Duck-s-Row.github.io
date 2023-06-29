@@ -102,7 +102,19 @@ if (isset($_SESSION['user_id'])) {
                 <h2>Requests</h2>
                 <div>
                     <i class="fa fa-envelope"></i>
-                    <p>90</p>
+                    <p>
+                        <?php
+
+                        $sql = "SELECT * FROM request";
+                        $result = mysqli_query($con, $sql);
+                        $count_user = 0;
+
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $count_user++;
+                        }
+                        echo $count_user;
+                        ?>
+                    </p>
                 </div>
             </div>
         </div>
@@ -155,7 +167,33 @@ if (isset($_SESSION['user_id'])) {
         ?>
     </section>
 
-    <section class="request tap" id="request">request</section>
+    <section class="request tap" id="request">
+        <?php
+            $sql_request = "SELECT * FROM request";
+            $result_request = mysqli_query($con, $sql_request);
+            $sql_user = "SELECT * FROM user";
+            $result_user = mysqli_query($con, $sql_user);
+
+            echo "<table>";
+            echo "<tr><th>ID</th><th>Name</th><th>Email</th><th>Status</th><th>Action</th></tr>";
+            while ($row_user = mysqli_fetch_assoc($result) && $row_request = mysqli_fetch_assoc($result_user)) {
+                echo "<tr>";
+                echo "<td>" . $row_request["request_id"] . "</td>";
+                echo "<td>" . $row_user["username"] . "</td>";
+                echo "<td>" . $row_request["req_status"] . "</td>";
+                echo "<td>
+                    <form method='POST' action='update_user.php'>
+                        <input type='hidden' name='id' value='" . $row["user_id"] . "'>
+                        <input type='text' name='privilege' value='" . $row["privilege"] . "'>
+                        <input type='submit' value='Update'>
+                    </form>
+                </td>";
+                echo "<td><a href='delete_user.php?id=" . $row["user_id"] . "' onclick='return confirm(\"Are you sure you want to delete this user?\")'>Delete</a></td>";
+                echo "</tr>";
+            }
+            echo "</table>";
+        ?>
+    </section>
 
     <section class="insert tap" id="insert">
         <?php
@@ -387,7 +425,7 @@ if (isset($_SESSION['user_id'])) {
         </form>
     </section>
 
-    <script src="dash.js"></script>
+    <script src="dashboards.js"></script>
 </body>
 
 </html>

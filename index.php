@@ -35,7 +35,7 @@
      <nav class="nav-bar">
        <ul>
         <?php if($user_data['privilege']==1):  ?>
-         <li><a href="dashboard/dashboard.php">Dashboard</a></li>
+         <li><a href="dashboard/dashboards.php">Dashboard</a></li>
         <?php endif; ?>
          <li><a href="#home">Home</a></li>
          <li><a href="Hangout/hangout.php">Hangout</a></li> <!-- we could remove this ancher tag link because of using the button  -->
