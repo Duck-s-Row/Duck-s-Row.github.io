@@ -287,6 +287,8 @@ header {
     border-radius: 50px;
     margin-bottom: 20px;
     font-size: 16px;
+    cursor: pointer;
+    border: none;
 }
 
 .btn input[type="submit"]:hover, .btn .open:hover{
@@ -343,7 +345,152 @@ header {
         padding: 100px;
     }
   }
-  .contact_us{
+  .popup {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup_content {
+    width: 40%;
+    height: 90%;
+    color: #101820;
+    background: linear-gradient(120deg, #FEE715,#9d8e04);
+    border-radius: 10px;
+    box-shadow: 5px 10px 18px #000;
+    padding: 20px;
+    text-align: center;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.popup_content::-webkit-scrollbar{
+    width: 10px;
+}
+.popup_content::-webkit-scrollbar-thumb{
+    background-color: #9d8e04;
+    border-radius: 20px;
+}
+
+.popup #close {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: relative;
+    top: -320px;
+    left: 20px;
+    color: #FEE715;
+    background-color: #101820;
+    border-radius: 50%;
+    box-shadow: 5px 10px 18px black;
+}
+
+.plan_form_btn {
+    width: 50%;
+    height: 50px;  
+    background-color: #101820;
+    color: #FEE715;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 30px 0;
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.7s ease-out;
+    border: none;
+}
+
+.plan_form_btn:hover {
+    box-shadow: 5px 10px 18px black;
+    background-color: #101820;
+    color: #101820;
+    background-color: #fff;
+    transform: scale(1.02);
+}
+
+.addpopform {
+    width: 70%;
+    padding-top: 20px;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+}
+.addpopform input{
+    width: 100%;
+    margin-bottom: 20px;
+    height: 40px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px black solid ;
+    background: none;
+    border-radius: 20px;
+    padding: 0 10px;
+}
+
+.addpopform input[type="submit"] {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 10px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #101820;
+    color: #FEE715;  
+    border-radius: 20px;
+    transition: 0.5s ease-out;
+    font-size: 20px;
+    border: none;
+}
+
+.addpopform input[type="submit"]:hover {
+    background-color: white;
+    color: #101820;
+    transform: scale(1.05);
+    box-shadow: 5px 10px 18px black;
+}
+
+.plan_card {
+    width: 500px;
+    height: 60px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #FEE715;
+    background-color: #101820;   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    padding: 0 30px;
+    margin: 25px 0;   
+    transition: 0.5s ease-out;
+}
+
+.plan_card:hover {
+    transform: scale(1.1);
+}
+
+.expopform {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: -11px 0;
+}
+
+.expopform a {
+    width: 90%;
+}
+.contact_us{
     width: 100%;
     min-height: fit-content;
     background: #dfca13;
@@ -404,151 +551,3 @@ header {
 }
 
 
-.popup {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    z-index: 9999;
-
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-.popup_content {
-    width: 40%;
-    height: 90%;
-    
-    color: #FEE715;
-    background-color: #101820;
-    border-radius: 10px;
-    border: 5px double #FEE715;
-
-    padding: 20px;
-    text-align: center;
-    overflow-y: auto;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.popup_content::-webkit-scrollbar{
-    width: 10px;
-}
-.popup_content::-webkit-scrollbar-thumb{
-    background-color: #9d8e04;
-    border-radius: 20px;
-}
-
-.popup #close {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    position: relative;
-    top: -330px;
-    left: 20px;
-    background-color: #FEE715;
-    border-radius: 50%;
-}
-
-.plan_form_btn {
-    width: 50%;
-    height: 50px;
-    
-    background-color: #FEE715;
-    color: #101820;
-    border-radius: 30px;
-
-    cursor: pointer;
-    /* margin: 30px 0; */
-    font-size: 20px;
-    font-weight: 500;
-
-    transition: 0.5s ease-out;
-}
-
-.plan_form_btn:hover {
-    border: 4px double #FEE715;
-    background-color: #101820;
-    color: #FEE715;
-
-    transform: scale(1.07);
-}
-
-.addpopform {
-    width: 70%;
-    padding-top: 20px;
-    display: none;
-    flex-direction: column;
-    text-align: left;
-}
-.addpopform input{
-    width: 100%;
-    margin-bottom: 20px;
-    height: 30px;
-    border: 2px solid #FEE715;
-    border-radius: 20px;
-
-    padding: 0 20px;
-}
-
-.addpopform input[type="submit"] {
-    width: 50%;
-    height: 30px;
-    cursor: pointer;
-
-    background-color: #FEE715;
-    color: #101820;
-    
-    border-radius: 20px;
-    border: 2px solid #FEE715;
-
-    transition: 0.5s ease-out;
-}
-
-.addpopform input[type="submit"]:hover {
-    border: 4px double #FEE715;
-    background-color: #101820;
-    color: #FEE715;
-
-    transform: scale(1.07);
-}
-
-.plan_card {
-    width: 100%;
-    height: 60px;
-    border-radius: 20px;
-    cursor: pointer;
-
-    color: #101820;
-    background-color: #FEE715;
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    padding: 0 50px;
-    margin: 25px 0;
-    
-    transition: 0.5s ease-out;
-}
-
-.plan_card:hover {
-    transform: scale(1.1);
-}
-
-.expopform {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: -11px 0;
-}
-
-.expopform a {
-    width: 90%;
-}

@@ -146,19 +146,19 @@ header {
 }
 
 .left .ad {
-    width: 45%;
+    width: 40%;
     position: sticky;
     top: 100px;
     margin-bottom: 50px;
 }
 .content {
-    width: 55%;
+    width: 60%;
     text-align: center;
     margin-left: 55px;
 }
 
 .left .ad img{
-    height: 500px;
+    height: 450px;
     width: 100%;
     margin-top: 80px;
     margin-left: -60px;
@@ -283,6 +283,60 @@ header {
 }
 .popup_content h1{
     animation: animate 2s linear infinite;
+}
+.popup_content input[type="text"]{
+    background: none;
+    border: none;
+    text-align: center;
+    font-size: 30px;
+    color: #FEE715;
+    width: 150px;
+    margin-bottom: 10px;
+}
+.popup_content input[type="date"]{
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #FEE715;
+    text-align: center;
+    padding: 2px 0;
+    border-radius: 20px;
+    font-size: 15px;
+    color: #FEE715;
+    width: 170px;
+}
+.popup_content input[type="submit"]{
+    width: 70px;
+    height: 20px;
+    background-color: #FEE715;
+    color: #101820;
+    cursor: pointer;
+    margin-top: 10px;
+    border: none;
+    border-radius: 20px;
+}
+.popup_content input[type="submit"]:hover{
+    background-color: white;
+    color: #101820;
+}
+.remove button{
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #101820;
+    font-size: 30px;
+    margin: 45px 0 0 20px;
+}
+.remove button:hover{
+    color: white;
+}
+.remove input{
+    display: none;
+}
+.r1{
+    display: flex;
+    flex-direction: row;
 }
 .popup .card{
     width: 55%;

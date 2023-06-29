@@ -15,7 +15,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
    <meta charset="UTF-8">
    <meta name="description" content="GO Fun, GO & run">
-   <link rel="stylesheet" href="home/CSS_files/hom6.css">
+   <link rel="stylesheet" href="home/CSS_files/hom8.css">
    <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Bebas+Neue&display=swap" rel="stylesheet">
    <link rel="website icon" type="png" href="home/imgs/Logo.png">
@@ -23,9 +23,10 @@
  </head>
 
  <body>
-   <div class="loading" id="loader"></div>
+   <!-- <div class="loading" id="loader"></div> -->
    <!-- The Start of Navbar section -->
    <header>
+    
      <div class="logo"><a href="#home"><img src="home/imgs/ducks.png" alt=""></a></div>
      <div class="hamburger">
        <div class="line"></div>
@@ -34,9 +35,11 @@
      </div>
      <nav class="nav-bar">
        <ul>
-        <?php if($user_data['privilege']==1):  ?>
-         <li><a href="dashboard/dashboards.php">Dashboard</a></li>
-        <?php endif; ?>
+         <?php if (isset($_SESSION['user_id'])) : ?>
+           <?php if ($user_data['privilege'] == 1) :  ?>
+             <li><a href="dashboard/dashboard.php">Dashboard</a></li>
+           <?php endif; ?>
+         <?php endif; ?>
          <li><a href="#home">Home</a></li>
          <li><a href="Hangout/hangout.php">Hangout</a></li> <!-- we could remove this ancher tag link because of using the button  -->
          <li><a href="#services">Services</a></li>
@@ -49,6 +52,7 @@
            <li><a href="Log_in/login.php" class="profile">Login</a></li>
          <?php endif; ?>
          <li><i class="fa fa-right-from-bracket" id="logout"></i><i class="fa-regular fa-user" onclick="toggleMenu()" id="user-icon"></i></li>
+         <div class="dark"><img src="home/imgs/moon.png" id="icon"></div>
        </ul>
 
        <div class="sub-menu-wrap" id="subMenu">
@@ -107,43 +111,43 @@
    <!-- The Start of Services Section -->
    <section class="services" id="services">
      <div class="content">
-      <a href="Hangout/hangout.php">
-        <div class="card">
-          <div class="icon">
-            <i class="fa-solid fa-sack-dollar"></i>
-          </div>
-          <div class="info">
-            <h3>Specific budget</h3>
-            <p>You can decide on a budget, and we'll show you the appropriate places depending on that.</p>
-          </div>
-        </div>
-      </a>
+       <a href="Hangout/hangout.php">
+         <div class="card">
+           <div class="icon">
+             <i class="fa-solid fa-sack-dollar"></i>
+           </div>
+           <div class="info">
+             <h3>Specific budget</h3>
+             <p>You can decide on a budget, and we'll show you the appropriate places depending on that.</p>
+           </div>
+         </div>
+       </a>
      </div>
      <div class="content">
-      <a href="Hangout/hangout.php">
-        <div class="card">
-          <div class="icon">
-            <i class="fa-solid fa-location-dot"></i>
-          </div>
-          <div class="info">
-            <h3>Various places</h3>
-            <p>We'll highlight various locations in the Giza Governorate that are appropriate for all groups.</p>
-          </div>
-        </div>
-      </a>
+       <a href="Hangout/hangout.php">
+         <div class="card">
+           <div class="icon">
+             <i class="fa-solid fa-location-dot"></i>
+           </div>
+           <div class="info">
+             <h3>Various places</h3>
+             <p>We'll highlight various locations in the Giza Governorate that are appropriate for all groups.</p>
+           </div>
+         </div>
+       </a>
      </div>
      <div class="content">
-      <a href="plans/plans.php">
-        <div class="card">
-          <div class="icon">
-            <i class="fa-solid fa-list-check"></i>
-          </div>
-          <div class="info">
-            <h3>Make your plan</h3>
-            <p>To visit the locations you add at any moment, you can make your own plan.</p>
-          </div>
-        </div>
-      </a>
+       <a href="plans/plans.php">
+         <div class="card">
+           <div class="icon">
+             <i class="fa-solid fa-list-check"></i>
+           </div>
+           <div class="info">
+             <h3>Make your plan</h3>
+             <p>To visit the locations you add at any moment, you can make your own plan.</p>
+           </div>
+         </div>
+       </a>
      </div>
    </section>
    <!-- The End of services Section -->
@@ -214,6 +218,19 @@
    <!-- The End of the page -->
 
    <!-- JS -->
+   <script>
+    var icon = document.getElementById("icon");
+
+    icon.onclick = function(){
+      document.body.classList.toggle("dark-theme")
+      if(document.body.classList.contains("dark-theme")){
+        icon.src = "home/imgs/sun.png";
+      }
+      else{
+        icon.src = "home/imgs/moon.png"
+      }
+    }
+   </script>
    <script src="home/home.js"></script>
    <script src="home/sendmail.js"></script>
  </body>
