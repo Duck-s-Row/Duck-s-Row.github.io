@@ -116,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                 </form>
                                 <?php
                                 $plan_id = $eachPlan['plan_id'];
-                                $selectAllPlacesQuery = "SELECT * FROM exist_plan,places WHERE exist_plan.user_id = $user_id AND exist_plan.plan_id = $plan_id AND exist_plan.place_id = places.place_id ORDER BY Rand()";
+                                $selectAllPlacesQuery = "SELECT * FROM exist_plan,places WHERE  exist_plan.plan_id = $plan_id AND exist_plan.place_id = places.place_id ORDER BY Rand()";
                                 $allPlacesInEachPlan = mysqli_query($con, $selectAllPlacesQuery);
                                 // if(mysqli_num_rows($allPlacesInEachPlan)>0){
 

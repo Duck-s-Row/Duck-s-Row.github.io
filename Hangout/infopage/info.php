@@ -160,7 +160,7 @@ $result_pics = mysqli_query($con, $pics_query);
 
                 $query1 = "INSERT INTO exist_plan(plan_id,user_id,place_id) VALUES(?,?,?)";
                 $stmt1 = mysqli_prepare($con, $query1);
-                mysqli_stmt_bind_param($stmt1, 'iii', $plan_id, $user_id, $place_id);
+                mysqli_stmt_bind_param($stmt1, 'ii', $plan_id, $place_id);
                 mysqli_stmt_execute($stmt1);
 
                 header("Location:info.php");

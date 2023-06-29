@@ -52,7 +52,7 @@
            <li><a href="Log_in/login.php" class="profile">Login</a></li>
          <?php endif; ?>
          <li><i class="fa fa-right-from-bracket" id="logout"></i><i class="fa-regular fa-user" onclick="toggleMenu()" id="user-icon"></i></li>
-         <div class="dark"><img src="home/imgs/moon.png" id="icon"></div>
+         <div class="dark"><i class='fa-regular fa-moon' style='color: #ffffff;' id='icon'></i></div>
        </ul>
 
        <div class="sub-menu-wrap" id="subMenu">
@@ -220,14 +220,15 @@
    <!-- JS -->
    <script>
     var icon = document.getElementById("icon");
+    var divIcon = document.querySelector(".dark")
 
-    icon.onclick = function(){
+    divIcon.onclick = function(){
       document.body.classList.toggle("dark-theme")
       if(document.body.classList.contains("dark-theme")){
-        icon.src = "home/imgs/sun.png";
+        icon.className = "fa-regular fa-sun";
       }
       else{
-        icon.src = "home/imgs/moon.png"
+        icon.className = "fa-regular fa-moon";
       }
     }
    </script>

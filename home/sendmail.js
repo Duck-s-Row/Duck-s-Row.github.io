@@ -14,5 +14,5 @@ function sendMail(){
     xhr.open("POST","home/emailHandler.php",true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
     // xhr.send("name="+Name+"&email="+email+"&message="+message);
-    xhr.send("name=" + encodeURIComponent(name) + "&email=" + encodeURIComponent(email) + "&message=" + encodeURIComponent(message));
+    xhr.send("name=" + encodeURIComponent(Name) + "&email=" + encodeURIComponent(email) + "&message=" + encodeURIComponent(message));
 }

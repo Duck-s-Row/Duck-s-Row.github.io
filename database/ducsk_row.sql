@@ -113,7 +113,8 @@ UPDATE user_plans
 SET average = total_avg + place_avg
 WHERE plan_id = plan_id_val;
 END / / DELIMITER;
-DELIMITER / / CREATE TRIGGER update_average_after_delete
+DELIMITER / /
+CREATE TRIGGER update_average_after_delete
 AFTER DELETE ON exist_plan FOR EACH ROW BEGIN
 DECLARE total_avg DOUBLE;
 DECLARE place_avg DOUBLE;
@@ -132,14 +133,15 @@ WHERE plan_id = plan_id_val;
 UPDATE user_plans
 SET average = total_avg - place_avg
 WHERE plan_id = plan_id_val;
-END / / DELIMITER;
+END / /
+DELIMITER;
 -- request table
-create table request(
+create table requests(
     request_id bigint primary key,
-    place_id bigint,
     user_id bigint,
-    req_status varchar(255) default 'pending'
+    req_status varchar(255)  default 'pending'
 );
+alter table requests add foreign key(user_id) references users(user_id);
 create table request_details(
     place_id bigint primary key,
     request_id bigint,
@@ -154,19 +156,21 @@ create table request_details(
     max_price int,
     menu_image varchar(255)
 );
-create table request_pics(
-    photo_id bigint primary key,
-    place_id bigint,
-    photo_name varchar(255)
+alter table request_details add foreign key(request_id) references requests(request_id);
+ create table request_place_pics(
+	photo_id bigint primary key,
+     place_id bigint,
+photo_name varchar(255)
 );
+alter table request_place_pics add foreign key(place_id) references request_details(place_id);
 create table request_comment(
-    id int primary key auto_increment,
-    request_id bigint,
-    comment varchar(255)
+id int primary key auto_increment,
+place_id bigint,
+comment varchar(255)
 );
-alter table request_details
-add foreign key(request_id) references request(request_id);
-alter table request_pics
-add foreign key(place_id) references request_details(place_id);
-alter table request_comment
-add foreign key(request_id) references request(request_id);
+alter table request_comment add foreign key(place_id) references request_details(place_id);
+
+ALTER TABLE `ducks_row`.`exist_plan` DROP FOREIGN KEY `exist_plan_ibfk_2`;
+ALTER TABLE `ducks_row`.`exist_plan` DROP COLUMN `user_id`,
+    DROP INDEX `user_id`;
+;
