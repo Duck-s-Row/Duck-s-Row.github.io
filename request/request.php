@@ -30,12 +30,12 @@
     <form action="send_data.php" method="post">
         <section class="main">
             <div class="photo">
-                <h2>Logo of the Place</h2>
+                <!-- <h2>Logo of the Place</h2>
                 <input type="file" name="images">
                 <h2>Photos of the Place</h2>
                 <input type="file" name="images" multiple>
                 <h2>Menu of the Place (optional)</h2>
-                <input type="file" name="images" multiple>
+                <input type="file" name="images" multiple> -->
             </div>
             <div class="disc">
                 <div>

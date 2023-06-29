@@ -17,10 +17,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $average = ($min + $max) / 2;
 
-    $request = "INSERT INTO request(request_id,place_id,user_id) VALUES($place_id, $request_id, $user_id)";
+    $request = "INSERT INTO requests(request_id,user_id) VALUES( $request_id, $user_id)";
     mysqli_query($con, $request); 
     
     $request_details = "INSERT INTO request_details(place_id, request_id, p_name, p_branch, details, average_budget, category, location, min_price, max_price) VALUES($place_id, $request_id, '$p_name', '$p_branch', '$details', $average, '$category', '$location', $min, $max)";
     mysqli_query($con, $request_details); 
-
+    header("location:request.php");
 }
