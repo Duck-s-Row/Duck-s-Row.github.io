@@ -102,7 +102,19 @@ if (isset($_SESSION['user_id'])) {
                 <h2>Requests</h2>
                 <div>
                     <i class="fa fa-envelope"></i>
-                    <p>90</p>
+                    <p>
+                        <?php
+
+                        $sql = "SELECT * FROM requests";
+                        $result = mysqli_query($con, $sql);
+                        $count_requests = 0;
+
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $count_requests++;
+                        }
+                        echo $count_requests;
+                        ?>
+                    </p>
                 </div>
             </div>
         </div>
@@ -114,12 +126,14 @@ if (isset($_SESSION['user_id'])) {
         $result = mysqli_query($con, $sql);
 
         echo "<table>";
-        echo "<tr><th>ID</th><th>Name</th><th>Email</th><th>Privilege</th><th>Action</th></tr>";
+        echo "<tr><th>ID</th><th>UserName</th><th>Full Name</th><th>Email</th><th>Privilege</th><th>Action</th></tr>";
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
             echo "<td>" . $row["user_id"] . "</td>";
+            echo "<td>" . $row["username"] . "</td>";
             echo "<td>" . $row["Fname"] . " " . $row["Lname"] . "</td>";
             echo "<td>" . $row["email"] . "</td>";
+            
             echo "<td>
                     <form method='POST' action='update_user.php'>
                         <input type='hidden' name='id' value='" . $row["user_id"] . "'>
@@ -162,11 +176,12 @@ if (isset($_SESSION['user_id'])) {
                 <th>User Name</th>
                 <th>Place Name</th>
                 <th>Category</th>
+                <th>Status</th>
                 <th></th>
             </tr>
 
             <?php
-            $selectAllReq = "SELECT requests.request_id,username,p_name,category FROM users,requests,request_details WHERE users.user_id = requests.user_id AND requests.request_id = request_details.request_id";
+            $selectAllReq = "SELECT requests.request_id,username,p_name,category,req_status FROM users,requests,request_details WHERE users.user_id = requests.user_id AND requests.request_id = request_details.request_id";
             $allReq = mysqli_query($con, $selectAllReq);
             while ($eachReq = mysqli_fetch_assoc($allReq)) :
             ?>
@@ -175,9 +190,10 @@ if (isset($_SESSION['user_id'])) {
                     <td><?php echo $eachReq['username'] ?></td>
                     <td><?php echo $eachReq['p_name'] ?></td>
                     <td><?php echo $eachReq['category'] ?></td>
+                    <td><?php echo $eachReq['req_status'] ?></td>
                     <td>
                         <form action="more.php" method="post">
-                            <input type="hidden" name="re_id" value="<?php echo $eachReq['request_id'] ?>">
+                            <input type="hidden" name="req_id" value="<?php echo $eachReq['request_id'] ?>">
                             <input type="submit" value="More">
                         </form>
                     </td>
@@ -185,7 +201,7 @@ if (isset($_SESSION['user_id'])) {
             <?php endwhile; ?>
         </table>
     </section>
-    
+
 
     <section class="insert tap" id="insert">
         <?php

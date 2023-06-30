@@ -1,7 +1,7 @@
 <?php 
 session_start();
-require("../connection/connection.php");
-require("../Functions/Functions.php");
+require("../../connection/connection.php");
+require("../../Functions/Functions.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $p_name = $_POST['p_name'];

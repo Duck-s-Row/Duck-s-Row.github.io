@@ -1,3 +1,18 @@
+<?php 
+require("../../connection/connection.php");
+require('../../Functions/Functions.php');
+session_start();
+if (isset($_SESSION['user_id']) ) {
+    $user_data = Get_user_data($con);
+    if ($user_data['privilege'] != 1 && $user_data['privilege'] !=2 ){
+        header('Location:../../index.php');
+    }
+} else {
+    //redirect to login page
+    header("Location: ../../Log_in/login.php");
+    die;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +20,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="requestsss.css">
-    <title>Document</title>
+    <link rel="website icon" type="png" href="../home/imgs/Logo.png">
+    <title>Send New Request</title>
 </head>
 <body>
     <!-- The Start of Navbar section -->
     <header>
-        <div class="logo"><a href="../index.php"><img src="../home/imgs/ducks.png" alt=""></a></div>
+        <div class="logo"><a href="../../index.php"><img src="../../home/imgs/ducks.png" alt=""></a></div>
         <div class="hamburger">
             <div class="line"></div>
             <div class="line"></div>
@@ -18,11 +34,11 @@
         </div>
         <nav class="nav-bar">
             <ul>
-                <li><a href="../index.php">Home</a></li>
-                <li><a href="../plans/plans.php">My Plans</a></li>
+                <li><a href="../../index.php">Home</a></li>
+                <li><a href="../../plans/plans.php">My Plans</a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
                 <li><a href="#contact_us">About</a></li>
-                <li><a href="../Profile/profile.php" class="profile">Profile</a></li>
+                <li><a href="../../Profile/profile.php" class="profile">Profile</a></li>
             </ul>
         </nav>
     </header>
@@ -82,7 +98,7 @@
                             <option value="el manial">el Manial</option>
                         </optgroup>
                     </select><br>
-                    <h2>Location : </h2>
+                    <h2>i Frame src Location : </h2>
                     <input type="text" name="location" placeholder="Enter location URL">
                 </div>
                 <input type="submit" value="Request" class="submit_request">

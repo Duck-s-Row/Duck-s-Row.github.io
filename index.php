@@ -26,7 +26,7 @@
    <!-- <div class="loading" id="loader"></div> -->
    <!-- The Start of Navbar section -->
    <header>
-    
+
      <div class="logo"><a href="#home"><img src="home/imgs/ducks.png" alt=""></a></div>
      <div class="hamburger">
        <div class="line"></div>
@@ -38,6 +38,8 @@
          <?php if (isset($_SESSION['user_id'])) : ?>
            <?php if ($user_data['privilege'] == 1) :  ?>
              <li><a href="dashboard/dashboard.php">Dashboard</a></li>
+           <?php elseif ($user_data['privilege'] == 2) : ?>
+             <li><a href="request/index.php">Requests</a></li>
            <?php endif; ?>
          <?php endif; ?>
          <li><a href="#home">Home</a></li>
@@ -219,18 +221,17 @@
 
    <!-- JS -->
    <script>
-    var icon = document.getElementById("icon");
-    var divIcon = document.querySelector(".dark")
+     var icon = document.getElementById("icon");
+     var divIcon = document.querySelector(".dark")
 
-    divIcon.onclick = function(){
-      document.body.classList.toggle("dark-theme")
-      if(document.body.classList.contains("dark-theme")){
-        icon.className = "fa-regular fa-sun";
-      }
-      else{
-        icon.className = "fa-regular fa-moon";
-      }
-    }
+     divIcon.onclick = function() {
+       document.body.classList.toggle("dark-theme")
+       if (document.body.classList.contains("dark-theme")) {
+         icon.className = "fa-regular fa-sun";
+       } else {
+         icon.className = "fa-regular fa-moon";
+       }
+     }
    </script>
    <script src="home/home.js"></script>
    <script src="home/sendmail.js"></script>

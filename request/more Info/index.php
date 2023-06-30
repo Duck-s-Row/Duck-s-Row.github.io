@@ -1,0 +1,91 @@
+<?php
+require("../../connection/connection.php");
+require('../../Functions/Functions.php');
+session_start();
+$request_id = $_SESSION['request_id'];
+$user_id = $_SESSION['user_id'];
+if (isset($_SESSION['user_id']) && isset($request_id)) {
+    $user_data = Get_user_data($con);
+    if ($user_data['privilege'] != 1 && $user_data['privilege'] !=2)
+        header('Location:../../index.php');
+} else {
+    //redirect to login page
+    header("Location: ../../Log_in/login.php");
+    die;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
+    <title>Request Adjustment</title>
+</head>
+
+<body>
+    <?php 
+        $selectReqQuery = "SELECT * FROM requests, request_details WHERE requests.user_id = $user_id AND requests.request_id = $request_id AND request_details.request_id = $request_id";
+        $req_details =mysqli_query($con,$selectReqQuery);
+        $eachDetail = mysqli_fetch_assoc($req_details);
+        $place_id = $eachDetail['place_id'];
+        
+    ?>
+    <form action="adjust request.php" method="post">
+        <input type="hidden" name="place_id" value="<?php echo $eachDetail['place_id'] ?>" <?php if($eachDetail['req_status']=="Accepted") echo "readonly"; ?>>
+        <label for="p_name">Place Name</label>
+        <input type="text" name="p_name" id="p_name" value="<?php echo $eachDetail['p_name'] ?>" <?php if($eachDetail['req_status']=="Accepted") echo "readonly"; ?>>
+        <label for="category">Category</label>
+        <select name="category" id="category" <?php if($eachDetail['req_status']=="Accepted") echo "disabled"; ?>>
+            <option value="Cafe" <?php if($eachDetail['category']=="Cafe") echo "selected";?>>Cafe</option>
+            <option value="Restaurants"<?php if($eachDetail['category']=="Restaurants") echo "selected";?>>Restaurants</option>
+            <option value="Park"<?php if($eachDetail['category']=="Park") echo "selected";?>>Park</option>
+            <option value="Museums" <?php if($eachDetail['category']=="Museums") echo "selected";?>>Museums</option>
+            <option value="Mall" <?php if($eachDetail['category']=="Mall") echo "selected";?>>Mall</option>
+            <option value="Cinema" <?php if($eachDetail['category']=="Cinema") echo "selected";?>>Cinema</option>
+            <option value="EscapeRoom" <?php if($eachDetail['category']=="Escape Rooms") echo "selected";?>>Escape Rooms</option>
+        </select>
+        <label for="">Budget</label>
+        <input type="number" name="min" id="" value="<?php echo $eachDetail['min_price'] ?>" <?php if($eachDetail['req_status']=="Accepted") echo "readonly"; ?>>-
+        <input type="number" name="max" id="" value="<?php echo $eachDetail['max_price'] ?>" <?php if($eachDetail['req_status']=="Accepted") echo "readonly"; ?>>
+        <p>Average</p>
+        <label for="details">Details</label>
+        <input type="text" name="details" id="details" value="<?php echo $eachDetail['details'] ?>" <?php if($eachDetail['req_status']=="Accepted") echo "readonly"; ?>>
+        <label for="p_branch">Place Branch</label>
+        <select id="p_branch" name="p_branch" <?php if($eachDetail['req_status']=="Accepted") echo "disabled"; ?>>
+            <optgroup label="GIZA">
+                <option value="haram" <?php if($eachDetail['p_branch']=="haram") echo "selected"; ?>>haram</option>
+                <option value="fisal"<?php if($eachDetail['p_branch']=="fisal") echo "selected"; ?>>fisal</option>
+                <option value="el doki"<?php if($eachDetail['p_branch']=="el doki") echo "selected"; ?>>el doki</option>
+                <option value="zamalek"<?php if($eachDetail['p_branch']=="zamalek") echo "selected"; ?>>zamalek</option>
+                <option value="6th october" <?php if($eachDetail['p_branch']=="6th october") echo "selected"; ?>>6th october</option>
+                <option value="el shiekh zayed"<?php if($eachDetail['p_branch']=="el shiekh zayed") echo "selected"; ?>>el shiekh zayed</option>
+                <option value="el mohandseen"<?php if($eachDetail['p_branch']=="el Mohandseen") echo "selected"; ?>>el Mohandseen</option>
+                <option value="el manial"<?php if($eachDetail['p_branch']=="el Manial") echo "selected"; ?>>el Manial</option>
+            </optgroup>
+        </select><br>
+        <label for="location">i Frame src Location</label >
+        <input type="url" name="location" id="location" value="<?php echo $eachDetail['location'] ?>" <?php if($eachDetail['req_status']=="Accepted") echo "readonly"; ?>>
+        <?php
+
+            $selectComQuery = "SELECT * FROM request_comment WHERE place_id = $place_id";
+            $AllCom = mysqli_query($con,$selectComQuery); 
+        ?>
+        <table>
+            <tr>
+                <th>Comment</th>
+                <th>Comment Date</th>
+            </tr>
+            <?php while($eachCom = mysqli_fetch_assoc($AllCom)): ?>
+                <tr>
+                    <td><?php echo $eachCom['comment'] ?></td>
+                    <td><?php echo $eachCom['com_date'] ?></td>
+                </tr>
+            <?php endwhile; ?>
+        </table>
+        <input type="submit" value="Update" <?php if($eachDetail['req_status']=="Accepted") echo "disabled"; ?>>
+    </form>
+</body>
+
+</html>
