@@ -92,7 +92,9 @@ add column menu_image varchar(255);
 alter table user_plans
 add column average Double DEFAULT 0;
 -- triggers of the average
-DELIMITER / / CREATE TRIGGER update_average_after_insert
+
+DELIMITER / /
+CREATE TRIGGER update_average_after_insert
 AFTER
 INSERT ON exist_plan FOR EACH ROW BEGIN
 DECLARE total_avg DOUBLE;
@@ -112,7 +114,10 @@ WHERE plan_id = plan_id_val;
 UPDATE user_plans
 SET average = total_avg + place_avg
 WHERE plan_id = plan_id_val;
-END / / DELIMITER;
+END / /
+DELIMITER;
+
+
 DELIMITER / /
 CREATE TRIGGER update_average_after_delete
 AFTER DELETE ON exist_plan FOR EACH ROW BEGIN
@@ -135,6 +140,7 @@ SET average = total_avg - place_avg
 WHERE plan_id = plan_id_val;
 END / /
 DELIMITER;
+
 -- request table
 create table requests(
     request_id bigint primary key,
@@ -170,7 +176,7 @@ comment varchar(255)
 );
 alter table request_comment add foreign key(place_id) references request_details(place_id);
 
--- if does not work drop it manullay 
+-- if it does not work drop it manullay 
 ALTER TABLE `ducks_row`.`exist_plan` DROP FOREIGN KEY `exist_plan_ibfk_2`;
 ALTER TABLE `ducks_row`.`exist_plan` DROP COLUMN `user_id`,
     DROP INDEX `user_id`;
