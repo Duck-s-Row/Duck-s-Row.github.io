@@ -110,27 +110,27 @@ if (isset($_SESSION['user_id'])) {
 
     <section class="users tap" id="users">
         <?php
-            $sql = "SELECT * FROM users";
-            $result = mysqli_query($con, $sql);
+        $sql = "SELECT * FROM users";
+        $result = mysqli_query($con, $sql);
 
-            echo "<table>";
-            echo "<tr><th>ID</th><th>Name</th><th>Email</th><th>Privilege</th><th>Action</th></tr>";
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<tr>";
-                echo "<td>" . $row["user_id"] . "</td>";
-                echo "<td>" . $row["Fname"] . " " . $row["Lname"] . "</td>";
-                echo "<td>" . $row["email"] . "</td>";
-                echo "<td>
+        echo "<table>";
+        echo "<tr><th>ID</th><th>Name</th><th>Email</th><th>Privilege</th><th>Action</th></tr>";
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>";
+            echo "<td>" . $row["user_id"] . "</td>";
+            echo "<td>" . $row["Fname"] . " " . $row["Lname"] . "</td>";
+            echo "<td>" . $row["email"] . "</td>";
+            echo "<td>
                     <form method='POST' action='update_user.php'>
                         <input type='hidden' name='id' value='" . $row["user_id"] . "'>
                         <input type='text' name='privilege' value='" . $row["privilege"] . "'>
                         <input type='submit' value='Update'>
                     </form>
                 </td>";
-                echo "<td><a href='delete_user.php?id=" . $row["user_id"] . "' onclick='return confirm(\"Are you sure you want to delete this user?\")'>Delete</a></td>";
-                echo "</tr>";
-            }
-            echo "</table>";
+            echo "<td><a href='delete_user.php?id=" . $row["user_id"] . "' onclick='return confirm(\"Are you sure you want to delete this user?\")'>Delete</a></td>";
+            echo "</tr>";
+        }
+        echo "</table>";
         ?>
     </section>
 
@@ -155,11 +155,40 @@ if (isset($_SESSION['user_id'])) {
         ?>
     </section>
 
-    <section class="request tap" id="request">request</section>
+    <section class="request tap" id="request">
+        <table>
+            <tr>
+                <th>Request Id</th>
+                <th>User Name</th>
+                <th>Place Name</th>
+                <th>Category</th>
+                <th></th>
+            </tr>
+
+            <?php
+            $selectAllReq = "SELECT requests.request_id,username,p_name,category FROM users,requests,request_details WHERE users.user_id = requests.user_id AND requests.request_id = request_details.request_id";
+            $allReq = mysqli_query($con, $selectAllReq);
+            while ($eachReq = mysqli_fetch_assoc($allReq)) :
+            ?>
+                <tr>
+                    <td><?php echo $eachReq['request_id'] ?></td>
+                    <td><?php echo $eachReq['username'] ?></td>
+                    <td><?php echo $eachReq['p_name'] ?></td>
+                    <td><?php echo $eachReq['category'] ?></td>
+                    <td>
+                        <form action="more.php" method="post">
+                            <input type="hidden" name="re_id" value="<?php echo $eachReq['request_id'] ?>">
+                            <input type="submit" value="More">
+                        </form>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
+        </table>
+    </section>
+    
 
     <section class="insert tap" id="insert">
         <?php
-        check_privilege_hangout($con);
         $select_places = "select * from places";
         $result = mysqli_query($con, $select_places);
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -189,19 +218,19 @@ if (isset($_SESSION['user_id'])) {
                 if (!in_array($image_ext, $valid_image_ext)) {
                     echo '
                     <script>alert("Invalid Image Extension");</script>';
-                    header('Location:insertion of places.php');
+                    header('Location:dashboard.php');
                 } elseif ($image_size > 1200000) {
                     echo '
                     <script>alert("Imgae Size Is Too Large");</script>';
-                    header('Location:insertion of places.php');
+                    header('Location:dashboard.php');
                 } else {
                     $photo_id = random_num(10);
                     $new_image_name = random_num(10);
                     $new_image_name .= "." . $image_ext;
                     $insert_new_place_pic = "INSERT INTO place_pics(photo_id,place_id,photo_name) VALUES($photo_id,$place_id,'$new_image_name')";
                     mysqli_query($con, $insert_new_place_pic);
-                    move_uploaded_file($tmp_name, '../places_imgs/' . $new_image_name);
-                    header('Location:insertion of places.php');
+                    move_uploaded_file($tmp_name, '../Hangout/places_imgs/' . $new_image_name);
+                    header('Location:dashboard.php');
                 }
             } else if ($_POST['Form_identifier'] == "insert_logo") {
                 $p_name = $_POST['p_name'];
@@ -216,19 +245,19 @@ if (isset($_SESSION['user_id'])) {
                 if (!in_array($logo_ext, $valid_logo_ext)) {
                     echo '
                     <script>alert("Invalid logo Extension");</script>';
-                    header('Location:insertion of places.php');
+                    header('Location:dashboard.php');
                 } elseif ($logo_size > 1200000) {
                     echo '
                     <script>alert("Logo Size Is Too Large");</script>';
-                    header('Location:insertion of places.php');
+                    header('Location:dashboard.php');
                 } else {
                     // $photo_id = random_num(10);
                     $new_logo_name = random_num(10);
                     $new_logo_name .= "." . $logo_ext;
                     $update_logo = "UPDATE places SET logo = '$new_logo_name' WHERE p_name = '$p_name'";
                     mysqli_query($con, $update_logo);
-                    move_uploaded_file($tmp_name, '../logos/' . $new_logo_name);
-                    header('Location:insertion of places.php');
+                    move_uploaded_file($tmp_name, '../Hangout/logos/' . $new_logo_name);
+                    header('Location:dashboard.php');
                 }
             } else if ($_POST['Form_identifier'] == "insert_offer") {
                 $offer_name = $_FILES['offer']['name'];
@@ -242,19 +271,19 @@ if (isset($_SESSION['user_id'])) {
                 if (!in_array($offer_ext, $valid_offer_ext)) {
                     echo '
                     <script>alert("Invalid logo Extension");</script>';
-                    header('Location:insertion of places.php');
+                    header('Location:dashboard.php');
                 } elseif ($offer_size > 1200000) {
                     echo '
                     <script>alert("Logo Size Is Too Large");</script>';
-                    header('Location:insertion of places.php');
+                    header('Location:dashboard.php');
                 } else {
                     $offer_id = random_num(10);
                     $new_offer_name = random_num(10);
                     $new_offer_name .= "." . $offer_ext;
                     $insert_offer = "INSERT INTO offers VALUES($offer_id,'$new_offer_name')";
                     mysqli_query($con, $insert_offer);
-                    move_uploaded_file($tmp_name, '../offers/' . $new_offer_name);
-                    header('Location:insertion of places.php');
+                    move_uploaded_file($tmp_name, '../Hangout/offers/' . $new_offer_name);
+                    header('Location:dashboard.php');
                 }
             } else if ($_POST['Form_identifier'] == "Insert_menu") {
                 $menu_image_name = $_FILES['menu_image']['name'];
@@ -268,11 +297,11 @@ if (isset($_SESSION['user_id'])) {
                 if (!in_array($menu_image_ext, $valid_menu_image_ext)) {
                     echo '
                     <script>alert("Invalid logo Extension");</script>';
-                    header('Location:insertion of places.php');
+                    header('Location:dashboard.php');
                 } elseif ($menu_image_size > 1200000) {
                     echo '
                     <script>alert("Logo Size Is Too Large");</script>';
-                    header('Location:insertion of places.php');
+                    header('Location:dashboard.php');
                 } else {
                     $new_menu_image_name = date('Y');
                     $new_menu_image_name .= '_' . date('M');
@@ -280,12 +309,10 @@ if (isset($_SESSION['user_id'])) {
                     $new_menu_image_name .= "." . $menu_image_ext;
                     $insert_menu_image = "UPDATE places SET menu_image = '$new_menu_image_name' WHERE p_name = '$placeName' ";
                     mysqli_query($con, $insert_menu_image);
-                    move_uploaded_file($tmp_name, '../menus/' . "$new_menu_image_name");
-                    header('Location:insertion of places.php');
+                    move_uploaded_file($tmp_name, '../Hangout/menus/' . "$new_menu_image_name");
+                    header('Location:dashboard.php');
                 }
             }
-
-            header('Location:insertion of places.php');
         }
         ?>
 
@@ -294,7 +321,6 @@ if (isset($_SESSION['user_id'])) {
                 <input type="hidden" name="Form_identifier" value="insert_new_place">
                 <label for="p_name">Place Name:</label>
                 <input type="text" name="p_name" id="p_name"><br>
-                <!-- <input type="text" name="p_branch" id="p_branch"><br> -->
                 <label for="p_branch">Place Branch:</label>
                 <select id="p_branch" name="p_branch">
                     <optgroup label="GIZA">
@@ -329,9 +355,10 @@ if (isset($_SESSION['user_id'])) {
                     <input type="number" name="min" id="min">
                     <label for="max">Max:</label>
                     <input type="number" name="max" id="mx"><br>
-                </div>   
+                </div>
                 <input type="submit" value="save">
-            </div><hr>
+            </div>
+            <hr>
         </form>
 
         <div class="c2">
@@ -348,7 +375,6 @@ if (isset($_SESSION['user_id'])) {
                 <input type="file" name="photo_name" id="photo_name" accept=".jpg, .png, .jpeg"><br>
                 <input type="submit" value="save">
             </form><br><br>
-
 
 
             <form method="post" enctype="multipart/form-data" align=center class="logo">
@@ -389,7 +415,7 @@ if (isset($_SESSION['user_id'])) {
                 <input type="file" name="menu_image" id="menu_image" accept=".jpg, .png, .jpeg"><br>
                 <input type="submit" value="Save">
             </form>
-        </div>    
+        </div>
     </section>
 
     <script src="dash.js"></script>
