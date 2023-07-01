@@ -1,11 +1,5 @@
 create database ducks_row;
 use ducks_row;
-create table codes(
-    id int primary key auto_increment,
-    email varchar(100),
-    code varchar(6),
-    expire varchar(100)
-);
 create table users(
     id int primary key auto_increment,
     user_id bigint,
