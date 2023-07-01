@@ -169,13 +169,13 @@ place_id bigint,
 comment varchar(255)
 );
 alter table request_comment add foreign key(place_id) references request_details(place_id);
+ALTER TABLE request_comment ADD COLUMN com_date Date ;
 
 -- if does not work drop it manullay 
 ALTER TABLE `ducks_row`.`exist_plan` DROP FOREIGN KEY `exist_plan_ibfk_2`;
 ALTER TABLE `ducks_row`.`exist_plan` DROP COLUMN `user_id`,
     DROP INDEX `user_id`;
 ;
-ALTER TABLE request_comment ADD COLUMN com_date Date ;
 
 
 
