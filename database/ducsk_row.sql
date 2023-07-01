@@ -182,3 +182,48 @@ ALTER TABLE `ducks_row`.`exist_plan` DROP COLUMN `user_id`,
     DROP INDEX `user_id`;
 ;
 ALTER TABLE request_comment ADD COLUMN com_date Date ;
+
+
+
+-- -- table user_review
+
+CREATE TABLE `review_table` (
+  `review_id` int(11) NOT NULL,
+  `user_name` varchar(200) NOT NULL,
+  `user_rating` int(1) NOT NULL,
+  `user_review` text NOT NULL,
+  `datetime` int(11) NOT NULL,
+  `place_id` bigint(20) NOT NULL,
+  `user_id` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for table `review_table`
+--
+ALTER TABLE `review_table`
+  ADD PRIMARY KEY (`review_id`);
+
+--
+-- AUTO_INCREMENT for table `review_table`
+--
+ALTER TABLE `review_table`
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+
+
+
+-- create table user_reviews(
+--     id int primary key auto_increment,
+--     place_id bigint,
+--     user_id bigint,
+--     rate int(1) NOT NULL,
+--     date_time int(11) NOT NULL,
+--     review varchar(255),
+--     user_name varchar(200) NOT NULL,
+--     index(review)
+-- );
+
+-- alter table user_reviews
+-- add foreign key(user_id) references users(user_id);
+-- alter table user_reviews
+-- add foreign key(place_id) references places(place_id);
