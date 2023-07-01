@@ -91,7 +91,70 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                             <?php echo $place['category'] ?><br>
                                         </p>
                                     </div>
-                                    <h6>Average: <br><?php echo $place['average_budget'] ?></h6>
+                                    <h6>Average: <br><?php echo $place['average_budget'] ?><br>
+                                    <!--  start rating line -->
+                                    <?php
+                                        $sql = "SELECT user_rating from review_table WHERE place_id=".$place['place_id'].";";
+                                        $result3 = $con->query($sql);
+                                        $average_rating = 0;
+                                        $total_review = 0;
+                                        $five_star_review = 0;
+                                        $four_star_review = 0;
+                                        $three_star_review = 0;
+                                        $two_star_review = 0;
+                                        $one_star_review = 0;
+                                        $total_user_rating = 0;
+                                        if ($result3->num_rows > 0) {
+                                            $total=0;
+                                            $number=$result3->num_rows * 5;
+                                        while($row=$result3->fetch_assoc()){
+
+                                            if($row["user_rating"] == '5')
+                                            {
+                                                $five_star_review++;
+                                            }
+                                    
+                                            if($row["user_rating"] == '4')
+                                            {
+                                                $four_star_review++;
+                                            }
+                                    
+                                            if($row["user_rating"] == '3')
+                                            {
+                                                $three_star_review++;
+                                            }
+                                    
+                                            if($row["user_rating"] == '2')
+                                            {
+                                                $two_star_review++;
+                                            }
+                                    
+                                            if($row["user_rating"] == '1')
+                                            {
+                                                $one_star_review++;
+                                            }
+                                    
+                                            $total_review++;
+                                    
+                                            $total_user_rating = $total_user_rating + $row["user_rating"];
+                                    
+                                        }
+                                    
+                                        $average_rating = $total_user_rating / $total_review;
+                                        
+                                        if($average_rating<=0){
+                                            echo "Rating = 0";
+                                        }else{
+                                            echo "Rating = ".(round($average_rating,1))." / 5 &#10029;";
+                                        }
+                                        
+                                    }
+                                            
+                                            
+                                    ?>
+                            <!-- end of rating line -->
+                                    </h6>
+
                                     <div class="location-text">
                                         <i class="fa-solid fa-location-dot"></i>
                                         <p><?php echo $place['p_branch'] ?></p>
