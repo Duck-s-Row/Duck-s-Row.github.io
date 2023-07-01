@@ -36,25 +36,20 @@ if (isset($_SESSION['user_id'])) {
         </div>
         <nav class="nav-bar">
         <ul>
-            <?php if (isset($_SESSION['user_id'])) : ?>
             <?php if ($user_data['privilege'] == 1) :  ?>
-                <li><a href="dashboard/dashboard.php">Dashboard</a></li>
+                <li><a href="../dashboard/dashboard.php"><b>Dashboard</b></a></li>
             <?php endif; ?>
-            <?php endif; ?>
-            <li><a href="#home">Home</a></li>
-            <li><a href="../Hangout/hangout.php">Hangout</a></li> <!-- we could remove this ancher tag link because of using the button  -->
-            <li><a href="#services">Services</a></li>
+            <li><a href="../index.php"><b>Home</b></a></li>
+            <li><a href="../Hangout/hangout.php"><b>Hangout</b></a></li> <!-- we could remove this ancher tag link because of using the button  -->
             <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Plans</a></li> -->
-            <li><a href="#about_us">About</a></li>
-            <?php if (isset($_SESSION['user_id'])) : ?>
-            <li><a href="../Profile/profile.php" class="profile">Profile</a></li>
-            <?php endif; ?>
+            <li><a href="#about_us"><b>About</b></a></li>
+            <li><a href="../Profile/profile.php" class="profile"><b>Profile</b></a></li>
         </ul>
         </nav>
     </header>
 
     <section class="request_details">
-        <p>DO You Want To Send New Request <a href="new request/request.php">Click here</a></p>
+        <p>DO You Want To Send New Request <a href="new request/index.php">Click here</a></p>
         <?php 
         $selectAllReq = "SELECT * FROM requests, request_details WHERE requests.user_id = $user_id AND request_details.request_id = requests.request_id";
         $allReq = mysqli_query($con,$selectAllReq);

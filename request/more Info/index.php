@@ -37,15 +37,15 @@ if (isset($_SESSION['user_id']) && isset($request_id)) {
         <ul>
             <?php if (isset($_SESSION['user_id'])) : ?>
             <?php if ($user_data['privilege'] == 1) :  ?>
-                <li><a href="dashboard/dashboard.php">Dashboard</a></li>
+                <li><a href="dashboard/dashboard.php"><b>Dashboard</b></a></li>
             <?php endif; ?>
             <?php endif; ?>
-            <li><a href="#home">Home</a></li>
-            <li><a href="../Hangout/hangout.php">Hangout</a></li> <!-- we could remove this ancher tag link because of using the button  -->
+            <li><a href="#home"><b>Home</b></a></li>
+            <li><a href="../Hangout/hangout.php"><b>Hangout</b></a></li> <!-- we could remove this ancher tag link because of using the button  -->
             <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Plans</a></li> -->
-            <li><a href="#about_us">About</a></li>
+            <li><a href="#about_us"><b>About</b></a></li>
             <?php if (isset($_SESSION['user_id'])) : ?>
-            <li><a href="../Profile/profile.php" class="profile">Profile</a></li>
+            <li><a href="../Profile/profile.php" class="profile"><b>Profile</b></a></li>
             <?php endif; ?>
         </ul>
         </nav>
@@ -62,6 +62,7 @@ if (isset($_SESSION['user_id']) && isset($request_id)) {
             <?php
                 $selectComQuery = "SELECT * FROM request_comment WHERE place_id = $place_id";
                 $AllCom = mysqli_query($con,$selectComQuery); 
+                if(mysqli_num_rows($AllCom)>0):
             ?>
             <div class="com-table">
                 <table>
@@ -77,6 +78,7 @@ if (isset($_SESSION['user_id']) && isset($request_id)) {
                     <?php endwhile; ?>
                 </table>
             </div>
+            <?php endif; ?>
             <div>
                 <input type="hidden" name="place_id" value="<?php echo $eachDetail['place_id'] ?>" <?php if($eachDetail['req_status']=="Accepted") echo "readonly"; ?>>
                 <label for="p_name">Place Name</label>
