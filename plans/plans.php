@@ -65,6 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <ul>
                 <?php if ($user_data['privilege'] == 1) :  ?>
                     <li><a href="../dashboard/dashboard.php">Dashboard</a></li>
+                <?php elseif ($user_data['privilege'] == 2) : ?>
+                    <li><a href="request/index.php">Requests</a></li>
                 <?php endif; ?>
                 <li><a href="../index.php">Home</a></li>
                 <li><a href="../Hangout/hangout.php">Hangout</a></li>

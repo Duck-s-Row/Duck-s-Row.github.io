@@ -1,10 +1,10 @@
-<?php 
+<?php
 require("../../connection/connection.php");
 require('../../Functions/Functions.php');
 session_start();
-if (isset($_SESSION['user_id']) ) {
+if (isset($_SESSION['user_id'])) {
     $user_data = Get_user_data($con);
-    if ($user_data['privilege'] != 1 && $user_data['privilege'] !=2 ){
+    if ($user_data['privilege'] != 1 && $user_data['privilege'] != 2) {
         header('Location:../../index.php');
     }
 } else {
@@ -15,14 +15,16 @@ if (isset($_SESSION['user_id']) ) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="requestsss.css">
-    <link rel="website icon" type="png" href="../home/imgs/Logo.png">
+    <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
     <title>Send New Request</title>
 </head>
+
 <body>
     <!-- The Start of Navbar section -->
     <header>
@@ -34,31 +36,32 @@ if (isset($_SESSION['user_id']) ) {
         </div>
         <nav class="nav-bar">
             <ul>
-                <li><a href="../../index.php">Home</a></li>
-                <li><a href="../../plans/plans.php">My Plans</a></li>
+                <li><a href="../../index.php"><b>Home</b></a></li>
+                <li><a href="../../plans/plans.php"><b>My Plans</b></a></li>
+                <li><a href="../index.php"><b>Requests</b></a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
-                <li><a href="#contact_us">About</a></li>
-                <li><a href="../../Profile/profile.php" class="profile">Profile</a></li>
+                <li><a href="#contact_us"><b>About</b></a></li>
+                <li><a href="../../Profile/profile.php" class="profile"><b>Profile</b></a></li>
             </ul>
         </nav>
     </header>
     <!-- The End of Navbar section -->
-    <form action="send_data.php" method="post">
+    <form action="send_data.php" method="post" enctype="multipart/form-data">
         <section class="main">
             <div class="photo">
-                <!-- <h2>Logo of the Place</h2>
-                <input type="file" name="images">
-                <h2>Photos of the Place</h2>
-                <input type="file" name="images" multiple>
+                <h2>Logo of the Place (optional)</h2>
+                <input type="file" name="logo" accept=".jpg, .png, .jpeg">
+                <h2>Photos of the Place (choose one or more pictures)</h2>
+                <input type="file" name="image[]" multiple accept=".jpg, .png, .jpeg" required>
                 <h2>Menu of the Place (optional)</h2>
-                <input type="file" name="images" multiple> -->
+                <input type="file" name="menu" accept=".jpg, .png, .jpeg">
             </div>
             <div class="disc">
                 <div>
                     <h2>Place Name</h2>
-                    <input type="text" name="p_name" placeholder="Enter place name">
+                    <input type="text" name="p_name" placeholder="Enter place name" required>
                     <h2>Category</h2>
-                    <select name="category" id="category">
+                    <select name="category" id="category" required>
                         <option value="Cafe">Cafe</option>
                         <option value="Restaurants">Restaurants</option>
                         <option value="Park">Park</option>
@@ -72,7 +75,7 @@ if (isset($_SESSION['user_id']) ) {
                     <div class="box1">
                         <div>
                             <h2>Budget</h2>
-                            <p><input type="number" name="min" placeholder="min price"> - <input type="number" name="max" placeholder="max price"> L.E/Person</p>
+                            <p><input type="number" name="min" placeholder="min price" required> - <input type="number" name="max" placeholder="max price" required> L.E/Person</p>
                             <h2>Average</h2>
                             <p>200 L.E / Person</p>
                         </div>
@@ -80,13 +83,13 @@ if (isset($_SESSION['user_id']) ) {
                     <div class="box2">
                         <div>
                             <h2>Details</h2>
-                            <textarea name="details" placeholder="Enter more details"></textarea>
+                            <textarea name="details" placeholder="Enter more details" required></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="map-container">
                     <h2>Place Branch</h2>
-                    <select id="p_branch" name="p_branch">
+                    <select id="p_branch" name="p_branch" required>
                         <optgroup label="GIZA">
                             <option value="haram">haram</option>
                             <option value="fisal">fisal</option>
@@ -99,11 +102,12 @@ if (isset($_SESSION['user_id']) ) {
                         </optgroup>
                     </select><br>
                     <h2>i Frame src Location : </h2>
-                    <input type="text" name="location" placeholder="Enter location URL">
+                    <input type="text" name="location" placeholder="Enter location URL" required>
                 </div>
                 <input type="submit" value="Request" class="submit_request">
             </div>
         </section>
     </form>
 </body>
+
 </html>

@@ -25,7 +25,7 @@ if (isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-    <p>DO You Want To Send New Request <a href="new request/request.php">Click here</a></p>
+    <p>DO You Want To Send New Request <a href="new request/index.php">Click here</a></p>
     <?php 
     $selectAllReq = "SELECT * FROM requests, request_details WHERE requests.user_id = $user_id AND request_details.request_id = requests.request_id";
     $allReq = mysqli_query($con,$selectAllReq);

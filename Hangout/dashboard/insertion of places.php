@@ -110,11 +110,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $menu_image_ext = strtolower(end($menu_image_ext));
         if (!in_array($menu_image_ext, $valid_menu_image_ext)) {
             echo '
-            <script>alert("Invalid logo Extension");</script>';
+            <script>alert("Invalid menu Extension");</script>';
             header('Location:insertion of places.php');
         } elseif ($menu_image_size > 1200000) {
             echo '
-            <script>alert("Logo Size Is Too Large");</script>';
+            <script>alert("Menu Size Is Too Large");</script>';
             header('Location:insertion of places.php');
         } else {            
             $new_menu_image_name = date('Y');
