@@ -202,16 +202,15 @@ header {
 .right .card {
     width: 80%;
     min-height: 200px;
+    text-align: center;
 }
-.right .card:hover{
-    animation: animate 2s linear infinite;
-}
+
 .right .card img{
     width: 40%;
     height: 30%;
 }
 .right .more {
-    padding: 0;
+    
 }
 
 .popup {
@@ -399,7 +398,7 @@ header {
     border-radius: 10px;
     margin-left: 320px;
 }
-.more{
+.popup .card .more{
     width: 100%;
     display: flex;
     justify-content: space-between;

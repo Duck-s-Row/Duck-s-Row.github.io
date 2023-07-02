@@ -184,14 +184,14 @@ select option{
     color: #FEE715;
     transition: 0.7s ease;
 }
-@keyframes animate {
+/* @keyframes animate {
     0%{
         filter: hue-rotate(0deg);
     }
     100%{
         filter: hue-rotate(360deg);
     }
-}
+} */
    
 .text2{
     position: relative;
@@ -201,11 +201,13 @@ select option{
 .icons{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     border: 5px #73690d solid;
     border-bottom: 0;
     border-top: 0;
     border-right: 0;
+    font-size: 20px;
 }
 .icons a{
     color: #101820;
@@ -226,7 +228,7 @@ select option{
 }
 .card:hover .icons{
     animation: icon 0.4s ease-in both;
-    height: 150px;
+    height: 120px;
     width: 100px;
     background-color: #fee715ed;
 }
@@ -253,7 +255,7 @@ select option{
 }
 .hang .left .choices .f_row .card img {
     width: 120px;
-    height: 100%;
+    height: 120px;
 }
 .hang .left .choices .f_row .card .text1 {
     margin-left: 10px;

@@ -29,21 +29,18 @@ $allImgs = mysqli_query($con, $selectImgs);
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
     <title>More Request's Info</title>
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="m1.css">
+    <link rel="stylesheet" href="m3.css">
 </head>
 
 <body>
     <div class="back">
         <a onclick="window.history.back()"><i class="fa-solid fa-circle-left"></i></a>
+        <img src="../../Hangout/logos/<?php echo $eachDetail['logo'] ?>" alt="logo" height="70" width="70"><br>
+        <input type="hidden" name="logo" value="<?php echo $eachDetail['logo'] ?>">
     </div>
     <form action="decision.php" method="post">
         <div class="content">
             <div class="left">
-                <img src="../../Hangout/logos/<?php echo $eachDetail['logo'] ?>" alt="logo" height="90" width="90"><br>
-                <input type="hidden" name="logo" value="<?php echo $eachDetail['logo'] ?>">
-                <img src="../../Hangout/menus/<?php echo $eachDetail['menu_image'] ?>" alt="menu" height="200" width="200"><br>
-                <input type="hidden" name="menu" value="<?php echo $eachDetail['menu_image'] ?>">
-
                 <div class="main_slide">
                     <div class="slider-container">
                         <div id="slide-number" class="slide-number"></div>
@@ -56,16 +53,20 @@ $allImgs = mysqli_query($con, $selectImgs);
                         <?php endwhile; ?>
                     </div>
                     <div class="slider-controls">
-                        <span id="prev" class="prev"><i class="fa-solid fa-circle-arrow-left"></i></span>
+                        <span id="prev" class="prev"><i class="fa-solid fa-angles-left"></i></span>
                         <span id="indicators" class="indicators"></span>
-                        <span id="next" class="next"><i class="fa-solid fa-circle-arrow-right"></i></span>
+                        <span id="next" class="next"><i class="fa-solid fa-angles-right"></i></span>
                     </div>
                 </div>
                 <script src="slider.js"></script>
+                <div class="menu">
+                    MENU<img src="../../Hangout/menus/<?php echo $eachDetail['menu_image'] ?>" alt="menu" height="100" width="100"><br>
+                    <input type="hidden" name="menu" value="<?php echo $eachDetail['menu_image'] ?>">
 
-                <label for="location">Location</label>
-                <input type="hidden" name="location" value="<?php echo $eachDetail['location'] ?>">
-                <iframe width="50%" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="<?php echo $eachDetail['location']; ?>&output=embed" allowfullscreen id="location"></iframe>
+                    <label for="location">Location</label>
+                    <input type="hidden" name="location" value="<?php echo $eachDetail['location'] ?>">
+                    <iframe width="100%" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="<?php echo $eachDetail['location']; ?>&output=embed" allowfullscreen id="location"></iframe>
+                </div>
             </div>
 
             <div class="right">
