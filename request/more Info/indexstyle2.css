@@ -139,9 +139,14 @@ header {
     color: #fefefe;
 }
 .right{
+    width: 50%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-left: 500px;
+    margin-top: 50px;
     margin-bottom: 20px;
 }
 .right .menu p{
@@ -153,13 +158,19 @@ header {
     margin-bottom: 20px;
 }
 .left{
+    width: 50%;
+    height: 100vh;
+    margin-top: 50px;
+
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .request_details form {
     width: 100%;
     min-height: 100%;
-    padding: 0 100px;
+    /* padding: 0 100px; */
     display: flex;
     flex-direction: column;
 }
@@ -271,11 +282,14 @@ input[type="submit"] {
 .main_slide {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 40%;
     position: relative; /* Add position relative to the main container */
   }
   
   .slider-container {
+    width: 100%;
     position: relative;
   }
   
@@ -288,7 +302,7 @@ input[type="submit"] {
     width: 350px;
     height: 350px;
     right: 150px;
-    left: 300px;
+    left: 50px;
   }
   
   .slider-container img.active {
@@ -365,8 +379,9 @@ input[type="submit"] {
 
 /* end start slide  */
 .com-table{
+    width: 400px;
     margin-top: 400px;
-    margin-left: 125%;
+    margin-left: 90%;
 }
 .log{
     position: absolute;
