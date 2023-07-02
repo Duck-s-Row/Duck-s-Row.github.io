@@ -242,3 +242,106 @@ input[type="submit"] {
 	font-size: 20px;
 	cursor: pointer;
 }
+
+/* start slide style  */
+
+.main_slide {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    position: relative; /* Add position relative to the main container */
+  }
+  
+  .slider-container {
+    position: relative;
+  }
+  
+  .slider-container img {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: 1;
+    margin-left: 55px;
+    padding: 30px 0;
+    border-radius: 50px;
+    width: 500px;
+    height: 500px;
+  }
+  
+  .slider-container img.active {
+    opacity: 1;
+  }
+  
+  .slider-container .slide-number {
+    display: none;
+  }
+  
+  .slider-controls {
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .slider-controls .prev,
+  .slider-controls .next {
+    background-color: #dfca13;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50px;
+    user-select: none;
+    margin-bottom: 230px;
+    font-size: 30px;
+    height: 30px;
+  }
+  
+  .slider-controls .prev {
+    float: left;
+    margin-left: 10px;
+  }
+  
+  .slider-controls .next {
+    float: right;
+  }
+  
+  .slider-controls .prev.disabled,
+  .slider-controls .next.disabled {
+    background-color: #A1A19D ;
+    cursor: no-drop;
+  }
+  
+  .slider-controls .indicators {
+    display: none;
+  }
+  
+  .slider-controls .indicators ul {
+    list-style: none;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .slider-controls .indicators ul li {
+    display: inline-block;
+    background-color: #f6f6f6;
+    color: #333;
+    font-weight: bold;
+    height: 28px;
+    width: 28px;
+    border-radius: 4px;
+    margin: 0 2px;
+    line-height: 28px;
+    cursor: pointer;
+  }
+  
+  .slider-controls .indicators ul li.active {
+    background-color: #dfca13;
+    color: #fff;
+  }
+
+ 
+
+
+/* end start slide  */

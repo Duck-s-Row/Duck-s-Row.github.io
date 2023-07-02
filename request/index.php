@@ -41,15 +41,15 @@ if (isset($_SESSION['user_id'])) {
             <?php endif; ?>
             <li><a href="../index.php"><b>Home</b></a></li>
             <li><a href="../Hangout/hangout.php"><b>Hangout</b></a></li> <!-- we could remove this ancher tag link because of using the button  -->
-            <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Plans</a></li> -->
-            <li><a href="#about_us"><b>About</b></a></li>
+            <li><a href="../plans/plans.php"><b>My Plans</b></a></li>
+            <!-- <li><a href="#about_us"><b>About</b></a></li> -->
             <li><a href="../Profile/profile.php" class="profile"><b>Profile</b></a></li>
         </ul>
         </nav>
     </header>
 
     <section class="request_details">
-        <p>DO You Want To Send New Request <a href="new request/index.php">Click here</a></p>
+        <p>If You Want To Send New Request <a href="new request/index.php">Click here</a></p>
         <?php 
         $selectAllReq = "SELECT * FROM requests, request_details WHERE requests.user_id = $user_id AND request_details.request_id = requests.request_id";
         $allReq = mysqli_query($con,$selectAllReq);

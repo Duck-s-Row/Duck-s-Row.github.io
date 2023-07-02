@@ -22,7 +22,7 @@ if (isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="requestsss.css">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-    <title>Send New Request</title>
+    <title>New Request</title>
 </head>
 
 <body>

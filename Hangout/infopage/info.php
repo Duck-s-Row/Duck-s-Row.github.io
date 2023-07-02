@@ -52,8 +52,7 @@ $result_pics = mysqli_query($con, $pics_query);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-    <!-- <link rel="stylesheet" href="inofomss.css"> -->
-    <link rel="stylesheet" href="i3.css">
+    <link rel="stylesheet" href="info.css">
     <title>info</title>
 </head>
 
@@ -105,20 +104,21 @@ $result_pics = mysqli_query($con, $pics_query);
                     <?php endwhile;
                     }  ?>
                 </div>
-
+                
                 <div class="slider-controls">
                     <span id="prev" class="prev"><i class="fa-solid fa-circle-arrow-left"></i></span>
                     <span id="indicators" class="indicators"></span>
                     <span id="next" class="next"><i class="fa-solid fa-circle-arrow-right"></i></span>
                 </div>
             </div>
+            
             <!-- js for slide  -->
             <script src="slider.js"></script>
 
             <div class="disc">
                 <div>
-                    <h2><?php echo $row['category']; ?></h2>
-                    <p><?php echo $row['p_name']; ?></p>
+                    <h2><?php echo $row['p_name']; ?></h2>
+                    <p><?php echo $row['category']; ?></p>
                 </div>
                 <div class="box">
                     <div class="box1">
@@ -136,7 +136,18 @@ $result_pics = mysqli_query($con, $pics_query);
                         </div>
                     </div>
                 </div>
-
+                <div>
+                    <div>
+                        <h2>Menu</h2>
+                        <!-- user click here to active the popup -->
+                        <p>click here</p>
+                    </div>
+                </div>
+                <!-- popup -->
+                <div id="">
+                    <img src="../menus/<?php echo $row['menu_image'] ?>" alt="">
+                </div>
+                
                 <div class="map-container">
                     <h2>Location : <?php echo $row['p_branch'] ?></h2>
                     <iframe width="50%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="<?php echo $row['location']; ?>&output=embed" allowfullscreen></iframe>
