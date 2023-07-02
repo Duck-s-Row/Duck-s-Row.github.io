@@ -41,7 +41,7 @@ $allImgs = mysqli_query($con, $selectImgs);
     <div id="menu_popup" class="popup_menu">
         <button id="close_menu"><i class="fa fa-x"></i></button>
         <div class="popup_content" id="popup_content">
-            <img src="../menus/<?php echo $row['menu_image'] ?>" alt="">
+            <img src="../../Hangout/menus/<?php echo $eachDetail['menu_image'] ?>" alt="">
         </div>
     </div>
     <form action="decision.php" method="post">

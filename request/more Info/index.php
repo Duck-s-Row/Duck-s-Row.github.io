@@ -47,18 +47,15 @@ $place_id = $eachDetail['place_id'];
         </div>
         <nav class="nav-bar">
             <ul>
-                <?php if (isset($_SESSION['user_id'])) : ?>
-                    <?php if ($user_data['privilege'] == 1) :  ?>
-                        <li><a href="dashboard/dashboard.php"><b>Dashboard</b></a></li>
-                    <?php endif; ?>
-                <?php endif; ?>
                 <li><a href="../../index.php"><b>Home</b></a></li>
-                <li><a href="../Hangout/hangout.php"><b>Hangout</b></a></li> <!-- we could remove this ancher tag link because of using the button  -->
-                <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Plans</a></li> -->
-                <li><a href="#about_us"><b>About</b></a></li>
-                <?php if (isset($_SESSION['user_id'])) : ?>
-                    <li><a href="../Profile/profile.php" class="profile"><b>Profile</b></a></li>
+                <?php if ($user_data['privilege'] == 1) :  ?>
+                    <li><a href="../../dashboard/dashboard.php"><b>Dashboard</b></a></li>
                 <?php endif; ?>
+                <li><a href="../../Hangout/hangout.php"><b>Hangout</b></a></li> <!-- we could remove this ancher tag link because of using the button  -->
+                <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Plans</a></li> -->
+                <!-- <li><a href="#about_us"><b>About</b></a></li> -->
+                <li><a href="../../plans/plans.php" class="profile"><b>My plans</b></a></li>
+                <li><a href="../../Profile/profile.php" class="profile"><b>Profile</b></a></li>
             </ul>
         </nav>
     </header>
@@ -76,7 +73,7 @@ $place_id = $eachDetail['place_id'];
             <div class="log">
                 <img src="../../Hangout/logos/<?php echo $eachDetail['logo'] ?>" alt="" width="70" height="70">
             </div>
-            
+
             <div class="main-slide">
                 <div class="slider-container">
                     <div id="slide-number" class="slide-number"></div>
@@ -98,29 +95,29 @@ $place_id = $eachDetail['place_id'];
             </div>
             <script src="slider.js"></script>
             <?php
-                $selectComQuery = "SELECT * FROM request_comment WHERE place_id = $place_id";
-                $AllCom = mysqli_query($con, $selectComQuery);
-                if (mysqli_num_rows($AllCom) > 0) :
-                ?>
-                    <div class="com-table">
-                        <table>
+            $selectComQuery = "SELECT * FROM request_comment WHERE place_id = $place_id";
+            $AllCom = mysqli_query($con, $selectComQuery);
+            if (mysqli_num_rows($AllCom) > 0) :
+            ?>
+                <div class="com-table">
+                    <table>
+                        <tr>
+                            <th>Comment</th>
+                            <th>Comment Date</th>
+                        </tr>
+                        <?php while ($eachCom = mysqli_fetch_assoc($AllCom)) : ?>
                             <tr>
-                                <th>Comment</th>
-                                <th>Comment Date</th>
+                                <td><?php echo $eachCom['comment'] ?></td>
+                                <td><?php echo $eachCom['com_date'] ?></td>
                             </tr>
-                            <?php while ($eachCom = mysqli_fetch_assoc($AllCom)) : ?>
-                                <tr>
-                                    <td><?php echo $eachCom['comment'] ?></td>
-                                    <td><?php echo $eachCom['com_date'] ?></td>
-                                </tr>
-                            <?php endwhile; ?>
-                        </table>
-                    </div>
-                <?php endif; ?>
+                        <?php endwhile; ?>
+                    </table>
+                </div>
+            <?php endif; ?>
         </div>
         <div class="right">
             <form action="adjust request.php" method="post">
-                
+
                 <div>
                     <input type="hidden" name="place_id" value="<?php echo $eachDetail['place_id'] ?>" <?php if ($eachDetail['req_status'] == "Accepted") echo "readonly"; ?>>
                     <label for="p_name">Place Name</label>
@@ -182,7 +179,7 @@ $place_id = $eachDetail['place_id'];
         <div id="menu_popup" class="popup_menu">
             <button id="close_menu"><i class="fa fa-x"></i></button>
             <div class="popup_content" id="popup_content">
-                <img src="../menus/<?php echo $row['menu_image'] ?>" alt="">
+                <img src="../../Hangout/menus/<?php echo $eachDetail['menu_image'] ?>" alt="">
             </div>
         </div>
     </section>
@@ -211,29 +208,29 @@ $place_id = $eachDetail['place_id'];
 
         const average = (min + max) / 2;
 
-        if(isNaN(average)){
+        if (isNaN(average)) {
             avrSpan.textContent = 0;
         } else {
             avrSpan.textContent = average.toFixed(2);
         }
 
         avrSpan.textContent = average.toFixed(2);
-        
+
         minInput.addEventListener('input', calculateAverage);
         maxInput.addEventListener('input', calculateAverage);
-        
+
         function calculateAverage() {
             const min = parseFloat(minInput.value);
             const max = parseFloat(maxInput.value);
-            
+
             const average = (min + max) / 2;
 
-            if(isNaN(average)){
-            avrSpan.textContent = 0;
+            if (isNaN(average)) {
+                avrSpan.textContent = 0;
             } else {
                 avrSpan.textContent = average.toFixed(2);
             }
-            
+
             avrSpan.textContent = average.toFixed(2);
         }
     </script>
