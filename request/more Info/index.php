@@ -153,7 +153,7 @@ $place_id = $eachDetail['place_id'];
                 </div>
                 <div class="menu">
                     <label>MENU</label>
-                    <p>Show Menu</p>
+                    <p class="open" id="open_menu">Show menu</p>
                 </div>
                 <div>
                     <label for="p_branch">Place Branch</label>
@@ -179,9 +179,29 @@ $place_id = $eachDetail['place_id'];
                 </div>
             </form>
         </div>
-        
+        <div id="menu_popup" class="popup_menu">
+            <button id="close_menu"><i class="fa fa-x"></i></button>
+            <div class="popup_content" id="popup_content">
+                <img src="../menus/<?php echo $row['menu_image'] ?>" alt="">
+            </div>
+        </div>
     </section>
     <script>
+        // Menu Popup page
+        var popup_menu = document.getElementById("menu_popup");
+        var close_menu = document.getElementById("close_menu");
+        var open_menu = document.getElementById("open_menu");
+
+        close_menu.addEventListener("click", ()=> {
+            popup_menu.style.display = "none";
+        });
+
+        open_menu.addEventListener("click", ()=> {
+            popup_menu.style.display = "flex";
+            close_menu.style.display = "block";
+        });
+        
+
         const minInput = document.getElementById('min');
         const maxInput = document.getElementById('max');
         const avrSpan = document.getElementById('avr');

@@ -111,8 +111,8 @@ $allImgs = mysqli_query($con, $selectImgs);
         </div>
     </form>
     <script>
-                // Menu Popup page
-                var popup_menu = document.getElementById("menu_popup");
+        // Menu Popup page
+        var popup_menu = document.getElementById("menu_popup");
         var close_menu = document.getElementById("close_menu");
         var open_menu = document.getElementById("open_menu");
 
