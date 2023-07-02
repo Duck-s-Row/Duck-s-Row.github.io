@@ -142,6 +142,7 @@ header {
 .request_details p a {
     font-family: 'Bebas Neue', cursive;
     letter-spacing: 0.1em;
+    color: #FEE715;
 }
 
 a {

@@ -22,13 +22,18 @@ if (isset($_SESSION['user_id']) && isset($request_id)) {
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-    <link rel="stylesheet" href="indexstyle.css">
+    <link rel="stylesheet" href="indexstyle1.css">
     <title>Request Adjustment</title>
 </head>
 
 <body>
     <header>
-        <div class="logo"><a href="#home"><img src="../../home/imgs/ducks.png" alt=""></a></div>
+        <div class="logo"><a href="#home">
+            <div class="back">
+                <a onclick="window.history.back()"><i class="fa-solid fa-circle-left"></i></a>
+            </div>
+            <img src="../../home/imgs/black-duck.png" alt=""></a>
+        </div>
         <div class="hamburger">
             <div class="line"></div>
             <div class="line"></div>
