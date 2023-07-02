@@ -1,5 +1,5 @@
 <?php
-    require("../../connection/connection.php");
+    require("../connection/connection.php");
 
     $id = $_GET["id"];
 

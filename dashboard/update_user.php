@@ -4,7 +4,7 @@
         $id = $_POST["id"];
         $privilege = $_POST["privilege"];
 
-        $sql = "UPDATE users SET privilege='$privilege' WHERE user_id='$id'";
+        $sql = "UPDATE users SET privilege= $privilege WHERE user_id= $id";
 
         mysqli_query($con, $sql);
 

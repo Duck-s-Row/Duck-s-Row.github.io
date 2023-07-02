@@ -52,7 +52,7 @@ $result_pics = mysqli_query($con, $pics_query);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-    <link rel="stylesheet" href="info.css">
+    <link rel="stylesheet" href="info2.css">
     <title>info</title>
 </head>
 
@@ -71,12 +71,13 @@ $result_pics = mysqli_query($con, $pics_query);
         </div>
         <nav class="nav-bar">
             <ul>
+                <li><a href="../../index.php"><b>Home</b></a></li>
                 <?php if ($user_data['privilege'] == 1) :  ?>
                     <li><a href="../../dashboard/dashboard.php"><b>Dashboard</b></a></li>
+                    <li><a href="../request/index.php"><b>Requests</b></a></li>
                 <?php elseif ($user_data['privilege'] == 2) : ?>
                     <li><a href="../../request/index.php"><b>Requests</b></a></li>
                 <?php endif; ?>
-                <li><a href="../../index.php"><b>Home</b></a></li>
                 <li><a href="../../plans/plans.php"><b>My plans</b></a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
                 <li><a href="#contact_us"><b>About</b></a></li>
@@ -104,14 +105,22 @@ $result_pics = mysqli_query($con, $pics_query);
                     <?php endwhile;
                     }  ?>
                 </div>
-                
+
                 <div class="slider-controls">
-                    <span id="prev" class="prev"><i class="fa-solid fa-circle-arrow-left"></i></span>
+                    <span id="prev" class="prev"><i class="fa-solid fa-angles-left"></i></span>
                     <span id="indicators" class="indicators"></span>
-                    <span id="next" class="next"><i class="fa-solid fa-circle-arrow-right"></i></span>
+                    <span id="next" class="next"><i class="fa-solid fa-angles-right"></i></span>
+                    <div class="box2">
+                        <div>
+                            <h2>Details</h2>
+                            <p><?php echo $row['more_details'] ?></p>
+                        </div>
+                    </div>
                 </div>
+
             </div>
-            
+
+
             <!-- js for slide  -->
             <script src="slider.js"></script>
 
@@ -127,27 +136,19 @@ $result_pics = mysqli_query($con, $pics_query);
                             <p><?php echo $row['min_price'] ?>-<?php echo $row['max_price'] ?> L.E/Person</p>
                             <h2>Average</h2>
                             <p><?php echo $row['average_budget']; ?></p>
+                            <?php if ($row['category'] == "Restaurants" || $row['category'] == "Cafe") : ?>
+                                <h2>Menu</h2>
+                                <!-- user click here to active the popup -->
+                                <p>click here</p>
+                            <?php endif; ?>
                         </div>
-                    </div>
-                    <div class="box2">
-                        <div>
-                            <h2>Details</h2>
-                            <p><?php echo $row['more_details'] ?></p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <h2>Menu</h2>
-                        <!-- user click here to active the popup -->
-                        <p>click here</p>
                     </div>
                 </div>
                 <!-- popup -->
-                <div id="">
+                <!-- <div id="">
                     <img src="../menus/<?php echo $row['menu_image'] ?>" alt="">
-                </div>
-                
+                </div> -->
+
                 <div class="map-container">
                     <h2>Location : <?php echo $row['p_branch'] ?></h2>
                     <iframe width="50%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="<?php echo $row['location']; ?>&output=embed" allowfullscreen></iframe>
@@ -156,7 +157,7 @@ $result_pics = mysqli_query($con, $pics_query);
         </div>
     </section>
 
-    <footer class="btn">
+    <footer class="btns">
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             if ($_POST['Form_identifier'] == 'add_new') {
@@ -241,25 +242,6 @@ $result_pics = mysqli_query($con, $pics_query);
     <?php
     include_once("rate.php");
     ?>
-
-    <style>
-        .progress-label-left {
-            float: left;
-            margin-right: 0.5em;
-            line-height: 1em;
-        }
-
-        .progress-label-right {
-            float: right;
-            margin-left: 0.3em;
-            line-height: 1em;
-        }
-
-        .star-light {
-            color: #e9ecef;
-        }
-    </style>
-
     <!-- The Start of Contact Us section -->
     <section class="contact_us" id="contact_us">
         <div class="left">

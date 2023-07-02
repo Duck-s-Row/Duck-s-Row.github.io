@@ -13,6 +13,11 @@ if (isset($_SESSION['user_id']) && isset($request_id)) {
     header("Location: ../../Log_in/login.php");
     die;
 }
+$selectReqQuery = "SELECT * FROM requests, request_details WHERE requests.user_id = $user_id AND requests.request_id = $request_id AND request_details.request_id = $request_id";
+$req_details = mysqli_query($con, $selectReqQuery);
+$eachDetail = mysqli_fetch_assoc($req_details);
+$place_id = $eachDetail['place_id'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,10 +34,11 @@ if (isset($_SESSION['user_id']) && isset($request_id)) {
 <body>
     <header>
         <div class="logo"><a href="#home">
-            <div class="back">
-                <a onclick="window.history.back()"><i class="fa-solid fa-circle-left"></i></a>
-            </div>
-            <img src="../../home/imgs/black-duck.png" alt=""></a>
+                <div class="back">
+                    <a onclick="window.history.back()"><i class="fa-solid fa-circle-left"></i></a>
+                </div>
+                <img src="../../home/imgs/black-duck.png" alt="">
+            </a>
         </div>
         <div class="hamburger">
             <div class="line"></div>
@@ -59,14 +65,16 @@ if (isset($_SESSION['user_id']) && isset($request_id)) {
     <section class="request_details">
         <?php
         $selectPlaceIdQuery = "SELECT place_id From request_details WHERE request_id = $request_id";
-        $resultPlace_id = mysqli_query($con,$selectPlaceIdQuery);
+        $resultPlace_id = mysqli_query($con, $selectPlaceIdQuery);
         $rowPlace_id = mysqli_fetch_assoc($resultPlace_id);
         $place_id = $rowPlace_id['place_id'];
         //picture query
         $pics_query = "SELECT * FROM request_place_pics WHERE place_id = $place_id ORDER BY RAND() ";
         $result_pics = mysqli_query($con, $pics_query);
         ?>
+
         <div class="photo">
+            <img src="../../Hangout/logos/<?php echo $eachDetail['logo'] ?>" alt="">
             <div class="slider-container">
                 <div id="slide-number" class="slide-number"></div>
                 <?php
@@ -86,13 +94,6 @@ if (isset($_SESSION['user_id']) && isset($request_id)) {
             </div>
         </div>
         <script src="slider.js"></script>
-        <?php
-        $selectReqQuery = "SELECT * FROM requests, request_details WHERE requests.user_id = $user_id AND requests.request_id = $request_id AND request_details.request_id = $request_id";
-        $req_details = mysqli_query($con, $selectReqQuery);
-        $eachDetail = mysqli_fetch_assoc($req_details);
-        $place_id = $eachDetail['place_id'];
-
-        ?>
         <form action="adjust request.php" method="post">
             <?php
             $selectComQuery = "SELECT * FROM request_comment WHERE place_id = $place_id";
