@@ -30,6 +30,15 @@ body {
     font-size: 20px;
     color: #fee715;
 }
+.left .menu{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+.left .menu img{
+  margin-left: 100px;
+}
 .right{
     display: flex;
     flex-direction: column;
@@ -65,7 +74,10 @@ body {
 }
 .back{
     text-align: left;
-    padding: 30px 0 0 50px;
+    padding: 20px 0 0 40px;
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
 }
 .back a{
     color: #fee715;
@@ -74,6 +86,13 @@ body {
 }
 .back a:hover{
     color: white;
+}
+.back img{
+  margin-left: 90%;
+  height: 100%;
+}
+.btns{
+  margin-bottom: 40px;
 }
 .btns input{
     width: 130px;
@@ -105,8 +124,9 @@ body {
 .main_slide {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 100%;
     position: relative; /* Add position relative to the main container */
+    margin-bottom: 320px;
   }
   
   .slider-container {
@@ -118,11 +138,10 @@ body {
     opacity: 0;
     transition: opacity 1s;
     z-index: 1;
-    margin-left: 55px;
-    padding: 30px 0;
     border-radius: 50px;
-    width: 500px;
-    height: 500px;
+    width: 300px;
+    height: 300px;
+    margin-left: 45px;
   }
   
   .slider-container img.active {
@@ -135,29 +154,26 @@ body {
   
   .slider-controls {
     position: absolute;
-    bottom: 80px;
     left: 0;
     right: 0;
     overflow: hidden;
-    width: 100%;
+    width: 390px;
+    margin-top: 130px;
   }
   
   .slider-controls .prev,
   .slider-controls .next {
-    background-color: #dfca13;
-    color: black;
+    color: #dfca13;
     text-align: center;
     cursor: pointer;
     border-radius: 50px;
     user-select: none;
-    margin-bottom: 230px;
     font-size: 30px;
     height: 30px;
   }
   
   .slider-controls .prev {
     float: left;
-    margin-left: 10px;
   }
   
   .slider-controls .next {
@@ -166,7 +182,7 @@ body {
   
   .slider-controls .prev.disabled,
   .slider-controls .next.disabled {
-    background-color: #A1A19D ;
+    color: #A1A19D ;
     cursor: no-drop;
   }
   
