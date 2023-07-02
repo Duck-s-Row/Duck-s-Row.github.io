@@ -37,6 +37,7 @@ header {
 }
 .logo img{
     width: 80px;
+    margin-bottom: 30px;
 }
 .back-arrow{
     padding-right: 40px;
@@ -45,6 +46,7 @@ header {
     color: #101820;
     padding-bottom: 10px;
     cursor: pointer;
+    margin-top: 30px;
 }
 .hamburger {
     display: none;
@@ -119,6 +121,7 @@ header {
 
 .photo{
     display: flex;
+    flex-direction: row;
     width: 100%;
     height: 100%;
 }
@@ -169,13 +172,12 @@ header {
   
   .slider-controls .prev,
   .slider-controls .next {
-    background-color: #dfca13;
-    color: black;
+    color: #dfca13;
     text-align: center;
     cursor: pointer;
     border-radius: 50px;
     user-select: none;
-    margin-bottom: 230px;
+    margin-top: 150px;
     font-size: 30px;
     height: 30px;
   }
@@ -191,7 +193,7 @@ header {
   
   .slider-controls .prev.disabled,
   .slider-controls .next.disabled {
-    background-color: #A1A19D ;
+    color: #A1A19D ;
     cursor: no-drop;
   }
   
@@ -233,7 +235,8 @@ header {
     display: flex;
     flex-direction: column;
     width: 50%;
-    padding: 0 70px 70px 70px;
+    padding: 0 0 30px 70px;
+    margin-left: 120px;
     color: white;
 }
 .disc a{
@@ -263,8 +266,15 @@ header {
     width: 500px;
     display: flex;
     justify-content: space-between;
+    margin-top: 400px;
+    margin-left: 60px;
 }
-
+.box2 h2{
+    color: #FEE715;
+}
+.box2 p{
+    color: white;
+}
 .box2>*{
     width: 100%;
 }
@@ -274,12 +284,11 @@ header {
     margin: 20px;
 }
 
-.btn{
-    text-align: right;
-    margin-right: 50px;
+.btns{
+   margin-left: 84%;
 }
 
-.btn input[type="submit"], .btn .open{
+.btns input[type="submit"], .btns .open{
     background: #dfca13;
     width: 200px;
     height: 50px;
@@ -291,7 +300,7 @@ header {
     border: none;
 }
 
-.btn input[type="submit"]:hover, .btn .open:hover{
+.btns input[type="submit"]:hover, .btns .open:hover{
     background-color: white;
 }
 
@@ -335,12 +344,12 @@ header {
       margin: 20px 0;
     }
     
-    .btn {
+    .btns {
       text-align: center;
       margin: 0;
     }
     
-    .btn .button {
+    .btns .button {
         margin: 20px;
         padding: 100px;
     }
@@ -395,7 +404,7 @@ header {
     box-shadow: 5px 10px 18px black;
 }
 
-.plan_form_btn {
+.plan_form_btns {
     width: 50%;
     height: 50px;  
     background-color: #101820;
@@ -409,7 +418,7 @@ header {
     border: none;
 }
 
-.plan_form_btn:hover {
+.plan_form_btns:hover {
     box-shadow: 5px 10px 18px black;
     background-color: #101820;
     color: #101820;
@@ -490,6 +499,94 @@ header {
 .expopform a {
     width: 90%;
 }
+
+/*start rate*/
+.progress-label-left {
+    float: left;
+    margin-right: 0.5em;
+    line-height: 1em;
+}
+
+.progress-label-right {
+    float: right;
+    margin-left: 0.3em;
+    line-height: 1em;
+}
+
+.star-light {
+    color: #babcbd;
+}
+.container{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+.card{
+    height: 220px;
+    width: 65%;
+    background: #dfcb13;
+    border-radius: 20px;
+    box-shadow: 5px 10px 18px #000000;
+}
+.card-header{
+    display: none;
+}
+.col-sm-4 b{
+    color: #000;
+}
+.col-sm-4 button{
+    background-color: #101820;
+    color: #dfca13;
+    border: none;
+    border-radius: 20px;
+    margin-top: 10px;
+    width: 80px;
+}
+.col-sm-4 button:hover{
+    background-color: #fff;
+    color: #101820;
+}
+.modal-content{
+    background-color: #101820;
+}
+.modal-header h5{
+    color: #FEE715;
+}
+.modal-header button{
+    color: #FEE715;
+}
+.form-group textarea{
+    border-radius: 20px;
+    border: none;
+    background-color: #A1A19D;
+}
+.form-group button{
+    background-color: #dfca13;
+    color: #101820;
+    border-radius: 20px;
+    border: none;
+}
+.form-group button:hover{
+    background: white;
+    color: #101820;
+}
+.rounded-circle{
+    width: 40px;
+    height: 40px;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.col-sm-11 .card{
+    width: 100%;
+    height: 150px;
+    margin-left: 10px;
+}
+/*end rate*/
+
 .contact_us{
     width: 100%;
     min-height: fit-content;

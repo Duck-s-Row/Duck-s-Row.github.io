@@ -52,7 +52,7 @@ $result_pics = mysqli_query($con, $pics_query);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-    <link rel="stylesheet" href="info.css">
+    <link rel="stylesheet" href="info1.css">
     <title>info</title>
 </head>
 
@@ -107,11 +107,19 @@ $result_pics = mysqli_query($con, $pics_query);
                 </div>
                 
                 <div class="slider-controls">
-                    <span id="prev" class="prev"><i class="fa-solid fa-circle-arrow-left"></i></span>
+                    <span id="prev" class="prev"><i class="fa-solid fa-angles-left"></i></span>
                     <span id="indicators" class="indicators"></span>
-                    <span id="next" class="next"><i class="fa-solid fa-circle-arrow-right"></i></span>
+                    <span id="next" class="next"><i class="fa-solid fa-angles-right"></i></span>
+                    <div class="box2">
+                        <div>
+                            <h2>Details</h2>
+                            <p><?php echo $row['more_details'] ?></p>
+                        </div>
+                    </div>
                 </div>
+                
             </div>
+            
             
             <!-- js for slide  -->
             <script src="slider.js"></script>
@@ -130,12 +138,7 @@ $result_pics = mysqli_query($con, $pics_query);
                             <p><?php echo $row['average_budget']; ?></p>
                         </div>
                     </div>
-                    <div class="box2">
-                        <div>
-                            <h2>Details</h2>
-                            <p><?php echo $row['more_details'] ?></p>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div>
                     <div>
@@ -157,7 +160,7 @@ $result_pics = mysqli_query($con, $pics_query);
         </div>
     </section>
 
-    <footer class="btn">
+    <footer class="btns">
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             if ($_POST['Form_identifier'] == 'add_new') {
@@ -242,25 +245,6 @@ $result_pics = mysqli_query($con, $pics_query);
     <?php
     include_once("rate.php");
     ?>
-
-    <style>
-        .progress-label-left {
-            float: left;
-            margin-right: 0.5em;
-            line-height: 1em;
-        }
-
-        .progress-label-right {
-            float: right;
-            margin-left: 0.3em;
-            line-height: 1em;
-        }
-
-        .star-light {
-            color: #e9ecef;
-        }
-    </style>
-
     <!-- The Start of Contact Us section -->
     <section class="contact_us" id="contact_us">
         <div class="left">
