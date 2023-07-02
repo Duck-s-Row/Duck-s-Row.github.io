@@ -286,11 +286,13 @@ input[type="submit"] {
     align-items: center;
     width: 40%;
     position: relative; /* Add position relative to the main container */
+    
   }
   
   .slider-container {
     width: 100%;
     position: relative;
+    margin-top: 200px;
   }
   
   .slider-container img {
@@ -298,11 +300,11 @@ input[type="submit"] {
     opacity: 0;
     transition: opacity 1s;
     z-index: 1;
-    border-radius: 50px;
-    width: 350px;
-    height: 350px;
+    width: 400px;
+    height: 400px;
     right: 150px;
     left: 50px;
+    bottom: 1px;
   }
   
   .slider-container img.active {
@@ -318,9 +320,9 @@ input[type="submit"] {
     left: 0;
     right: 0;
     overflow: hidden;
-    width: 440px;
-    left: 265px;
-    bottom: 120px;
+    width: 490px;
+    left: 258px;
+    bottom: 90px;
   }
   
   .slider-controls .prev,
@@ -328,7 +330,6 @@ input[type="submit"] {
     color: #dfca13;
     text-align: center;
     cursor: pointer;
-    border-radius: 50px;
     user-select: none;
     margin-bottom: 230px;
     font-size: 30px;
@@ -379,9 +380,7 @@ input[type="submit"] {
 
 /* end start slide  */
 .com-table{
-    width: 400px;
-    margin-top: 400px;
-    margin-left: 90%;
+    margin-right: 50px;
 }
 .log{
     position: absolute;
