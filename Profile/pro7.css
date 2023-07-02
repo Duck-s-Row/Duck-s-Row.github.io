@@ -55,10 +55,11 @@ input[type="file"]::-webkit-file-upload-button{
     text-decoration: none;
     background-color: black;
     color: #FEE715;
-    border-radius: 30px;
+    border-bottom-right-radius:10px ;
     align-self: self-start;
-    padding: 7px;
-    margin-top: 15px;
+    padding: 10px 7px 5px 7px;
+    margin: 10px 0 0 0;
+    cursor: pointer;
 }
 #home:hover{
     background-color: #fff;
@@ -75,6 +76,8 @@ input[type="file"]::-webkit-file-upload-button{
     align-items: center;
     padding-bottom: 20px;
     color: white;
+    border-radius: 50px;
+    margin-top: 20px;
 }
 
 .h {
@@ -104,10 +107,13 @@ hr{
 .user_choices{
     background: #101820;
     border-radius: 50px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 0;
     overflow: hidden;
 }
 .btns{
     text-align: center;
+    margin-top: 35px;
 }
 .chooice {
     width: 100%;
@@ -142,6 +148,8 @@ button a{
     overflow: hidden;
     background-color: #101820;
     margin: 2%;
+    border-bottom-left-radius:5px ;
+    border-top-right-radius:5px ;
 }
 .planes , .pass{
     display: none;
