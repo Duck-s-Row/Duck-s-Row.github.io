@@ -35,14 +35,15 @@
      </div>
      <nav class="nav-bar">
        <ul>
+         <li><a href="#home">Home</a></li>
          <?php if (isset($_SESSION['user_id'])) : ?>
            <?php if ($user_data['privilege'] == 1) :  ?>
              <li><a href="dashboard/dashboard.php">Dashboard</a></li>
-           <?php elseif ($user_data['privilege'] == 2) : ?>
+             <li><a href="request/index.php">Requests</a></li>
+           <?php elseif ($user_data['privilege'] == 2 ) : ?>
              <li><a href="request/index.php">Requests</a></li>
            <?php endif; ?>
          <?php endif; ?>
-         <li><a href="#home">Home</a></li>
          <li><a href="Hangout/hangout.php">Hangout</a></li> <!-- we could remove this ancher tag link because of using the button  -->
          <li><a href="#services">Services</a></li>
          <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Plans</a></li> -->

@@ -291,3 +291,10 @@ a {
     color: #11101b;
     background-color: white;
 }
+.request input[type="submit"]{
+    background: none;
+    color: #fee715;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}

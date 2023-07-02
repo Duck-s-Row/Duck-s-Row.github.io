@@ -42,11 +42,11 @@ $result_pics = mysqli_query($con, $pics_query);
 <head>
     <!-- all Links for rate system -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <meta charset="UTF-8">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -75,6 +75,8 @@ $result_pics = mysqli_query($con, $pics_query);
             <ul>
                 <?php if ($user_data['privilege'] == 1) :  ?>
                     <li><a href="../../dashboard/dashboard.php"><b>Dashboard</b></a></li>
+                <?php elseif ($user_data['privilege'] == 2) : ?>
+                    <li><a href="../../request/index.php"><b>Requests</b></a></li>
                 <?php endif; ?>
                 <li><a href="../../index.php"><b>Home</b></a></li>
                 <li><a href="../../plans/plans.php"><b>My plans</b></a></li>
@@ -86,6 +88,9 @@ $result_pics = mysqli_query($con, $pics_query);
     </header>
     <!-- The End of Navbar section -->
     
+
+
+
 
 
     <section class="main">
@@ -104,20 +109,21 @@ $result_pics = mysqli_query($con, $pics_query);
                     <?php endwhile;
                     }  ?>
                 </div>
-
+                
                 <div class="slider-controls">
                     <span id="prev" class="prev"><i class="fa-solid fa-circle-arrow-left"></i></span>
                     <span id="indicators" class="indicators"></span>
                     <span id="next" class="next"><i class="fa-solid fa-circle-arrow-right"></i></span>
                 </div>
             </div>
+            
             <!-- js for slide  -->
             <script src="slider.js"></script>
 
             <div class="disc">
                 <div>
-                    <h2><?php echo $row['category']; ?></h2>
-                    <p><?php echo $row['p_name']; ?></p>
+                    <h2><?php echo $row['p_name']; ?></h2>
+                    <p><?php echo $row['category']; ?></p>
                 </div>
                 <div class="box">
                     <div class="box1">
@@ -135,7 +141,18 @@ $result_pics = mysqli_query($con, $pics_query);
                         </div>
                     </div>
                 </div>
-
+                <div>
+                    <div>
+                        <h2>Menu</h2>
+                        <!-- user click here to active the popup -->
+                        <p>click here</p>
+                    </div>
+                </div>
+                <!-- popup -->
+                <div id="">
+                    <img src="../menus/<?php echo $row['menu_image'] ?>" alt="">
+                </div>
+                
                 <div class="map-container">
                     <h2>Location : <?php echo $row['p_branch'] ?></h2>
                     <iframe width="50%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="<?php echo $row['location']; ?>&output=embed" allowfullscreen></iframe>
@@ -231,23 +248,21 @@ $result_pics = mysqli_query($con, $pics_query);
     ?>
 
     <style>
-        .progress-label-left
-        {
+        .progress-label-left {
             float: left;
             margin-right: 0.5em;
             line-height: 1em;
         }
-        .progress-label-right
-        {
+
+        .progress-label-right {
             float: right;
             margin-left: 0.3em;
             line-height: 1em;
         }
-        .star-light
-        {
-            color:#e9ecef;
-        }
 
+        .star-light {
+            color: #e9ecef;
+        }
     </style>
 
     <!-- The Start of Contact Us section -->
@@ -272,4 +287,5 @@ $result_pics = mysqli_query($con, $pics_query);
     <script src="rate.js"></script> <!-- script for rating system code -->
 
 </body>
+
 </html>
