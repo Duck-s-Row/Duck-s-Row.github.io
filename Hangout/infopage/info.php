@@ -105,7 +105,7 @@ $result_pics = mysqli_query($con, $pics_query);
                     <?php endwhile;
                     }  ?>
                 </div>
-                
+
                 <div class="slider-controls">
                     <span id="prev" class="prev"><i class="fa-solid fa-angles-left"></i></span>
                     <span id="indicators" class="indicators"></span>
@@ -117,10 +117,10 @@ $result_pics = mysqli_query($con, $pics_query);
                         </div>
                     </div>
                 </div>
-                
+
             </div>
-            
-            
+
+
             <!-- js for slide  -->
             <script src="slider.js"></script>
 
@@ -136,17 +136,19 @@ $result_pics = mysqli_query($con, $pics_query);
                             <p><?php echo $row['min_price'] ?>-<?php echo $row['max_price'] ?> L.E/Person</p>
                             <h2>Average</h2>
                             <p><?php echo $row['average_budget']; ?></p>
-                            <h2>Menu</h2>
-                            <!-- user click here to active the popup -->
-                            <p>click here</p>
+                            <?php if ($row['category'] == "Restaurants" || $row['category'] == "Cafe") : ?>
+                                <h2>Menu</h2>
+                                <!-- user click here to active the popup -->
+                                <p>click here</p>
+                            <?php endif; ?>
                         </div>
-                    </div>   
+                    </div>
                 </div>
                 <!-- popup -->
                 <!-- <div id="">
                     <img src="../menus/<?php echo $row['menu_image'] ?>" alt="">
                 </div> -->
-                
+
                 <div class="map-container">
                     <h2>Location : <?php echo $row['p_branch'] ?></h2>
                     <iframe width="50%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="<?php echo $row['location']; ?>&output=embed" allowfullscreen></iframe>
