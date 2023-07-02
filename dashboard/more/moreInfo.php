@@ -28,6 +28,7 @@ $allImgs = mysqli_query($con, $selectImgs);
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
     <title>More Request's Info</title>
+    <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="m1.css">
 </head>
 
@@ -42,18 +43,31 @@ $allImgs = mysqli_query($con, $selectImgs);
                 <input type="hidden" name="logo" value="<?php echo $eachDetail['logo'] ?>">
                 <img src="../../Hangout/menus/<?php echo $eachDetail['menu_image'] ?>" alt="menu" height="200" width="200"><br>
                 <input type="hidden" name="menu" value="<?php echo $eachDetail['menu_image'] ?>">
-                <?php $count = 1;
-                while ($eachImg = mysqli_fetch_assoc($allImgs)) : ?>
-                    <input type="hidden" name="image<?php echo $count ?>" value="<?php echo $eachImg['photo_name']; ?>">
-                    <input type="hidden" name="imageId<?php echo $count ?>" value="<?php echo $eachImg['photo_id']; ?>">
-                    <img src="../../Hangout/places_imgs/<?php echo $eachImg['photo_name']; ?>" alt="<?php echo $count ?>">
-                    <?php $count++; ?>
-                <?php endwhile; ?>
+
+                <div class="main_slide">
+                    <div class="slider-container">
+                        <div id="slide-number" class="slide-number"></div>
+                        <?php $count = 1;
+                        while ($eachImg = mysqli_fetch_assoc($allImgs)) : ?>
+                            <input type="hidden" name="image<?php echo $count ?>" value="<?php echo $eachImg['photo_name']; ?>">
+                            <input type="hidden" name="imageId<?php echo $count ?>" value="<?php echo $eachImg['photo_id']; ?>">
+                            <img src="../../Hangout/places_imgs/<?php echo $eachImg['photo_name']; ?>" alt="<?php echo $count ?>">
+                            <?php $count++; ?>
+                        <?php endwhile; ?>
+                    </div>
+                    <div class="slider-controls">
+                        <span id="prev" class="prev"><i class="fa-solid fa-circle-arrow-left"></i></span>
+                        <span id="indicators" class="indicators"></span>
+                        <span id="next" class="next"><i class="fa-solid fa-circle-arrow-right"></i></span>
+                    </div>
+                </div>
+                <script src="slider.js"></script>
+
                 <label for="location">Location</label>
                 <input type="hidden" name="location" value="<?php echo $eachDetail['location'] ?>">
                 <iframe width="50%" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="<?php echo $eachDetail['location']; ?>&output=embed" allowfullscreen id="location"></iframe>
             </div>
-            
+
             <div class="right">
                 <p>Request Sender : <span><?php echo $eachDetail['username'] ?></span> </p>
                 <p>Request Status : <span><?php echo $eachDetail['req_status'] ?></span></p><br>
@@ -82,8 +96,8 @@ $allImgs = mysqli_query($con, $selectImgs);
             </div>
         </div>
         <div class="btns">
-            <input type="submit" name="decision" value="Reject" <?php if($eachDetail['req_status']== "Accepted") echo "disabled" ?>>
-            <input type="submit" name="decision" value="Accept" <?php if($eachDetail['req_status']== "Accepted") echo "disabled" ?>>
+            <input type="submit" name="decision" value="Reject" <?php if ($eachDetail['req_status'] == "Accepted") echo "disabled" ?>>
+            <input type="submit" name="decision" value="Accept" <?php if ($eachDetail['req_status'] == "Accepted") echo "disabled" ?>>
         </div>
     </form>
 </body>

@@ -71,12 +71,13 @@ $result_pics = mysqli_query($con, $pics_query);
         </div>
         <nav class="nav-bar">
             <ul>
+                <li><a href="../../index.php"><b>Home</b></a></li>
                 <?php if ($user_data['privilege'] == 1) :  ?>
                     <li><a href="../../dashboard/dashboard.php"><b>Dashboard</b></a></li>
+                    <li><a href="../request/index.php"><b>Requests</b></a></li>
                 <?php elseif ($user_data['privilege'] == 2) : ?>
                     <li><a href="../../request/index.php"><b>Requests</b></a></li>
                 <?php endif; ?>
-                <li><a href="../../index.php"><b>Home</b></a></li>
                 <li><a href="../../plans/plans.php"><b>My plans</b></a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
                 <li><a href="#contact_us"><b>About</b></a></li>
