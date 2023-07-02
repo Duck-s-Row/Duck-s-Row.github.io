@@ -52,7 +52,7 @@ $result_pics = mysqli_query($con, $pics_query);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-    <link rel="stylesheet" href="info2.css">
+    <link rel="stylesheet" href="info3.css">
     <title>info</title>
 </head>
 
@@ -139,15 +139,18 @@ $result_pics = mysqli_query($con, $pics_query);
                             <?php if ($row['category'] == "Restaurants" || $row['category'] == "Cafe") : ?>
                                 <h2>Menu</h2>
                                 <!-- user click here to active the popup -->
-                                <p>click here</p>
+                                <p class="open" id="open_menu">Show menu</p>
                             <?php endif; ?>
                         </div>
                     </div>
                 </div>
                 <!-- popup -->
-                <!-- <div id="">
-                    <img src="../menus/<?php echo $row['menu_image'] ?>" alt="">
-                </div> -->
+                <div id="menu_popup" class="popup_menu">
+                    <button id="close_menu"><i class="fa fa-x"></i></button>
+                    <div class="popup_content" id="popup_content">
+                        <img src="../menus/<?php echo $row['menu_image'] ?>" alt="">
+                    </div>
+                </div>
 
                 <div class="map-container">
                     <h2>Location : <?php echo $row['p_branch'] ?></h2>

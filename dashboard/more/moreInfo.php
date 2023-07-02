@@ -112,6 +112,11 @@ $allImgs = mysqli_query($con, $selectImgs);
         const max = parseFloat(maxInput.value);
 
         const average = (min + max) / 2;
+        if(isNaN(average)){
+            avrSpan.textContent = 0;
+        } else {
+            avrSpan.textContent = average.toFixed(2);
+        }
 
         avrSpan.textContent = average.toFixed(2);
         
@@ -123,6 +128,11 @@ $allImgs = mysqli_query($con, $selectImgs);
             const max = parseFloat(maxInput.value);
             
             const average = (min + max) / 2;
+            if(isNaN(average)){
+                avrSpan.textContent = 0;
+            } else {
+                avrSpan.textContent = average.toFixed(2);
+            }
             
             avrSpan.textContent = average.toFixed(2);
         }

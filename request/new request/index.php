@@ -20,7 +20,7 @@ if (isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="requestsss.css">
+    <link rel="stylesheet" href="request1.css">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
     <title>New Request</title>
 </head>
@@ -75,10 +75,12 @@ if (isset($_SESSION['user_id'])) {
                     <div class="box1">
                         <div>
                             <h2>Budget</h2>
-                            <p><input type="number" name="min" placeholder="min price" required> - <input type="number" name="max" placeholder="max price" required> L.E/Person</p>
-                            <h2>Average</h2>
-                            <p>200 L.E / Person</p>
+                            <p><input type="number" name="min" id="min" placeholder="min price" required> - <input type="number" name="max" id="max" placeholder="max price" required> L.E/Person</p>
                         </div>
+                    </div>
+                    <div id="average">
+                        <h2>Average</h2>
+                        <p><span id="avr"></span> L.E.</p>
                     </div>
                     <div class="box2">
                         <div>
@@ -108,6 +110,44 @@ if (isset($_SESSION['user_id'])) {
             </div>
         </section>
     </form>
+    <script>
+        const minInput = document.getElementById('min');
+        const maxInput = document.getElementById('max');
+        const avrSpan = document.getElementById('avr');
+
+        const min = parseFloat(minInput.value);
+        const max = parseFloat(maxInput.value);
+
+        const average = (min + max) / 2;
+
+        console.log(average);
+        console.log("----------");
+        console.log(average.toFixed(2));
+
+        if(isNaN(average)){
+            avrSpan.textContent = 0;
+        } else {
+            avrSpan.textContent = average.toFixed(2);
+        }
+
+        minInput.addEventListener('input', calculateAverage);
+        maxInput.addEventListener('input', calculateAverage);
+        
+        function calculateAverage() {
+            const min = parseFloat(minInput.value);
+            const max = parseFloat(maxInput.value);
+            
+            const average = (min + max) / 2;
+
+            if(isNaN(average)){
+            avrSpan.textContent = 0;
+            } else {
+                avrSpan.textContent = average.toFixed(2);
+            }
+
+            avrSpan.textContent = average.toFixed(2);
+        }
+    </script>
 </body>
 
 </html>
