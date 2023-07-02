@@ -68,7 +68,10 @@ $allImgs = mysqli_query($con, $selectImgs);
                     <input type="number" name="min" id="" value="<?php echo $eachDetail['min_price'] ?>" readonly>- <input type="number" name="max" id="" value="<?php echo $eachDetail['max_price'] ?>" readonly><br>
                 </div>
 
-                <label for="">Average</label>
+                <div id="average">
+                    <label>Average</label>
+                    <p><span id="avr"></span>L.E.</p>
+                </div>
                 <p><?php echo $eachDetail['average_budget'] ?></p><br>
                 <label for="details">Details</label>
                 <input type="text" name="details" id="details" value="<?php echo $eachDetail['details'] ?>" readonly><br>
@@ -86,6 +89,30 @@ $allImgs = mysqli_query($con, $selectImgs);
             <input type="submit" name="decision" value="Accept" <?php if($eachDetail['req_status']== "Accepted") echo "disabled" ?>>
         </div>
     </form>
+    <script>
+        const minInput = document.getElementById('min');
+        const maxInput = document.getElementById('max');
+        const avrSpan = document.getElementById('avr');
+
+        const min = parseFloat(minInput.value);
+        const max = parseFloat(maxInput.value);
+
+        const average = (min + max) / 2;
+
+        avrSpan.textContent = average.toFixed(2);
+        
+        minInput.addEventListener('input', calculateAverage);
+        maxInput.addEventListener('input', calculateAverage);
+        
+        function calculateAverage() {
+            const min = parseFloat(minInput.value);
+            const max = parseFloat(maxInput.value);
+            
+            const average = (min + max) / 2;
+            
+            avrSpan.textContent = average.toFixed(2);
+        }
+    </script>
 </body>
 
 </html>

@@ -347,9 +347,6 @@ input[type="submit"] {
     color: #fff;
   }
 
- 
-
-
 /* end start slide  */
 .back a{
     color: #11101b;
@@ -358,4 +355,18 @@ input[type="submit"] {
 }
 .back a:hover{
     color: white;
+}
+
+#average {
+    margin: 10px 0;
+}
+
+#average span {
+    color: #dfca13;
+}
+
+#average p {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }

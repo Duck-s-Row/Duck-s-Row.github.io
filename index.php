@@ -127,14 +127,14 @@
        </a>
      </div>
      <div class="content">
-       <a href="Hangout/hangout.php">
+       <a href="#about_us">
          <div class="card">
            <div class="icon">
-             <i class="fa-solid fa-location-dot"></i>
+            <i class="fa-solid fa-envelope"></i>
            </div>
            <div class="info">
-             <h3>Various places</h3>
-             <p>We'll highlight various locations in the Giza Governorate that are appropriate for all groups.</p>
+             <h3>Requests</h3>
+             <p>We can assist in expanding your business by featuring your services on our website.</p>
            </div>
          </div>
        </a>
@@ -158,7 +158,7 @@
    <!-- The Start of About Us section -->
    <section class="about_us" id="about_us">
      <div class="left">
-       <h1>What Can We Offer For You</h1>
+       <h1>Contact us to add your services</h1>
        <form method="post">
          <input type="text" id="name" placeholder="Your name" value="<?php if (isset($_SESSION['user_id'])) echo $user_data['username'] ?>" required>
          <input type="email" id="email" placeholder="Your E-mail" value="<?php if (isset($_SESSION['user_id']))  echo $user_data['email'] ?>" required readonly>

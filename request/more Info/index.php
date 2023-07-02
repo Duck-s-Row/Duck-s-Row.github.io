@@ -22,7 +22,7 @@ if (isset($_SESSION['user_id']) && isset($request_id)) {
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-    <link rel="stylesheet" href="indexstyle1.css">
+    <link rel="stylesheet" href="indexstyle2.css">
     <title>Request Adjustment</title>
 </head>
 
@@ -46,7 +46,7 @@ if (isset($_SESSION['user_id']) && isset($request_id)) {
                         <li><a href="dashboard/dashboard.php"><b>Dashboard</b></a></li>
                     <?php endif; ?>
                 <?php endif; ?>
-                <li><a href="#home"><b>Home</b></a></li>
+                <li><a href="../../index.php"><b>Home</b></a></li>
                 <li><a href="../Hangout/hangout.php"><b>Hangout</b></a></li> <!-- we could remove this ancher tag link because of using the button  -->
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Plans</a></li> -->
                 <li><a href="#about_us"><b>About</b></a></li>
@@ -133,9 +133,12 @@ if (isset($_SESSION['user_id']) && isset($request_id)) {
             </div>
             <div>
                 <label for="">Budget</label>
-                <input type="number" name="min" id="" value="<?php echo $eachDetail['min_price'] ?>" <?php if ($eachDetail['req_status'] == "Accepted") echo "readonly"; ?>>-
-                <input type="number" name="max" id="" value="<?php echo $eachDetail['max_price'] ?>" <?php if ($eachDetail['req_status'] == "Accepted") echo "readonly"; ?>>
-                <p>Average</p>
+                <input type="number" name="min" id="min" value="<?php echo $eachDetail['min_price'] ?>" <?php if ($eachDetail['req_status'] == "Accepted") echo "readonly"; ?>>-
+                <input type="number" name="max" id="max" value="<?php echo $eachDetail['max_price'] ?>" <?php if ($eachDetail['req_status'] == "Accepted") echo "readonly"; ?>>
+                <div id="average">
+                    <label>Average</label>
+                    <p><span id="avr"></span>L.E.</p>
+                </div>
             </div>
             <div>
                 <label for="details">Details</label>
@@ -165,6 +168,30 @@ if (isset($_SESSION['user_id']) && isset($request_id)) {
             </div>
         </form>
     </section>
+    <script>
+        const minInput = document.getElementById('min');
+        const maxInput = document.getElementById('max');
+        const avrSpan = document.getElementById('avr');
+
+        const min = parseFloat(minInput.value);
+        const max = parseFloat(maxInput.value);
+
+        const average = (min + max) / 2;
+
+        avrSpan.textContent = average.toFixed(2);
+        
+        minInput.addEventListener('input', calculateAverage);
+        maxInput.addEventListener('input', calculateAverage);
+        
+        function calculateAverage() {
+            const min = parseFloat(minInput.value);
+            const max = parseFloat(maxInput.value);
+            
+            const average = (min + max) / 2;
+            
+            avrSpan.textContent = average.toFixed(2);
+        }
+    </script>
 </body>
 
 </html>
