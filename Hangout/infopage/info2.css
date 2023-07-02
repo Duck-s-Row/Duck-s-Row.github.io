@@ -646,4 +646,35 @@ header {
 .privacy {
     grid-column: 3;
 }
-
+@media (max-width: 450px){
+    body{
+        height: 100%;
+        width: 100%;
+    }
+    .photo{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .main_slide{
+        width: 100%;
+        height: 100%;
+    }
+    .slider-container img{
+        margin: 0;
+        padding: 0;
+        width: 94%;
+        margin-left: 10%;
+        margin-right: 10%;
+        height: 400px;
+    }
+    .disc{
+        margin: 400px 0 0 0 ;
+    }
+    .disc p{
+        margin-bottom: 10px;
+    }
+    .disc h2{
+        margin-bottom: 0;
+    }
+}

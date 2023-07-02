@@ -52,7 +52,7 @@ $result_pics = mysqli_query($con, $pics_query);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-    <link rel="stylesheet" href="info1.css">
+    <link rel="stylesheet" href="info2.css">
     <title>info</title>
 </head>
 
@@ -136,21 +136,16 @@ $result_pics = mysqli_query($con, $pics_query);
                             <p><?php echo $row['min_price'] ?>-<?php echo $row['max_price'] ?> L.E/Person</p>
                             <h2>Average</h2>
                             <p><?php echo $row['average_budget']; ?></p>
+                            <h2>Menu</h2>
+                            <!-- user click here to active the popup -->
+                            <p>click here</p>
                         </div>
-                    </div>
-                    
-                </div>
-                <div>
-                    <div>
-                        <h2>Menu</h2>
-                        <!-- user click here to active the popup -->
-                        <p>click here</p>
-                    </div>
+                    </div>   
                 </div>
                 <!-- popup -->
-                <div id="">
+                <!-- <div id="">
                     <img src="../menus/<?php echo $row['menu_image'] ?>" alt="">
-                </div>
+                </div> -->
                 
                 <div class="map-container">
                     <h2>Location : <?php echo $row['p_branch'] ?></h2>
