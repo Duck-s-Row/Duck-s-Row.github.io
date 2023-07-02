@@ -38,6 +38,12 @@ $allImgs = mysqli_query($con, $selectImgs);
         <img src="../../Hangout/logos/<?php echo $eachDetail['logo'] ?>" alt="logo" height="70" width="70"><br>
         <input type="hidden" name="logo" value="<?php echo $eachDetail['logo'] ?>">
     </div>
+    <div id="menu_popup" class="popup_menu">
+        <button id="close_menu"><i class="fa fa-x"></i></button>
+        <div class="popup_content" id="popup_content">
+            <img src="../menus/<?php echo $row['menu_image'] ?>" alt="">
+        </div>
+    </div>
     <form action="decision.php" method="post">
         <div class="content">
             <div class="left">
@@ -60,7 +66,10 @@ $allImgs = mysqli_query($con, $selectImgs);
                 </div>
                 <script src="slider.js"></script>
                 <div class="menu">
-                    MENU<img src="../../Hangout/menus/<?php echo $eachDetail['menu_image'] ?>" alt="menu" height="100" width="100"><br>
+                    <!-- MENU<img src="../../Hangout/menus/<?php echo $eachDetail['menu_image'] ?>" alt="menu" height="100" width="100"><br> -->
+                    <!-- popup -->
+                    MENU
+                    <p class="open" id="open_menu">Show menu</p>
                     <input type="hidden" name="menu" value="<?php echo $eachDetail['menu_image'] ?>">
 
                     <label for="location">Location</label>
@@ -83,10 +92,7 @@ $allImgs = mysqli_query($con, $selectImgs);
                     <input type="number" name="min" id="" value="<?php echo $eachDetail['min_price'] ?>" readonly>- <input type="number" name="max" id="" value="<?php echo $eachDetail['max_price'] ?>" readonly><br>
                 </div>
 
-                <div id="average">
-                    <label>Average</label>
-                    <p><span id="avr"></span>L.E.</p>
-                </div>
+                <label>Average</label>
                 <p><?php echo $eachDetail['average_budget'] ?></p><br>
                 <label for="details">Details</label>
                 <input type="text" name="details" id="details" value="<?php echo $eachDetail['details'] ?>" readonly><br>
@@ -105,6 +111,20 @@ $allImgs = mysqli_query($con, $selectImgs);
         </div>
     </form>
     <script>
+                // Menu Popup page
+                var popup_menu = document.getElementById("menu_popup");
+        var close_menu = document.getElementById("close_menu");
+        var open_menu = document.getElementById("open_menu");
+
+        close_menu.addEventListener("click", ()=> {
+            popup_menu.style.display = "none";
+        });
+
+        open_menu.addEventListener("click", ()=> {
+            popup_menu.style.display = "flex";
+            close_menu.style.display = "block";
+        });
+        
         const minInput = document.getElementById('min');
         const maxInput = document.getElementById('max');
         const avrSpan = document.getElementById('avr');

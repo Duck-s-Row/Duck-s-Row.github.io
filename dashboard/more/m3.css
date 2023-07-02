@@ -218,3 +218,70 @@ body {
 
 
 /* end start slide  */
+
+
+.popup_menu {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup_menu {
+  left: 0;
+}
+
+.popup_content, .popup_menu .popup_content{
+  width: 40%;
+  height: 90%;
+  color: #101820;
+  background: linear-gradient(120deg, #FEE715,#9d8e04);
+  border-radius: 10px;
+  box-shadow: 5px 10px 18px #000;
+  padding: 20px;
+  text-align: center;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.popup_menu .popup_content img {
+  width: 100%;
+  height: 100%;
+}
+
+.popup_content::-webkit-scrollbar{
+  width: 10px;
+}
+.popup_content::-webkit-scrollbar-thumb{
+  background-color: #9d8e04;
+  border-radius: 20px;
+}
+
+#open_menu {
+  color: #fff;
+  cursor: pointer;
+  margin: 10px 0 20px 0;
+}
+
+.popup #close, .popup_menu #close_menu {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+  top: -320px;
+  left: 20px;
+  color: #FEE715;
+  background-color: #101820;
+  border-radius: 50%;
+  box-shadow: 5px 10px 18px black;
+}
+
