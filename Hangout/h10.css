@@ -77,32 +77,79 @@ header {
     color: #FEE715;
 }
 
-@media (max-width: 90vh) {
-    nav {
-        min-height: 5vh;
-        top: 20px;
+@media only screen and (max-width: 1320px) {
+    header {
+        padding: 0 50px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .sub-menu-wrap{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+        cursor: pointer;
     }
 
-    .navbar .navbar-toggler {
-        color: white;
-        border: none;
-        font-size: 40px;
+    .hamburger .line {
+        width: 30px;
+        height: 3px;
+        background: #fefefe;
+        margin: 6px 0;
     }
 
-    #user {
-        margin-left: 10px;
-        font-size: 40px;
-        color: white;
+    .nav-bar {
+        height: 0;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 75%;
+        margin: auto;
+        background: #11101b;
+        transition: 0.5s;
+        overflow: hidden;
     }
 
-    #logo {
-        width: 90px;
+    .nav-bar.active{
+        height: 370px;
     }
 
-    .navbar .navbar-nav .nav-link,.navbar .navbar-brand {
-        font-size: 30px;
+    .nav-bar ul {
+        display: block;
+        width: fit-content;
+        margin: 20px auto 0 auto;
+        padding: 0;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
     }
 
+    #user-icon {
+        display: none;
+    }
+
+    #logout{
+        display: inline-block;
+    }
+
+    .nav-bar.active ul {
+        opacity: 1;
+    }
+
+    .nav-bar ul li a {
+        margin-bottom: 12px;
+    }
+    .profile{
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 720px){
+    .logo img {
+        width: 60px;
+    }
 }
 
 
