@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="h7.css">
+    <link rel="stylesheet" href="h9.css">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -35,12 +35,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </div>
         <nav class="nav-bar">
             <ul>
+                <li><a href="../index.php">Home</a></li>
                 <?php if ($user_data['privilege'] == 1) :  ?>
                     <li><a href="../dashboard/dashboard.php">Dashboard</a></li>
+                    <li><a href="../request/index.php">Requests</a></li>
                 <?php elseif ($user_data['privilege'] == 2) : ?>
                     <li><a href="../request/index.php">Requests</a></li>
                 <?php endif; ?>
-                <li><a href="../index.php">Home</a></li>
                 <li><a href="../plans/plans.php">My Plans</a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
                 <li><a href="#contact_us">About</a></li>
@@ -167,8 +168,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                     <!-- </div> -->
                                     <div class="icons">
                                         <a href="" onclick="event.preventDefault(); document.getElementById('hidden_form_<?php echo $place['place_id']; ?>').submit();"><i class="fa-solid fa-eye"></i></a>
-                                        <a href=""><i class="fa-solid fa-plus"></i></a>
-                                        <a href=""><i class="fa-solid fa-heart"></i></a>
+                                        
                                     </div>
                                 </div>
                             </div>

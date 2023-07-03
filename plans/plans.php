@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="p10.css">
+    <link rel="stylesheet" href="p11.css">
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <title>My Plans</title>
 </head>
@@ -63,12 +63,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </div>
         <nav class="nav-bar">
             <ul>
+                <li><a href="../index.php">Home</a></li>
                 <?php if ($user_data['privilege'] == 1) :  ?>
                     <li><a href="../dashboard/dashboard.php">Dashboard</a></li>
+                    <li><a href="request/index.php">Requests</a></li>
                 <?php elseif ($user_data['privilege'] == 2) : ?>
                     <li><a href="request/index.php">Requests</a></li>
                 <?php endif; ?>
-                <li><a href="../index.php">Home</a></li>
                 <li><a href="../Hangout/hangout.php">Hangout</a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
                 <li><a href="#about_us">About</a></li>

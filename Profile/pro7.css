@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'ABeeZee', sans-serif;
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(-120deg, #FEE715,#9d8e04);
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* start of user&choices */
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.user a{
+    cursor: pointer;
+}
+.user_choices{
+    height: 90vh;
+    width: 30%;
+    margin: 2% 7% 2% 2%;
+}
+.user .pic{
+    position: absolute;
+    top: 200px;
+    width: 32px;
+    height: 32px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #101820;
+}
+.user .pic .icon{
+    font-size: 22px;
+}
+.user .pic input[type="file"]{
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+}
+input[type="file"]::-webkit-file-upload-button{
+    cursor: pointer;
+}
+#home {
+    text-decoration: none;
+    background-color: black;
+    color: #FEE715;
+    border-bottom-right-radius:10px ;
+    align-self: self-start;
+    padding: 10px 7px 5px 7px;
+    margin: 10px 0 0 0;
+    cursor: pointer;
+}
+#home:hover{
+    background-color: #fff;
+    color: #101820;
+}
+#home span {
+    font-size: 20px;
+}
+.user {
+    background-color: #101820;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    color: white;
+    border-radius: 50px;
+    margin-top: 20px;
+}
+
+.h {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    letter-spacing: 0.1em;
+    margin-left: 20px;
+    color: #fff;
+}
+.user img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 15px;
+}
+hr{
+    width: 100%;
+}
+.user h2, .user h3 {
+    padding-top: 10px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+.user_choices{
+    background: #101820;
+    border-radius: 50px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 0;
+    overflow: hidden;
+}
+.btns{
+    text-align: center;
+    margin-top: 35px;
+}
+.chooice {
+    width: 100%;
+    height: 60px;
+    border: 0;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #0b1016;
+}
+.chooice:hover{
+    background: none;
+}
+button a{
+    text-decoration: none;
+    color: black;  
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    color: #FEE715;
+}
+/* end of user&choices */
+
+
+.details_info,.planes,.pass{
+    display: block;
+    width: 60%;
+    height: 90vh;
+    border-radius: 50px;
+    overflow: hidden;
+    background-color: #101820;
+    margin: 2%;
+    border-bottom-left-radius:5px ;
+    border-top-right-radius:5px ;
+}
+.planes , .pass{
+    display: none;
+}
+.details {
+    height: 10%;
+    background-color: black;
+    color: #FEE715;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    border-radius: 20px;
+}
+.planes form{
+    margin: 20px 0 0 20px;
+}
+.planes form input{
+    width: 40px;
+    height: 20px;
+}
+
+/* start of user info */
+.c1{
+    display: flex;
+    margin: 50px 0 60px 80px;
+}
+form input[type="text"],input[type="email"],input[type="tel"]{
+    margin-top: 10px;
+}
+.c1l{
+    margin-left: 120px;
+}
+.c2{
+    margin: 0 0 60px 80px;
+}
+.c3{
+    display: flex;
+    margin: 0 0 80px 80px;
+}
+.gender{
+    font-size: 17px;
+    margin-left: 130px;
+}
+.details_info input {
+    font-size: 20px;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #FEE715;
+    border-radius: 10px;
+    padding: 7px 7px 0 7px;
+    width: 280px;
+    color: #fff;
+}
+.details_info input:hover{
+    border: 1px solid white;
+}
+.details_info input[type="submit"] {
+    width: 180px;
+    height: 50px;
+    border: none;
+    font-weight: 600;
+    font-size: 24px;
+    border-radius: 20px;
+    margin-left: 80px;
+    background-color: black;
+    color: rgba(254, 231, 21, 1);
+    cursor: pointer;
+}
+.details_info input[type="submit"]:hover{
+    color: #101820;
+    background-color: white;
+}
+label {
+    font-weight: 700;
+    color: #FEE715;
+    padding-bottom: 5px;
+}
+/* end of user info */
+
+
+
+/* start of Change Password */
+.pass input{
+    font-size: 20px;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #FEE715;
+    border-radius: 10px;
+    padding: 7px 7px 0 7px;
+    width: 280px;
+    color: #fff;
+}
+.pass input[type="submit"]{
+    width: 30%;
+    height: 50px;
+    border: none;
+    font-weight: 600;
+    font-size: 24px;
+    border-radius: 20px;
+    margin: 50px 35% 0 35%;
+    background-color: black;
+    color: rgba(254, 231, 21, 1);
+    cursor: pointer;
+}
+.pass input[type="submit"]:hover{
+    color: #101820;
+    background-color: white;
+}
+.pass .check input[type="submit"]{
+    width: 20%;
+    margin: 30px 40% 40px 40%;
+    text-align: center;
+}
+.pass .old{
+    margin-top: 80px;
+    text-align: center;
+}
+.pass .new{
+    margin: 80px 0 0 80px;
+    display: flex;
+}
+.pass .new .rnew{
+    margin-left: 120px;
+}
+
+.pass .new .rnew p {
+    display: none;
+}
+/* end of Change Password */
+
+/* Mobile Styles */
+@media only screen and (max-width: 1020px) {
+    
+    body {
+      background-color: #101820;
+    }
+
+    .main {
+        width: 100%;
+        min-height: 100vh;
+        background-color: #101820;
+        display: flex;
+        flex-direction: column;
+    }
+      .user {
+        
+        display: flex;
+        flex-direction: column;
+        flex-direction: row;
+        width: 100%;
+        height: 100px;
+        
+        text-align: unset;
+        padding-bottom:175px;
+    }
+
+    #home {
+        border-radius: 30px;
+        align-self: self-start;
+        margin: 25px;
+        
+    }
+
+    .details_info{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        width: 96.5%;
+    }
+
+    .planes{
+        margin-top: 10px;
+        width: 96.5%;
+    }
+
+    .pass{
+        margin-top: 10px;
+        width: 96.5%;
+        height: 80vh;
+    }
+
+    .user_choices{
+        
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 30px auto 0 auto;
+        height: 100%;
+        width: 90%;
+    }
+
+    .btns{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .user img {
+        width: 100px;
+        height: 100px;
+        margin-left: 10px;
+        margin-top: 30px;
+    }
+
+    .details_info input {
+
+        width: 176px;
+
+    }
+
+    .details_info form{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .c1 {
+        display: flex;
+        flex-direction: column;
+        margin: 50px 0 10px 80px;
+    }
+
+    .c1l {
+        margin-top: 0px;
+        margin-left: 0;
+    }
+
+    .c2 {
+        margin: 0 0 10px 80px;
+    }
+
+    .c3 {
+        display: flex;
+        flex-direction: column;
+        display: flex;
+        margin: 0 0 0 80px;
+    }
+
+    .gender {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    .details_info{
+
+        height: 80vh;
+    }
+
+    .details_info input[type="submit"] {
+        width: 186px;
+        height: 40px;
+        color: black;
+        background-color: rgba(254, 231, 21, 1);
+        border: none;
+        font-weight: 600;
+        font-size: 24px;
+        border-radius: 20px;
+        margin-top: 0px;
+    }
+      
+    .pass .new .rnew {
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+
+    .pass .new {
+        display: flex;
+        flex-direction: column;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .chooice{
+        height: 60px;
+    }
+
+    button a {
+        font-size: 15px;
+        line-height: unset;
+        letter-spacing:unset; 
+        display: flex;
+        flex-direction: column;
+    }
+
+    
+  }
