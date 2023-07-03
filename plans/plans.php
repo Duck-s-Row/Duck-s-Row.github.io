@@ -17,12 +17,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     } else if ($_POST['Form_identifier'] == "Delete_place") {
         $place_id_delete = $_POST['place_id'];
         $plan_id_delete = $_POST['plan_id'];
-        $deletePlaceQuery = "DELETE FROM exist_plan WHERE user_id = $user_id AND place_id = $place_id_delete AND plan_id = $plan_id_delete";
+        $deletePlaceQuery = "DELETE FROM exist_plan WHERE place_id = $place_id_delete AND plan_id = $plan_id_delete";
         mysqli_query($con, $deletePlaceQuery);
         header("Location:plans.php");
     } else if ($_POST['Form_identifier'] == "remove_plan") {
         $plan_id_remove = $_POST['plan_id'];
-        $removePlanQuery = "DELETE FROM exist_plan WHERE user_id = $user_id AND  plan_id = $plan_id_remove ";
+        $removePlanQuery = "DELETE FROM exist_plan WHERE  plan_id = $plan_id_remove ";
         mysqli_query($con, $removePlanQuery);
         $removePlanQuery = "DELETE FROM user_plans WHERE user_id = $user_id AND plan_id = $plan_id_remove ";
         mysqli_query($con, $removePlanQuery);
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="p11.css">
+    <link rel="stylesheet" href="p13.css">
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <title>My Plans</title>
 </head>
@@ -203,7 +203,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             </p>
         </div>
     </section>
-    <script src="popUp.js"></script>
+    <script src="popup1.js"></script>
     <script>
         let images = [];
         <?php

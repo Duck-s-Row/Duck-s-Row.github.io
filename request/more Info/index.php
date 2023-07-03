@@ -27,7 +27,7 @@ $place_id = $eachDetail['place_id'];
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-    <link rel="stylesheet" href="indexstyle2.css">
+    <link rel="stylesheet" href="indexstyle3.css">
     <title>Request Adjustment</title>
 </head>
 
@@ -94,30 +94,29 @@ $place_id = $eachDetail['place_id'];
                 </div>
             </div>
             <script src="slider.js"></script>
-            <?php
-            $selectComQuery = "SELECT * FROM request_comment WHERE place_id = $place_id";
-            $AllCom = mysqli_query($con, $selectComQuery);
-            if (mysqli_num_rows($AllCom) > 0) :
-            ?>
-                <div class="com-table">
-                    <table>
-                        <tr>
-                            <th>Comment</th>
-                            <th>Comment Date</th>
-                        </tr>
-                        <?php while ($eachCom = mysqli_fetch_assoc($AllCom)) : ?>
-                            <tr>
-                                <td><?php echo $eachCom['comment'] ?></td>
-                                <td><?php echo $eachCom['com_date'] ?></td>
-                            </tr>
-                        <?php endwhile; ?>
-                    </table>
-                </div>
-            <?php endif; ?>
         </div>
         <div class="right">
             <form action="adjust request.php" method="post">
-
+                <?php
+                $selectComQuery = "SELECT * FROM request_comment WHERE place_id = $place_id";
+                $AllCom = mysqli_query($con, $selectComQuery);
+                if (mysqli_num_rows($AllCom) > 0) :
+                ?>
+                    <div class="com-table">
+                        <table>
+                            <tr>
+                                <th>Comment</th>
+                                <th>Comment Date</th>
+                            </tr>
+                            <?php while ($eachCom = mysqli_fetch_assoc($AllCom)) : ?>
+                                <tr>
+                                    <td><?php echo $eachCom['comment'] ?></td>
+                                    <td><?php echo $eachCom['com_date'] ?></td>
+                                </tr>
+                            <?php endwhile; ?>
+                        </table>
+                    </div>
+                <?php endif; ?>
                 <div>
                     <input type="hidden" name="place_id" value="<?php echo $eachDetail['place_id'] ?>" <?php if ($eachDetail['req_status'] == "Accepted") echo "readonly"; ?>>
                     <label for="p_name">Place Name</label>

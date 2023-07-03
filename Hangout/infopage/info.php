@@ -56,6 +56,7 @@ $result_pics = mysqli_query($con, $pics_query);
     <link rel="stylesheet" href="i3.css">
     <link rel="stylesheet" href="info.css">
     <link rel="stylesheet" href="info3.css">
+    <link rel="stylesheet" href="info5.css">
     <title>info</title>
 </head>
 
@@ -192,7 +193,7 @@ $result_pics = mysqli_query($con, $pics_query);
                 mysqli_stmt_bind_param($stmt2, 'issss', $plan_id, $plan_name, $plan_date, $creation_date, $user_id);
                 mysqli_stmt_execute($stmt2);
 
-                $query1 = "INSERT INTO exist_plan(plan_id,user_id,place_id) VALUES(?,?,?)";
+                $query1 = "INSERT INTO exist_plan(plan_id,place_id) VALUES(?,?)";
                 $stmt1 = mysqli_prepare($con, $query1);
                 mysqli_stmt_bind_param($stmt1, 'ii', $plan_id, $place_id);
                 mysqli_stmt_execute($stmt1);
