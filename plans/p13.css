@@ -554,18 +554,21 @@ header {
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        margin-top: 100px;
     }
 
     .left .ad{
-        top: unset;
+        display: none;
     }
 
     .content{
-        width: 80%;
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
     }
-
+    .remove button{
+        margin-top: 25px;
+    }
     .right {
         width: 80%;
         display: flex;
@@ -575,15 +578,17 @@ header {
         left: 10%;
         right: 10%;
     }
-
+    
     .plan_card {
-        width: 100%;
-        
-        margin: 0;
+        width: 80%;
+        margin: 0 0 0 20px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        margin-top: 0;
     }
-
+    .r1{
+        margin-top: 20px;
+    }
     .right .card {
         width: 100%;
         min-height: 100px;
