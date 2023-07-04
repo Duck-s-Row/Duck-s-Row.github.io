@@ -196,6 +196,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <option value="Mall">Mall</option>
             <option value="Cinema">Cinema</option>
             <option value="EscapeRoom">Escape Rooms</option>
+            <option value="Pool">Pools</option>
+            <option value="KidsArea">Kids Area</option>
+            <option value="BowlingHall">Bowling Halls</option>
         </select><br>
         <label for="location">Location:</label>
         <input type="url" name="location" id="location"><br>
