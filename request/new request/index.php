@@ -20,7 +20,7 @@ if (isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="request1.css">
+    <link rel="stylesheet" href="request2.css">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
     <title>New Request</title>
 </head>

@@ -23,7 +23,7 @@ if (isset($_SESSION['user_id'])) {
     <title>Requests</title>
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="index1.css">
+    <link rel="stylesheet" href="index2.css">
 </head>
 
 <body>

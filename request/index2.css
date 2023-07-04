@@ -206,7 +206,7 @@ table {
     border-collapse: collapse;
     border: 2px solid #fee715;
     width: 90%;
-
+    word-break: break-all;
     margin-bottom: 50px;
 }
 
@@ -234,4 +234,24 @@ input[type="submit"] {
 	font-family: 'Bebas Neue', cursive;
 	font-size: 20px;
 	cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .request_details p{
+        font-size: 12px;
+    }
+    
+    th, td {
+        text-align: center;
+        padding: 5px;
+        font-size: 10px;
+    }
+
+    input[type="submit"] {
+        width: 40px;
+        height: 20px;
+        font-size: 10px;
+        
+    }
 }
