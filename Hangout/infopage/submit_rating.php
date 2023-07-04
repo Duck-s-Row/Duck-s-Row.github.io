@@ -8,7 +8,7 @@ session_start();
 $place_id = $_SESSION['place_id'];
 $user_id = $_SESSION['user_id'];
 
-$connect = new PDO("mysql:host=localhost;dbname=ducks_row", "root", "");
+$connect = new PDO("mysql:host=localhost;dbname=ducks_row", "root", "Abdo1234");
 
 $select = "select username from users where user_id = $user_id ";
 $resulut5 = $con->query($select);
