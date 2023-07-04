@@ -541,7 +541,12 @@ header {
     grid-column: 3;
 }
 
-@media (max-width: 999px) {
+@media (max-width: 1200px) {
+
+    .plan_card h3{
+        font-size: 15px;
+    }
+
     .plans {
         width: 100%;
         padding: 0;
@@ -558,7 +563,10 @@ header {
     }
 
     .left .ad{
-        display: none;
+        margin-left: 100px;
+        width: auto;
+        height: auto;
+       position: unset;
     }
 
     .content{
@@ -568,6 +576,8 @@ header {
     }
     .remove button{
         margin-top: 25px;
+        font-size: 20px;
+        margin: 20px 0 0 10px;
     }
     .right {
         width: 80%;
@@ -580,14 +590,16 @@ header {
     }
     
     .plan_card {
-        width: 80%;
+        width: 70%;
         margin: 0 0 0 20px;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         margin-top: 0;
+        height: auto;
     }
     .r1{
         margin-top: 20px;
+        margin-left: 20px;
     }
     .right .card {
         width: 100%;
@@ -599,15 +611,16 @@ header {
         height: 100%;
     }
 
-    .contact_us .left{
-        grid-row: 1;
+    .contact_us .info{
+        grid-column: 1;
+        grid-row: 2;
     }
 
-    .contact_us{
-
+    .contact_us .left{
+        grid-row: 1;
         display: flex;
-        flex-direction: column;
-        padding: 40px;
+        justify-content: end;
+        margin-bottom: 50px;
     }
 
     .popup_content{
@@ -617,6 +630,12 @@ header {
 
     .popup .card{
         width: 90%;
+        min-height: 400px;
+    }
+
+    .popup .card .more {
+        align-items: center;
+        flex-direction: column;
     }
 
     .popup #close{
@@ -626,10 +645,17 @@ header {
         height: 3.5%;
     }
 
+    .popup_content input[type="text"] {
+        margin-top: 40px;
+    }
+
     .more{
         padding: 0;
     }
+
+
 }
+
 
 @media (max-width: 900px) {
     

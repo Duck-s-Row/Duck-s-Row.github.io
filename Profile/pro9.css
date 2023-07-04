@@ -303,15 +303,12 @@ label {
         flex-direction: column;
     }
       .user {
-        
         display: flex;
         flex-direction: column;
         flex-direction: row;
         width: 100%;
-        height: 100px;
-        
+        height: auto;
         text-align: unset;
-        padding-bottom:175px;
     }
 
     #home {
@@ -336,7 +333,7 @@ label {
     .pass{
         margin-top: 10px;
         width: 96.5%;
-        height: 80vh;
+        height: 100vh;
     }
 
     .user_choices{
@@ -352,6 +349,7 @@ label {
     .btns{
         display: flex;
         flex-direction: row;
+        margin-bottom: 20px;
     }
 
     .user img {
@@ -359,6 +357,10 @@ label {
         height: 100px;
         margin-left: 10px;
         margin-top: 30px;
+    }
+
+    .user .pic{
+        top: 250px;
     }
 
     .details_info input {
@@ -370,12 +372,13 @@ label {
     .details_info form{
         display: flex;
         flex-direction: column;
+        
     }
 
     .c1 {
         display: flex;
         flex-direction: column;
-        margin: 50px 0 10px 80px;
+        margin: 50px 0 10px 50px;
     }
 
     .c1l {
@@ -384,14 +387,14 @@ label {
     }
 
     .c2 {
-        margin: 0 0 10px 80px;
+        margin: 0 0 10px 50px;
     }
 
     .c3 {
         display: flex;
         flex-direction: column;
         display: flex;
-        margin: 0 0 0 80px;
+        margin: 0 0 0 50px;
     }
 
     .gender {
@@ -401,7 +404,7 @@ label {
 
     .details_info{
 
-        height: 80vh;
+        height: 100vh;
     }
 
     .details_info input[type="submit"] {
@@ -413,7 +416,12 @@ label {
         font-weight: 600;
         font-size: 24px;
         border-radius: 20px;
-        margin-top: 0px;
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+
+    .pass .details{
+        font-size: 15px;
     }
       
     .pass .new .rnew {
@@ -424,6 +432,17 @@ label {
     .pass .new {
         display: flex;
         flex-direction: column;
+        margin: 80px 0 0 50px;
+    }
+
+    .pass .check input[type="submit"] {
+        width: 30%;
+        margin: 30px 40% 40px 35%;
+        text-align: center;
+    }
+
+    .pass input{
+        width: 180px;
     }
 
     img {
@@ -432,11 +451,11 @@ label {
     }
 
     .chooice{
-        height: 60px;
+        height: auto;
     }
 
     button a {
-        font-size: 15px;
+        font-size: 10.2px;
         line-height: unset;
         letter-spacing:unset; 
         display: flex;
