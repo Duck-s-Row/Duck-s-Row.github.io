@@ -54,8 +54,7 @@ function filter() {
                   <!-- </div> -->
                   <div class="icons">
                     <a href="" onclick="event.preventDefault(); document.getElementById('hidden_form_${item1.place_id}').submit();"><i class="fa-solid fa-eye"></i></a>
-                    <a href=""><i class="fa-solid fa-plus"></i></a>
-                    <a href=""><i class="fa-solid fa-heart"></i></a>
+                    
                   </div>
                 </div>
               </div>
@@ -85,8 +84,7 @@ function filter() {
                   <!-- </div> -->
                   <div class="icons">
                     <a href="" onclick="event.preventDefault(); document.getElementById('hidden_form_${item2.place_id}').submit();"><i class="fa-solid fa-eye"></i></a>
-                    <a href=""><i class="fa-solid fa-plus"></i></a>
-                    <a href=""><i class="fa-solid fa-heart"></i></a>
+                    
                   </div>
                 </div>
               </div>
