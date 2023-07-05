@@ -21,7 +21,7 @@ if (isset($_SESSION['user_id'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="d6.css">
+    <link rel="stylesheet" href="d7.css">
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <title>Dashboard</title>
 </head>
@@ -58,7 +58,7 @@ if (isset($_SESSION['user_id'])) {
 
     <section class="dashboard tap" id="dashboard">
         <h3>Hi Admin, Welcome back</h3>
-        <div class="shortcut">
+        <div class="shortcut1">
             <div class="card">
                 <h2>Users</h2>
                 <i class="fa fa-user"></i>
@@ -75,8 +75,8 @@ if (isset($_SESSION['user_id'])) {
                 <a href="#requests" class="navigate">Navigate</a>
             </div>
         </div>
-        <h2>Number of</h2>
-        <div class="shortcut">
+        <h2 class="number-of">Number of</h2>
+        <div class="shortcut2">
             <div class="card" id="numcard">
                 <h2>Sign ups</h2>
                 <div>

@@ -161,11 +161,11 @@ nav ul li.active {
     }
 
     button {
-        width: 25%;
-        height: 45%;
+        width: 30%;
+        height: 50%;
         border-radius: 10px;
         margin-top: 50px;
-        font-size: 20px;
+        font-size: 17px;
     }
     
 }
@@ -176,7 +176,17 @@ nav ul li.active {
     }
 }
 
-.shortcut {
+.shortcut1 {
+    width: 95%;
+    height: 270px;
+    display: flex;
+    padding: 0px 10px;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.shortcut2 {
     width: 95%;
     height: 270px;
     display: flex;
@@ -246,7 +256,7 @@ table {
     border-collapse: collapse;
     border: 2px solid #fee715;
     width: 90%;
-
+    word-break: break-all;
     margin-bottom: 50px;
 }
 
@@ -392,8 +402,123 @@ a {
 @media only screen and (max-width: 1200px) {
 
     .dashboard{
-        padding: 50% 0 0 20%;
+        padding: 50% 0 50% 5%;
     }
 
+    .shortcut1 {
+        height: auto;
+        margin-top: 30px;
+        flex-direction: column;
+        justify-content: unset;
+    }
+
+    .shortcut1 .card{
+        width: auto; 
+    }
+
+    /* .shortcut2{
+        flex-direction: column;
+    } */
+
+    .shortcut2 .card {
+        /* width: unset;
+        height: unset;
+        background-color: unset;
+        box-shadow: unset;
+        border-radius: unset;
+        display: unset;
+        align-items: unset;
+        justify-content: unset;
+        flex-direction: unset;
+        padding: unset; */
+        display: none;
+    }
+
+    /* .shortcut2 .card svg{
+        display: none;
+    }
+
+    .shortcut2 .card h2{
+        display: none;
+    } */
+
+    .number-of{
+        display: none;
+    }
+    
+
+    .dashboard, .users, .places, .request {
+        display: none;
+        padding: 7% 0 0 5%;
+    }
+
+    .users input[type="text"]{
+        width: 15px;
+        font-size: 10px;
+    }
+
+    .users input[type="submit"]{
+        width: 40px;
+        font-size: 10px;
+    }
+
+    table{
+        margin-top: 80px;
+    }
+
+    .request input[type="submit"]{
+        font-size: 12px;
+    }
+    
+    th, td {
+        text-align: center;
+        padding: 5px;
+        font-size: 10px;
+    }
+
+    .dashboard, .insert {
+        display: none;
+        padding: 30% 0 0 0%;
+        
+    }
+
+    .insert .c1 input, .insert .c1 select {
+        width: 70%;
+        margin-left: 20%;
+        margin-right: 0%;
+    }
+
+    .insert .c1 .min-max {
+        display: flex;
+        flex-direction: column;
+        margin: 0px 0 0 30%;
+    }
+
+    .insert .c1 input[type="submit"] {
+        
+        width: 30%;
+        margin: 20px 35%;
+
+    }
+
+    .insert .c1 .min-max label {
+        margin: 10px 0 0 -90%;
+    }
+
+    
+.insert .c2 select, .insert .c2 input[type="file"] {
+    width: 70%;
+    margin: 0px 0% 30px 0%;
+}
+
+.insert .c2 input[type="file"] {
+    width: 70%;
+    margin: 0px 0% 30px 0%;
+}
+
+.insert .c2 input[type="submit"] {
+    width: 20%;
+    margin: 0px 0% 30px 0%;
+}
 
 }
