@@ -49,7 +49,7 @@
          <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Plans</a></li> -->
          <li><a href="#about_us">About</a></li>
          <?php if (isset($_SESSION['user_id'])) : ?>
-           <li><a href="Profile/profile.php" class="profile">Profile</a></li>
+           <li><a href="Profile/index.php" class="profile">Profile</a></li>
          <?php else : ?>
            <li><a href="Sign_UP/ThirdPage/regist.php" class="profile">Sign Up</a></li>
            <li><a href="Log_in/index.php" class="profile">Login</a></li>
@@ -67,7 +67,7 @@
              </div>
              <hr>
 
-             <a href="Profile/profile.php" class="sub-menu-link">
+             <a href="Profile/index.php" class="sub-menu-link">
                <i class="fa-regular fa-user" id="drop-icon"></i>
                <p>Profile page</p>
                <span>></span>

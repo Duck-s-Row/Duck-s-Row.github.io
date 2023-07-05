@@ -43,7 +43,7 @@ if (isset($_SESSION['user_id'])) {
             <li><a href="../Hangout/hangout.php"><b>Hangout</b></a></li> <!-- we could remove this ancher tag link because of using the button  -->
             <li><a href="../plans/plans.php"><b>My Plans</b></a></li>
             <!-- <li><a href="#about_us"><b>About</b></a></li> -->
-            <li><a href="../Profile/profile.php" class="profile"><b>Profile</b></a></li>
+            <li><a href="../Profile/index.php" class="profile"><b>Profile</b></a></li>
         </ul>
         </nav>
     </header>

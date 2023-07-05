@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt_details = mysqli_prepare($con, $update_details_query);
         mysqli_stmt_bind_param($stmt_details, "sss", $fname, $lname, $gender);
         mysqli_stmt_execute($stmt_details);
-        header('Location:profile.php');
+        header('Location:index.php');
     } elseif ($_POST['Form_identifier'] == "update_password") {
         $new_password = $_POST['new_pass'];
         $hased_new_password = password_hash($new_password, PASSWORD_DEFAULT);
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt_new_password = mysqli_prepare($con, $update_password_query);
         mysqli_stmt_bind_param($stmt_new_password, "s", $hased_new_password);
         mysqli_stmt_execute($stmt_new_password);
-        header('Location:profile.php');
+        header('Location:index.php');
     } elseif ($_POST['Form_identifier'] == "update_profile_pic") {
         $image_name = $_FILES['user_pic']['name'];
         $image_size = $_FILES['user_pic']['size'];
@@ -34,18 +34,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!in_array($image_ext, $valid_image_ext)) {
             echo '
             <script>alert("Invalid Image Extension");</script>';
-            header('Location:profile.php');
+            header('Location:index.php');
         } elseif ($image_size > 1200000) {
             echo '
             <script>alert("Imgae Size Is Too Large");</script>';
-            header('Location:profile.php');
+            header('Location:index.php');
         } else {
             $new_image_name = random_num(10);
             $new_image_name .= "." . $image_ext;
             $update_profile_pic_query = "update users set user_pic = '$new_image_name' where user_id=$user_id";
             mysqli_query($con, $update_profile_pic_query);
             move_uploaded_file($tmp_name, 'user_profile_imgs/' . $new_image_name);
-            header('Location:profile.php');
+            header('Location:index.php');
         }
     }
 }
