@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if ($_POST['Form_identifier'] == "more") {
         $place_id = $_POST['place_id'];
         $_SESSION['place_id'] = $place_id;
-        header('Location:../Hangout/infopage/info.php');
+        header('Location:../Hangout/infopage/index.php');
     } else if ($_POST['Form_identifier'] == "Delete_place") {
         $place_id_delete = $_POST['place_id'];
         $plan_id_delete = $_POST['plan_id'];

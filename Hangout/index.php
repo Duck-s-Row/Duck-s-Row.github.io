@@ -6,7 +6,7 @@ $user_data = check_login($con);
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $place_id = $_POST['place_id'];
     $_SESSION['place_id'] = $place_id;
-    header('Location:infopage/info.php');
+    header('Location:infopage/index.php');
 }
 ?>
 <!DOCTYPE html>

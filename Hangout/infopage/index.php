@@ -161,41 +161,7 @@ $result_pics = mysqli_query($con, $pics_query);
     </section>
 
     <footer class="btns">
-        <?php
-        if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            if ($_POST['Form_identifier'] == 'add_new') {
-                $plan_id = random_num(5);
-                $creation_date = date('Y-m-d H:i:s');
 
-                //check if the plan name is empty 
-                if (empty($_POST['plan_name'])) {
-                    $plan_name = "plan";
-                } else {
-                    $plan_name = $_POST['plan_name'];
-                }
-
-                //check if the plan date is empty 
-                if (empty($_POST['plan_date'])) {
-                    $plan_date = date('Y-m-d');
-                } else {
-                    $plan_date = $_POST['plan_date'];
-                }
-
-                $query2 = "INSERT INTO user_plans(plan_id,plan_name,plan_date,creation_date,user_id) VALUES(?,?,?,?,?)";
-                $stmt2 = mysqli_prepare($con, $query2);
-                mysqli_stmt_bind_param($stmt2, 'issss', $plan_id, $plan_name, $plan_date, $creation_date, $user_id);
-                mysqli_stmt_execute($stmt2);
-
-                $query1 = "INSERT INTO exist_plan(plan_id,place_id) VALUES(?,?)";
-                $stmt1 = mysqli_prepare($con, $query1);
-                mysqli_stmt_bind_param($stmt1, 'ii', $plan_id, $place_id);
-                mysqli_stmt_execute($stmt1);
-
-                header("Location:info.php");
-                // }
-            }
-        }
-        ?>
 
         <button class="open" id="open">+ Add to my plans</button>
     </footer>
@@ -204,8 +170,8 @@ $result_pics = mysqli_query($con, $pics_query);
         <button id="close"><i class="fa fa-x"></i></button>
         <div class="popup_content" id="popup_content">
             <button class="plan_form_btn" id="plan_form_btn">New Plan</button>
-            <form method="post" class="addpopform" id="addpopform">
-                <input type="hidden" name="Form_identifier" value="add_new">
+            <form method="post" class="addpopform" id="addpopform" action="addnew.php">
+                <!-- <input type="hidden" name="Form_identifier" value="add_new"> -->
                 <div>
                     <label for="plane_name">Plan Name</label>
                     <input type="text" name="plan_name">
