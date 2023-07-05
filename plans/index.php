@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <?php elseif ($user_data['privilege'] == 2) : ?>
                     <li><a href="request/index.php">Requests</a></li>
                 <?php endif; ?>
-                <li><a href="../Hangout/hangout.php">Hangout</a></li>
+                <li><a href="../Hangout/index.php">Hangout</a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
                 <li><a href="#about_us">About</a></li>
                 <li><a href="../Profile/index.php" class="profile">Profile</a></li>
@@ -156,7 +156,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         </section>
                     <?php endwhile; ?>
                 <?php else : ?>
-                    <h1>You don't Have Any Plans ?<br><a href="../Hangout/hangout.php">Add new one</a></h1>
+                    <h1>You don't Have Any Plans ?<br><a href="../Hangout/index.php">Add new one</a></h1>
                 <?php endif; ?>
             </div>
         </div>

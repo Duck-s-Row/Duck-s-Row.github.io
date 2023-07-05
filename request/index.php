@@ -40,7 +40,7 @@ if (isset($_SESSION['user_id'])) {
             <?php if ($user_data['privilege'] == 1) :  ?>
                 <li><a href="../dashboard/dashboard.php"><b>Dashboard</b></a></li>
             <?php endif; ?>
-            <li><a href="../Hangout/hangout.php"><b>Hangout</b></a></li> <!-- we could remove this ancher tag link because of using the button  -->
+            <li><a href="../Hangout/index.php"><b>Hangout</b></a></li> <!-- we could remove this ancher tag link because of using the button  -->
             <li><a href="../plans/index.php"><b>My Plans</b></a></li>
             <!-- <li><a href="#about_us"><b>About</b></a></li> -->
             <li><a href="../Profile/index.php" class="profile"><b>Profile</b></a></li>

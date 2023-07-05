@@ -44,7 +44,7 @@
              <li><a href="request/index.php">Requests</a></li>
            <?php endif; ?>
          <?php endif; ?>
-         <li><a href="Hangout/hangout.php">Hangout</a></li> <!-- we could remove this ancher tag link because of using the button  -->
+         <li><a href="Hangout/index.php">Hangout</a></li> <!-- we could remove this ancher tag link because of using the button  -->
          <li><a href="#services">Services</a></li>
          <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Plans</a></li> -->
          <li><a href="#about_us">About</a></li>
@@ -107,14 +107,14 @@
    <section class="home" id="home">
      <h1 data-text="Duck's Row">Duck's Row</h1>
      <h2>Go Fun, Go <span>&</span> Run</h2>
-     <button onclick="window.location.href = 'Hangout/hangout.php';" class="button">Hangout</button>
+     <button onclick="window.location.href = 'Hangout/index.php';" class="button">Hangout</button>
    </section>
    <!-- The End of Home Section -->
 
    <!-- The Start of Services Section -->
    <section class="services" id="services">
      <div class="content">
-       <a href="Hangout/hangout.php">
+       <a href="Hangout/index.php">
          <div class="card">
            <div class="icon">
              <i class="fa-solid fa-sack-dollar"></i>
