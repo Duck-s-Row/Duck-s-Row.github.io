@@ -54,7 +54,13 @@
            <li><a href="Sign_UP/ThirdPage/regist.php" class="profile">Sign Up</a></li>
            <li><a href="Log_in/index.php" class="profile">Login</a></li>
          <?php endif; ?>
-         <li><i class="fa fa-right-from-bracket" id="logout"></i><i class="fa-regular fa-user" onclick="toggleMenu()" id="user-icon"></i></li>
+         <?php //if (isset($_SESSION['user_id'])) : ?>
+           <!-- <li> -->
+             <!-- <img src="profile/user_profile_imgs/<?php //echo $user_data['user_pic'] ?>" alt="<?php //echo $user_data['username'] . " picture" ?>" id="user_pic" onclick="toggleMenu()"> -->
+           <!-- </li> -->
+         <?php //else : ?>
+           <li><i class="fa fa-right-from-bracket" id="logout"></i><i class="fa-regular fa-user" onclick="toggleMenu()" id="user-icon"></i></li>
+         <?php //endif; ?>
          <div class="dark"><i class='fa-regular fa-moon' style='color: #ffffff;' id='icon'></i></div>
        </ul>
 
