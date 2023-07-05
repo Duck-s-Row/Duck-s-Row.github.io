@@ -49,7 +49,7 @@ $place_id = $eachDetail['place_id'];
             <ul>
                 <li><a href="../../index.php"><b>Home</b></a></li>
                 <?php if ($user_data['privilege'] == 1) :  ?>
-                    <li><a href="../../dashboard/dashboard.php"><b>Dashboard</b></a></li>
+                    <li><a href="../../dashboard/index.php"><b>Dashboard</b></a></li>
                 <?php endif; ?>
                 <li><a href="../../Hangout/index.php"><b>Hangout</b></a></li> <!-- we could remove this ancher tag link because of using the button  -->
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Plans</a></li> -->
@@ -188,15 +188,15 @@ $place_id = $eachDetail['place_id'];
         var close_menu = document.getElementById("close_menu");
         var open_menu = document.getElementById("open_menu");
 
-        close_menu.addEventListener("click", ()=> {
+        close_menu.addEventListener("click", () => {
             popup_menu.style.display = "none";
         });
 
-        open_menu.addEventListener("click", ()=> {
+        open_menu.addEventListener("click", () => {
             popup_menu.style.display = "flex";
             close_menu.style.display = "block";
         });
-        
+
 
         const minInput = document.getElementById('min');
         const maxInput = document.getElementById('max');

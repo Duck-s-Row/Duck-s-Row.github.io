@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <ul>
                 <li><a href="../index.php">Home</a></li>
                 <?php if ($user_data['privilege'] == 1) :  ?>
-                    <li><a href="../dashboard/dashboard.php">Dashboard</a></li>
+                    <li><a href="../dashboard/index.php">Dashboard</a></li>
                     <li><a href="request/index.php">Requests</a></li>
                 <?php elseif ($user_data['privilege'] == 2) : ?>
                     <li><a href="request/index.php">Requests</a></li>
@@ -222,18 +222,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }, 2000);
     </script>
     <script>
-     var icon = document.getElementById("icon");
-     var divIcon = document.querySelector(".dark")
+        var icon = document.getElementById("icon");
+        var divIcon = document.querySelector(".dark")
 
-     divIcon.onclick = function() {
-       document.body.classList.toggle("dark-theme")
-       if (document.body.classList.contains("dark-theme")) {
-         icon.className = "fa-regular fa-sun";
-       } else {
-         icon.className = "fa-regular fa-moon";
-       }
-     }
-   </script>
+        divIcon.onclick = function() {
+            document.body.classList.toggle("dark-theme")
+            if (document.body.classList.contains("dark-theme")) {
+                icon.className = "fa-regular fa-sun";
+            } else {
+                icon.className = "fa-regular fa-moon";
+            }
+        }
+    </script>
 </body>
 
 </html>

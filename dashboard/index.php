@@ -47,13 +47,13 @@ if (isset($_SESSION['user_id'])) {
     </header>
 
     <script>
-    hamburger = document.querySelector(".hamburger");
+        hamburger = document.querySelector(".hamburger");
 
         // Add the navigation bar active class
         hamburger.onclick = function() {
             navBar = document.querySelector(".nav-bar");
             navBar.classList.toggle("active");
-           }
+        }
     </script>
 
     <section class="dashboard tap" id="dashboard">
@@ -150,7 +150,7 @@ if (isset($_SESSION['user_id'])) {
             echo "<td>" . $row["username"] . "</td>";
             echo "<td>" . $row["Fname"] . " " . $row["Lname"] . "</td>";
             echo "<td>" . $row["email"] . "</td>";
-            
+
             echo "<td>
                     <form method='POST' action='update_user.php'>
                         <input type='hidden' name='id' value='" . $row["user_id"] . "'>
@@ -251,11 +251,11 @@ if (isset($_SESSION['user_id'])) {
                 if (!in_array($image_ext, $valid_image_ext)) {
                     echo '
                     <script>alert("Invalid Image Extension");</script>';
-                    header('Location:dashboard.php');
+                    header('Location:index.php');
                 } elseif ($image_size > 1200000) {
                     echo '
                     <script>alert("Imgae Size Is Too Large");</script>';
-                    header('Location:dashboard.php');
+                    header('Location:index.php');
                 } else {
                     $photo_id = random_num(10);
                     $new_image_name = random_num(10);
@@ -263,7 +263,7 @@ if (isset($_SESSION['user_id'])) {
                     $insert_new_place_pic = "INSERT INTO place_pics(photo_id,place_id,photo_name) VALUES($photo_id,$place_id,'$new_image_name')";
                     mysqli_query($con, $insert_new_place_pic);
                     move_uploaded_file($tmp_name, '../Hangout/places_imgs/' . $new_image_name);
-                    header('Location:dashboard.php');
+                    header('Location:index.php');
                 }
             } else if ($_POST['Form_identifier'] == "insert_logo") {
                 $p_name = $_POST['p_name'];
@@ -278,11 +278,11 @@ if (isset($_SESSION['user_id'])) {
                 if (!in_array($logo_ext, $valid_logo_ext)) {
                     echo '
                     <script>alert("Invalid logo Extension");</script>';
-                    header('Location:dashboard.php');
+                    header('Location:index.php');
                 } elseif ($logo_size > 1200000) {
                     echo '
                     <script>alert("Logo Size Is Too Large");</script>';
-                    header('Location:dashboard.php');
+                    header('Location:index.php');
                 } else {
                     // $photo_id = random_num(10);
                     $new_logo_name = random_num(10);
@@ -290,7 +290,7 @@ if (isset($_SESSION['user_id'])) {
                     $update_logo = "UPDATE places SET logo = '$new_logo_name' WHERE p_name = '$p_name'";
                     mysqli_query($con, $update_logo);
                     move_uploaded_file($tmp_name, '../Hangout/logos/' . $new_logo_name);
-                    header('Location:dashboard.php');
+                    header('Location:index.php');
                 }
             } else if ($_POST['Form_identifier'] == "insert_offer") {
                 $offer_name = $_FILES['offer']['name'];
@@ -304,11 +304,11 @@ if (isset($_SESSION['user_id'])) {
                 if (!in_array($offer_ext, $valid_offer_ext)) {
                     echo '
                     <script>alert("Invalid logo Extension");</script>';
-                    header('Location:dashboard.php');
+                    header('Location:index.php');
                 } elseif ($offer_size > 1200000) {
                     echo '
                     <script>alert("Logo Size Is Too Large");</script>';
-                    header('Location:dashboard.php');
+                    header('Location:index.php');
                 } else {
                     $offer_id = random_num(10);
                     $new_offer_name = random_num(10);
@@ -316,7 +316,7 @@ if (isset($_SESSION['user_id'])) {
                     $insert_offer = "INSERT INTO offers VALUES($offer_id,'$new_offer_name')";
                     mysqli_query($con, $insert_offer);
                     move_uploaded_file($tmp_name, '../Hangout/offers/' . $new_offer_name);
-                    header('Location:dashboard.php');
+                    header('Location:index.php');
                 }
             } else if ($_POST['Form_identifier'] == "Insert_menu") {
                 $menu_image_name = $_FILES['menu_image']['name'];
@@ -330,11 +330,11 @@ if (isset($_SESSION['user_id'])) {
                 if (!in_array($menu_image_ext, $valid_menu_image_ext)) {
                     echo '
                     <script>alert("Invalid logo Extension");</script>';
-                    header('Location:dashboard.php');
+                    header('Location:index.php');
                 } elseif ($menu_image_size > 1200000) {
                     echo '
                     <script>alert("Logo Size Is Too Large");</script>';
-                    header('Location:dashboard.php');
+                    header('Location:index.php');
                 } else {
                     $new_menu_image_name = date('Y');
                     $new_menu_image_name .= '_' . date('M');
@@ -343,7 +343,7 @@ if (isset($_SESSION['user_id'])) {
                     $insert_menu_image = "UPDATE places SET menu_image = '$new_menu_image_name' WHERE p_name = '$placeName' ";
                     mysqli_query($con, $insert_menu_image);
                     move_uploaded_file($tmp_name, '../Hangout/menus/' . "$new_menu_image_name");
-                    header('Location:dashboard.php');
+                    header('Location:index.php');
                 }
             }
         }

@@ -73,7 +73,7 @@ $result_pics = mysqli_query($con, $pics_query);
             <ul>
                 <li><a href="../../index.php"><b>Home</b></a></li>
                 <?php if ($user_data['privilege'] == 1) :  ?>
-                    <li><a href="../../dashboard/dashboard.php"><b>Dashboard</b></a></li>
+                    <li><a href="../../dashboard/index.php"><b>Dashboard</b></a></li>
                     <li><a href="../request/index.php"><b>Requests</b></a></li>
                 <?php elseif ($user_data['privilege'] == 2) : ?>
                     <li><a href="../../request/index.php"><b>Requests</b></a></li>

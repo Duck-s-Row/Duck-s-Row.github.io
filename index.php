@@ -38,9 +38,9 @@
          <li><a href="#home">Home</a></li>
          <?php if (isset($_SESSION['user_id'])) : ?>
            <?php if ($user_data['privilege'] == 1) :  ?>
-             <li><a href="dashboard/dashboard.php">Dashboard</a></li>
+             <li><a href="dashboard/index.php">Dashboard</a></li>
              <li><a href="request/index.php">Requests</a></li>
-           <?php elseif ($user_data['privilege'] == 2 ) : ?>
+           <?php elseif ($user_data['privilege'] == 2) : ?>
              <li><a href="request/index.php">Requests</a></li>
            <?php endif; ?>
          <?php endif; ?>
@@ -130,7 +130,7 @@
        <a href="#about_us">
          <div class="card">
            <div class="icon">
-            <i class="fa-solid fa-envelope"></i>
+             <i class="fa-solid fa-envelope"></i>
            </div>
            <div class="info">
              <h3>Requests</h3>

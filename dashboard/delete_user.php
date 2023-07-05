@@ -7,5 +7,4 @@
 
     mysqli_query($con, $sql);
 
-    header("Location: dashboard.php");
-?>
+    header("Location: index.php");
