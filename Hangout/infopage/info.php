@@ -9,7 +9,7 @@ $user_id = $_SESSION['user_id'];
 $user_data = Get_user_data($con);
 //make the user must login to enter here first
 if (!isset($user_id))
-    header("Location:../../Log_in/login.php");
+    header("Location:../../Log_in/index.php");
 
 
 $Data = "SELECT * FROM places WHERE place_id = $place_id LIMIT 1";

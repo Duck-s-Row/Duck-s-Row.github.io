@@ -7,5 +7,5 @@ if(isset($_SESSION['user_id']))
 
 }
 
-header('Location:../Log_in/login.php');
+header('Location:../Log_in/index.php');
 die;

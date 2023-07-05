@@ -46,7 +46,7 @@ if(isset($_GET['mode'])){
 						unset($_SESSION['forgot']);
 					}
 
-					header("Location: ../../Log_in/login.php");
+					header("Location: ../../Log_in/index.php");
 					die;
 				}
 				break;

@@ -13,7 +13,7 @@ function check_login($con)
     }
 
     //redirect to login page
-    header("location: ../Log_in/login.php");
+    header("location: ../Log_in/index.php");
     die;
 }
 function Get_user_data($con)
@@ -57,7 +57,7 @@ function check_privilege_hangout($con)
     }
     //redirect to login page
     else {
-        header("location: ../../Log_in/login.php");
+        header("location: ../../Log_in/index.php");
         die;
     }
 }

@@ -52,7 +52,7 @@
            <li><a href="Profile/profile.php" class="profile">Profile</a></li>
          <?php else : ?>
            <li><a href="Sign_UP/ThirdPage/regist.php" class="profile">Sign Up</a></li>
-           <li><a href="Log_in/login.php" class="profile">Login</a></li>
+           <li><a href="Log_in/index.php" class="profile">Login</a></li>
          <?php endif; ?>
          <li><i class="fa fa-right-from-bracket" id="logout"></i><i class="fa-regular fa-user" onclick="toggleMenu()" id="user-icon"></i></li>
          <div class="dark"><i class='fa-regular fa-moon' style='color: #ffffff;' id='icon'></i></div>
@@ -91,7 +91,7 @@
                <span>></span>
              </a>
 
-             <a href="Log_in/login.php" class="sub-menu-link">
+             <a href="Log_in/index.php" class="sub-menu-link">
                <i class="fa fa-lock" id="drop-icon"></i>
                <p>Login</p>
                <span>></span>

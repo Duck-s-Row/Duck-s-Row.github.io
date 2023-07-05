@@ -9,7 +9,7 @@ if (isset($_SESSION['user_id']) && isset($request_id)) {
         header('Location:../../index.php');
 } else {
     //redirect to login page
-    header("Location: ../../Log_in/login.php");
+    header("Location: ../../Log_in/index.php");
     die;
 }
 $selectRquestDetails = "SELECT * FROM users, requests, request_details WHERE users.user_id = requests.user_id AND requests.request_id = $request_id  And request_details.request_id = $request_id limit 1";

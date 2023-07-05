@@ -8,7 +8,7 @@ if (isset($_SESSION['user_id'])) {
         header('Location:../index.php');
 } else {
     //redirect to login page
-    header("Location: ../Log_in/login.php");
+    header("Location: ../Log_in/index.php");
     die;
 }
 ?>

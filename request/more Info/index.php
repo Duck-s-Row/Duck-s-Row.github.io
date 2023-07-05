@@ -10,7 +10,7 @@ if (isset($_SESSION['user_id']) && isset($request_id)) {
         header('Location:../../index.php');
 } else {
     //redirect to login page
-    header("Location: ../../Log_in/login.php");
+    header("Location: ../../Log_in/index.php");
     die;
 }
 $selectReqQuery = "SELECT * FROM requests, request_details WHERE requests.user_id = $user_id AND requests.request_id = $request_id AND request_details.request_id = $request_id";
