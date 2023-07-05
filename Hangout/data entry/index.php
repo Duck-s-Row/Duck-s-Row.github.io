@@ -32,11 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if (!in_array($image_ext, $valid_image_ext)) {
             echo '
             <script>alert("Invalid Image Extension");</script>';
-            header('Location:insertion of places.php');
+            header('Location:index.php');
         } elseif ($image_size > 1200000) {
             echo '
             <script>alert("Imgae Size Is Too Large");</script>';
-            header('Location:insertion of places.php');
+            header('Location:index.php');
         } else {
             $photo_id = random_num(10);
             $new_image_name = random_num(10);
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $insert_new_place_pic = "INSERT INTO place_pics(photo_id,place_id,photo_name) VALUES($photo_id,$place_id,'$new_image_name')";
             mysqli_query($con, $insert_new_place_pic);
             move_uploaded_file($tmp_name, '../places_imgs/' . $new_image_name);
-            header('Location:insertion of places.php');
+            header('Location:index.php');
         }
     } else if ($_POST['Form_identifier'] == "insert_logo") {
         $p_name = $_POST['p_name'];
@@ -59,11 +59,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if (!in_array($logo_ext, $valid_logo_ext)) {
             echo '
             <script>alert("Invalid logo Extension");</script>';
-            header('Location:insertion of places.php');
+            header('Location:index.php');
         } elseif ($logo_size > 1200000) {
             echo '
             <script>alert("Logo Size Is Too Large");</script>';
-            header('Location:insertion of places.php');
+            header('Location:index.php');
         } else {
             // $photo_id = random_num(10);
             $new_logo_name = random_num(10);
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $update_logo = "UPDATE places SET logo = '$new_logo_name' WHERE p_name = '$p_name'";
             mysqli_query($con, $update_logo);
             move_uploaded_file($tmp_name, '../logos/' . $new_logo_name);
-            header('Location:insertion of places.php');
+            header('Location:index.php');
         }
     } else if ($_POST['Form_identifier'] == "insert_offer") {
         $offer_name = $_FILES['offer']['name'];
@@ -85,11 +85,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if (!in_array($offer_ext, $valid_offer_ext)) {
             echo '
             <script>alert("Invalid logo Extension");</script>';
-            header('Location:insertion of places.php');
+            header('Location:index.php');
         } elseif ($offer_size > 1200000) {
             echo '
             <script>alert("Logo Size Is Too Large");</script>';
-            header('Location:insertion of places.php');
+            header('Location:index.php');
         } else {
             $offer_id = random_num(10);
             $new_offer_name = random_num(10);
@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $insert_offer = "INSERT INTO offers VALUES($offer_id,'$new_offer_name')";
             mysqli_query($con, $insert_offer);
             move_uploaded_file($tmp_name, '../offers/' . $new_offer_name);
-            header('Location:insertion of places.php');
+            header('Location:index.php');
         }
     } else if ($_POST['Form_identifier'] == "Insert_menu") {
         $menu_image_name = $_FILES['menu_image']['name'];
@@ -111,11 +111,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if (!in_array($menu_image_ext, $valid_menu_image_ext)) {
             echo '
             <script>alert("Invalid menu Extension");</script>';
-            header('Location:insertion of places.php');
+            header('Location:index.php');
         } elseif ($menu_image_size > 1200000) {
             echo '
             <script>alert("Menu Size Is Too Large");</script>';
-            header('Location:insertion of places.php');
+            header('Location:index.php');
         } else {            
             $new_menu_image_name = date('Y');
             $new_menu_image_name .= '_' . date('M');
@@ -124,11 +124,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $insert_menu_image = "UPDATE places SET menu_image = '$new_menu_image_name' WHERE p_name = '$placeName' ";
             mysqli_query($con, $insert_menu_image);
             move_uploaded_file($tmp_name, '../menus/' . "$new_menu_image_name");
-            header('Location:insertion of places.php');
+            header('Location:index.php');
         }
     }
 
-    header('Location:insertion of places.php');
+    header('Location:index.php');
 }
 ?>
 <!DOCTYPE html>
