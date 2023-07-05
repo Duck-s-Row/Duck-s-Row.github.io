@@ -79,7 +79,7 @@
                <span>></span>
              </a>
 
-             <a href="Log_out/logout.php" class="sub-menu-link">
+             <a href="Log_out/index.php" class="sub-menu-link">
                <i class="fa fa-right-from-bracket" id="drop-icon"></i>
                <p>Logout</p>
                <span>></span>
