@@ -20,18 +20,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         //insert images
         $checkNumImgsQuery = "SELECT photo_name FROM request_place_pics WHERE place_id = $placeId";
         $ALLnumImgs = mysqli_query($con, $checkNumImgsQuery);
-        $i=1;
-        while( mysqli_fetch_assoc($ALLnumImgs)){
+        $i = 1;
+        while (mysqli_fetch_assoc($ALLnumImgs)) {
             $imgName = $_POST["image$i"];
             $photoId = $_POST["imageId$i"];
             $insertimgQuery = "INSERT INTO place_pics(photo_id,place_id,photo_name) VALUES($photoId,$placeId,'$imgName')";
             mysqli_query($con, $insertimgQuery);
             $i++;
         }
-            
+
         $updateRequestStatus = "UPDATE requests SET req_status = 'Accepted' WHERE request_id = $req_id";
         mysqli_query($con, $updateRequestStatus);
-        header("Location:moreInfo.php");
+        header("Location:index.php");
     } else if ($_POST['decision'] == "Reject") {
         $placeId = $_POST['place_id'];
         $comment = $_POST['comment'];
@@ -42,6 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
         $updateStatusQuery = "UPDATE requests SET req_status = 'Rejected' WHERE request_id = $req_id";
         mysqli_query($con, $updateStatusQuery);
-        header("Location:moreInfo.php");
+        header("Location:index.php");
     }
 }
