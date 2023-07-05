@@ -37,7 +37,7 @@ if (isset($_SESSION['user_id'])) {
         <nav class="nav-bar">
             <ul>
                 <li><a href="../../index.php"><b>Home</b></a></li>
-                <li><a href="../../plans/plans.php"><b>My Plans</b></a></li>
+                <li><a href="../../plans/index.php"><b>My Plans</b></a></li>
                 <li><a href="../index.php"><b>Requests</b></a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
                 <li><a href="#contact_us"><b>About</b></a></li>

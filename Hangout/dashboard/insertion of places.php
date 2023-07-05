@@ -155,7 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <nav class="nav-bar">
             <ul>
                 <li><a href="../../index.php">Home</a></li>
-                <li><a href="../../plans/plans.php">My Plans</a></li>
+                <li><a href="../../plans/index.php">My Plans</a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
                 <!-- <li><a href="#contact_us">About</a></li> -->
                 <li><a href="../../Profile/index.php" class="profile">Profile</a></li>

@@ -73,7 +73,7 @@
                <span>></span>
              </a>
 
-             <a href="plans/plans.php" class="sub-menu-link">
+             <a href="plans/index.php" class="sub-menu-link">
                <i class="fa-solid fa-location-dot" id="drop-icon"></i>
                <p>My Plans</p>
                <span>></span>
@@ -140,7 +140,7 @@
        </a>
      </div>
      <div class="content">
-       <a href="plans/plans.php">
+       <a href="plans/index.php">
          <div class="card">
            <div class="icon">
              <i class="fa-solid fa-list-check"></i>

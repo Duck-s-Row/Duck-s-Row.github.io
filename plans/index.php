@@ -19,14 +19,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $plan_id_delete = $_POST['plan_id'];
         $deletePlaceQuery = "DELETE FROM exist_plan WHERE place_id = $place_id_delete AND plan_id = $plan_id_delete";
         mysqli_query($con, $deletePlaceQuery);
-        header("Location:plans.php");
+        header("Location:index.php");
     } else if ($_POST['Form_identifier'] == "remove_plan") {
         $plan_id_remove = $_POST['plan_id'];
         $removePlanQuery = "DELETE FROM exist_plan WHERE  plan_id = $plan_id_remove ";
         mysqli_query($con, $removePlanQuery);
         $removePlanQuery = "DELETE FROM user_plans WHERE user_id = $user_id AND plan_id = $plan_id_remove ";
         mysqli_query($con, $removePlanQuery);
-        header("Location:plans.php");
+        header("Location:index.php");
     } else if ($_POST['Form_identifier'] == "change_name_date") {
         $plan_id_name_date = $_POST['plan_id'];
         $plan_name = $_POST['plan_name'];
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $stmt = mysqli_prepare($con, $changeNameDateQuery);
         mysqli_stmt_bind_param($stmt, "ssi", $plan_name, $plan_date, $plan_id_name_date);
         mysqli_stmt_execute($stmt);
-        header("Location:plans.php");
+        header("Location:index.php");
     }
 }
 ?>

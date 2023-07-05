@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <?php elseif ($user_data['privilege'] == 2) : ?>
                     <li><a href="../request/index.php">Requests</a></li>
                 <?php endif; ?>
-                <li><a href="../plans/plans.php">My Plans</a></li>
+                <li><a href="../plans/index.php">My Plans</a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
                 <li><a href="#contact_us">About</a></li>
                 <li><a href="../Profile/index.php" class="profile">Profile</a></li>

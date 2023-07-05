@@ -25,7 +25,7 @@ chooice[0].addEventListener("click", () => {
 });
 
 chooice[1].addEventListener("click", () => {
-    window.location.href = '../plans/plans.php';
+    window.location.href = '../plans/index.php';
 });
 
 

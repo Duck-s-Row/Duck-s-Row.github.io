@@ -54,7 +54,7 @@ $place_id = $eachDetail['place_id'];
                 <li><a href="../../Hangout/hangout.php"><b>Hangout</b></a></li> <!-- we could remove this ancher tag link because of using the button  -->
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Plans</a></li> -->
                 <!-- <li><a href="#about_us"><b>About</b></a></li> -->
-                <li><a href="../../plans/plans.php" class="profile"><b>My plans</b></a></li>
+                <li><a href="../../plans/index.php" class="profile"><b>My plans</b></a></li>
                 <li><a href="../../Profile/index.php" class="profile"><b>Profile</b></a></li>
             </ul>
         </nav>
