@@ -52,7 +52,7 @@ $result_pics = mysqli_query($con, $pics_query);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-    <link rel="stylesheet" href="info6.css">
+    <link rel="stylesheet" href="info7.css">
     <title>info</title>
 </head>
 
@@ -126,6 +126,7 @@ $result_pics = mysqli_query($con, $pics_query);
                     <div>
                         <h2>Details</h2>
                         <p><?php echo $row['more_details'] ?></p>
+                        <h2>Go With <a href="https://m.uber.com/go/pickup?drop%5B0%5D=%7B%22addressLine1%22%3A%22%D8%A8%D8%A7%D9%81%D9%84%D9%88%20%D8%A8%D8%B1%D8%AC%D8%B1%22%2C%22addressLine2%22%3A%22%D9%A3%D9%A0%D9%A0%20%D8%A7%D8%8C%20%D8%AD%D8%AF%D8%A7%D8%A6%D9%82%20%D8%A7%D9%84%D8%A7%D9%87%D8%B1%D8%A7%D9%85%D8%8C%D8%8C%20%D9%83%D9%81%D8%B1%20%D9%86%D8%B5%D8%A7%D8%B1%D8%8C%20%D8%A7%D9%84%D9%87%D8%B1%D9%85%D8%8C%20%D8%A7%D9%84%D8%AC%D9%8A%D8%B2%D8%A9%22%2C%22id%22%3A%22ChIJb-WdiA5FWBQRAEcbHpF8oR4%22%2C%22latitude%22%3A29.9906164%2C%22longitude%22%3A31.129197%2C%22provider%22%3A%22google_places%22%7D&utm_campaign=CM2062755-search-google-brand_53_-99_EG-National_rider_web_acq_cpc_ar_Brand_exact_uber_kwd-169801042_480013497517_110028308861_e_c&utm_source=AdWords_Brand" target="_blank">UPER</a></h2>
                     </div>
                 </div>
 

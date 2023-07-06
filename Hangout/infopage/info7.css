@@ -862,3 +862,8 @@ header {
     }
 
 }
+.box2 a{
+    direction: none;
+    cursor: pointer;
+    color: white;
+}
