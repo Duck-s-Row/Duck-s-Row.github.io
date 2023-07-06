@@ -17,6 +17,14 @@ $user_data = Get_user_data($con);
   <meta name="description" content="GO Fun, GO & run">
   <link rel="stylesheet" href="home/CSS_files/hom10.css">
   <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                $('.home').css("opacity", 1 - $(window).scrollTop()/700)
+            })
+        })
+    </script>
   <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="website icon" type="png" href="home/imgs/Logo.png">
   <title>Duck's Row</title>
