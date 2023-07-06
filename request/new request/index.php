@@ -105,6 +105,8 @@ if (isset($_SESSION['user_id'])) {
                     </select><br>
                     <h2>i Frame src Location : </h2>
                     <input type="text" name="location" placeholder="Enter location URL" required>
+                    <h2>UPER Location (optional)</h2>
+                    <input type="text" name="uper_location" id="" placeholder="Enter location URL of UPER">
                 </div>
                 <input type="submit" value="Request" class="submit_request">
             </div>

@@ -17,7 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $max = $_POST['max'];
         $place_id = random_num(10);
         $average = ($min + $max) / 2;
-        $insert_place = "INSERT INTO places(p_name,p_branch,small_details,location,category,min_price,max_price,place_id,average_budget,more_details) VALUES('$p_name','$p_branch','$small_details','$location','$category',$min,$max,$place_id,$average,'$more_details')";
+        $uper_location = $_POST['uperLocation'];
+        $insert_place = "INSERT INTO places(p_name,p_branch,small_details,location,category,min_price,max_price,place_id,average_budget,more_details,uper_location) VALUES('$p_name','$p_branch','$small_details','$location','$category',$min,$max,$place_id,$average,'$more_details','$uper_location')";
         mysqli_query($con, $insert_place);
     } else if ($_POST['Form_identifier'] == "insert_photo") {
         $place_id = $_POST['place_id'];
@@ -206,6 +207,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <input type="number" name="min" id="min">
         <label for="max">Max:</label>
         <input type="number" name="max" id="mx"><br>
+        <label for="uperLocation">UPER Location</label>
+        <input type="url" name="uperLocation" id="uperLocation"><br>
         <input type="submit" value="save">
     </form><br><br>
 

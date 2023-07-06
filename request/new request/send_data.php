@@ -15,13 +15,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $place_id = random_num(10);
     $user_id = $_SESSION["user_id"];
     $average = ($min + $max) / 2;
-
+    $uper_location = $_POST['uper_location'];
 
 
     $request = "INSERT INTO requests(request_id,user_id) VALUES( $request_id, $user_id)";
     mysqli_query($con, $request);
 
-    $request_details = "INSERT INTO request_details(place_id, request_id, p_name, p_branch, details, average_budget, category, location, min_price, max_price) VALUES($place_id, $request_id, '$p_name', '$p_branch', '$details', $average, '$category', '$location', $min, $max)";
+    $request_details = "INSERT INTO request_details(place_id, request_id, p_name, p_branch, details, average_budget, category, location, min_price, max_price,uper_location) VALUES($place_id, $request_id, '$p_name', '$p_branch', '$details', $average, '$category', '$location', $min, $max,'$uper_location')";
     mysqli_query($con, $request_details);
 
 

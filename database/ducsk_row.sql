@@ -221,3 +221,6 @@ ALTER TABLE `review_table`
 -- add foreign key(user_id) references users(user_id);
 -- alter table user_reviews
 -- add foreign key(place_id) references places(place_id);
+
+alter table request_details add column uper_location longtext;
+alter table places add column uper_location longtext;

@@ -98,7 +98,10 @@ $allImgs = mysqli_query($con, $selectImgs);
                 <input type="text" name="details" id="details" value="<?php echo $eachDetail['details'] ?>" readonly><br>
                 <label for="p_branch">place Branch</label>
                 <input type="text" name="p_branch" id="p_branch" value="<?php echo $eachDetail['p_branch'] ?>" readonly><br>
-
+                <?php if(!empty($eachDetail['uper_location'])): ?>
+                <label for="uper_location">UPER Location</label>
+                <input type="url" name="uper_location" id="uper_location" <?php echo $eachDetail['uper_location'] ?> readonly> <br>
+                <?php endif; ?>
                 <div class="comment">
                     <label for="comment">If you have Comment Leave It Here:</label><br>
                     <input type="text" name="comment" id="comment">

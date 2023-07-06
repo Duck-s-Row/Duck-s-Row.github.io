@@ -169,6 +169,8 @@ $place_id = $eachDetail['place_id'];
                 <div>
                     <label for="location">i Frame src Location</label>
                     <input type="url" name="location" id="location" value="<?php echo $eachDetail['location'] ?>" <?php if ($eachDetail['req_status'] == "Accepted") echo "readonly"; ?>>
+                    <label for="uper_location">UPER Location</label>
+                    <input type="url" name="uper_location" id="uper_location" value="<?php echo$eachDetail['uper_location'] ?>" <?php if ($eachDetail['req_status'] == "Accepted") echo "readonly"; ?>>
                 </div>
                 <div>
                     <input type="submit" value="Update" <?php if ($eachDetail['req_status'] == "Accepted") echo "disabled"; ?>>
