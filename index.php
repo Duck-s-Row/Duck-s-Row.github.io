@@ -15,15 +15,23 @@ $user_data = Get_user_data($con);
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
   <meta charset="UTF-8">
   <meta name="description" content="GO Fun, GO & run">
-  <link rel="stylesheet" href="home/CSS_files/hom8.css">
+  <link rel="stylesheet" href="home/CSS_files/hom10.css">
   <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                $('.home').css("opacity", 1 - $(window).scrollTop()/700)
+            })
+        })
+    </script>
   <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="website icon" type="png" href="home/imgs/Logo.png">
   <title>Duck's Row</title>
 </head>
 
 <body>
-  <!-- <div class="loading" id="loader"></div> -->
+  <div class="loading" id="loader"></div>
   <!-- The Start of Navbar section -->
   <header>
 

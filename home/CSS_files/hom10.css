@@ -38,6 +38,7 @@ header {
     position: fixed;
     z-index: 1;
     margin: 40px 5% 0 5%;
+    animation: anim2 3s linear forwards;
 }
 
 .logo img{
@@ -329,8 +330,7 @@ header {
     font-weight: 400;
     font-size: 32px;
     line-height: 38px;
-    /* -webkit-text-stroke: 0.1vw white;
-    position: relative; */
+    animation: anim2 3s linear forwards;
 }
 .home h2 span{
     font-weight: bolder;
@@ -343,6 +343,16 @@ header {
     }
     70%,90%{
         width: 100%;
+    }
+}
+@keyframes anim2 {
+    0%{
+        opacity: 0;
+        transform: rotateY(180deg);
+    }
+    100%{
+        opacity: 1;
+        transform: rotateY(0deg);
     }
 }
 .home .button {
@@ -363,6 +373,7 @@ header {
     transform:  ease-out;
     border-radius: 100px;
     color: var(--teritary-color);
+    animation: anim2 3s linear forwards;
 } 
 
 .home .button:hover {
@@ -394,7 +405,7 @@ header {
     width: 400px;
     height: 250px;
     padding: 20px;
-    box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+    box-shadow: 2px 5px 25px rgba(1 1 1 / 15%);
     border-radius: 10px;
     transition: 0.7s ease;
     margin: 25px;
@@ -414,7 +425,10 @@ header {
     color: var(--pentachrome-color);
     font-size: 25px;
     font-weight: 700;
-    margin: 10px;
+    margin: 10px;  
+}
+.card:hover{
+    -webkit-box-reflect: below -150px linear-gradient(transparent , rgba(0,0,0,0.4));
 }
 .info p{
     color: var(--secondary-color);
