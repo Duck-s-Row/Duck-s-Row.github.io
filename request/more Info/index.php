@@ -27,7 +27,7 @@ $place_id = $eachDetail['place_id'];
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-    <link rel="stylesheet" href="indexstyle3.css">
+    <link rel="stylesheet" href="indexstyle4.css">
     <title>Request Adjustment</title>
 </head>
 

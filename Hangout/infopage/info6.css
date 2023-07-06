@@ -91,9 +91,84 @@ header {
     color: #101820;
 }
 
+@media only screen and (max-width: 1320px) {
+    header {
+        padding: 0 20px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .sub-menu-wrap{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger .line {
+        width: 30px;
+        height: 3px;
+        background: #fefefe;
+        margin: 6px 0;
+    }
+
+    .nav-bar {
+        height: 0;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 75%;
+        margin: auto;
+        background: #11101b;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+    .nav-bar.active{
+        height: 370px;
+    }
+
+    .nav-bar ul {
+        display: block;
+        width: fit-content;
+        margin: 20px auto 0 auto;
+        padding: 0;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    #user-icon {
+        display: none;
+    }
+
+    #logout{
+        display: inline-block;
+    }
+
+    .nav-bar.active ul {
+        opacity: 1;
+    }
+
+    .nav-bar ul li a {
+        margin-bottom: 12px;
+    }
+    .profile{
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 720px){
+    .logo img {
+        width: 60px;
+    }
+}
+
 @media (max-width: 90vh) {
     nav {
-        min-height: 5vh;
+        min-height: 0vh;
         top: 20px;
     }
 
@@ -264,7 +339,7 @@ header {
     width: 500px;
     display: flex;
     justify-content: space-between;
-    margin-top: 380px;
+    margin-top: 430px;
     margin-left: 60px;
 }
 .box2 h2{
@@ -657,35 +732,133 @@ header {
 .privacy {
     grid-column: 3;
 }
+
 @media (max-width: 450px){
     body{
         height: 100%;
         width: 100%;
     }
+
+    .main{
+        flex-direction: column;
+    }
+
     .photo{
         display: flex;
         flex-direction: column;
         height: 100%;
     }
-    .main_slide{
-        width: 100%;
-        height: 100%;
+
+    .slider-controls {
+        left: -8px;
+        width: 90%;
+        top: -60px;
     }
+    
+    .main_slide {
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+
+    }
+
     .slider-container img{
         margin: 0;
         padding: 0;
-        width: 94%;
+        width: 60%;
         margin-left: 10%;
         margin-right: 10%;
-        height: 400px;
+        height: 200px;
     }
+    .slider-controls .prev {
+        margin-left: 9px;
+    }
+
+    .box2{
+        width: auto;
+        margin-top: 210px;
+        margin-left: unset;
+    }
+
+    .box2 h2{
+        font-size: 1.5em;
+    }
+
+    .box2 p{
+        font-size: 15px;
+    }
+
     .disc{
-        margin: 400px 0 0 0 ;
+        margin: 0px 0 0 0 ;
+        padding: 0 0 30px 20px;
     }
+
+    .name h2{
+        margin-left: -157px;
+
+    }
+
     .disc p{
         margin-bottom: 10px;
+        font-size: 15px;
     }
     .disc h2{
         margin-bottom: 0;
     }
+
+    .map-container h2{
+        margin-left: -15px;
+        font-size: 20px;
+    }
+
+    .map-container iframe{
+        width: 90%;
+        margin-left: -30px;
+    }
+
+    .container {
+        margin-bottom: 600px;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .col-sm-4 b {
+        color: white;
+    }
+
+    .progress-label-right {
+        color: white;
+    }
+
+    p {
+        margin-bottom: 3rem;
+    }
+
+    .text-center {
+        color: white;
+    }
+
+    .col-sm-4 button {
+        background-color: yellow;
+        color: black;
+    }
+
+    .contact_us {
+        width: 100%;
+        min-height: fit-content;
+        background: #dfca13;
+        display: grid;
+        grid-template-columns: unset;
+        grid-template-rows: unset;
+        font-family: 'ABeeZee', sans-serif;
+        padding: 20px;
+    }
+
+    .contact_us .info {
+        grid-column: 1;
+        grid-row: unset;
+    }
+
 }

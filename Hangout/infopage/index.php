@@ -52,7 +52,7 @@ $result_pics = mysqli_query($con, $pics_query);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-    <link rel="stylesheet" href="info5.css">
+    <link rel="stylesheet" href="info6.css">
     <title>info</title>
 </head>
 
@@ -85,6 +85,17 @@ $result_pics = mysqli_query($con, $pics_query);
             </ul>
         </nav>
     </header>
+
+    <script>
+        hamburger = document.querySelector(".hamburger");
+
+        // Add the navigation bar active class
+        hamburger.onclick = function() {
+            navBar = document.querySelector(".nav-bar");
+            navBar.classList.toggle("active");
+        }
+    </script>
+
     <!-- The End of Navbar section -->
 
 
@@ -110,11 +121,11 @@ $result_pics = mysqli_query($con, $pics_query);
                     <span id="prev" class="prev"><i class="fa-solid fa-angles-left"></i></span>
                     <span id="indicators" class="indicators"></span>
                     <span id="next" class="next"><i class="fa-solid fa-angles-right"></i></span>
-                    <div class="box2">
-                        <div>
-                            <h2>Details</h2>
-                            <p><?php echo $row['more_details'] ?></p>
-                        </div>
+                </div>
+                <div class="box2">
+                    <div>
+                        <h2>Details</h2>
+                        <p><?php echo $row['more_details'] ?></p>
                     </div>
                 </div>
 
@@ -125,7 +136,7 @@ $result_pics = mysqli_query($con, $pics_query);
             <script src="slider.js"></script>
 
             <div class="disc">
-                <div>
+                <div class="name">
                     <h2><?php echo $row['p_name']; ?></h2>
                     <p><?php echo $row['category']; ?></p>
                 </div>
