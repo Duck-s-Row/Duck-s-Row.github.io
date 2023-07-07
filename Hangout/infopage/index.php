@@ -52,7 +52,7 @@ $result_pics = mysqli_query($con, $pics_query);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-    <link rel="stylesheet" href="info7.css">
+    <link rel="stylesheet" href="info8.css">
     <title>info</title>
 </head>
 
@@ -74,7 +74,7 @@ $result_pics = mysqli_query($con, $pics_query);
                 <li><a href="../../index.php"><b>Home</b></a></li>
                 <?php if ($user_data['privilege'] == 1) :  ?>
                     <li><a href="../../dashboard/index.php"><b>Dashboard</b></a></li>
-                    <li><a href="../request/index.php"><b>Requests</b></a></li>
+                    <li><a href="../../request/index.php"><b>Requests</b></a></li>
                 <?php elseif ($user_data['privilege'] == 2) : ?>
                     <li><a href="../../request/index.php"><b>Requests</b></a></li>
                 <?php endif; ?>
@@ -148,7 +148,13 @@ $result_pics = mysqli_query($con, $pics_query);
                         <div>
                             <h2>Budget</h2>
                             <p><?php echo $row['min_price'] ?>-<?php echo $row['max_price'] ?> L.E/Person</p>
-                            <h2>Average</h2>
+                            <div id="test">
+                                <h2>Average
+                                    <span id="hint">This average may not be accurate,<br>check the menu below.</span> 
+                                    <span id="icon"><i class="fa-solid fa-circle-info fa-beat-fade" style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075;" ></i></span>
+                                </h2>
+                            </div>
+        
                             <p><?php echo $row['average_budget']; ?></p>
                             <?php if (($row['category'] == "Restaurants" || $row['category'] == "Cafe") && !empty($row['menu_image'])) : ?>
                                 <h2>Menu</h2>

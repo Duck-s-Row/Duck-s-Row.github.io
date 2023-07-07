@@ -30,7 +30,6 @@ header {
 }
 .main{
     width: 100%;
-    min-height: 90vh;
     padding-top: 150px;
     display: flex;
     flex-direction: row;
@@ -127,7 +126,7 @@ header {
     }
 
     .nav-bar.active{
-        height: 370px;
+        height: 400px;
     }
 
     .nav-bar ul {
@@ -154,6 +153,7 @@ header {
 
     .nav-bar ul li a {
         margin-bottom: 12px;
+        color: white;
     }
     .profile{
         display: block;
@@ -399,7 +399,6 @@ header {
     
     .disc h2 {
       font-size: 24px;
-      margin-bottom: 20px;
     }
     
     .disc p {
@@ -734,11 +733,6 @@ header {
 }
 
 @media (max-width: 450px){
-    body{
-        height: 100%;
-        width: 100%;
-    }
-
     .main{
         flex-direction: column;
     }
@@ -750,8 +744,8 @@ header {
     }
 
     .slider-controls {
-        left: -8px;
-        width: 90%;
+        left: 33px;
+        width: 80%;
         top: -60px;
     }
     
@@ -769,9 +763,7 @@ header {
         margin-left: 10%;
         margin-right: 10%;
         height: 200px;
-    }
-    .slider-controls .prev {
-        margin-left: 9px;
+        left: 28px;
     }
 
     .box2{
@@ -802,10 +794,13 @@ header {
         margin-bottom: 10px;
         font-size: 15px;
     }
-    .disc h2{
+    .disc .name h2{
+        margin: 0;
+        text-align: left;
+    }
+    .box2 h2{
         margin-bottom: 0;
     }
-
     .map-container h2{
         margin-left: -15px;
         font-size: 20px;
@@ -822,28 +817,42 @@ header {
 
     .card {
         width: 90%;
+        height: 530px;
     }
 
     .col-sm-4 b {
         color: white;
+        font-size: 30px;
     }
-
+    .col-sm-4{
+        margin: 0;
+        padding: 0;
+    }
+    .mb-3{
+        margin-bottom:0 ;
+    }
+    .progress{
+        font-size: 20px;
+        width:70%;
+    }
     .progress-label-right {
-        color: white;
+        color: black;
+        font-size: 20px;
     }
-
+    .col-sm-11{
+        width: 93%;
+    }
     p {
-        margin-bottom: 3rem;
+        margin-bottom: 20px;
     }
 
     .text-center {
         color: white;
     }
-
-    .col-sm-4 button {
-        background-color: yellow;
-        color: black;
+    .col-sm-4 button{
+        margin-top: 0;
     }
+
 
     .contact_us {
         width: 100%;
@@ -860,10 +869,50 @@ header {
         grid-column: 1;
         grid-row: unset;
     }
-
+    #test:hover #hint{
+        top: -215%;
+        visibility: visible;
+        opacity: 1;
+        margin-left: -150px;
+    }
 }
 .box2 a{
     direction: none;
     cursor: pointer;
     color: white;
+}
+#test{
+    position: relative;
+}
+#icon{
+    cursor: pointer;
+    font-size: 30px;
+}
+#hint{
+    position: absolute;
+    transform: translateX(-50%);
+    background-color: #000;
+    color: white;
+    white-space: nowrap;
+    padding: 10px 15px;
+    border-radius: 7px;
+    font-size: 20px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+#hint::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    border: 15px solid;
+    border-color: #000 #0000 #0000 #0000;
+}
+#test:hover #hint{
+    top: -215%;
+    left: 90%;
+    visibility: visible;
+    opacity: 1;
 }
