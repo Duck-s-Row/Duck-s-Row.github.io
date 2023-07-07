@@ -143,7 +143,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <img src="../../home/imgs/gold-ducks.png" alt="Logo">
     </footer>
       
-    <script src="registiration.js"></script>
+    <script src="registiration1.js"></script>
 </body>
 
 </html>

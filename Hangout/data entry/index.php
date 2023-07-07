@@ -136,7 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="insertions.css">
+    <link rel="stylesheet" href="insertions1.css">
     <link rel="website icon" type="png" href="../home/imgs/Logo.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -147,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 <body>
     <header>
-        <div class="logo"><a href="../../index.php"><img src="../../home/imgs/ducks.png" alt=""></a></div>
+        <div class="logo"><a href="../../index.php"><img src="../../home/imgs/black-duck.png" alt=""></a></div>
         <div class="hamburger">
             <div class="line"></div>
             <div class="line"></div>
@@ -165,108 +165,121 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </nav>
     </header>
 
+<section class="main">
+    <div class="left">
+        <form method="post" align=center enctype="multipart/form-data" class="photo">
+            <input type="hidden" name="Form_identifier" value="insert_photo">
+            <label for="p_name">choose a place:</label><br>
+            <select id="p_name" name="place_id">
+                <?php
+                while ($row = mysqli_fetch_assoc($result)) : ?>
+                    <option value="<?php echo $row['place_id'] ?>"><?php echo $row['p_name'] . " " . $row['p_branch'] ?></option>
+                <?php endwhile; ?>
+            </select><br>
+            <label for="photo_name">insert photo</label><br>
+            <input type="file" name="photo_name" id="photo_name" accept=".jpg, .png, .jpeg"><br>
+            <input type="submit" value="save"><br>
+        </form><br>
 
-    <form method="post" align='center' class="place">
-        <input type="hidden" name="Form_identifier" value="insert_new_place">
-        <label for="p_name">place :</label>
-        <input type="text" name="p_name" id="p_name"><br>
-        <!-- <input type="text" name="p_branch" id="p_branch"><br> -->
-        <label for="p_branch">place branch:</label>
-        <select id="p_branch" name="p_branch">
-            <optgroup label="GIZA">
-                <option value="haram">haram</option>
-                <option value="fisal">fisal</option>
-                <option value="el doki">el doki</option>
-                <option value="zamalek">zamalek</option>
-                <option value="6th october">6th october</option>
-                <option value="el shiekh zayed">el shiekh zayed</option>
-                <option value="el mohandseen">el Mohandseen</option>
-                <option value="el manial">el Manial</option>
-            </optgroup>
-        </select><br>
-        <label for="small_details">Small details:</label>
-        <input type="text" name="small_details" id="small_details"><br>
-        <label for="more_details">More details:</label>
-        <input type="text" name="more_details" id="more_details"><br>
-        <label for="category">Category:</label>
-        <select name="category" id="">
-            <option value="Cafe">Cafe</option>
-            <option value="Restaurants">Restaurants</option>
-            <option value="Park">Park</option>
-            <option value="Museums">Museums</option>
-            <option value="Mall">Mall</option>
-            <option value="Cinema">Cinema</option>
-            <option value="EscapeRoom">Escape Rooms</option>
-            <option value="Pool">Pools</option>
-            <option value="KidsArea">Kids Area</option>
-            <option value="BowlingHall">Bowling Halls</option>
-        </select><br>
-        <label for="location">Location:</label>
-        <input type="url" name="location" id="location"><br>
-        <label for="min">Min:</label>
-        <input type="number" name="min" id="min">
-        <label for="max">Max:</label>
-        <input type="number" name="max" id="mx"><br>
-        <label for="uperLocation">UPER Location</label>
-        <input type="url" name="uperLocation" id="uperLocation"><br>
-        <input type="submit" value="save">
-    </form><br><br>
+        <form method="post" enctype="multipart/form-data" align=center class="logo">
+            <label for="p_name">choose a place:</label><br>
+            <select id="p_name" name="p_name">
+                <?php
+                $select_places1 = "SELECT DISTINCT p_name FROM places";
+                $result1 = mysqli_query($con, $select_places1);
+                while ($row1 = mysqli_fetch_assoc($result1)) : ?>
+                    <option value="<?php echo $row1['p_name'] ?>"><?php echo $row1['p_name'] ?></option>
+                <?php endwhile; ?>
+            </select><br>
+            <input type="hidden" name="Form_identifier" value="insert_logo">
+            <label for="logo_name">insert logo</label><br>
+            <input type="file" name="logo_name" id="logo_name" accept=".jpg, .png, .jpeg"><br>
+            <input type="submit" value="save"><br>
+        </form>
 
+        <form method="post" enctype="multipart/form-data" align=center class="offers">
+            <input type="hidden" name="Form_identifier" value="insert_offer">
+            <label for="offer">Insert offer picture</label><br>
+            <input type="file" name="offer" id="offer" accept=".jpg, .png, .jpeg"><br>
+            <input type="submit" value="save"><br>
+        </form>
 
-    <form method="post" align=center enctype="multipart/form-data" class="photo">
-        <input type="hidden" name="Form_identifier" value="insert_photo">
-        <label for="p_name">choose a place:</label>
-        <select id="p_name" name="place_id">
-            <?php
-            while ($row = mysqli_fetch_assoc($result)) : ?>
-                <option value="<?php echo $row['place_id'] ?>"><?php echo $row['p_name'] . " " . $row['p_branch'] ?></option>
-            <?php endwhile; ?>
-        </select><br>
-        <label for="photo_name">insert photo</label>
-        <input type="file" name="photo_name" id="photo_name" accept=".jpg, .png, .jpeg"><br>
-        <input type="submit" value="save">
-    </form><br>
+        <form method="POST" align='center' enctype="multipart/form-data" class="menu">
+            <input type="hidden" name="Form_identifier" value="Insert_menu">
+            <label for="place_name_menu">choose place</label><br>
+            <select name="place_name_menu" id="place_name_menu">
+                <?php
+                $selectALLPlacesN = "SELECT distinct p_name FROM places WHERE category = 'Restaurants' OR category = 'Cafe' OR category = 'Cinema'";
+                $placesNames = mysqli_query($con, $selectALLPlacesN);
+                while ($eachPlaceName = mysqli_fetch_array($placesNames)) :
+                ?>
+                    <option value="<?php echo $eachPlaceName['p_name'] ?>"><?php echo $eachPlaceName['p_name'] ?></option>
+                <?php endwhile; ?>
+            </select><br>
+            <label for="menu_image">Insert Menu Image</label><br>
+            <input type="file" name="menu_image" id="menu_image" accept=".jpg, .png, .jpeg"><br>
+            <input type="submit" value="Save">  
+        </form>
+    </div>
 
+    <div class="right">
 
+        <form method="post" align='center' class="place">
+            <input type="hidden" name="Form_identifier" value="insert_new_place">
+            <label for="p_name">place :</label><br>
+            <input type="text" name="p_name" id="p_name"><br>
+            <label for="p_branch">place branch:</label><br>
 
-    <form method="post" enctype="multipart/form-data" align=center class="logo">
-        <label for="p_name">choose a place:</label>
-        <select id="p_name" name="p_name">
-            <?php
-            $select_places1 = "SELECT DISTINCT p_name FROM places";
-            $result1 = mysqli_query($con, $select_places1);
-            while ($row1 = mysqli_fetch_assoc($result1)) : ?>
-                <option value="<?php echo $row1['p_name'] ?>"><?php echo $row1['p_name'] ?></option>
-            <?php endwhile; ?>
-        </select><br>
-        <input type="hidden" name="Form_identifier" value="insert_logo">
-        <label for="logo_name">insert logo</label>
-        <input type="file" name="logo_name" id="logo_name" accept=".jpg, .png, .jpeg"><br>
-        <input type="submit" value="save">
-    </form>
+            <select id="p_branch" name="p_branch">
+                <optgroup label="GIZA">
+                    <option value="haram">haram</option>
+                    <option value="fisal">fisal</option>
+                    <option value="el doki">el doki</option>
+                    <option value="zamalek">zamalek</option>
+                    <option value="6th october">6th october</option>
+                    <option value="el shiekh zayed">el shiekh zayed</option>
+                    <option value="el mohandseen">el Mohandseen</option>
+                    <option value="el manial">el Manial</option>
+                </optgroup>
+            </select><br>
 
-    <form method="post" enctype="multipart/form-data" align=center class="offers">
-        <input type="hidden" name="Form_identifier" value="insert_offer">
-        <label for="offer">Insert offer picture</label>
-        <input type="file" name="offer" id="offer" accept=".jpg, .png, .jpeg"><br>
-        <input type="submit" value="save">
-    </form>
-    <form method="POST" align='center' enctype="multipart/form-data" class="menu">
-        <input type="hidden" name="Form_identifier" value="Insert_menu">
-        <label for="place_name_menu">choose place</label>
-        <select name="place_name_menu" id="place_name_menu">
-            <?php
-            $selectALLPlacesN = "SELECT distinct p_name FROM places WHERE category = 'Restaurants' OR category = 'Cafe' OR category = 'Cinema'";
-            $placesNames = mysqli_query($con, $selectALLPlacesN);
-            while ($eachPlaceName = mysqli_fetch_array($placesNames)) :
-            ?>
-                <option value="<?php echo $eachPlaceName['p_name'] ?>"><?php echo $eachPlaceName['p_name'] ?></option>
-            <?php endwhile; ?>
-        </select><br>
-        <label for="menu_image">Insert Menu Image</label>
-        <input type="file" name="menu_image" id="menu_image" accept=".jpg, .png, .jpeg"><br>
-        <input type="submit" value="Save">  
-    </form>
+            <label for="small_details">Small details:</label><br>
+            <input type="text" name="small_details" id="small_details"><br>
+            <label for="more_details">More details:</label><br>
+            <input type="text" name="more_details" id="more_details"><br>
+            <label for="category">Category:</label><br>
+
+            <select name="category" id="">
+                <option value="Cafe">Cafe</option>
+                <option value="Restaurants">Restaurants</option>
+                <option value="Park">Park</option>
+                <option value="Museums">Museums</option>
+                <option value="Mall">Mall</option>
+                <option value="Cinema">Cinema</option>
+                <option value="EscapeRoom">Escape Rooms</option>
+                <option value="Pool">Pools</option>
+                <option value="KidsArea">Kids Area</option>
+                <option value="BowlingHall">Bowling Halls</option>
+            </select><br>
+            
+            <label for="location">Location:</label><br>
+            <input type="url" name="location" id="location"><br>
+
+            <div class="min-max">
+                <label for="min">Min:</label>
+                <input type="number" name="min" id="min">
+                <label for="max">Max:</label>
+                <input type="number" name="max" id="mx"><br>
+            </div>
+            
+            <label for="uperLocation">UPER Location</label><br>
+            <input type="url" name="uperLocation" id="uperLocation"><br>
+            <input type="submit" value="save">
+        </form>
+
+    </div>
+</section>
+    
 </body>
 
 </html>

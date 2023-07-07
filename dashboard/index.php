@@ -263,10 +263,10 @@ if (isset($_SESSION['user_id'])) {
                     <label for="min">Min:</label>
                     <input type="number" name="min" id="min">
                     <label for="max">Max:</label>
-                    <input type="number" name="max" id="mx"><br>
-                    <label for="uper_location">UPER Location</label>
+                    <input type="number" name="max" id="mx">
+                </div><br>
+                <label for="uper_location">UPER Location</label>
                     <input type="url" name="uper_location" id="uper_location">
-                </div>
                 <input type="submit" value="save">
             </div>
             <hr>

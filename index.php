@@ -134,7 +134,7 @@ $user_data = Get_user_data($con);
       <a href="Hangout/index.php">
         <div class="card">
           <div class="icon">
-            <i class="fa-solid fa-sack-dollar"></i>
+            <i class="fa-solid fa-sack-dollar fa-beat-fade"></i>
           </div>
           <div class="info">
             <h3>Specific budget</h3>
@@ -144,10 +144,10 @@ $user_data = Get_user_data($con);
       </a>
     </div>
     <div class="content">
-      <a href="#about_us">
+      <a href="request/index.php">
         <div class="card">
           <div class="icon">
-            <i class="fa-solid fa-envelope"></i>
+            <i class="fa-solid fa-envelope fa-beat-fade"></i>
           </div>
           <div class="info">
             <h3>Requests</h3>
@@ -160,7 +160,7 @@ $user_data = Get_user_data($con);
       <a href="plans/index.php">
         <div class="card">
           <div class="icon">
-            <i class="fa-solid fa-list-check"></i>
+            <i class="fa-solid fa-list-check fa-beat-fade"></i>
           </div>
           <div class="info">
             <h3>Make your plan</h3>
