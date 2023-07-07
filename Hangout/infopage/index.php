@@ -150,7 +150,7 @@ $result_pics = mysqli_query($con, $pics_query);
                             <p><?php echo $row['min_price'] ?>-<?php echo $row['max_price'] ?> L.E/Person</p>
                             <div id="test">
                                 <h2>Average
-                                    <span id="hint">This average may not be accurate,<br>check the menu below.</span> 
+                                    <span id="hint">This average may not be accurate,<br>check the menu below if exit.</span> 
                                     <span id="icon"><i class="fa-solid fa-circle-info fa-beat-fade" style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075;" ></i></span>
                                 </h2>
                             </div>

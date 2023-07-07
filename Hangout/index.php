@@ -39,8 +39,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <?php if ($user_data['privilege'] == 1) :  ?>
                     <li><a href="../dashboard/index.php">Dashboard</a></li>
                     <li><a href="../request/index.php">Requests</a></li>
+                    <li><a href="data entry/index.php">Data entry</a></li>
                 <?php elseif ($user_data['privilege'] == 2) : ?>
                     <li><a href="../request/index.php">Requests</a></li>
+                <?php elseif ($user_data['privilege'] == 3) : ?>
+                    <li><a href="data entry/index.php">Data entry</a></li>
                 <?php endif; ?>
                 <li><a href="../plans/index.php">My Plans</a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
@@ -102,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
                                     <div class="location-text">
                                         <i class="fa-solid fa-location-dot"></i>
-                                        <p><?php echo $place['p_branch'] ?></p>  
+                                        <p><?php echo $place['p_branch'] ?></p>
                                     </div>
 
                                     <div class="rate">
