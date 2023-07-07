@@ -15,8 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $logo = $_POST['logo'];
         $menu = $_POST['menu'];
         $details = $_POST['details'];
-        $uper_location = $_POST['uper_location'];
-        $insertIntoPlaces = "INSERT INTO places(place_id,p_name,p_branch,category,location,min_price,max_price,average_budget,more_details,logo,menu_image,uper_location) values($placeId,'$placeName','$placeBranch','$category','$locatoin',$min,$max,$average,'$details','$logo','$menu','$uper_location')";
+        if($_POST['uper_location'] == "empty") {
+            $uper_location = Null;
+        }
+        $insertIntoPlaces = "INSERT INTO places(place_id,p_name,p_branch,category,location,min_price,max_price,average_budget,more_details,logo,menu_image,uper_location) values($placeId,'$placeName','$placeBranch','$category','$locatoin',$min,$max,$average,'$details','$log2o','$menu','$uper_location')";
         mysqli_query($con, $insertIntoPlaces);
         //insert images
         $checkNumImgsQuery = "SELECT photo_name FROM request_place_pics WHERE place_id = $placeId";

@@ -175,7 +175,7 @@ $user_data = Get_user_data($con);
       </a>
     </div>
     <div class="content">
-      <a href="request/index.php">
+      <a href="#message">
         <div class="card">
           <div class="icon">
             <i class="fa-solid fa-envelope fa-beat-fade"></i>
@@ -223,7 +223,7 @@ $user_data = Get_user_data($con);
         Duck's Row is trying to organize your time so you can have fun in various locations while staying inside the limits of your preferred spending limit. <br>We need you to enjoy yourself and go to your favourite destinations.
       </p>
       <div class="icons">
-        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.facebook.com/ducksrs" target="_blank"><i class="fa-brands fa-facebook"></i></a>
         <a href="#"><i class="fa-brands fa-instagram"></i></a>
         <a href="#"><i class="fa-brands fa-twitter"></i></a>
       </div>
