@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="h12.css">
+    <link rel="stylesheet" href="h14.css">
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -98,7 +98,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                             <?php echo $place['category'] ?><br>
                                         </p>
                                     </div>
-                                    <h6>Average: <br><?php echo $place['average_budget'] ?><br>
+                                    <h6>Average: <br><?php echo $place['average_budget'] ?><br></h6>
+
+                                    <div class="location-text">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <p><?php echo $place['p_branch'] ?></p>  
+                                    </div>
+
+                                    <div class="rate">
                                         <!--  start rating line -->
                                         <?php
                                         $sql = "SELECT user_rating from review_table WHERE place_id=" . $place['place_id'] . ";";
@@ -144,20 +151,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                             $average_rating = $total_user_rating / $total_review;
 
                                             if ($average_rating <= 0) {
-                                                echo "Rating = 0";
+                                                echo "0";
                                             } else {
-                                                echo "Rating = " . (round($average_rating, 1)) . " / 5 &#10029;";
+                                                echo "" . (round($average_rating, 1)) . " / 5 &#10029;";
                                             }
                                         }
-
-
                                         ?>
                                         <!-- end of rating line -->
-                                    </h6>
-
-                                    <div class="location-text">
-                                        <i class="fa-solid fa-location-dot"></i>
-                                        <p><?php echo $place['p_branch'] ?></p>
                                     </div>
                                 </div>
                                 <div class="text2">
