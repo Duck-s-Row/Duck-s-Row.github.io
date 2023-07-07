@@ -15,7 +15,7 @@ $user_data = Get_user_data($con);
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
   <meta charset="UTF-8">
   <meta name="description" content="GO Fun, GO & run">
-  <link rel="stylesheet" href="home/CSS_files/hom10.css">
+  <link rel="stylesheet" href="home/CSS_files/hom11.css">
   <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script type="text/javascript">
@@ -72,7 +72,38 @@ $user_data = Get_user_data($con);
         <li><i class="fa fa-right-from-bracket" id="logout"></i><i class="fa-regular fa-user" onclick="toggleMenu()" id="user-icon"></i></li>
         <?php //endif; ?>
         
-        <div class="dark"><i class='fa-regular fa-moon' style='color: #ffffff;' id='icon'></i></div>
+        <?php
+          // Set the initial mode based on the cookie value
+          if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') {
+            echo '<script>document.querySelector("body").classList.add("dark-theme");</script>';
+          }
+          
+          // Listen for changes in the switch element and toggle the dark mode on or off based on the switch state
+          if (isset($_POST['mode'])) {
+            $mode = $_POST['mode'];
+            setcookie('mode', $mode, time() + (86400 * 30), "/"); // Set the cookie for 30 days
+            echo '<script>document.querySelector("body").classList.toggle("dark-theme");</script>';
+          }
+          ?>
+          <label class="switch">
+            <input type="checkbox" id="darkModeToggle" <?php if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') { echo 'checked'; } ?>>
+            <i class='fa-regular fa-moon' style='color: #ffffff;' id='icon'></i>
+          </label>
+
+        <!-- Add a hidden form to submit the switch value to the PHP code -->
+        <form id="darkModeForm" method="POST" style="display:none;">
+          <input type="hidden" name="mode" id="modeInput">
+        </form>
+
+        <!-- Use JavaScript to listen for changes in the switch element and submit the form -->
+        <script>
+          const darkModeToggle = document.querySelector('#darkModeToggle');
+          const modeInput = document.querySelector('#modeInput');
+          darkModeToggle.addEventListener('change', () => {
+            modeInput.value = darkModeToggle.checked ? 'dark' : 'light';
+            document.querySelector('#darkModeForm').submit();
+          });
+        </script>
       </ul>
 
       <div class="sub-menu-wrap" id="subMenu">
