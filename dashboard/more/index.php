@@ -36,7 +36,6 @@ $allImgs = mysqli_query($con, $selectImgs);
     <div class="back">
         <a onclick="window.history.back()"><i class="fa-solid fa-circle-left"></i></a>
         <img src="../../Hangout/logos/<?php echo $eachDetail['logo'] ?>" alt="logo" height="70" width="70"><br>
-        <input type="hidden" name="logo" value="<?php echo $eachDetail['logo'] ?>">
     </div>
     <div id="menu_popup" class="popup_menu">
         <button id="close_menu"><i class="fa fa-x"></i></button>
@@ -45,6 +44,7 @@ $allImgs = mysqli_query($con, $selectImgs);
         </div>
     </div>
     <form action="decision.php" method="post">
+        <input type="hidden" name="logo" value="<?php echo $eachDetail['logo'] ?>">
         <div class="content">
             <div class="left">
                 <div class="main_slide">
@@ -98,10 +98,9 @@ $allImgs = mysqli_query($con, $selectImgs);
                 <input type="text" name="details" id="details" value="<?php echo $eachDetail['details'] ?>" readonly><br>
                 <label for="p_branch">place Branch</label>
                 <input type="text" name="p_branch" id="p_branch" value="<?php echo $eachDetail['p_branch'] ?>" readonly><br>
-                <?php if(!empty($eachDetail['uper_location'])): ?>
+                
                 <label for="uper_location">UPER Location</label>
-                <input type="url" name="uper_location" id="uper_location" <?php echo $eachDetail['uper_location'] ?> readonly> <br>
-                <?php endif; ?>
+                <input type="url" name="uper_location" id="uper_location" <?php echo $eachDetail['uper_location'] ?> readonly <?php if(empty($eachDetail['uper_location'])) echo "value='empty'" ?>> <br>
                 <div class="comment">
                     <label for="comment">If you have Comment Leave It Here:</label><br>
                     <input type="text" name="comment" id="comment">
