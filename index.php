@@ -15,7 +15,7 @@ $user_data = Get_user_data($con);
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
   <meta charset="UTF-8">
   <meta name="description" content="GO Fun, GO & run">
-  <link rel="stylesheet" href="home/CSS_files/hom11.css">
+  <link rel="stylesheet" href="home/CSS_files/hom12.css">
   <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script type="text/javascript">
@@ -64,13 +64,15 @@ $user_data = Get_user_data($con);
         <?php endif; ?>
 
         <!-- user picture icon -->
-        <?php //if (isset($_SESSION['user_id'])) : ?>
-        <!-- <li> -->
-          <!-- <img src="profile/user_profile_imgs/<?php //echo $user_data['user_pic'] ?>" alt="<?php //echo $user_data['username'] . " picture"?>" id="user_pic" onclick="toggleMenu()"> -->
-        <!-- </li> -->
-        <?php //else : ?>
+        <?php if (isset($_SESSION['user_id'])) : ?>
+          <div class="user-image">
+            <li>
+              <img src="profile/user_profile_imgs/<?php echo $user_data['user_pic'] ?>" alt="<?php echo $user_data['username'] . " picture"?>" id="user_pic" onclick="toggleMenu()">
+            </li>
+          </div>
+        <?php else : ?>
         <li><i class="fa fa-right-from-bracket" id="logout"></i><i class="fa-regular fa-user" onclick="toggleMenu()" id="user-icon"></i></li>
-        <?php //endif; ?>
+        <?php endif; ?>
         
         <?php
           // Set the initial mode based on the cookie value

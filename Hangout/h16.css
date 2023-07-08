@@ -328,7 +328,7 @@ select option{
 
 .hang .left .choices .f_row .card {
     width: 400px;
-    height: 140px;
+    height: 120px;
     background-color: var(--c2);
     margin: 20px auto 10px auto;
     border-radius: 20px;
@@ -381,7 +381,7 @@ select option{
 }
 .card:hover .icons{
     animation: icon 0.4s ease-in both;
-    height: 140px;
+    height: 120px;
     width: 100px;
     background-color: #fee715ed;
 }
@@ -407,8 +407,8 @@ select option{
     display: flex;
 }
 .hang .left .choices .f_row .card img {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
 }
 .hang .left .choices .f_row .card .text1 {
     margin-left: 10px;
