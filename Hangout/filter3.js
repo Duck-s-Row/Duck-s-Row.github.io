@@ -48,6 +48,7 @@ function filter() {
                 <div class="text2">
                   <!-- <div class="more"> -->
                     <form method="POST" id="hidden_form_${item1.place_id}" style="display: none;" >
+                      <input type="hidden" name="Form_identifier" value="more">
                       <input type="hidden" name="place_id" value="${item1.place_id}">
                       <input type="submit" name="more" id="more" value="More">
                     </form>
@@ -78,6 +79,7 @@ function filter() {
                 <div class="text2">
                   <!-- <div class="more"> -->
                     <form method="POST" id="hidden_form_${item2.place_id}" style="display: none;" >
+                      <input type="hidden" name="Form_identifier" value="more">
                       <input type="hidden" name="place_id" value="${item2.place_id}">
                       <input type="submit" name="more" id="more" value="More">
                     </form>
