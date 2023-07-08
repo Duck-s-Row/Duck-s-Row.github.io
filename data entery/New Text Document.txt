@@ -1,0 +1,5 @@
+restaurante: An amazing restaurante that offer a wide variety of food with a wide variety of prices affordable by everyone
+cafe: An excelent cafe with a nice view and a comfortable place to enjoy a hot or cold drink with a really affordable prices
+
+
+park: an amazing place to enjoy time hangout with your friends and children

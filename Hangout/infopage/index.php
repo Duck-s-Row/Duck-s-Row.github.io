@@ -97,6 +97,9 @@ $result_pics = mysqli_query($con, $pics_query);
     </script>
 
     <!-- The End of Navbar section -->
+    
+
+
 
 
 
