@@ -1,0 +1,524 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'ABeeZee', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 100%;
+    min-height: 100vh;
+    background: #11101b;
+    color: #f2f2f2;
+}
+
+header {
+    width: 15%;
+    height: 100%;
+    background: #11101b;
+    border-right: 15px double #fee715;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 999;
+}
+
+nav {
+    width: 100%;
+    height: 100%;
+}
+
+nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+button {
+    width: 100%;
+    height: 70px;
+    margin-bottom: 50px;
+    background-color: #fee715;
+
+    font-size: 30px;
+    font-family: 'Bebas Neue', cursive;
+
+    border: none;
+    cursor: pointer;
+}
+
+nav ul li {
+    cursor: pointer;
+    width: 100%;
+    height: 60px;
+    list-style: none;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+nav ul li.active {
+    background-color: #fee715c6;
+}
+
+.dashboard, .users, .places, .request{
+    display: block;
+    padding: 7% 0 0 20%;
+}
+.insert{
+    display: block;
+    padding: 30px 0 0 10%;
+}
+.users, .places, .request, .insert{
+    display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+
+    header {
+        padding: 0 30px;
+        width: 100%;
+        height: 10%;
+        flex-direction: row;
+        border-right: none;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hamburger{
+        display: block;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    .hamburger .line {
+        width: 30px;
+        height: 3px;
+        background: #fefefe;
+        margin: 6px 0;
+    }
+
+    .nav-bar {
+        height: 0;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 75%;
+        margin: auto;
+        background: #11101b;
+        transition: 0.5s;
+    }
+
+    .nav-bar.active{
+        height: 500px;
+        width: 50%;
+        background-color: #fee715;
+        left: unset;
+        right: 80px;
+    }
+
+    .nav-bar ul {
+        display: block;
+        width: fit-content;
+        margin: 20px auto 0 auto;
+        padding: 0;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    #user-icon {
+        display: none;
+    }
+
+    #logout{
+        display: inline-block;
+    }
+
+    .nav-bar.active ul {
+        opacity: 1;
+    }
+
+    .nav-bar ul li a {
+        margin-bottom: 12px;
+    }
+    .profile{
+        display: block;
+    }
+
+    button {
+        width: 30%;
+        height: 50%;
+        border-radius: 10px;
+        margin-top: 50px;
+        font-size: 17px;
+    }
+    
+}
+
+@media only screen and (max-width: 720px){
+    .logo img {
+        width: 60px;
+    }
+}
+
+.shortcut1 {
+    width: 95%;
+    height: 270px;
+    display: flex;
+    padding: 0px 10px;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.shortcut2 {
+    width: 95%;
+    height: 270px;
+    display: flex;
+    padding: 0px 10px;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.card {
+    width: 300px;
+    height: 80%;
+    background-color: #fee715c6;
+    box-shadow: 0 5px 10px #fee71599;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.card>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card svg,.card p  {
+    margin-top: 20px;
+    font-size: 40px;
+}
+
+#numcard {
+    transition: 0.5s ease-out;
+}
+
+#numcard:hover {
+    transform: scale(1.1);
+}
+
+.card a {
+    text-decoration: none;
+    text-align: center;
+    background-color: #11101b;
+    border: 4px double #11101b;
+    color: #fee715;
+
+    padding: 5px 10px;
+    margin-top: 20px;
+    border-radius: 15px;
+    
+    font-size: 20px;
+    transition: 0.5s ease-out;
+}
+
+.card a:hover {
+    transform: scale(1.1);
+    background-color: #fee715;
+    color: #11101b;
+    border: 4px double #11101b;
+}
+
+table {
+    color: #f2f2f2;
+    border-collapse: collapse;
+    border: 2px solid #fee715;
+    width: 90%;
+    word-break: break-all;
+    margin-bottom: 50px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    color: #11101b;
+    background-color: #fee715;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    border: 2px solid #fee715;
+    background-color: #11101b;
+}
+
+a {
+    color: #fee715;
+    text-decoration: none;
+}
+.insert .c1{
+    display: flex;
+    flex-direction: column;
+}
+.insert .c1 input , .insert .c1 select{
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+    height: 30px;
+    color: white;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #fee715;
+    border-radius: 20px;
+    padding: 0 10px;
+}
+.insert .c1 select{
+    color: rgba(255, 255, 255, 0.463);
+    cursor: pointer;
+}
+.insert .c1 select option{
+    color: #11101b;
+}
+.insert .c1 label{
+    font-size: 17px;
+}
+.insert .c1 .min-max{
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 0 40%;
+}
+.insert .c1 .min-max input{
+    width: 85px;
+    margin: 0 0 0 5px;
+}
+.insert .c1 .min-max label{
+    margin: 10px 0 0 10px;
+}
+.insert .c1 input[type="submit"]{
+    background-color: #fee715;
+    color: #11101b;
+    margin: 20px 45%;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    padding: 5px 0;
+    height: 100%;
+    cursor: pointer;
+    border: 0
+}
+.insert .c1 input[type="submit"]:hover{
+    background-color: white;
+    color: #11101b;
+}
+.insert .c2{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.insert .c2 select , .insert .c2 input[type="file"]{
+    width: 20%;
+    margin: 0 40% 0 40%;
+    height: 30px;
+    color: white;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #fee715;
+    border-radius: 20px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+.insert .c2 select option{
+    color: black;
+}
+.insert .c2 input[type="file"]{
+    box-shadow: 5px 5px 10px black;
+    border-radius: 50px;
+    outline: none;
+    width: 14%;
+    margin: 0 43% 0 43%;
+}
+::-webkit-file-upload-button{
+    color: #11101b;
+    background: #fee715;
+    padding: 5px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 1px 0 1px 1px black;
+    outline: none;
+}
+.insert .c2 input[type="submit"]{
+    width: 6%;
+    margin: 20px 47% 10px 47%;
+    background-color: #fee715;
+    color: #11101b;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 20px;
+}
+.insert .c2 input[type="submit"]:hover{
+    color: #11101b;
+    background-color: white;
+}
+.request input[type="submit"]{
+    background: none;
+    color: #fee715;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .dashboard{
+        padding: 50% 0 50% 5%;
+    }
+
+    .shortcut1 {
+        height: auto;
+        margin-top: 30px;
+        flex-direction: column;
+        justify-content: unset;
+    }
+
+    .shortcut1 .card{
+        width: auto; 
+    }
+
+    /* .shortcut2{
+        flex-direction: column;
+    } */
+
+    .shortcut2 .card {
+        /* width: unset;
+        height: unset;
+        background-color: unset;
+        box-shadow: unset;
+        border-radius: unset;
+        display: unset;
+        align-items: unset;
+        justify-content: unset;
+        flex-direction: unset;
+        padding: unset; */
+        display: none;
+    }
+
+    /* .shortcut2 .card svg{
+        display: none;
+    }
+
+    .shortcut2 .card h2{
+        display: none;
+    } */
+
+    .number-of{
+        display: none;
+    }
+    
+
+    .dashboard, .users, .places, .request {
+        display: none;
+        padding: 7% 0 0 5%;
+    }
+
+    .users input[type="text"]{
+        width: 15px;
+        font-size: 10px;
+    }
+
+    .users input[type="submit"]{
+        width: 40px;
+        font-size: 10px;
+    }
+
+    table{
+        margin-top: 80px;
+    }
+
+    .request input[type="submit"]{
+        font-size: 12px;
+    }
+    
+    th, td {
+        text-align: center;
+        padding: 5px;
+        font-size: 10px;
+    }
+
+    .dashboard, .insert {
+        display: none;
+        padding: 30% 0 0 0%;
+        
+    }
+
+    .insert .c1 input, .insert .c1 select {
+        width: 70%;
+        margin-left: 20%;
+        margin-right: 0%;
+    }
+
+    .insert .c1 .min-max {
+        display: flex;
+        flex-direction: column;
+        margin: 0px 0 0 30%;
+    }
+
+    .insert .c1 input[type="submit"] {
+        
+        width: 30%;
+        margin: 20px 35%;
+
+    }
+
+    .insert .c1 .min-max label {
+        margin: 10px 0 0 -90%;
+    }
+
+    
+.insert .c2 select, .insert .c2 input[type="file"] {
+    width: 70%;
+    margin: 0px 0% 30px 0%;
+}
+
+.insert .c2 input[type="file"] {
+    width: 70%;
+    margin: 0px 0% 30px 0%;
+}
+
+.insert .c2 input[type="submit"] {
+    width: 20%;
+    margin: 0px 0% 30px 0%;
+}
+
+}

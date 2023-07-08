@@ -9,7 +9,7 @@ if (isset($_SESSION['user_id'])) {
     }
 } else {
     //redirect to login page
-    header("Location: ../../Log_in/login.php");
+    header("Location: ../../Log_in/index.php");
     die;
 }
 ?>
@@ -20,7 +20,7 @@ if (isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="request1.css">
+    <link rel="stylesheet" href="request2.css">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
     <title>New Request</title>
 </head>
@@ -37,11 +37,11 @@ if (isset($_SESSION['user_id'])) {
         <nav class="nav-bar">
             <ul>
                 <li><a href="../../index.php"><b>Home</b></a></li>
-                <li><a href="../../plans/plans.php"><b>My Plans</b></a></li>
+                <li><a href="../../plans/index.php"><b>My Plans</b></a></li>
                 <li><a href="../index.php"><b>Requests</b></a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
                 <li><a href="#contact_us"><b>About</b></a></li>
-                <li><a href="../../Profile/profile.php" class="profile"><b>Profile</b></a></li>
+                <li><a href="../../Profile/index.php" class="profile"><b>Profile</b></a></li>
             </ul>
         </nav>
     </header>
@@ -105,6 +105,8 @@ if (isset($_SESSION['user_id'])) {
                     </select><br>
                     <h2>i Frame src Location : </h2>
                     <input type="text" name="location" placeholder="Enter location URL" required>
+                    <h2>UPER Location (optional)</h2>
+                    <input type="text" name="uper_location" id="" placeholder="Enter location URL of UPER">
                 </div>
                 <input type="submit" value="Request" class="submit_request">
             </div>

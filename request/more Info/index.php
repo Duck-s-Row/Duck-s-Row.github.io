@@ -10,7 +10,7 @@ if (isset($_SESSION['user_id']) && isset($request_id)) {
         header('Location:../../index.php');
 } else {
     //redirect to login page
-    header("Location: ../../Log_in/login.php");
+    header("Location: ../../Log_in/index.php");
     die;
 }
 $selectReqQuery = "SELECT * FROM requests, request_details WHERE requests.user_id = $user_id AND requests.request_id = $request_id AND request_details.request_id = $request_id";
@@ -27,7 +27,7 @@ $place_id = $eachDetail['place_id'];
     <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="../../home/imgs/Logo.png">
-    <link rel="stylesheet" href="indexstyle3.css">
+    <link rel="stylesheet" href="indexstyle4.css">
     <title>Request Adjustment</title>
 </head>
 
@@ -49,13 +49,13 @@ $place_id = $eachDetail['place_id'];
             <ul>
                 <li><a href="../../index.php"><b>Home</b></a></li>
                 <?php if ($user_data['privilege'] == 1) :  ?>
-                    <li><a href="../../dashboard/dashboard.php"><b>Dashboard</b></a></li>
+                    <li><a href="../../dashboard/index.php"><b>Dashboard</b></a></li>
                 <?php endif; ?>
-                <li><a href="../../Hangout/hangout.php"><b>Hangout</b></a></li> <!-- we could remove this ancher tag link because of using the button  -->
+                <li><a href="../../Hangout/index.php"><b>Hangout</b></a></li> <!-- we could remove this ancher tag link because of using the button  -->
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Plans</a></li> -->
                 <!-- <li><a href="#about_us"><b>About</b></a></li> -->
-                <li><a href="../../plans/plans.php" class="profile"><b>My plans</b></a></li>
-                <li><a href="../../Profile/profile.php" class="profile"><b>Profile</b></a></li>
+                <li><a href="../../plans/index.php" class="profile"><b>My plans</b></a></li>
+                <li><a href="../../Profile/index.php" class="profile"><b>Profile</b></a></li>
             </ul>
         </nav>
     </header>
@@ -169,6 +169,8 @@ $place_id = $eachDetail['place_id'];
                 <div>
                     <label for="location">i Frame src Location</label>
                     <input type="url" name="location" id="location" value="<?php echo $eachDetail['location'] ?>" <?php if ($eachDetail['req_status'] == "Accepted") echo "readonly"; ?>>
+                    <label for="uper_location">UPER Location</label>
+                    <input type="url" name="uper_location" id="uper_location" value="<?php echo$eachDetail['uper_location'] ?>" <?php if ($eachDetail['req_status'] == "Accepted") echo "readonly"; ?>>
                 </div>
                 <div>
                     <input type="submit" value="Update" <?php if ($eachDetail['req_status'] == "Accepted") echo "disabled"; ?>>
@@ -188,15 +190,15 @@ $place_id = $eachDetail['place_id'];
         var close_menu = document.getElementById("close_menu");
         var open_menu = document.getElementById("open_menu");
 
-        close_menu.addEventListener("click", ()=> {
+        close_menu.addEventListener("click", () => {
             popup_menu.style.display = "none";
         });
 
-        open_menu.addEventListener("click", ()=> {
+        open_menu.addEventListener("click", () => {
             popup_menu.style.display = "flex";
             close_menu.style.display = "block";
         });
-        
+
 
         const minInput = document.getElementById('min');
         const maxInput = document.getElementById('max');

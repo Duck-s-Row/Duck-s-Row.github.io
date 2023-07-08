@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $stmt = mysqli_prepare($con, $query);
       mysqli_stmt_bind_param($stmt, "isssssss", $user_id, $username, $hasedpassword, $phone, $email, $gender, $Fname, $Lname);
       mysqli_stmt_execute($stmt);
-      header('Location:../../Log_in/login.php');
+      header('Location:../../Log_in/index.php');
       die();
     }
 }
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="head">
         <h1>SIGN UP</h1>
-        <span>You have already an account? <a href="../../Log_in/login.php">Login</a></span>
+        <span>You have already an account? <a href="../../Log_in/index.php">Login</a></span>
     </div>
     <div class="content">
         <form method="post">
@@ -143,7 +143,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <img src="../../home/imgs/gold-ducks.png" alt="Logo">
     </footer>
       
-    <script src="registiration.js"></script>
+    <script src="registiration1.js"></script>
 </body>
 
 </html>

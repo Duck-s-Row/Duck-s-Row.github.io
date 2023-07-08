@@ -13,7 +13,7 @@ function check_login($con)
     }
 
     //redirect to login page
-    header("location: ../Log_in/login.php");
+    header("location: ../Log_in/index.php");
     die;
 }
 function Get_user_data($con)
@@ -51,13 +51,15 @@ function check_privilege_hangout($con)
         $result = mysqli_query($con, $query);
         if ($result && mysqli_num_rows($result) > 0) {
             $user_data = mysqli_fetch_assoc($result);
-            if ($user_data['privilege'] == 0)
-                header('Location:../../index.php');
+            return $user_data['privilege'];
+        } else {
+            header("location: ../../Log_in/index.php");
+            die;
         }
     }
     //redirect to login page
     else {
-        header("location: ../../Log_in/login.php");
+        header("location: ../../Log_in/index.php");
         die;
     }
 }
@@ -72,7 +74,7 @@ function getAllplaces($con)
     return $places;
 }
 
-function filterLocationSort($con, $location, $sort, $categories,$budget)
+function filterLocationSort($con, $location, $sort, $categories, $budget)
 {
     $sql = "SELECT * FROM places";
     $condition = [];
@@ -103,7 +105,7 @@ function filterLocationSort($con, $location, $sort, $categories,$budget)
         $sql .= " ORDER BY average_budget DESC";
     } elseif ($sort == "low-Average") {
         $sql .= " ORDER BY average_budget ASC";
-    } else{
+    } else {
         $sql .= " ORDER BY RAND()";
     }
     $result = mysqli_query($con, $sql);
