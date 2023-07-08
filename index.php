@@ -228,8 +228,8 @@ $user_data = Get_user_data($con);
       </p>
       <div class="icons">
         <a href="https://www.facebook.com/ducksrs" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://instagram.com/ducks_row?igshid=MzNlNGNkZWQ4Mg=="><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://twitter.com/ducksrow100?t=mCM_cslRmBpsw6SUM6_jBg&s=09"><i class="fa-brands fa-twitter"></i></a>
       </div>
       <div class="contact">
         <h3><span>contact</span> us</h3>
