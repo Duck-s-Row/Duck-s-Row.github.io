@@ -18,13 +18,13 @@ $user_data = Get_user_data($con);
   <link rel="stylesheet" href="home/CSS_files/hom12.css">
   <script src="https://kit.fontawesome.com/60b24d6b5a.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $(window).scroll(function(){
-                $('.home').css("opacity", 1 - $(window).scrollTop()/700)
-            })
-        })
-    </script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(window).scroll(function() {
+        $('.home').css("opacity", 1 - $(window).scrollTop() / 700)
+      })
+    })
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="website icon" type="png" href="home/imgs/Logo.png">
   <title>Duck's Row</title>
@@ -50,6 +50,8 @@ $user_data = Get_user_data($con);
             <li><a href="request/index.php">Requests</a></li>
           <?php elseif ($user_data['privilege'] == 2) : ?>
             <li><a href="request/index.php">Requests</a></li>
+          <?php elseif ($user_data['privilege'] == 3) : ?>
+            <li><a href="Hangout/data entry/index.php">Data entry</a></li>
           <?php endif; ?>
         <?php endif; ?>
         <li><a href="Hangout/index.php">Hangout</a></li> <!-- we could remove this ancher tag link because of using the button  -->
