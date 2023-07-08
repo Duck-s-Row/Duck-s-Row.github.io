@@ -4,9 +4,11 @@ include("../connection/connection.php");
 include("../Functions/Functions.php");
 $user_data = check_login($con);
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $place_id = $_POST['place_id'];
-    $_SESSION['place_id'] = $place_id;
-    header('Location:infopage/index.php');
+    if($_POST['Form_identifier'] == "more"){
+        $place_id = $_POST['place_id'];
+        $_SESSION['place_id'] = $place_id;
+        header('Location:infopage/index.php');
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -51,17 +53,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <li><a href="../Profile/index.php" class="profile">Profile</a></li>
                 <!-- <div class="dark"><i class='fa-regular fa-moon' style='color: #ffffff;' id='icon'></i></div> -->
                 <?php
-                    // Set the initial mode based on the cookie value
-                    if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') {
-                        echo '<script>document.querySelector("body").classList.add("dark-theme");</script>';
-                    }
-                    
-                    // Listen for changes in the switch element and toggle the dark mode on or off based on the switch state
-                    if (isset($_POST['mode'])) {
-                        $mode = $_POST['mode'];
-                        setcookie('mode', $mode, time() + (86400 * 30), "/"); // Set the cookie for 30 days
-                        echo '<script>document.querySelector("body").classList.toggle("dark-theme");</script>';
-                    }
+                if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') {
+                    echo '<script>document.querySelector("body").classList.add("dark-theme");</script>';
+                }
+                if (isset($_POST['mode'])) {
+                    $mode = $_POST['mode'];
+                    setcookie('mode', $mode, time() + (86400 * 30), "/"); // Set the cookie for 30 days
+                    echo '<script>document.querySelector("body").classList.toggle("dark-theme");</script>';
+                }
                 ?>
                 <label class="switch">
                     <input type="checkbox" id="darkModeToggle" <?php if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') { echo 'checked'; } ?>>
@@ -70,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
                 <!-- Add a hidden form to submit the switch value to the PHP code -->
                 <form id="darkModeForm" method="POST" style="display:none;">
+                    <input type="hidden" name="Form_identifier" value="theme">
                     <input type="hidden" name="mode" id="modeInput">
                 </form>
 
@@ -198,6 +198,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                 <div class="text2">
                                     <!-- <div class="more"> -->
                                     <form method="POST" id="hidden_form_<?php echo $place['place_id']; ?>" style="display: none;">
+                                        <input type="hidden" name="Form_identifier" value="more">
                                         <input type="hidden" name="place_id" value="<?php echo $place['place_id']; ?>">
                                         <input type="submit" name="more" id="more" value="More">
                                     </form>
