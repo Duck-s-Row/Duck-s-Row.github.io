@@ -95,6 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         <!-- Add a hidden form to submit the switch value to the PHP code -->
         <form id="darkModeForm" method="POST" style="display:none;">
+            <input type="hidden" name="Form_identifier" value="theme">
           <input type="hidden" name="mode" id="modeInput">
         </form>
 
