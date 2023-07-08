@@ -477,6 +477,10 @@ header {
     border-radius: 100px;
     color: var(--teritary-color);
     animation: anim2 3s linear forwards;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 } 
 
 .home .button:hover {
