@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo '
             <script>alert("Invalid Image Extension");</script>';
             header('Location:index.php');
-        } elseif ($image_size > 1200000) {
+        } elseif ($image_size > 5000000) {
             echo '
             <script>alert("Imgae Size Is Too Large");</script>';
             header('Location:index.php');

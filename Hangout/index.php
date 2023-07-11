@@ -2,9 +2,9 @@
 session_start();
 include("../connection/connection.php");
 include("../Functions/Functions.php");
-$user_data = check_login($con);
+$user_data = Get_user_data($con);
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    if($_POST['Form_identifier'] == "more"){
+    if ($_POST['Form_identifier'] == "more") {
         $place_id = $_POST['place_id'];
         $_SESSION['place_id'] = $place_id;
         header('Location:infopage/index.php');
@@ -37,16 +37,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <nav class="nav-bar">
             <ul>
                 <li><a href="../index.php">Home</a></li>
-                <?php if ($user_data['privilege'] == 1) :  ?>
-                    <li><a href="../dashboard/index.php">Dashboard</a></li>
-                    <li><a href="../request/index.php">Requests</a></li>
-                    <li><a href="data entry/index.php">Data entry</a></li>
-                <?php elseif ($user_data['privilege'] == 2) : ?>
-                    <li><a href="../request/index.php">Requests</a></li>
-                <?php elseif ($user_data['privilege'] == 3) : ?>
-                    <li><a href="data entry/index.php">Data entry</a></li>
+                <?php if (isset($user_data)) : ?>
+                    <?php if ($user_data['privilege'] == 1) :  ?>
+                        <li><a href="../dashboard/index.php">Dashboard</a></li>
+                        <li><a href="../request/index.php">Requests</a></li>
+                        <li><a href="data entry/index.php">Data entry</a></li>
+                    <?php elseif ($user_data['privilege'] == 2) : ?>
+                        <li><a href="../request/index.php">Requests</a></li>
+                    <?php elseif ($user_data['privilege'] == 3) : ?>
+                        <li><a href="data entry/index.php">Data entry</a></li>
+                    <?php endif; ?>
+                    <li><a href="../plans/index.php">My Plans</a></li>
                 <?php endif; ?>
-                <li><a href="../plans/index.php">My Plans</a></li>
                 <!-- <li><a href="Sign_UP/first page/Sign_up.php">My Planes</a></li> -->
                 <li><a href="#contact_us">About</a></li>
                 <li><a href="../Profile/index.php" class="profile">Profile</a></li>
@@ -62,7 +64,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 }
                 ?>
                 <label class="switch">
-                    <input type="checkbox" id="darkModeToggle" <?php if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') { echo 'checked'; } ?>>
+                    <input type="checkbox" id="darkModeToggle" <?php if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') {
+                                                                    echo 'checked';
+                                                                } ?>>
                     <i class='fa-regular fa-moon' style='color: #ffffff;' id='icon'></i>
                 </label>
 
@@ -74,12 +78,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
                 <!-- Use JavaScript to listen for changes in the switch element and submit the form -->
                 <script>
-                const darkModeToggle = document.querySelector('#darkModeToggle');
-                const modeInput = document.querySelector('#modeInput');
-                darkModeToggle.addEventListener('change', () => {
-                    modeInput.value = darkModeToggle.checked ? 'dark' : 'light';
-                    document.querySelector('#darkModeForm').submit();
-                });
+                    const darkModeToggle = document.querySelector('#darkModeToggle');
+                    const modeInput = document.querySelector('#modeInput');
+                    darkModeToggle.addEventListener('change', () => {
+                        modeInput.value = darkModeToggle.checked ? 'dark' : 'light';
+                        document.querySelector('#darkModeForm').submit();
+                    });
                 </script>
             </ul>
         </nav>
