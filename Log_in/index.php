@@ -5,9 +5,9 @@ include("../Functions/Functions.php");
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    // getting posted from user
-   $username    = $_POST['username'];
-   $password = $_POST['password'];
+    // getting posted from user 
+   $username = filter_input(INPUT_POST,'username',FILTER_SANITIZE_STRING);
+   $password = filter_input(INPUT_POST,'password',FILTER_SANITIZE_STRING); 
         //read from database
         $query = "select username,password from users where username = ? limit 1";
         $stmt = mysqli_prepare($con,$query);

@@ -5,20 +5,22 @@ include("../../Functions/Functions.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // something was posted
-    $username    = $_POST['username'];
-    $password    = $_POST['password'];
+    $username    = filter_input(INPUT_POST,'username',FILTER_SANITIZE_STRING);
+    $password    = filter_input(INPUT_POST,'password',FILTER_SANITIZE_STRING);
     $hasedpassword = password_hash($password, PASSWORD_DEFAULT);
-    $Fname       = $_POST['Fname'];
-    $Lname       = $_POST['Lname'];
-    $phone       = $_POST['phone'];
-    $email       = $_POST['email'];
-    $gender      = $_POST['gender'];
-
+    $Fname       = filter_input(INPUT_POST,'Fname',FILTER_SANITIZE_STRING);
+    $Lname       = filter_input(INPUT_POST,'Lname',FILTER_SANITIZE_STRING);
+    $phone       = filter_input(INPUT_POST,'phone',FILTER_SANITIZE_NUMBER_INT);
+    $email       = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);
+    $gender      = filter_input(INPUT_POST,'gender',FILTER_SANITIZE_STRING);
 
     // Check if the username already exists in the database
     $username = mysqli_real_escape_string($con, $_POST['username']);
-    $sql = "SELECT * FROM users WHERE username = '$username'";
-    $result = mysqli_query($con, $sql);
+    $sql = "SELECT * FROM users WHERE username = ?";
+    $stmt = mysqli_prepare($con,$sql);
+    mysqli_stmt_bind_param($stmt,"s",$username);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
     
     if (mysqli_num_rows($result) > 0) {
       // Username already exists, alert the user
@@ -26,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }else{
       // Username doesn't exist, store the user signup information in the database
       $user_id = random_num(20);
-      $query = "insert into users(user_id,username,password,phone,email,gender,Fname,Lname) values(?,?,?,?,?,?,?,?)";
+      $query = "INSERT INTO users(user_id,username,password,phone,email,gender,Fname,Lname) VALUES(?,?,?,?,?,?,?,?)";
       $stmt = mysqli_prepare($con, $query);
       mysqli_stmt_bind_param($stmt, "isssssss", $user_id, $username, $hasedpassword, $phone, $email, $gender, $Fname, $Lname);
       mysqli_stmt_execute($stmt);
