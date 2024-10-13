@@ -94,8 +94,12 @@ All rights reserved.
 
 This project was developed by:
 
-- **Kareem Abdallah** - Front-End Developer  
+- **Kareem Abdallah**
   [GitHub](https://github.com/Kareem2003) | [LinkedIn](https://www.linkedin.com/in/kareem2003/)
+  
+- **Amr Matarek**  
+  [GitHub](https://github.com/Amr11matarek) | [LinkedIn](https://www.linkedin.com/in/amr-matarek-72839b244)
+  
 
 ---
 
