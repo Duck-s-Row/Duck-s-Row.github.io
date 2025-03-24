@@ -100,8 +100,8 @@ This project was developed by:
 - **Amr Matarek**
   🔗[GitHub](https://github.com/Amr11matarek) | 🔗[LinkedIn](https://www.linkedin.com/in/amr-matarek-72839b244)
 
-- **Abdulrhman Mohammed**
-  🔗[GitHub](https://github.com/3bdalrahman) | 🔗[LinkedIn](https://www.linkedin.com/in/abdulrhman-mohammed03/)
+- **Abdulrhman Ahmed**
+  🔗[GitHub](https://github.com/3bdalrahman) | 🔗[LinkedIn](https://www.linkedin.com/in/abdulrhman-ahmed03/)
   
 ---
 
